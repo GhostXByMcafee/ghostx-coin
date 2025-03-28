@@ -1,0 +1,1 @@
+# ghostx-coin
