@@ -1,0 +1,86 @@
+[
+    [
+        "GWXVVwNQHdAWTkNjYv3pbH9mXGKZRYQtHi",
+        "76a9148b1d5921b64f145029dd959b04a562d9835ed1c788ac",
+        {
+            "chain": "main",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "gEqtPoT1bnoubFPe86LMdKC6WKLocPfEQc",
+        "a9148445066b44a0f14818b0eedb59075330328eac3087",
+        {
+            "chain": "main",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "XQia7jZQWGPiL2HDe23cT73Q6S9qutiY3r",
+        "76a91492a274856ed390ae27a92bb85d58cf758458d7df88ac",
+        {
+            "chain": "test",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "xBR9ENTqoNeFEyb7ytkBgrTGyij32NtkGa",
+        "a91422235c95de53077845e5bea50695bb8ae36ad3d787",
+        {
+            "chain": "test",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "pg2JhJZkgM8fqL4smTiJcjTtBJxoK9eZ5a",
+        "76a9147a32faa2c20739e239bc9c6df82adaf1fedf7ca988ac",
+        {
+            "chain": "regtest",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "rJfFPASMNc8sJWSyPcq5dSJgXnUawEVpuL",
+        "a914884b6d8e60b95b5250f736cd1fd7cfc4b3ce226387",
+        {
+            "chain": "regtest",
+            "isPrivkey": false
+        }
+    ],
+    [
+        "6bWYXjSswSjoRSF9jiCyAnj9e4tKbPhxoxdZ22niPCLrH8XvPJ6",
+        "f09e062fb2da7deeb1d5dcd515a699cdc774074e445c68f41840dfbbd4c28c70",
+        {
+            "chain": "main",
+            "isCompressed": false,
+            "isPrivkey": true
+        }
+    ],
+    [
+        "RbQBNJdLYNgpbz3kiR2XNMd8PaxBaUZEn2b5mbg5x767hdtmNvQc",
+        "400d33acaaf239f65b22f84fbddc5e61953a8922cd4a0e0b130736be314bcc9d",
+        {
+            "chain": "main",
+            "isCompressed": true,
+            "isPrivkey": true
+        }
+    ],
+    [
+        "2Zz3t6rmqjn1pX8oBHhDZKyC7f2xjdDooYykNig418he4aTSCGW",
+        "ce2fd4cbe7339b55fde1d37ac86f95b18af7253d923f3b7268bb29026cb0a6ca",
+        {
+            "chain": "test",
+            "isCompressed": false,
+            "isPrivkey": true
+        }
+    ],
+    [
+        "7s1Mz17SGKziEY8Xd9eoyYirGkSL3FXgevofjDCqPqMgZNKZ3DhF",
+        "63784eeb2f1caff18c5969f5149691f6b8cc5145763f88cda67de6dc5a196284",
+        {
+            "chain": "test",
+            "isCompressed": true,
+            "isPrivkey": true
+        }
+    ]
+]
