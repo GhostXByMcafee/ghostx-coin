@@ -75,10 +75,9 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
     {
         arith_uint256 nMinProofOfWorkLimit = arith_uint256("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         bnProofOfWorkLimit = nMinProofOfWorkLimit;
-    } else
-    {
+    } else {
         bnProofOfWorkLimit = UintToArith256(params.powLimit);
-    };
+    }
     
     bool fNegative;
     bool fOverflow;

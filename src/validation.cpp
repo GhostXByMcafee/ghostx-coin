@@ -6471,7 +6471,6 @@ bool CChainState::LoadChainTip(const CChainParams& chainparams)
     int currentHeight = m_chain.Height();
     ColdRewardUndo undoData;
 
-    LogPrintf("REMOVING COLD REWARD DURING STARTUP %d\n", currentHeight);
     if (currentHeight >= 1 && currentHeight >= chainparams.GetConsensus().automatedGvrActivationHeight) {
         if (!pblocktree->ReadLastTrackedHeight(readHeight)) {
             LogPrintf("Can't read last tracked height from disk");

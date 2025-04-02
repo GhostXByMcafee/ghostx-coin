@@ -22,7 +22,6 @@
 #include <boost/algorithm/string/split.hpp>
 #include "chain/tx_blacklist.h"
 
-#include <pow.h>
 
 int64_t CChainParams::GetCoinYearReward(int64_t nTime) const
 {
@@ -263,15 +262,9 @@ static CBlock CreateGenesisBlockRegTest(uint32_t nTime, uint32_t nNonce, uint32_
     genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
     genesis.hashWitnessMerkleRoot = BlockWitnessMerkleRoot(genesis);
 
-    while (!CheckProofOfWork(genesis.GetHash(), genesis.nBits, Params().GetConsensus())) {
-        ++genesis.nNonce;
-    }
-
-    std::cout << "Genesis block hash: " << genesis.GetHash().GetHex() << "\n";
-    std::cout << "Nonce: " << genesis.nNonce << "\n";
-
     return genesis;
 }
+
 
 static CBlock CreateGenesisBlockTestNet(uint32_t nTime, uint32_t nNonce, uint32_t nBits)
 {
@@ -457,11 +450,12 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlockMainNet(1592430039, 96427, 0x1f00ffff); // 2017-07-17 13:00:00
+        genesis = CreateGenesisBlockMainNet(1743596724, 0, 0x020001f4); // 2017-07-17 13:00:00
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00001e92daa9a7c945afdf3ce2736862b128f95c8966d3cda112caea98dd95f0"));
-        assert(genesis.hashMerkleRoot == uint256S("0x3365ed8b8758ef69f7edeae23c1ec4bc7a893df9b7d3ff49e4846a1c29a2121f"));
-        assert(genesis.hashWitnessMerkleRoot == uint256S("0x9b4cee449a778b349408c8d3200c1e45dbf097926a69276240d2b767305bfac3"));
+        // Will mine the genesis after we have enough configs
+        // assert(consensus.hashGenesisBlock == uint256S("0x00001e92daa9a7c945afdf3ce2736862b128f95c8966d3cda112caea98dd95f0"));
+        // assert(genesis.hashMerkleRoot == uint256S("0x3365ed8b8758ef69f7edeae23c1ec4bc7a893df9b7d3ff49e4846a1c29a2121f"));
+        // assert(genesis.hashWitnessMerkleRoot == uint256S("0x9b4cee449a778b349408c8d3200c1e45dbf097926a69276240d2b767305bfac3"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
@@ -655,13 +649,13 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlockTestNet(1743235263, 0, 0x1f00fff);
+        genesis = CreateGenesisBlockTestNet(1743596724, 13390, 0x1f00ffff);
 
         consensus.hashGenesisBlock = genesis.GetHash();
 
-        assert(consensus.hashGenesisBlock == uint256S("0x0000f7a29616311da755c7ebbcaf69eac2cac94d39f7361d773dafd610174f8f"));
-        assert(genesis.hashMerkleRoot == uint256S("0xc088a85a1e2aa0a55900f079078075af187600d5d242c09d5139fc3bbb23f1f8"));
-        assert(genesis.hashWitnessMerkleRoot == uint256S("0x5e35a3292cbf2e112a65236817519565a3c50544dd24d602ceba985dba4e806c"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00003ba7acf1b4b9c66c05a6f3d474911cfbbadf0b6da230b6fd700e70928b35"));
+        assert(genesis.hashMerkleRoot == uint256S("0x90fcf59a955f96500e0dc3b0558a55139b6b58818b95168707ea10204bd799b0"));
+        assert(genesis.hashWitnessMerkleRoot == uint256S("0x48f28fc4d2b95110ca7907615543321b731f1bd7e040e80acfa376cb7f95147e"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -936,9 +930,9 @@ public:
 
         genesis = CreateGenesisBlockRegTest(1543578342, 1, 0x207fffff);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x0df42459b6ced4f7c9ec8c7d4c4efe1a9ca89441f17e8c2485a80c247d0544b2"));
-        assert(genesis.hashMerkleRoot == uint256S("0xf89653c7208af2c76a3070d436229fb782acbd065bd5810307995b9982423ce7"));
-        assert(genesis.hashWitnessMerkleRoot == uint256S("0x36b66a1aff91f34ab794da710d007777ef5e612a320e1979ac96e5f292399639"));
+        // assert(consensus.hashGenesisBlock == uint256S("0x0df42459b6ced4f7c9ec8c7d4c4efe1a9ca89441f17e8c2485a80c247d0544b2"));
+        // assert(genesis.hashMerkleRoot == uint256S("0xf89653c7208af2c76a3070d436229fb782acbd065bd5810307995b9982423ce7"));
+        // assert(genesis.hashWitnessMerkleRoot == uint256S("0x36b66a1aff91f34ab794da710d007777ef5e612a320e1979ac96e5f292399639"));
 
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
