@@ -6728,7 +6728,6 @@ static UniValue debugwallet(const JSONRPCRequest &request)
     bool exit_ibd = false;
     CAmount max_frozen_output_spendable = ::ChainActive().Height() >= Params().GetConsensus().nBlockRewardCorrectionHeight ?
         Params().GetConsensus().m_max_tainted_value_out_increased : Params().GetConsensus().m_max_tainted_value_out;
-    int64_t time_now = GetAdjustedTime();
 
     if (!request.params[0].isNull()) {
         const UniValue &options = request.params[0].get_obj();
@@ -9836,84 +9835,6 @@ static UniValue extkeyimportmasterlegacy(const JSONRPCRequest &request)
 }
 
 
-static UniValue geteligibleaddresses(const JSONRPCRequest& request)
-{
-    RPCHelpMan{"geteligibleaddresses",
-                "\nReturn the list of eligible addresses at the specified height" +
-                HELP_REQUIRING_PASSPHRASE,
-                {
-                    {"height", RPCArg::Type::NUM, /* default */ "0", "The height at which to return the eligble addresses"},
-                    {"eligibleonly", RPCArg::Type::BOOL, /* default */ "1", "Whether to return eligible addresses only. When set to true height is the current height"},
-                    {"flushcache", RPCArg::Type::BOOL, "0", "Whether or not to save the current state to disk before operations. For debugging only"}
-                },
-             RPCResult{
-                    RPCResult::Type::OBJ, "", "", {
-                    {
-                        RPCResult::Type::OBJ, "", "", {
-                            {RPCResult::Type::STR, "Address", "The address eligible"},
-                            {RPCResult::Type::NUM, "Balance", "Balance of the eligible address"},
-                        }
-                    }
-                }},
-            RPCExamples{
-                HelpExampleCli("geteligibleaddresses", "4 1")
-            },
-        }.Check(request);
-    
-    UniValue result(UniValue::VARR);
-
-    int height{::ChainActive().Tip()->nHeight};
-    bool eligibleonly{true};
-    bool flushState{false};
-
-    if (request.params.size() > 0) {
-        height = request.params[0].get_int64();
-    }
-
-    if (request.params.size() > 1) {
-        eligibleonly = request.params[1].get_bool();
-    }
-
-    if (request.params.size() > 2) {
-        flushState = request.params[2].get_bool();
-    }
-
-    auto& tracker = InitColdReward();
-
-    if (flushState) {
-        tracker.endPersistedTransaction();
-    }
-
-    std::vector<std::pair<ColdRewardTracker::AddressType, CAmount>> addresses;
-
-    if (!eligibleonly) {
-        height = ::ChainActive().Tip()->nHeight;
-        addresses = rewardTracker.getBalances();
-    } else {
-        const auto addrMul = tracker.getEligibleAddresses(height);
-        const auto balances = tracker.getBalances();
-
-        for (const auto& b: balances) {
-            auto res = std::find_if(addrMul.begin(), addrMul.end(), [&b](const std::pair<ColdRewardTracker::AddressType, CAmount>& s){
-                return s.first == b.first;
-            });
-
-            if (res != addrMul.end()) {
-                addresses.push_back(std::make_pair(res->first, b.second));
-            }
-        }
-    }
-
-    for (const auto& trackedAddr : addresses) {
-        UniValue innerResult(UniValue::VOBJ);
-        innerResult.pushKV("Address", std::string(trackedAddr.first.begin(), trackedAddr.first.end()) );
-        innerResult.pushKV("Balance", ValueFromAmount(trackedAddr.second));
-        result.push_back(innerResult);
-    }
-    
-    return result;
-}
-
 static UniValue rehashblock(const JSONRPCRequest &request)
 {
             RPCHelpMan{"rehashblock",
@@ -10092,8 +10013,6 @@ static const CRPCCommand commands[] =
     { "blockchain",         "rewindchain",                      &rewindchain,                   {"height"} },
     { "blockchain",         "pruneorphanedblocks",              &pruneorphanedblocks,           {"testonly"} },
     { "blockchain",         "rehashblock",                      &rehashblock,                   {"blockhex","signwith","addtxns"} },
-
-    { "blockchain",         "geteligibleaddresses",             &geteligibleaddresses,          {"height", "eligibleonly", "flushcache"} },
 };
 // clang-format on
     return MakeSpan(commands);

@@ -13662,62 +13662,6 @@ bool CHDWallet::CreateCoinStake(unsigned int nBits, int64_t nTime, int nBlockHei
         }
     }
 
-    if (nBlockHeight >= consensusParams.automatedGvrActivationHeight && nBlockHeight > consensusParams.agvrStartPayingHeight) {
-        // Entering here means AGVR is activated and that the first month is over, everything should work normally
-
-        CAmount nGVRfwd = 0;
-
-        if (nBlockHeight > 1) { // genesis block is pow
-            LOCK(cs_main);
-            if (!coinStakeCache.GetCoinStake(pindexPrev->GetBlockHash(), txPrevCoinstake)) {
-                return werror("%s: Failed to get previous coinstake: %s.", __func__, pindexPrev->GetBlockHash().ToString());
-            }
-            if (!txPrevCoinstake->GetGvrFundCfwd(nGVRfwd)) {
-                nGVRfwd = 0;
-            }
-        }
-
-        CTxDestination stakerAddrDest;
-        if (!ExtractDestination(scriptPubKeyKernel, stakerAddrDest)) {
-             return werror("%s: Can't extract destination for kernel script.", __func__);
-        }
-
-        auto& rewardTracker = InitColdReward();
-        const auto& eligibleAddresses = rewardTracker.getEligibleAddresses(nBlockHeight);
-        auto isStakerGvrEligible = std::find_if(eligibleAddresses.cbegin(), eligibleAddresses.cend(),
-                                                [&stakerAddrDest](const std::pair<ColdRewardTracker::AddressType, unsigned int>& addrMul) {
-            const CTxDestination& trackedAddrDest = DecodeDestination(std::string(addrMul.first.begin(), addrMul.first.end()));
-            return trackedAddrDest == stakerAddrDest;
-        });
-
-        CAmount gvrOut = (nRewardFeesExcluded * agvrFundPercent) / 100; // 50% goes to the veteran
-        CAmount gvrOutTotal = nGVRfwd + gvrOut;
-
-        nRewardOut -= gvrOut;
-
-        if (isStakerGvrEligible != eligibleAddresses.end() && IsValidDestination(stakerAddrDest)) {
-            OUTPUT_PTR<CTxOutStandard> gvrOutTx = MAKE_OUTPUT<CTxOutStandard>();
-            gvrOutTx->nValue = gvrOutTotal;
-            gvrOutTx->scriptPubKey = scriptPubKeyKernel;
-            if (devFundPaid)
-                txNew.vpout.insert(txNew.vpout.begin() + 2, gvrOutTx);
-            else
-                txNew.vpout.insert(txNew.vpout.begin() + 1, gvrOutTx);
-        } else {
-            // Add the GVR to carried forward. We will pay it when the staker is veteran
-            std::vector<uint8_t> vCfwd(1), &vData = *txNew.vpout[0]->GetPData();
-
-            vCfwd[0] = DO_GVR_FUND_CFWD;
-            if (0 != part::PutVarInt(vCfwd, gvrOutTotal)) {
-                return werror("%s: PutVarInt failed: %d.", __func__, gvrOutTotal);
-            }
-            vData.insert(vData.end(), vCfwd.begin(), vCfwd.end());
-            CAmount test_cfwd = 0;
-            assert(ExtractCoinStakeInt64(vData, DO_GVR_FUND_CFWD, test_cfwd));
-            assert(test_cfwd == gvrOutTotal);
-        }
-    }
-
     CAmount nGVRfwd = 0;
 
     if (nBlockHeight > 1) { // genesis block is pow

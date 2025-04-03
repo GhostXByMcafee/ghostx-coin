@@ -64,7 +64,7 @@ static bool AppInit(int argc, char* argv[])
         if (args.IsArgSet("-version")) {
             strUsage += FormatParagraph(LicenseInfo()) + "\n";
         } else {
-            strUsage += "\nUsage:  particld [options]                     Start " PACKAGE_NAME "\n";
+            strUsage += "\nUsage:  ghostd [options]                     Start " PACKAGE_NAME "\n";
             strUsage += "\n" + args.GetHelpMessage();
         }
 

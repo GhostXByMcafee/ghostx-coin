@@ -151,7 +151,6 @@ extern CBlockPolicyEstimator feeEstimator;
 typedef std::unordered_map<uint256, CBlockIndex*, BlockHasher> BlockMap;
 extern std::map<COutPoint, uint256> mapStakeSeen;
 extern std::list<COutPoint> listStakeSeen;
-extern ColdRewardTracker rewardTracker;
 extern uint64_t nLastBlockTx;
 extern uint64_t nLastBlockSize;
 extern Mutex g_best_block_mutex;
@@ -1122,7 +1121,6 @@ bool FlushStateToDisk(const CChainParams& chainParams, BlockValidationState &sta
 bool FlushView(CCoinsViewCache *view, BlockValidationState& state, bool fDisconnecting);
 void UpdateTip(CTxMemPool& mempool, const CBlockIndex *pindexNew, const CChainParams& chainParams);
 
-ColdRewardTracker& InitColdReward();
 void ClearTrackedData();
 
 #endif // BITCOIN_VALIDATION_H
