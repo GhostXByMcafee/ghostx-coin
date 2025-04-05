@@ -162,12 +162,11 @@ struct Params {
     int nLWMADiffUpgradeHeight;
     int anonRestrictionStartHeight;
     // The height at which we start the automation of GVR
-    int automatedGvrActivationHeight;
+    int automatedGvrActivationHeight = 0;
 
     int64_t gvrThreshold;
     int minRewardRangeSpan;
-    int agvrStartPayingHeight;
-
+ 
     /**
      * If true, witness commitments contain a payload equal to a Bitcoin Script solution
      * to the signet challenge. See BIP325.

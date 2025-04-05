@@ -208,11 +208,27 @@ static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits
 
 const std::pair<const char*, CAmount> regTestOutputs[] = {
     std::make_pair("585c2b3914d9ee51f8e710304e386531c3abcc82", 10000 * COIN),
+    std::make_pair("c33f3603ce7c46b423536f0434155dad8ee2aa1f", 10000 * COIN),
+    std::make_pair("72d83540ed1dcf28bfaca3fa2ed77100c2808825", 10000 * COIN),
+    std::make_pair("69e4cc4c219d8971a253cd5db69a0c99c4a5659d", 10000 * COIN),
+    std::make_pair("eab5ed88d97e50c87615a015771e220ab0a0991a", 10000 * COIN),
+    std::make_pair("119668a93761a34a4ba1c065794b26733975904f", 10000 * COIN),
+    std::make_pair("6da49762a4402d199d41d5778fcb69de19abbe9f", 10000 * COIN),
+    std::make_pair("27974d10ff5ba65052be7461d89ef2185acbe411", 10000 * COIN),
+    std::make_pair("89ea3129b8dbf1238b20a50211d50d462a988f61", 10000 * COIN),
+    std::make_pair("3baab5b42a409b7c6848a95dfd06ff792511d561", 10000 * COIN),
+
+    std::make_pair("649b801848cc0c32993fb39927654969a5af27b0", 5000 * COIN),
+    std::make_pair("d669de30fa30c3e64a0303cb13df12391a2f7256", 5000 * COIN),
+    std::make_pair("f0c0e3ebe4a1334ed6a5e9c1e069ef425c529934", 5000 * COIN),
+    std::make_pair("27189afe71ca423856de5f17538a069f22385422", 5000 * COIN),
+    std::make_pair("0e7f6fe0c4a5a6a9bfd18f7effdd5898b1f40b80", 5000 * COIN)
 };
+
 const size_t nGenesisOutputsRegtest = sizeof(regTestOutputs) / sizeof(regTestOutputs[0]);
 
 const std::pair<const char*, CAmount> genesisOutputs[] = {
-    std::make_pair("ac91d9def79121740404da83c600d187e89f8aff", 685150.75 * COIN),//GZaPN2m7hRUDumJ7qZd65u3tT362khT3LF
+    std::make_pair("88a8a3f770392d3ec17db9ba01b9e04e340cca26", 10000000 * COIN),
 };
 
 const size_t nGenesisOutputs = sizeof(genesisOutputs) / sizeof(genesisOutputs[0]);
@@ -367,7 +383,7 @@ public:
         consensus.smsg_fee_rate_fix_time = 1646150400;  // 2022-03-01 17:00:00 UTC
         // consensus.m_taproot_time = 1643734800;          // 2022-02-01 17:00:00 UTC
 
-        consensus.m_frozen_anon_index = 2382; // Called LAST_ANONINDEX = 2379 by Barry
+        consensus.m_frozen_anon_index = 2382;
         consensus.m_frozen_blinded_height = 884433;
 
         consensus.smsg_fee_period = 5040;
@@ -397,15 +413,15 @@ public:
 
         // Deployment of Taproot (BIPs 340-342)
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].bit = 2;
-        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nStartTime = 1619222400; // April 24th, 2021
-        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nTimeout = 1628640000; // August 11th, 2021
-        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].min_activation_height = 709632; // Approximately November 12th, 2021
+        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nStartTime = 1619222400;
+        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nTimeout = 1628640000;
+        consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].min_activation_height = 709632;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000af273924ccacbf60");//Chainwork at Block 2913
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000af273924ccacbf60");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0xeccad59c62c2b669a746297d1f3ffb49c4de8620d6ad69c240079386130b2343k"); //Blockhash of Block 2913
+        consensus.defaultAssumeValid = uint256S("0xeccad59c62c2b669a746297d1f3ffb49c4de8620d6ad69c240079386130b2343k");
 
         consensus.nMinRCTOutputDepth = 12;
 
@@ -435,10 +451,8 @@ public:
         consensus.nGVRPayOnetimeAmt = 129000 * COIN;
         consensus.nOneTimeGVRPayHeight = 42308;
         consensus.nGVRTreasuryFundAdjustment = 458743;
-        consensus.automatedGvrActivationHeight = 0xffffffff;
         consensus.minRewardRangeSpan = DEFAULT_MIN_REWARD_RANGE_SPAN;
         consensus.gvrThreshold = DEFAULT_GVR_THRESHOLD;
-        consensus.agvrStartPayingHeight = 0xffffffff;
 
         consensus.nBlockRewardCorrectionHeight = 975076;
         consensus.nMoneySupplyCap = DEFAULT_MONEY_SUPPLY_CAP;
@@ -450,12 +464,12 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlockMainNet(1743596724, 0, 0x020001f4); // 2017-07-17 13:00:00
+        genesis = CreateGenesisBlockMainNet(1743657363, 20501, 0x1f00ffff);
         consensus.hashGenesisBlock = genesis.GetHash();
-        // Will mine the genesis after we have enough configs
-        // assert(consensus.hashGenesisBlock == uint256S("0x00001e92daa9a7c945afdf3ce2736862b128f95c8966d3cda112caea98dd95f0"));
-        // assert(genesis.hashMerkleRoot == uint256S("0x3365ed8b8758ef69f7edeae23c1ec4bc7a893df9b7d3ff49e4846a1c29a2121f"));
-        // assert(genesis.hashWitnessMerkleRoot == uint256S("0x9b4cee449a778b349408c8d3200c1e45dbf097926a69276240d2b767305bfac3"));
+
+        assert(consensus.hashGenesisBlock == uint256S("0x00000635c6f1d9dea0c37473de2bdab71c390f76cd1bb4f7e0100165e30ecf64"));
+        assert(genesis.hashMerkleRoot == uint256S("0x0c03e401b1198cad491c41e6922ea7032090cd7874dee866a892ca4889eadaf0"));
+        assert(genesis.hashWitnessMerkleRoot == uint256S("0xe3cd54edba3ef05642b5f828aa91c6dbb48430d47e56ddcefd56134b4604aeec"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
@@ -511,9 +525,6 @@ public:
         checkpointData = {
             {
                 { 0, genesis.GetHash()},
-                {10000,  uint256S("930135028fc99b99548621d76b6bb90604a45041aec1d1bd02117275cfdb4c53")},
-                {20000,  uint256S("ae42938922053252fda2397f2a2fa13b8db7a710bfd1273c57677b72b6c52dc1")},
-                {30000,  uint256S("28505249e831f1bc3c70b8c178b6049b089dfa139564ec23345093448d51d023")},
             }
         };
 
@@ -615,7 +626,6 @@ public:
         consensus.nMinRCTOutputDepth = 2;
         consensus.m_frozen_anon_index = 0xffffffff;
         consensus.anonRestrictionStartHeight = 0xffffffff;
-        consensus.automatedGvrActivationHeight = 0xffffffff;
 
         pchMessageStart[0] = 0x08;
         pchMessageStart[1] = 0x11;
@@ -642,7 +652,7 @@ public:
         consensus.nBlockRewardCorrectionHeight = 869106;
         consensus.nMoneySupplyCap = 55000000;
 
-        nBlockRewardIncrease = 1;
+        nBlockRewardIncrease = 2;
         nBlockPerc = {100, 100, 95, 90, 86, 81, 77, 74, 70, 66, 63, 60, 57, 54, 51, 49, 46, 44, 42, 40, 38, 36, 34, 32, 31, 29, 28, 26, 25, 24, 23, 21, 20, 19, 18, 17, 17, 16, 15, 14, 14, 13, 12, 12, 11, 10, 10};
 
         nPruneAfterHeight = 1000;
@@ -707,7 +717,6 @@ public:
         vTreasuryFundSettings.emplace_back(1, TreasuryFundSettings("XMAcJPax3H3LWiVoE3z1iWTXCCpnPxRDhp", 66, 14));
         consensus.gvrThreshold = 10000 * COIN;
         consensus.minRewardRangeSpan = 500; // 500 blocks for testnet
-        consensus.agvrStartPayingHeight = consensus.automatedGvrActivationHeight + consensus.minRewardRangeSpan + 1;
         chainTxData = ChainTxData{
             // Data from rpc: getchaintxstats 4096 12e6a081d1874b3dfff99e120b8e22599e15730c23c88805740c507c11c91809
             /* nTime    */ 0,
@@ -897,7 +906,6 @@ public:
         consensus.nMinRCTOutputDepth = 2;
 
         consensus.anonRestrictionStartHeight = gArgs.GetArg("-anonrestrictionstartheight", DEFAULT_ANON_RESTRICTION_START_HEIGHT);
-        consensus.automatedGvrActivationHeight = gArgs.GetArg("-automatedgvrstartheight", DEFAULT_GVR_START_HEIGHT);
 
         pchMessageStart[0] = 0x09;
         pchMessageStart[1] = 0x12;
@@ -928,11 +936,12 @@ public:
 
         UpdateActivationParametersFromArgs(args);
 
-        genesis = CreateGenesisBlockRegTest(1543578342, 1, 0x207fffff);
+        genesis = CreateGenesisBlockRegTest(1743657363, 7276, 0x1f0fffff);
         consensus.hashGenesisBlock = genesis.GetHash();
-        // assert(consensus.hashGenesisBlock == uint256S("0x0df42459b6ced4f7c9ec8c7d4c4efe1a9ca89441f17e8c2485a80c247d0544b2"));
-        // assert(genesis.hashMerkleRoot == uint256S("0xf89653c7208af2c76a3070d436229fb782acbd065bd5810307995b9982423ce7"));
-        // assert(genesis.hashWitnessMerkleRoot == uint256S("0x36b66a1aff91f34ab794da710d007777ef5e612a320e1979ac96e5f292399639"));
+
+        assert(consensus.hashGenesisBlock == uint256S("0x0005d4a7ec2434f7127cdc63d1d2eb645e2323a36cdcd1654f71f91a4462bf4e"));
+        assert(genesis.hashMerkleRoot == uint256S("0xf89653c7208af2c76a3070d436229fb782acbd065bd5810307995b9982423ce7"));
+        assert(genesis.hashWitnessMerkleRoot == uint256S("0x36b66a1aff91f34ab794da710d007777ef5e612a320e1979ac96e5f292399639"));
 
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
@@ -948,7 +957,7 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("0x0df42459b6ced4f7c9ec8c7d4c4efe1a9ca89441f17e8c2485a80c247d0544b2")},
+                {0, genesis.GetHash()},
             }
         };
 
@@ -987,7 +996,7 @@ public:
 
 
         gvrCheckpoints = {
-            {0, uint256S("0x0df42459b6ced4f7c9ec8c7d4c4efe1a9ca89441f17e8c2485a80c247d0544b2")}
+            {0, uint256S("0x0005d4a7ec2434f7127cdc63d1d2eb645e2323a36cdcd1654f71f91a4462bf4e")}
         };
 
         anonRestricted = gArgs.GetBoolArg("-anonrestricted", DEFAULT_ANON_RESTRICTED);
@@ -996,7 +1005,6 @@ public:
 
         consensus.gvrThreshold = gArgs.GetArg("-gvrthreshold", DEFAULT_GVR_THRESHOLD);
         consensus.minRewardRangeSpan = gArgs.GetArg("-minrewardrangespan", DEFAULT_MIN_REWARD_RANGE_SPAN);
-        consensus.agvrStartPayingHeight = gArgs.GetArg("-startpayingheight", 0);
 
         consensus.nBlockRewardCorrectionHeight = gArgs.GetArg("-rewardcorrectionheight", DEFAULT_REWARD_CORRECTION_HEIGHT);
         consensus.nMoneySupplyCap = gArgs.GetArg("-moneysupplycap", DEFAULT_MONEY_SUPPLY_CAP);

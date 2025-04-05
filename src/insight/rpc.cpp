@@ -1037,7 +1037,6 @@ UniValue getblockreward(const JSONRPCRequest& request)
 
     CBlockIndex *pblockindex = ::ChainActive()[nHeight];
 
-    bool gvrActivationHeight = nHeight >= ::Params().GetConsensus().automatedGvrActivationHeight;
     CAmount stake_reward = 0;
     if (pblockindex->pprev) {
         stake_reward = Params().GetProofOfStakeReward(pblockindex->pprev, 0);
@@ -1059,23 +1058,7 @@ UniValue getblockreward(const JSONRPCRequest& request)
 
     UniValue outputs(UniValue::VARR);
     CAmount value_out = 0, value_in = 0, value_treasury = 0;
-
-    bool gvrOutExists = false;
-    bool devFundExists = !fundconf? false : (pblockindex->nHeight % fundconf->nTreasuryOutputPeriod) == 0;
-    CAmount gvrAmount = 0;
-    int numDataOutput = 0;
-
     for (const auto &txout : tx->vpout) {
-
-        if (gvrActivationHeight) {
-            if (txout->IsType(OutputTypes::OUTPUT_DATA)) {
-                if (numDataOutput == 0 && !txout->GetGvrFundCfwd(gvrAmount)) {
-                    gvrOutExists = true;
-                }
-                numDataOutput++;
-            }
-        }
-
         if (!txout->IsStandardOutput()) {
             continue;
         }
@@ -1085,7 +1068,7 @@ UniValue getblockreward(const JSONRPCRequest& request)
         output.pushKV("value", ValueFromAmount(txout->GetValue()));
         outputs.push_back(output);
 
-        if (!gvrActivationHeight && fundconf && *txout->GetPScriptPubKey() == fundScriptPubKey && value_treasury == 0) {
+        if (fundconf && *txout->GetPScriptPubKey() == fundScriptPubKey) {
             value_treasury = txout->GetValue();
             continue;
         }
@@ -1117,24 +1100,6 @@ UniValue getblockreward(const JSONRPCRequest& request)
     }
 
     CAmount block_reward = value_out - value_in;
-    short gvrIndex = 1;
-
-    if (gvrActivationHeight) {
-        if (gvrOutExists && !devFundExists) {
-            block_reward -= tx->vpout[1]->GetValue();
-            gvrIndex = 1;
-        }
-
-        if (gvrOutExists && devFundExists) {
-            block_reward -= tx->vpout[2]->GetValue();
-            gvrIndex = 2;
-        }
-
-        if (devFundExists) {
-            block_reward -= tx->vpout[1]->GetValue();
-            value_treasury = tx->vpout[1]->GetValue();
-        }
-    }
 
     UniValue rv(UniValue::VOBJ);
     rv.pushKV("blockhash", pblockindex->GetBlockHash().ToString());
@@ -1146,12 +1111,8 @@ UniValue getblockreward(const JSONRPCRequest& request)
     rv.pushKV("stakereward", ValueFromAmount(stake_reward));
     rv.pushKV("blockreward", ValueFromAmount(block_reward));
 
-    if (devFundExists) {
+    if (value_treasury > 0) {
         rv.pushKV("treasuryreward", ValueFromAmount(value_treasury));
-    }
-
-    if (gvrOutExists) {
-        rv.pushKV("gvrreward", ValueFromAmount(tx->vpout[gvrIndex]->GetValue()));
     }
 
     if (tx->IsCoinStake()) {

@@ -742,8 +742,6 @@ void SetupServerArgs(NodeContext& node)
     argsman.AddArg("-moneysupplycap", "Sets many supply cap", ArgsManager::ALLOW_INT | ArgsManager::DEBUG_ONLY, OptionsCategory::DEBUG_TEST);
     argsman.AddArg("-rewardcorrectionheight", "Sets reward correction height", ArgsManager::ALLOW_INT | ArgsManager::DEBUG_ONLY, OptionsCategory::DEBUG_TEST);
     argsman.AddArg("-minrewardrangespan", "Min reward range span", ArgsManager::ALLOW_INT | ArgsManager::DEBUG_ONLY, OptionsCategory::DEBUG_TEST);
-    argsman.AddArg("-automatedgvrstartheight", "Automated GVR start height", ArgsManager::ALLOW_INT | ArgsManager::DEBUG_ONLY, OptionsCategory::DEBUG_TEST);
-    argsman.AddArg("-startpayingheight", "Automated GVR start paying height", ArgsManager::ALLOW_INT | ArgsManager::DEBUG_ONLY, OptionsCategory::DEBUG_TEST);
 
     
 #if HAVE_DECL_DAEMON

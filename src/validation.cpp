@@ -2096,18 +2096,12 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
     bool fClean = true;
 
     CBlockUndo blockUndo;
-    ColdRewardUndo rewardUndo;
 
-    const auto& consensus = Params().GetConsensus();
     if (!UndoReadFromDisk(blockUndo, pindex)) {
         error("DisconnectBlock(): failure reading undo data");
         return DISCONNECT_FAILED;
     }
 
-    if (pindex->nHeight >= consensus.automatedGvrActivationHeight && !pblocktree->ReadRewardTrackerUndo(rewardUndo, pindex->nHeight)) {
-        error("DisconnectBlock(): failure reading coldreward undo data");
-        return DISCONNECT_FAILED;
-    }
 
     if (!fParticlMode) {
         if (blockUndo.vtxundo.size() + 1 != block.vtx.size()) {
@@ -2130,37 +2124,6 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
             }
         }
         
-        if (pindex->nHeight >= consensus.automatedGvrActivationHeight) {
-            std::size_t inputsSize = 0;
-            std::size_t outputsSize = 0;
-            for(const auto& tx: block.vtx) {
-                for (const auto& txout: tx->vpout) {
-                    CScript outScript;
-                    txout->GetScriptPubKey(outScript);
-
-                    if (outScript[0] != OP_RETURN && txout->IsStandardOutput()) {
-                        outputsSize++;
-                    }
-                }
-                for (const auto& txin: tx->vin) {
-                    if (!txin.IsAnonInput()) {
-                        inputsSize++;
-                    }
-                }
-            }
-
-            if (rewardUndo.inputs.at(pindex->nHeight).size() != inputsSize) {
-                error("DisconnectBlock(): block and undo inputs size of tracker inconsistent");
-                return DISCONNECT_FAILED;
-            }
-
-            if (rewardUndo.outputs.at(pindex->nHeight).size() != outputsSize) {
-                error("DisconnectBlock(): block and undo outputs size of tracker inconsistent for height %d (Expected %d, Got %d)",
-                     pindex->nHeight, rewardUndo.outputs.at(pindex->nHeight).size(), outputsSize - 1);
-                return DISCONNECT_FAILED;
-            }
-        }
-
     }
 
     int nVtxundo = (int)blockUndo.vtxundo.size()-1;
@@ -3012,7 +2975,6 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
             const TreasuryFundSettings *pTreasuryFundSettings = chainparams.GetTreasuryFundSettings(pindex->nHeight);
             const CAmount nCalculatedStakeReward = Params().GetProofOfStakeReward(pindex->pprev, nFees); // stake_test
             const float nCalculatedStakeRewardReal = (float) nCalculatedStakeReward / COIN; // stake_test
-            const CAmount nCalculatedStakeRewardWithoutFees = nCalculatedStakeReward - nFees;
 
             if (block.nTime >= consensus.smsg_fee_time) {
                 CAmount smsg_fee_new, smsg_fee_prev = consensus.smsg_fee_msg_per_day_per_k;
@@ -3074,159 +3036,99 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
                 }
             } else {
 
-                if (pindex->nHeight < consensus.automatedGvrActivationHeight) {
+                assert(pTreasuryFundSettings->nMinTreasuryStakePercent <= 100);
 
-                    assert(pTreasuryFundSettings->nMinTreasuryStakePercent <= 100);
+                CAmount nTreasuryBfwd = 0, nTreasuryCfwdCheck = 0;
+                float nMinTreasuryPartFloat = (nCalculatedStakeRewardReal * pTreasuryFundSettings->nMinTreasuryStakePercent) / 100;
+                CAmount nMinTreasuryPart = (CAmount) nMinTreasuryPartFloat * COIN;
+                CAmount nMaxHolderPart = nCalculatedStakeReward - nMinTreasuryPart;
+                if (nMinTreasuryPart < 0 || nMaxHolderPart < 0) {
+                    LogPrintf("ERROR: %s: Bad coinstake split amount (treasury=%d vs reward=%d)\n", __func__, nMinTreasuryPart, nMaxHolderPart);
+                    return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-amount");
+                }
 
-                    CAmount nTreasuryBfwd = 0, nTreasuryCfwdCheck = 0;
-                    float nMinTreasuryPartFloat = (nCalculatedStakeRewardReal * pTreasuryFundSettings->nMinTreasuryStakePercent) / 100;
-                    CAmount nMinTreasuryPart = (CAmount) nMinTreasuryPartFloat * COIN;
-                    CAmount nMaxHolderPart = nCalculatedStakeReward - nMinTreasuryPart;
-                    if (nMinTreasuryPart < 0 || nMaxHolderPart < 0) {
-                        LogPrintf("ERROR: %s: Bad coinstake split amount (treasury=%d vs reward=%d)\n", __func__, nMinTreasuryPart, nMaxHolderPart);
+                if (pindex->pprev->nHeight > 0) { // Genesis block is pow
+                    if (!txPrevCoinstake
+                        && !coinStakeCache.GetCoinStake(pindex->pprev->GetBlockHash(), txPrevCoinstake)) {
+                        LogPrintf("ERROR: %s: Failed to get previous coinstake.\n", __func__);
+                        return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-prev");
+                    }
+
+                    assert(txPrevCoinstake->IsCoinStake()); // Sanity check
+                    if (!txPrevCoinstake->GetTreasuryFundCfwd(nTreasuryBfwd)) {
+                        nTreasuryBfwd = 0;
+                    }
+                }
+
+                if (pindex->nHeight % pTreasuryFundSettings->nTreasuryOutputPeriod == 0) {
+                    // Fund output must exist and match cfwd, cfwd data output must be unset
+                    // nStakeReward must == nTreasuryBfwd + nCalculatedStakeReward
+
+                    if (nStakeReward != nTreasuryBfwd + nCalculatedStakeReward) {
+                        LogPrintf("ERROR: %s: Bad stake-reward (actual=%d vs expected=%d)\n", __func__, nStakeReward, nTreasuryBfwd + nCalculatedStakeReward);
                         return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-amount");
                     }
 
-                    if (pindex->pprev->nHeight > 0) { // Genesis block is pow
-                        if (!txPrevCoinstake
-                            && !coinStakeCache.GetCoinStake(pindex->pprev->GetBlockHash(), txPrevCoinstake)) {
-                            LogPrintf("ERROR: %s: Failed to get previous coinstake.\n", __func__);
-                            return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-prev");
-                        }
-
-                        assert(txPrevCoinstake->IsCoinStake()); // Sanity check
-                        if (!txPrevCoinstake->GetTreasuryFundCfwd(nTreasuryBfwd)) {
-                            nTreasuryBfwd = 0;
-                        }
+                    CTxDestination dfDest = DecodeDestination(pTreasuryFundSettings->sTreasuryFundAddresses);
+                    if (dfDest.type() == typeid(CNoDestination)) {
+                        return error("%s: Failed to get treasury fund destination: %s.", __func__, pTreasuryFundSettings->sTreasuryFundAddresses);
                     }
+                    CScript fundScriptPubKey = GetScriptForDestination(dfDest);
 
-                    if (pindex->nHeight % pTreasuryFundSettings->nTreasuryOutputPeriod == 0) {
-                        // Fund output must exist and match cfwd, cfwd data output must be unset
-                        // nStakeReward must == nTreasuryBfwd + nCalculatedStakeReward
-
-                        if (nStakeReward != nTreasuryBfwd + nCalculatedStakeReward) {
-                            LogPrintf("ERROR: %s: Bad stake-reward (actual=%d vs expected=%d)\n", __func__, nStakeReward, nTreasuryBfwd + nCalculatedStakeReward);
-                            return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-amount");
-                        }
-
-                        CTxDestination dfDest = DecodeDestination(pTreasuryFundSettings->sTreasuryFundAddresses);
-                        if (dfDest.type() == typeid(CNoDestination)) {
-                            return error("%s: Failed to get treasury fund destination: %s.", __func__, pTreasuryFundSettings->sTreasuryFundAddresses);
-                        }
-                        CScript fundScriptPubKey = GetScriptForDestination(dfDest);
-
-                        // Output 1 must be to the treasury fund
-                        const CTxOutStandard *outputDF = txCoinstake->vpout[1]->GetStandardOutput();
-                        if (!outputDF) {
-                            LogPrintf("ERROR: %s: Bad treasury fund output.\n", __func__);
-                            return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs");
-                        }
-                        if (outputDF->scriptPubKey != fundScriptPubKey) {
-                            LogPrintf("ERROR: %s: Bad treasury fund output script.\n", __func__);
-                            return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs");
-                        }
-                        if (outputDF->nValue < nTreasuryBfwd + nMinTreasuryPart) { // Max value is clamped already
-                            LogPrintf("ERROR: %s: Bad treasury-reward (actual=%d vs minfundpart=%d)\n", __func__, nStakeReward, nTreasuryBfwd + nMinTreasuryPart);
-                            return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-fund-amount");
-                        }
-                        if (txCoinstake->GetTreasuryFundCfwd(nTreasuryCfwdCheck)) {
-                            LogPrintf("ERROR: %s: Coinstake treasury cfwd must be unset.\n", __func__);
-                            return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-cfwd");
-                        }
-                    } else {
-                        // Ensure cfwd data output is correct and nStakeReward is <= nHolderPart
-                        // cfwd must == nTreasuryBfwd + (nCalculatedStakeReward - nStakeReward) // Allowing users to set a higher split
-                        //One time gvrpay check
-                        if(pindex->nHeight == consensus.nOneTimeGVRPayHeight){
-                            //Make sure stakeout pays the one time pay
-                            if(txCoinstake->vpout.size() > 1 && nStakeReward > nMaxHolderPart){
-                                CScript gvrPayeeSCP = GetScriptForDestination(DecodeDestination(pTreasuryFundSettings->sTreasuryFundAddresses));
-                                const CTxOutStandard *outputDF = txCoinstake->vpout[1]->GetStandardOutput();
-                                //Check output script
-                                if (outputDF->scriptPubKey != gvrPayeeSCP) {
-                                    return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-gvrpay");
-                                }
-                                //Check payout
-                                if(outputDF->nValue != consensus.nGVRPayOnetimeAmt){
-                                    return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-gvronetime-pay");
-                                }
-                                //Now if this passes set stakereward to actual reward so that we can check coinstake
-                                nStakeReward -= consensus.nGVRPayOnetimeAmt;
+                    // Output 1 must be to the treasury fund
+                    const CTxOutStandard *outputDF = txCoinstake->vpout[1]->GetStandardOutput();
+                    if (!outputDF) {
+                        LogPrintf("ERROR: %s: Bad treasury fund output.\n", __func__);
+                        return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs");
+                    }
+                    if (outputDF->scriptPubKey != fundScriptPubKey) {
+                        LogPrintf("ERROR: %s: Bad treasury fund output script.\n", __func__);
+                        return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs");
+                    }
+                    if (outputDF->nValue < nTreasuryBfwd + nMinTreasuryPart) { // Max value is clamped already
+                        LogPrintf("ERROR: %s: Bad treasury-reward (actual=%d vs minfundpart=%d)\n", __func__, nStakeReward, nTreasuryBfwd + nMinTreasuryPart);
+                        return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-fund-amount");
+                    }
+                    if (txCoinstake->GetTreasuryFundCfwd(nTreasuryCfwdCheck)) {
+                        LogPrintf("ERROR: %s: Coinstake treasury cfwd must be unset.\n", __func__);
+                        return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-cfwd");
+                    }
+                } else {
+                    // Ensure cfwd data output is correct and nStakeReward is <= nHolderPart
+                    // cfwd must == nTreasuryBfwd + (nCalculatedStakeReward - nStakeReward) // Allowing users to set a higher split
+                    //One time gvrpay check
+                    if(pindex->nHeight == consensus.nOneTimeGVRPayHeight){
+                        //Make sure stakeout pays the one time pay
+                        if(txCoinstake->vpout.size() > 1 && nStakeReward > nMaxHolderPart){
+                            CScript gvrPayeeSCP = GetScriptForDestination(DecodeDestination(pTreasuryFundSettings->sTreasuryFundAddresses));
+                            const CTxOutStandard *outputDF = txCoinstake->vpout[1]->GetStandardOutput();
+                            //Check output script
+                            if (outputDF->scriptPubKey != gvrPayeeSCP) {
+                                return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-gvrpay");
                             }
-                            else{
+                            //Check payout
+                            if(outputDF->nValue != consensus.nGVRPayOnetimeAmt){
                                 return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-gvronetime-pay");
                             }
+                            //Now if this passes set stakereward to actual reward so that we can check coinstake
+                            nStakeReward -= consensus.nGVRPayOnetimeAmt;
                         }
-                        if (nStakeReward < 0 || nStakeReward > nMaxHolderPart) {
-                            LogPrintf("ERROR: %s: Bad stake-reward (actual=%d vs maxholderpart=%d)\n", __func__, nStakeReward, nMaxHolderPart);
-                            return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-amount");
-                        }
-                        CAmount nTreasuryCfwd = nTreasuryBfwd + nCalculatedStakeReward - nStakeReward;
-                        if (!txCoinstake->GetTreasuryFundCfwd(nTreasuryCfwdCheck)
-                        || nTreasuryCfwdCheck != nTreasuryCfwd) {
-                            LogPrintf("ERROR: %s: Coinstake treasury fund carried forward mismatch (actual=%d vs expected=%d)\n", __func__, nTreasuryCfwdCheck, nTreasuryCfwd);
-                            return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-cfwd");
+                        else{
+                            return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-gvronetime-pay");
                         }
                     }
-
-                } else {
-
-                    CTxDestination dfDest = DecodeDestination(pTreasuryFundSettings->sTreasuryFundAddresses);
-                    CAmount nTreasuryBfwd = 0, nTreasuryCfwdCheck = 0;
-
-                    if (pindex->pprev->nHeight > 0) { // Genesis block is pow
-                        if (!txPrevCoinstake
-                            && !coinStakeCache.GetCoinStake(pindex->pprev->GetBlockHash(), txPrevCoinstake)) {
-                            LogPrintf("ERROR: %s: Failed to get previous coinstake.\n", __func__);
-                            return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-prev");
-                        }
-
-                        assert(txPrevCoinstake->IsCoinStake()); // Sanity check
-                        if (!txPrevCoinstake->GetTreasuryFundCfwd(nTreasuryBfwd)) {
-                            nTreasuryBfwd = 0;
-                        }
+                    if (nStakeReward < 0 || nStakeReward > nMaxHolderPart) {
+                        LogPrintf("ERROR: %s: Bad stake-reward (actual=%d vs maxholderpart=%d)\n", __func__, nStakeReward, nMaxHolderPart);
+                        return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-amount");
                     }
-
-                    if (dfDest.type() == typeid(CNoDestination)) {
-                        return error("%s: Failed to get dev fund destination: %s.", __func__, pTreasuryFundSettings->sTreasuryFundAddresses);
-                    }
-
-                    const int devFundPercent = pindex->nHeight >= consensus.nBlockRewardCorrectionHeight ? 21 : 16;
-
-                    if (pindex->nHeight % pTreasuryFundSettings->nTreasuryOutputPeriod == 0) {
-                        CScript fundScriptPubKey = GetScriptForDestination(dfDest);
-
-                        // Output 1 must be to the dev fund
-                        const CTxOutStandard* outputDF = txCoinstake->vpout[1]->GetStandardOutput();
-                        if (!outputDF) {
-                            LogPrintf("ERROR: %s: Bad dev fund output.\n", __func__);
-                            return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs");
-                        }
-                        if (outputDF->scriptPubKey != fundScriptPubKey) {
-                            LogPrintf("ERROR: %s: Bad dev fund output script.\n", __func__);
-                            return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-devfund-script");
-                        }
-
-                        if (txCoinstake->GetTreasuryFundCfwd(nTreasuryCfwdCheck)) {
-                            LogPrintf("ERROR: %s: Coinstake treasury cfwd must be unset.\n", __func__);
-                            return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-cfwd");
-                        }
-
-                        const CAmount devFundPart = nTreasuryBfwd + ((nCalculatedStakeRewardWithoutFees * devFundPercent) / 100);
-                        if (outputDF->nValue != devFundPart) {
-                            LogPrintf("ERROR: %s: Bad dev fund output value.\n", __func__);
-                            return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-devfund-amount");
-                        }
-                    } else {
-                        // The dev fund carried forward has to be set
-                        CAmount nTreasuryCfwd = nTreasuryBfwd + ((nCalculatedStakeRewardWithoutFees * devFundPercent) / 100);;
-                        if (!txCoinstake->GetTreasuryFundCfwd(nTreasuryCfwdCheck)
-                            || nTreasuryCfwdCheck != nTreasuryCfwd) {
-                            LogPrintf("ERROR: %s: Coinstake treasury fund carried forward mismatch (actual=%d vs expected=%d)\n", __func__, nTreasuryCfwdCheck, nTreasuryCfwd);
-                            return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-cfwd");
-                        }
+                    CAmount nTreasuryCfwd = nTreasuryBfwd + nCalculatedStakeReward - nStakeReward;
+                    if (!txCoinstake->GetTreasuryFundCfwd(nTreasuryCfwdCheck)
+                    || nTreasuryCfwdCheck != nTreasuryCfwd) {
+                        LogPrintf("ERROR: %s: Coinstake treasury fund carried forward mismatch (actual=%d vs expected=%d)\n", __func__, nTreasuryCfwdCheck, nTreasuryCfwd);
+                        return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cs-cfwd");
                     }
                 }
+           
             }
 
 

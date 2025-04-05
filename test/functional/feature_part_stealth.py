@@ -246,7 +246,7 @@ class StealthTest(GhostTestFramework):
 
         self.log.info('Test getblockhashafter')
         rv = nodes[0].getblockhashafter('2000-01 01:59')
-        assert(rv == '0df42459b6ced4f7c9ec8c7d4c4efe1a9ca89441f17e8c2485a80c247d0544b2')
+        assert(rv == '0005d4a7ec2434f7127cdc63d1d2eb645e2323a36cdcd1654f71f91a4462bf4e')
         try:
             nodes[0].getblockhashafter('9999-01 23:00:00')
             assert(False), 'Should fail'

@@ -226,7 +226,6 @@ BOOST_AUTO_TEST_CASE(frozen_blinded_test)
 
     BOOST_CHECK_NO_THROW(rv = CallRPC("debugwallet {\"list_frozen_outputs\":true}", context));
     BOOST_CHECK(rv["num_spendable"].get_int() > 0);
-    CAmount unspendable_value = AmountFromValue(rv["total_unspendable"]);
     // Find a spendable prevout
     COutPoint prevout_spendable;
     for (size_t i = 0; i < rv["frozen_outputs"].size(); ++i) {
