@@ -1,0 +1,5 @@
+ghost-cli.1 merge=ours
+ghost-qt.1 merge=ours
+ghost-wallet.1 merge=ours
+ghostd.1 merge=ours
+ghost-tx.1 merge=ours
