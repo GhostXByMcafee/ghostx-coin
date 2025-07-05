@@ -58,11 +58,11 @@
         <translation type="unfinished">தே&amp;ர்வுசெய் </translation>
     </message>
     <message>
-        <source>These are your Particl addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished">இவை பணம் அனுப்புவதற்கு உங்களின் பிட்காயின் முகவரிகள். பிட்காயின்களை அனுப்புவதற்கு முன் எப்பொழுதும் தொகையும் பெறுதலையும் சரிபார்க்கவும்.</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">பிட்காயின் பெறுவதற்காக உங்கள் முகவரி இவை. புதிய முகவரிகளை உருவாக்க 'புதிய முகவரியை உருவாக்கு' என்ற பட்டனை கிளிக் செய்யவும்.
 கையொப்பமிடுவது 'மரபு' வகையின் முகவரிகளால் மட்டுமே சாத்தியமாகும்.</translation>
@@ -156,7 +156,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">பணப்பை குறியாக்கத்தை உறுதிப்படுத்துக</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PARTICL&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
         <translation type="unfinished">எச்சரிக்கை: உங்கள் பணப்பையை குறியாக்கி உங்கள் கடவுச்சொற்றொடரை இழந்தால், நீங்கள் உங்கள் பைட்கோனை இழக்கலாம்!</translation>
     </message>
     <message>
@@ -176,7 +176,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">பழைய கடவுச்சொல் மற்றும் புதிய கடுவுசொல்லை உள்ளிடுக.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your particl from being stolen by malware infecting your computer.</source>
+        <source>Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
         <translation type="unfinished">வாலட்டை குறியாக்கம் செய்தால் மட்டும் உங்கள் பிட்காயினை வைரஸிடம் இருந்து பாதுகாக்க இயலாது.</translation>
     </message>
     <message>
@@ -279,7 +279,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">விலை</translation>
     </message>
     <message>
-        <source>Enter a Particl address (e.g. %1)</source>
+        <source>Enter a Bitcoin address (e.g. %1)</source>
         <translation type="unfinished">ஒரு விக்கிபீடியா முகவரியை உள்ளிடவும் (எ.கா. %1)</translation>
     </message>
     <message>
@@ -342,7 +342,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
             <numerusform />
         </translation>
     </message>
-    </context>
+    <message>
+        <source>default wallet</source>
+        <translation type="unfinished">இயல்புநிலை வாலட்</translation>
+    </message>
+</context>
 <context>
     <name>BitcoinGUI</name>
     <message>
@@ -408,10 +412,10 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Proxy is &lt;b&gt;enabled&lt;/b&gt;: %1</source>
-        <translation type="unfinished">ப்ராக்ஸி இயக்கப்பட்டது: %1</translation>
+        <translation type="unfinished">ப்ராக்ஸி &lt;b&gt;இயக்கப்பட்டது&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Particl address</source>
+        <source>Send coins to a Bitcoin address</source>
         <translation type="unfinished">ஒரு விக்கிபீடியா முகவரிக்கு நாணயங்களை அனுப்பவும்</translation>
     </message>
     <message>
@@ -443,11 +447,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp;பேக்கப் வாலட்...</translation>
     </message>
     <message>
-        <source>Sign messages with your Particl addresses to prove you own them</source>
+        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
         <translation type="unfinished">உங்கள் பிட்டினின் முகவரியுடன் செய்திகளை உங்களிடம் வைத்திருப்பதை நிரூபிக்க</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Particl addresses</source>
+        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
         <translation type="unfinished">குறிப்பிடப்பட்ட விக்கிபீடியா முகவர்களுடன் கையொப்பமிடப்பட்டதை உறுதிப்படுத்த, செய்திகளை சரிபார்க்கவும்</translation>
     </message>
     <message>
@@ -471,8 +475,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">தாவல்கள் கருவிப்பட்டி</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and particl: URIs)</source>
-        <translation type="unfinished">கொடுப்பனவுகளை கோருதல் (QR குறியீடுகள் மற்றும் particl உருவாக்குகிறது: URI கள்)</translation>
+        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
+        <translation type="unfinished">கொடுப்பனவுகளை கோருதல் (QR குறியீடுகள் மற்றும் bitcoin உருவாக்குகிறது: URI கள்)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -522,7 +526,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">தேதி வரை</translation>
     </message>
     <message>
-        <source>Load Partially Signed Particl Transaction</source>
+        <source>Load Partially Signed Bitcoin Transaction</source>
         <translation type="unfinished"> ஓரளவு கையொப்பமிடப்பட்ட பிட்காயின் பரிவர்த்தனையை ஏற்றவும்
 </translation>
     </message>
@@ -543,7 +547,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">முகவரிகள் பெறுதல்</translation>
     </message>
     <message>
-        <source>Open a particl: URI</source>
+        <source>Open a bitcoin: URI</source>
         <translation type="unfinished">திற பிட்காயின்: URI</translation>
     </message>
     <message>
@@ -563,8 +567,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">அனைத்து பணப்பைகள் மூடு</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Particl command-line options</source>
-        <translation type="unfinished">சாத்தியமான Particl கட்டளை-வரி விருப்பங்களைக் கொண்ட பட்டியலைப் பெற %1 உதவிச் செய்தியைக் காட்டு</translation>
+        <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
+        <translation type="unfinished">சாத்தியமான Bitcoin கட்டளை-வரி விருப்பங்களைக் கொண்ட பட்டியலைப் பெற %1 உதவிச் செய்தியைக் காட்டு</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
@@ -573,10 +577,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Mask the values in the Overview tab</source>
         <translation type="unfinished">கண்ணோட்டம் தாவலில் மதிப்புகளை மறைக்கவும்</translation>
-    </message>
-    <message>
-        <source>default wallet</source>
-        <translation type="unfinished">இயல்புநிலை வாலட்</translation>
     </message>
     <message>
         <source>No wallets available</source>
@@ -604,7 +604,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">%1 கிளையன்</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Particl network.</source>
+        <source>%n active connection(s) to Bitcoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -665,23 +665,23 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>HD key generation is &lt;b&gt;enabled&lt;/b&gt;</source>
-        <translation type="unfinished">HD முக்கிய தலைமுறை இயக்கப்பட்டது</translation>
+        <translation type="unfinished">HD முக்கிய தலைமுறை &lt;b&gt;இயக்கப்பட்டது&lt;/b&gt;</translation>
     </message>
     <message>
         <source>HD key generation is &lt;b&gt;disabled&lt;/b&gt;</source>
-        <translation type="unfinished">HD முக்கிய தலைமுறை முடக்கப்பட்டுள்ளது</translation>
+        <translation type="unfinished">HD முக்கிய தலைமுறை &lt;b&gt;முடக்கப்பட்டுள்ளது&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Private key &lt;b&gt;disabled&lt;/b&gt;</source>
-        <translation type="unfinished">தனிப்பட்ட விசை முடக்கப்பட்டது</translation>
+        <translation type="unfinished">தனிப்பட்ட விசை &lt;b&gt;முடக்கப்பட்டது&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
-        <translation type="unfinished">Wallet குறியாக்கப்பட்டு தற்போது திறக்கப்பட்டது</translation>
+        <translation type="unfinished">Wallet &lt;b&gt;குறியாக்கப்பட்டு&lt;/b&gt; தற்போது &lt;b&gt;திறக்கப்பட்டது&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
-        <translation type="unfinished">Wallet குறியாக்கப்பட்டு தற்போது பூட்டப்பட்டுள்ளது</translation>
+        <translation type="unfinished">Wallet &lt;b&gt;குறியாக்கப்பட்டு&lt;/b&gt; தற்போது &lt;b&gt;பூட்டப்பட்டுள்ளது&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Original message:</source>
@@ -833,10 +833,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">வாலட் திறத்தல் எச்சரிக்கை</translation>
     </message>
     <message>
-        <source>default wallet</source>
-        <translation type="unfinished">இயல்புநிலை வாலட்</translation>
-    </message>
-    <message>
         <source>Open Wallet</source>
         <extracomment>Title of window indicating the progress of opening of a wallet.</extracomment>
         <translation type="unfinished">வாலட்டை திற</translation>
@@ -882,6 +878,10 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Encrypt Wallet</source>
         <translation type="unfinished">வாலட்டை குறியாக்குக</translation>
+    </message>
+    <message>
+        <source>Advanced Options</source>
+        <translation type="unfinished">மேம்பட்ட விருப்பங்கள்</translation>
     </message>
     <message>
         <source>Disable private keys for this wallet. Wallets with private keys disabled will have no private keys and cannot have an HD seed or imported private keys. This is ideal for watch-only wallets.</source>
@@ -939,7 +939,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">முகவரியை அனுப்புவதைத் திருத்து</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Particl address.</source>
+        <source>The entered address "%1" is not a valid Bitcoin address.</source>
         <translation type="unfinished">உள்ளிட்ட முகவரி "%1" என்பது செல்லுபடியாகும் விக்கிபீடியா முகவரி அல்ல.</translation>
     </message>
     <message>
@@ -1015,8 +1015,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         </translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Particl block chain.</source>
-        <translation type="unfinished">Particl தொகுதி சங்கிலியின் நகலை %1 பதிவிறக்கம் செய்து சேமித்து வைக்கும்.</translation>
+        <source>%1 will download and store a copy of the Bitcoin block chain.</source>
+        <translation type="unfinished">Bitcoin தொகுதி சங்கிலியின் நகலை %1 பதிவிறக்கம் செய்து சேமித்து வைக்கும்.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1092,11 +1092,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">படிவம்</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the particl network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the bitcoin network, as detailed below.</source>
         <translation type="unfinished">சமீபத்திய பரிவர்த்தனைகள் இன்னும் காணப்படாமல் இருக்கலாம், எனவே உங்கள் பணப்பையின் சமநிலை தவறாக இருக்கலாம். கீழே விவரிக்கப்பட்டுள்ளபடி, உங்கள் பணப்பை பிட்ஃபோனை நெட்வொர்க்குடன் ஒத்திசைக்க முடிந்ததும் இந்த தகவல் சரியாக இருக்கும்.</translation>
     </message>
     <message>
-        <source>Attempting to spend particl that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend bitcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation type="unfinished">இதுவரை காட்டப்படாத பரிவர்த்தனைகளால் பாதிக்கப்படும் பிட்னிக்களை செலவிடுவதற்கு முயற்சி பிணையத்தால் ஏற்கப்படாது.</translation>
     </message>
     <message>
@@ -1127,7 +1127,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open particl URI</source>
+        <source>Open bitcoin URI</source>
         <translation type="unfinished">பிட்காயின் யூ. ஆர். ஐ.யை திர</translation>
     </message>
     <message>
@@ -1235,14 +1235,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp; உறுதிப்படுத்தப்படாத மாற்றத்தை செலவழிக்கவும்</translation>
     </message>
     <message>
-        <source>Automatically open the Particl client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation type="unfinished">ரூட்டரில் Particl கிளையன்ட் போர்ட் தானாக திறக்க. இது உங்கள் திசைவி UPnP ஐ ஆதரிக்கும் போது மட்டுமே இயங்குகிறது.</translation>
-    </message>
-    <message>
-        <source>Map port using &amp;UPnP</source>
-        <translation type="unfinished">&amp; UPnP ஐப் பயன்படுத்தி வரைபடம் துறைமுகம்</translation>
-    </message>
-    <message>
         <source>Accept connections from outside.</source>
         <translation type="unfinished">வெளியே இருந்து இணைப்புகளை ஏற்கவும்.</translation>
     </message>
@@ -1251,8 +1243,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Incomin &amp; g இணைப்புகளை அனுமதிக்கவும்</translation>
     </message>
     <message>
-        <source>Connect to the Particl network through a SOCKS5 proxy.</source>
-        <translation type="unfinished">Particl பிணையத்துடன் SOCKS5 ப்ராக்ஸி மூலம் இணைக்கவும்.</translation>
+        <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
+        <translation type="unfinished">Bitcoin பிணையத்துடன் SOCKS5 ப்ராக்ஸி மூலம் இணைக்கவும்.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1379,7 +1371,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">படிவம்</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Particl network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished">காட்டப்படும் தகவல் காலாவதியானதாக இருக்கலாம். ஒரு இணைப்பு நிறுவப்பட்ட பிறகு, உங்கள் பணப்பை தானாக பிட்கோடு நெட்வொர்க்குடன் ஒத்திசைக்கிறது, ஆனால் இந்த செயல்முறை இன்னும் முடிவடையவில்லை.</translation>
     </message>
     <message>
@@ -1473,19 +1465,19 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">கட்டணம் கோரிக்கை பிழை</translation>
     </message>
     <message>
-        <source>Cannot start particl: click-to-pay handler</source>
-        <translation type="unfinished">Particl தொடங்க முடியாது: கிளிக் க்கு ஊதியம் கையாளுதல்</translation>
+        <source>Cannot start bitcoin: click-to-pay handler</source>
+        <translation type="unfinished">Bitcoin தொடங்க முடியாது: கிளிக் க்கு ஊதியம் கையாளுதல்</translation>
     </message>
     <message>
         <source>URI handling</source>
         <translation type="unfinished">URI கையாளுதல்</translation>
     </message>
     <message>
-        <source>'particl://' is not a valid URI. Use 'particl:' instead.</source>
-        <translation type="unfinished">'particl: //' சரியான URI அல்ல. அதற்கு பதிலாக 'பிட்கின்:' பயன்படுத்தவும்.</translation>
+        <source>'bitcoin://' is not a valid URI. Use 'bitcoin:' instead.</source>
+        <translation type="unfinished">'bitcoin: //' சரியான URI அல்ல. அதற்கு பதிலாக 'பிட்கின்:' பயன்படுத்தவும்.</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Particl address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
         <translation type="unfinished">URI அலச முடியாது! தவறான பிட்கின் முகவரி அல்லது தவறான URI அளவுருக்கள் காரணமாக இது ஏற்படலாம்.</translation>
     </message>
     <message>
@@ -1788,6 +1780,10 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">நெட்வொர்க் செயல்பாடு முடக்கப்பட்டது</translation>
     </message>
     <message>
+        <source>None</source>
+        <translation type="unfinished">யாரும்</translation>
+    </message>
+    <message>
         <source>Executing command without any wallet</source>
         <translation type="unfinished">எந்த பணமும் இல்லாமல் கட்டளையை நிறைவேற்றும்</translation>
     </message>
@@ -1835,8 +1831,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp;செய்தி:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Particl network.</source>
-        <translation type="unfinished">கோரிக்கையை திறக்கும் போது காட்டப்படும் இது பணம் கோரிக்கை இணைக்க ஒரு விருப்ப செய்தி. குறிப்பு: Particl நெட்வொர்க்கில் பணம் செலுத்தியவுடன் செய்தி அனுப்பப்படாது.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bitcoin network.</source>
+        <translation type="unfinished">கோரிக்கையை திறக்கும் போது காட்டப்படும் இது பணம் கோரிக்கை இணைக்க ஒரு விருப்ப செய்தி. குறிப்பு: Bitcoin நெட்வொர்க்கில் பணம் செலுத்தியவுடன் செய்தி அனுப்பப்படாது.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1844,7 +1840,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
-        <translation type="unfinished">பணம் செலுத்த வேண்டுமெனில் இந்த படிவத்தைப் பயன்படுத்தவும். அனைத்து துறைகள் விருப்பமானவை.</translation>
+        <translation type="unfinished">பணம் செலுத்த வேண்டுமெனில் இந்த படிவத்தைப் பயன்படுத்தவும். அனைத்து துறைகள் &lt;b&gt;விருப்பமானவை&lt;/b&gt;.</translation>
     </message>
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
@@ -2044,8 +2040,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">படிவத்தின் அனைத்து துறையையும் அழி.</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for particl transactions than the network can process.</source>
-        <translation type="unfinished">தொகுதிகள் உள்ள இடத்தை விட குறைவான பரிவர்த்தனை அளவு இருக்கும் போது, ​​சுரங்க தொழிலாளர்கள் மற்றும் ரிலேடிங் முனைகள் குறைந்தபட்ச கட்டணத்தைச் செயல்படுத்தலாம். இந்த குறைந்தபட்ச கட்டணத்தை மட்டும் செலுத்துவது நன்றாக உள்ளது, ஆனால் நெட்வொர்க்கில் செயல்படுவதை விட particl பரிவர்த்தனைகளுக்கு இன்னும் கோரிக்கை தேவைப்பட்டால் இது ஒருபோதும் உறுதிப்படுத்தாத பரிவர்த்தனைக்கு காரணமாக இருக்கலாம்.</translation>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for bitcoin transactions than the network can process.</source>
+        <translation type="unfinished">தொகுதிகள் உள்ள இடத்தை விட குறைவான பரிவர்த்தனை அளவு இருக்கும் போது, ​​சுரங்க தொழிலாளர்கள் மற்றும் ரிலேடிங் முனைகள் குறைந்தபட்ச கட்டணத்தைச் செயல்படுத்தலாம். இந்த குறைந்தபட்ச கட்டணத்தை மட்டும் செலுத்துவது நன்றாக உள்ளது, ஆனால் நெட்வொர்க்கில் செயல்படுவதை விட bitcoin பரிவர்த்தனைகளுக்கு இன்னும் கோரிக்கை தேவைப்பட்டால் இது ஒருபோதும் உறுதிப்படுத்தாத பரிவர்த்தனைக்கு காரணமாக இருக்கலாம்.</translation>
     </message>
     <message>
         <source>A too low fee might result in a never confirming transaction (read the tooltip)</source>
@@ -2157,12 +2153,20 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">தொகை உங்கள் இருப்பையைவிட அதிகமாக உள்ளது.</translation>
     </message>
     <message>
+        <source>The total exceeds your balance when the %1 transaction fee is included.</source>
+        <translation type="unfinished">%1 பரிவர்த்தனைக் கட்டணம் சேர்க்கப்படும்போது மொத்த தொகை உங்கள் மீதம் உள்ள தொகையை மீறுகிறது.</translation>
+    </message>
+    <message>
         <source>Duplicate address found: addresses should only be used once each.</source>
         <translation type="unfinished">நகல் முகவரி காணப்பட்டது: முகவரிகள் ஒவ்வொன்றும் ஒரு முறை மட்டுமே பயன்படுத்தப்பட வேண்டும்.</translation>
     </message>
     <message>
         <source>Transaction creation failed!</source>
         <translation type="unfinished">பரிவர்த்தனை உருவாக்கம் தோல்வியடைந்தது!</translation>
+    </message>
+    <message>
+        <source>A fee higher than %1 is considered an absurdly high fee.</source>
+        <translation type="unfinished">எந்த ஒரு கட்டணம் %1 ஐ விட அதிகமாக இருந்தால் அது அபத்தமான உயர் கட்டணமாக கருதப்படும்.</translation>
     </message>
     <message numerus="yes">
         <source>Estimated to begin confirmation within %n block(s).</source>
@@ -2172,7 +2176,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Particl address</source>
+        <source>Warning: Invalid Bitcoin address</source>
         <translation type="unfinished">எச்சரிக்கை: தவறான பிட்காயின் முகவரி</translation>
     </message>
     <message>
@@ -2211,7 +2215,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">முன்பு பயன்படுத்திய முகவரியைத் தேர்வுசெய்</translation>
     </message>
     <message>
-        <source>The Particl address to send the payment to</source>
+        <source>The Bitcoin address to send the payment to</source>
         <translation type="unfinished">கட்டணத்தை அனுப்ப பிட்காயின் முகவரி</translation>
     </message>
     <message>
@@ -2223,7 +2227,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">இந்த உள்ளீட்டை அகற்று</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less particl than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less bitcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
         <translation type="unfinished">அனுப்பப்படும் தொகையிலிருந்து கட்டணம் கழிக்கப்படும். நீங்கள் உள்ளிடும் தொகையை விட பெறுநர் குறைவான பிட்காயின்களைப் பெறுவார். பல பெறுநர்கள் தேர்ந்தெடுக்கப்பட்டால், கட்டணம் சமமாக பிரிக்கப்படும்.</translation>
     </message>
     <message>
@@ -2243,7 +2247,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">இந்த முகவரியை பயன்படுத்தப்பட்ட முகவரிகளின் பட்டியலில் சேர்க்க ஒரு லேபிளை உள்ளிடவும்.</translation>
     </message>
     <message>
-        <source>A message that was attached to the particl: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Particl network.</source>
+        <source>A message that was attached to the bitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bitcoin network.</source>
         <translation type="unfinished">பிட்காயினுடன் இணைக்கப்பட்ட செய்தி: உங்கள் எதிர்கால குறிப்புக்காக பரிவர்த்தனையுடன் யூஆர்ஐ சேமிக்கப்படும். குறிப்பு: இந்த செய்தி பிட்காயின் வலையமைப்பிற்கு அனுப்பப்படாது.</translation>
     </message>
 </context>
@@ -2265,11 +2269,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp;செய்தியை கையொப்பமிடுங்கள்</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive particl sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation type="unfinished">மற்றவர்களுக்கு அனுப்பப்பட்ட பிட்காயின்களைப் நீங்கள் பெறலாம் என்பதை நிரூபிக்க உங்கள் முகவரிகளுடன் செய்திகள் / ஒப்பந்தங்களில் கையொப்பமிடலாம். தெளிவற்ற அல்லது சீரற்ற எதையும் கையொப்பமிடாமல் கவனமாக இருங்கள், ஏனெனில் ஃபிஷிங் தாக்குதல்கள் உங்கள் அடையாளத்தை அவர்களிடம் கையொப்பமிட்டு ஏமாற்ற முயற்சிக்கும். நீங்கள் ஒப்புக்கொள்ளும் முழுமையான மற்றும் விரிவான அறிக்கைகளில் மட்டுமே கையொப்பமிடுங்கள்.</translation>
-    </message>
-    <message>
-        <source>The Particl address to sign the message with</source>
+        <source>The Bitcoin address to sign the message with</source>
         <translation type="unfinished">செய்தியை கையொப்பமிட பிட்காயின் முகவரி</translation>
     </message>
     <message>
@@ -2293,7 +2293,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">தற்போதைய கையொப்பத்தை கிளிப்போர்டுக்கு காபி செய்</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Particl address</source>
+        <source>Sign the message to prove you own this Bitcoin address</source>
         <translation type="unfinished">இந்த பிட்காயின் முகவரி உங்களுக்கு சொந்தமானது என்பதை நிரூபிக்க செய்தியை கையொப்பமிடுங்கள்</translation>
     </message>
     <message>
@@ -2313,7 +2313,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp;செய்தியைச் சரிபார்க்கவும்</translation>
     </message>
     <message>
-        <source>The Particl address the message was signed with</source>
+        <source>The Bitcoin address the message was signed with</source>
         <translation type="unfinished">செய்தி கையொப்பமிடப்பட்ட பிட்காயின் முகவரி</translation>
     </message>
     <message>
@@ -2321,7 +2321,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">சரிபார்க்க கையொப்பமிடப்பட்ட செய்தி</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Particl address</source>
+        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
         <translation type="unfinished">குறிப்பிட்ட பிட்காயின் முகவரியுடன் கையொப்பமிடப்பட்டதா என்பதை உறுதிப்படுத்த இந்த செய்தியைச் சரிபார்க்கவும்</translation>
     </message>
     <message>
@@ -2343,10 +2343,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Please check the address and try again.</source>
         <translation type="unfinished">முகவரியைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்.</translation>
-    </message>
-    <message>
-        <source>The entered address does not refer to a key.</source>
-        <translation type="unfinished">உள்ளிட்ட முகவரி எந்த ஒரு கீயை குறிக்கவில்லை.</translation>
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
@@ -2552,7 +2548,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>This pane shows a detailed description of the transaction</source>
         <translation type="unfinished">இந்த பலகம் பரிவர்த்தனை பற்றிய விரிவான விளக்கத்தைக் காட்டுகிறது</translation>
     </message>
-    </context>
+    <message>
+        <source>Details for %1</source>
+        <translation type="unfinished">%1 க்கான விவரங்கள்</translation>
+    </message>
+</context>
 <context>
     <name>TransactionTableModel</name>
     <message>
@@ -2580,8 +2580,16 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">உறுதிப்படுத்துகிறது (%1 ன் %2 பரிந்துரைக்கப்பட்ட உறுதிப்படுத்தல்கல்)</translation>
     </message>
     <message>
+        <source>Confirmed (%1 confirmations)</source>
+        <translation type="unfinished">உறுதிப்படுத்தப்பட்டது (%1 உறுதிப்படுத்தல்கள்)</translation>
+    </message>
+    <message>
         <source>Conflicted</source>
         <translation type="unfinished">முரண்பாடு</translation>
+    </message>
+    <message>
+        <source>Immature (%1 confirmations, will be available after %2)</source>
+        <translation type="unfinished">முதிர்ச்சியடையவில்லை (%1 உறுதிப்படுத்தல்கள்,%2 க்குப் பிறகு கிடைக்கும்)</translation>
     </message>
     <message>
         <source>Generated but not accepted</source>
@@ -2810,11 +2818,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>Could not commit transaction</source>
         <translation type="unfinished">பரிவர்த்தனையை கமிட் செய்ய முடியவில்லை</translation>
     </message>
-    <message>
-        <source>default wallet</source>
-        <translation type="unfinished">இயல்புநிலை வாலட்</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>WalletView</name>
     <message>
@@ -2857,16 +2861,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">%s டெவலப்பர்கள்</translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. %s is probably already running.</source>
-        <translation type="unfinished">தரவு கோப்பகத்தை %s லாக் செய்ய முடியாது. %s ஏற்கனவே இயங்குகிறது.</translation>
-    </message>
-    <message>
         <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
         <translation type="unfinished">எம்ஐடி சாப்ட்வேர் விதிமுறைகளின் கீழ் பகிர்ந்தளிக்கப்படுகிறது, அதனுடன் கொடுக்கப்பட்டுள்ள %s அல்லது %s பைல் ஐ பார்க்கவும்</translation>
-    </message>
-    <message>
-        <source>Please check that your computer's date and time are correct! If your clock is wrong, %s will not work properly.</source>
-        <translation type="unfinished">உங்கள் கணினியின் தேதி மற்றும் நேரம் சரியாக உள்ளதா என்பதனை சரிபார்க்கவும்! உங்கள் கடிகாரம் தவறாக இருந்தால், %s சரியாக இயங்காது.</translation>
     </message>
     <message>
         <source>Please contribute if you find %s useful. Visit %s for further information about the software.</source>
@@ -2931,10 +2927,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Corrupted block database detected</source>
         <translation type="unfinished">சிதைந்த பிளாக் டேட்டாபேஸ் கண்டறியப்பட்டது</translation>
-    </message>
-    <message>
-        <source>Do you want to rebuild the block database now?</source>
-        <translation type="unfinished">இப்போது பிளாக் டேட்டாபேஸை மீண்டும் உருவாக்க விரும்புகிறீர்களா?</translation>
     </message>
     <message>
         <source>Done loading</source>
@@ -3009,8 +3001,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">-%s=&lt;amount&gt;: '%s' கான தவறான தொகை</translation>
     </message>
     <message>
-        <source>Not enough file descriptors available.</source>
-        <translation type="unfinished">போதுமான ஃபைல் டிஸ்கிரிப்டார் கிடைக்கவில்லை.</translation>
+        <source>Invalid netmask specified in -whitelist: '%s'</source>
+        <translation type="unfinished">-அனுமதிப்பட்டியல் குறிப்பிடப்பட்ட தவறான நெட்மாஸ்க்: '%s'</translation>
     </message>
     <message>
         <source>Prune cannot be configured with a negative value.</source>

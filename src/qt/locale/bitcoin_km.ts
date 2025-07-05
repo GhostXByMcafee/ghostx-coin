@@ -58,13 +58,13 @@
         <translation type="unfinished">ជ្រើសរើស(&amp;h)</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">ទាំងនេះ​គឺជាអាសយដ្ឋាន Particl របស់អ្នកសម្រាប់ធ្វើការផ្ញើការបង់ប្រាក់។ តែងតែពិនិត្យមើលចំនួនប្រាក់ និងអាសយដ្ឋានដែលទទួល មុនពេលផ្ញើប្រាក់។</translation>
+        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">ទាំងនេះ​គឺជាអាសយដ្ឋាន Bitcoin របស់អ្នកសម្រាប់ធ្វើការផ្ញើការបង់ប្រាក់។ តែងតែពិនិត្យមើលចំនួនប្រាក់ និងអាសយដ្ឋានដែលទទួល មុនពេលផ្ញើប្រាក់។</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">ទាំងនេះគឺជាអាសយដ្ឋាន Particl របស់អ្នកសម្រាប់ការទទួលការទូទាត់។ ប្រើប៊ូតុង 'បង្កើតអាសយដ្ឋានទទួលថ្មី' នៅក្នុងផ្ទាំងទទួល ដើម្បីបង្កើតអាសយដ្ឋានថ្មី។ 
+        <translation type="unfinished">ទាំងនេះគឺជាអាសយដ្ឋាន Bitcoin របស់អ្នកសម្រាប់ការទទួលការទូទាត់។ ប្រើប៊ូតុង 'បង្កើតអាសយដ្ឋានទទួលថ្មី' នៅក្នុងផ្ទាំងទទួល ដើម្បីបង្កើតអាសយដ្ឋានថ្មី។ 
 ការចុះហត្ថលេខាគឺអាចធ្វើទៅបានតែជាមួយអាសយដ្ឋាននៃប្រភេទ 'legacy' ប៉ុណ្ណោះ។</translation>
     </message>
     <message>
@@ -164,8 +164,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">បញ្ជាក់ការអ៊ិនគ្រីបកាបូបចល័ត</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PARTICL&lt;/b&gt;!</source>
-        <translation type="unfinished">ការព្រមាន៖ ប្រសិនបើអ្នកអ៊ិនគ្រីបកាបូបចល័តរបស់អ្នក ហើយអ្នកភ្លេចបាត់ឃ្លាសម្ងាត់ នោះអ្នកនិង &lt;b&gt;បាត់បង់ PARTICL របស់អ្នកទាំងអស់&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
+        <translation type="unfinished">ការព្រមាន៖ ប្រសិនបើអ្នកអ៊ិនគ្រីបកាបូបចល័តរបស់អ្នក ហើយអ្នកភ្លេចបាត់ឃ្លាសម្ងាត់ នោះអ្នកនិង &lt;b&gt;បាត់បង់ BITCOINS របស់អ្នកទាំងអស់&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -184,8 +184,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">វាយបញ្ចូលឃ្លាសម្ងាត់ចាស់ និងឃ្លាសសម្លាត់ថ្មី សម្រាប់កាបូបចល័តរបស់អ្នក។</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your particl from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">សូមចងចាំថាការអ៊ិនគ្រីបកាបូបរបស់អ្នកមិនអាចការពារបានពេញលេញនូវ particl របស់អ្នកពីការលួចដោយមេរោគដែលឆ្លងកុំព្យូទ័ររបស់អ្នក។</translation>
+        <source>Continue</source>
+        <translation type="unfinished">បន្ត</translation>
+    </message>
+    <message>
+        <source>Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">សូមចងចាំថាការអ៊ិនគ្រីបកាបូបរបស់អ្នកមិនអាចការពារបានពេញលេញនូវ bitcoins របស់អ្នកពីការលួចដោយមេរោគដែលឆ្លងកុំព្យូទ័ររបស់អ្នក។</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -372,7 +376,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>%1 kB</source>
         <translation type="unfinished"> %1 kB</translation>
     </message>
-    </context>
+    <message>
+        <source>default wallet</source>
+        <translation type="unfinished">កាបូបលំនាំដើម</translation>
+    </message>
+</context>
 <context>
     <name>BitcoinGUI</name>
     <message>
@@ -398,6 +406,14 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Quit application</source>
         <translation type="unfinished">បោះបង់កម្មវិធី</translation>
+    </message>
+    <message>
+        <source>&amp;About %1</source>
+        <translation type="unfinished">&amp;ប្រហែល %1</translation>
+    </message>
+    <message>
+        <source>Show information about %1</source>
+        <translation type="unfinished">បង្ហាញព័ត៍មានអំពី %1</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -433,8 +449,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">ប្រូកស៊ី ត្រូវបាន &lt;b&gt;អនុញ្ញាត&lt;/b&gt;៖ %1</translation>
     </message>
     <message>
-        <source>Send coins to a Particl address</source>
-        <translation type="unfinished">ផ្ញើកាក់ទៅកាន់ អាសយដ្ឋាន Particl មួយ</translation>
+        <source>Send coins to a Bitcoin address</source>
+        <translation type="unfinished">ផ្ញើកាក់ទៅកាន់ អាសយដ្ឋាន Bitcoin មួយ</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -477,7 +493,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">ចុះហត្ថលេខា&amp;សារ…</translation>
     </message>
     <message>
-        <source>Sign messages with your Particl addresses to prove you own them</source>
+        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
         <translation type="unfinished">ចុះហត្ថលេខាលើសារ អាសយដ្ឋានប៊ីតខញរបស់អ្នក ដើម្បីបញ្ចាក់ថាអ្នកជាម្ចាស់</translation>
     </message>
     <message>
@@ -485,7 +501,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp;ផ្ទៀងផ្ទាត់សារ...</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Particl addresses</source>
+        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
         <translation type="unfinished">ធ្វើការបញ្ចាក់សារ ដើម្បីធានាថាសារទាំំងនោះបានចុះហត្ថលេខា ជាមួយអាសយដ្ខានប៊ីតខញ</translation>
     </message>
     <message>
@@ -545,7 +561,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">កំពុងភ្ជាប់ទៅមិត្តភក្ដិ...</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and particl: URIs)</source>
+        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
         <translation type="unfinished">សំណើរទូរទាត់​(បង្កើតកូដ QR និង ប៊ីតខញ: URLs)</translation>
     </message>
     <message>
@@ -592,7 +608,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">ទាន់ពេល និង ទាន់សម័យ</translation>
     </message>
     <message>
-        <source>Load Partially Signed Particl Transaction</source>
+        <source>Load Partially Signed Bitcoin Transaction</source>
         <translation type="unfinished">បង្ហាញប្រត្តិបត្តិការប៊ីតខញដែលបានចុះហត្ថលេខាដោយផ្នែក</translation>
     </message>
     <message>
@@ -600,7 +616,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">ផ្ទុក PSBT ពី &amp;clipboard...</translation>
     </message>
     <message>
-        <source>Load Partially Signed Particl Transaction from clipboard</source>
+        <source>Load Partially Signed Bitcoin Transaction from clipboard</source>
         <translation type="unfinished">បង្ហាញប្រត្តិបត្តិការប៊ីតខញដែលបានចុះហត្ថលេខាដោយផ្នែកពីក្ដារតម្រៀប</translation>
     </message>
     <message>
@@ -608,7 +624,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp;អាសយដ្ឋានទទួល</translation>
     </message>
     <message>
-        <source>Open a particl: URI</source>
+        <source>Open a bitcoin: URI</source>
         <translation type="unfinished">បើកប៊ីតខញមួយៈ URl</translation>
     </message>
     <message>
@@ -642,6 +658,18 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">កាបូបMigrate</translation>
     </message>
     <message>
+        <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
+        <translation type="unfinished">បង្ហាញសារជំនួយ%1ដើម្បីទទួលបានបញ្ជីជាមួយនឹងជម្រើសបន្ទាត់ពាក្យបញ្ជា Bitcoin ដែលអាចធ្វើទៅបាន</translation>
+    </message>
+    <message>
+        <source>&amp;Mask values</source>
+        <translation type="unfinished">តម្លៃMask​(&amp;M)</translation>
+    </message>
+    <message>
+        <source>Mask the values in the Overview tab</source>
+        <translation type="unfinished">តម្លៃMaskនៅក្នុងថេបទិដ្ឋភាពទូទៅ</translation>
+    </message>
+    <message>
         <source>No wallets available</source>
         <translation type="unfinished">មិនមានកាបូបអេឡិចត្រូនិច</translation>
     </message>
@@ -667,21 +695,29 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>&amp;Window</source>
-        <translation type="unfinished">&amp;វិនដូ</translation>
+        <translation type="unfinished">វិនដូ(&amp;W)</translation>
+    </message>
+    <message>
+        <source>Main Window</source>
+        <translation type="unfinished">វិនដូចម្បង</translation>
+    </message>
+    <message>
+        <source>%1 client</source>
+        <translation type="unfinished">%1 អតិថិជន</translation>
     </message>
     <message>
         <source>&amp;Hide</source>
-        <translation type="unfinished">&amp;លាក់</translation>
+        <translation type="unfinished">លាក់(&amp;H)</translation>
     </message>
     <message>
         <source>S&amp;how</source>
-        <translation type="unfinished">S&amp;របៀប</translation>
+        <translation type="unfinished">របៀប(&amp;S)</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Particl network.</source>
+        <source>%n active connection(s) to Bitcoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
-            <numerusform>%n ការតភ្ជាប់សកម្មទៅបណ្តាញ Particl ។</numerusform>
+            <numerusform>%n ការតភ្ជាប់សកម្មទៅបណ្តាញ Bitcoin ។</numerusform>
             <numerusform />
         </translation>
     </message>
@@ -704,6 +740,10 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>Enable network activity</source>
         <extracomment>A context menu item. The network activity was disabled previously.</extracomment>
         <translation type="unfinished">បើកសកម្មភាពបណ្តាញ</translation>
+    </message>
+    <message>
+        <source>Error: %1</source>
+        <translation type="unfinished">កំហុស៖%1</translation>
     </message>
     <message>
         <source>Warning: %1</source>
@@ -886,6 +926,14 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Copy fee</source>
         <translation type="unfinished">ចម្លងតម្លៃ</translation>
+    </message>
+    <message>
+        <source>Copy change</source>
+        <translation type="unfinished">ចម្លងការផ្លាស់ប្តូរ</translation>
+    </message>
+    <message>
+        <source>(%1 locked)</source>
+        <translation type="unfinished">(%1បានចាក់សោរ)</translation>
     </message>
     <message>
         <source>Can vary +/- %1 satoshi(s) per input.</source>
@@ -1126,7 +1174,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 <context>
     <name>Intro</name>
     <message>
-        <source>Particl</source>
+        <source>Bitcoin</source>
         <translation type="unfinished">ប៊ីតខញ</translation>
     </message>
     <message numerus="yes">
@@ -1212,11 +1260,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">ទម្រង់</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the particl network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the bitcoin network, as detailed below.</source>
         <translation type="unfinished">ប្រត្តិបត្តិការថ្មីៗនេះប្រហែលជាមិនអាចមើលឃើញ ហេតុដូច្នេះសមតុល្យនៅក្នងកាបូបអេឡិចត្រូនិចរបស់អ្នកប្រហែលជាមិនត្រឹមត្រូវ។ ព័ត៌មានត្រឹមត្រូវនៅពេលដែលកាបូបអេឡិចត្រូនិចរបស់អ្នកបានធ្វើសមកាលកម្មជាមួយបណ្តាញប៊ឺតខញ  សូមពិនិត្យព័ត៌មានលំម្អិតខាងក្រោម។</translation>
     </message>
     <message>
-        <source>Attempting to spend particl that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend bitcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation type="unfinished">ព្យាយាមក្នុងការចំណាយប៊ីតខញដែលទទួលរងឥទ្ឋិពលពីប្រត្តិបត្តិការមិនទាន់ធ្វើការបង្ហាញ នឹងមិនត្រូវទទួលស្គាល់ពីបណ្តាញ។</translation>
     </message>
     <message>
@@ -1267,7 +1315,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open particl URI</source>
+        <source>Open bitcoin URI</source>
         <translation type="unfinished">បើកប៊ីតខញ​URl</translation>
     </message>
     <message>
@@ -1327,11 +1375,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">ជីហ្គាប៊ៃ </translation>
     </message>
     <message>
-        <source>Maximum database cache size. A larger cache can contribute to faster sync, after which the benefit is less pronounced for most use cases. Lowering the cache size will reduce memory usage. Unused mempool memory is shared for this cache.</source>
-        <extracomment>Tooltip text for Options window setting that sets the size of the database cache. Explains the corresponding effects of increasing/decreasing this value.</extracomment>
-        <translation type="unfinished">ទំហំឃ្លាំងទិន្នន័យអតិបរមា។ ឃ្លាំងសម្ងាត់ធំជាងអាចរួមចំណែកដល់ការធ្វើសមកាលកម្មលឿនជាងមុន បន្ទាប់ពីនោះអត្ថប្រយោជន៍គឺមិនសូវច្បាស់សម្រាប់ករណីប្រើប្រាស់ភាគច្រើន។ ការបន្ថយទំហំឃ្លាំងសម្ងាត់នឹងកាត់បន្ថយការប្រើប្រាស់អង្គចងចាំ។ អង្គចងចាំ mempool ដែលមិនប្រើត្រូវបានចែករំលែកសម្រាប់ឃ្លាំងសម្ងាត់នេះ។</translation>
-    </message>
-    <message>
         <source>Set the number of script verification threads. Negative values correspond to the number of cores you want to leave free to the system.</source>
         <extracomment>Tooltip text for Options window setting that sets the number of script verification threads. Explains that negative values mean to leave these many cores free to the system.</extracomment>
         <translation type="unfinished">កំណត់ចំនួនខ្សែស្រឡាយផ្ទៀងផ្ទាត់script ។ តម្លៃអវិជ្ជមានត្រូវគ្នាទៅនឹងចំនួនស្នូលដែលអ្នកចង់ចាកចេញពីប្រព័ន្ធដោយឥតគិតថ្លៃ។</translation>
@@ -1383,10 +1426,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">(&amp;E)script អ្នកចុះហត្ថលេខាខាងក្រៅ</translation>
     </message>
     <message>
-        <source>Automatically open the Particl client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
-        <translation type="unfinished">បើកច្រកម៉ាស៊ីនភ្ញៀវ Particl ដោយស្វ័យប្រវត្តិនៅលើរ៉ោតទ័រ។ វាដំណើរការតែនៅពេលដែលរ៉ោតទ័ររបស់អ្នកគាំទ្រ NAT-PMP ហើយវាត្រូវបានបើក។ ច្រកខាងក្រៅអាចជាចៃដន្យ។</translation>
-    </message>
-    <message>
         <source>Accept connections from outside.</source>
         <translation type="unfinished">ទទួលការតភ្ជាប់ពីខាងក្រៅ។</translation>
     </message>
@@ -1395,7 +1434,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">អនុញ្ញាតឲ្យមានការតភ្ជាប់ដែលចូលមក</translation>
     </message>
     <message>
-        <source>Connect to the Particl network through a SOCKS5 proxy.</source>
+        <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
         <translation type="unfinished">ភ្ជាប់ទៅកាន់បណ្តាញប៊ឺតខញតាមរយៈ​ SOCKS5 proxy។</translation>
     </message>
     <message>
@@ -1467,7 +1506,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">ទម្រង់</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Particl network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished">ព័ត៏មានបានបង្ហាញអាចហួសសពុលភាព។ កាបូបអេឡិចត្រូនិចរបស់អ្នកធ្វើសមកាលកម្មជាមួយនឹងបណ្តាញប៊ីតខញដោយស្វ័យប្រវត្ត បន្ទាប់ពីមានការតភ្ជាប់ ប៉ុន្តែដំណើរការនេះមិនទាន់បានបញ្ចប់នៅឡើយ។</translation>
     </message>
     <message>
@@ -1900,12 +1939,20 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation type="unfinished">សកម្មភាពបណ្តាញ ត្រូវបានដាក់អោយប្រើការលែងបាន។</translation>
     </message>
     <message>
+        <source>None</source>
+        <translation type="unfinished">មិន</translation>
+    </message>
+    <message>
         <source>Executing command without any wallet</source>
         <translation type="unfinished">ប្រត្តិបត្តិបញ្ជារដោយគ្មានកាបូបអេឡិចត្រូនិច។</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
         <translation type="unfinished">Ctrl+T</translation>
+    </message>
+    <message>
+        <source>Executing command using "%1" wallet</source>
+        <translation type="unfinished">ប្រត្តិបត្តិបញ្ចារដោយប្រើ​  ៉​%1​​  ៉ កាបូបអេឡិចត្រូនិច</translation>
     </message>
     <message>
         <source>Executing…</source>
@@ -1948,7 +1995,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation type="unfinished">&amp;សារ</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Particl network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bitcoin network.</source>
         <translation type="unfinished">សារជាជម្រើសមួយក្នុងការភ្ជាប់ទៅនឹងសំណើរទូរទាត់ប្រាក់ ដែលនឹងត្រូវបង្ហាញនៅពេលដែលសំណើរត្រូវបានបើក។ កំណត់ចំណាំៈ សារនេះនឹងមិនត្រូវបានបញ្ចូនជាមួយការទូរទាត់ប្រាក់នៅលើបណ្តាញប៊ីតខញ។</translation>
     </message>
     <message>
@@ -2027,7 +2074,11 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <source>Could not unlock wallet.</source>
         <translation type="unfinished">មិនអាចបើកសោរ កាបូបអេឡិចត្រូនិចបាន។</translation>
     </message>
-    </context>
+    <message>
+        <source>Could not generate new %1 address</source>
+        <translation type="unfinished">មិនអាចបង្កើតអាសយដ្ឋាន%1ថ្មី</translation>
+    </message>
+</context>
 <context>
     <name>ReceiveRequestDialog</name>
     <message>
@@ -2078,7 +2129,11 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <source>Payment information</source>
         <translation type="unfinished">ព័ត៏មានទូរទាត់ប្រាក់</translation>
     </message>
-    </context>
+    <message>
+        <source>Request payment to %1</source>
+        <translation type="unfinished">សំណើរសុំទូរទាត់ប្រាក់ដល់​ %1</translation>
+    </message>
+</context>
 <context>
     <name>RecentRequestsTableModel</name>
     <message>
@@ -2091,7 +2146,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
     </message>
     <message>
         <source>(no label)</source>
-        <translation type="unfinished">(គ្មាន​ស្លាក​)</translation>
+        <translation type="unfinished">(គ្មាន​ស្លាក​សញ្ញា)</translation>
     </message>
     <message>
         <source>(no message)</source>
@@ -2233,6 +2288,10 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">ចម្លងតម្លៃ</translation>
     </message>
     <message>
+        <source>Copy change</source>
+        <translation type="unfinished">ចម្លងការផ្លាស់ប្តូរ</translation>
+    </message>
+    <message>
         <source>Sign on device</source>
         <extracomment>"device" usually means a hardware wallet.</extracomment>
         <translation type="unfinished">ចុះហត្ថលេខាលើឧបករណ៍</translation>
@@ -2245,6 +2304,10 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <source>Set external signer script path in Options -&gt; Wallet</source>
         <extracomment>"External signer" means using devices such as hardware wallets.</extracomment>
         <translation type="unfinished">កំណត់ទីតាំងscript អ្នកចុះហត្ថលេខាខាងក្រៅនៅក្នុងជម្រើស -&gt; កាបូប</translation>
+    </message>
+    <message>
+        <source>%1 to %2</source>
+        <translation type="unfinished">%1​ ទៅ %2</translation>
     </message>
     <message>
         <source>To review recipient list click "Show Details…"</source>
@@ -2291,14 +2354,19 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">អ្នកអាចបង្កើនកម្រៃពេលក្រោយ( សញ្ញា ជំនួសដោយកម្រៃ BIP-125)។</translation>
     </message>
     <message>
+        <source>Please, review your transaction proposal. This will produce a Partially Signed Bitcoin Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can only create a PSBT. This string is displayed when private keys are disabled and an external signer is not available.</extracomment>
+        <translation type="unfinished">សូមពិនិត្យសំណើរប្រត្តិបត្តិការរបស់អ្នកឡើងវិញ។ វានឹងបង្កើតប្រត្តិបត្តិការប៊ីតខញដែលបានចុះហត្ថលេខាដោយផ្នែក (PSBT) ដែលអ្នកអាចរក្សាទុក ឬថតចម្លង រួចហើយសូមចុះហត្ថលេខា។ ឧទាហរណ៏ កាបូបអេឡិចត្រូនិចដែលមិនមានភ្ជាប់អ៊ីនធឺណេត %1 ឬកាបូបដែលមានផ្នែករឹងដែលអាចធ្វើការជាមួយ​ PSBT។</translation>
+    </message>
+    <message>
         <source>Do you want to create this transaction?</source>
         <extracomment>Message displayed when attempting to create a transaction. Cautionary text to prompt the user to verify that the displayed transaction details represent the transaction the user intends to create.</extracomment>
         <translation type="unfinished">តើអ្នកចង់បង្កើតប្រតិបត្តិការនេះទេ?</translation>
     </message>
     <message>
-        <source>Please, review your transaction. You can create and send this transaction or create a Partially Signed Particl Transaction (PSBT), which you can save or copy and then sign with, e.g., an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <source>Please, review your transaction. You can create and send this transaction or create a Partially Signed Bitcoin Transaction (PSBT), which you can save or copy and then sign with, e.g., an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can send their transaction or create a PSBT. This string is displayed when both private keys and PSBT controls are enabled.</extracomment>
-        <translation type="unfinished">សូមពិនិត្យមើលប្រតិបត្តិការរបស់អ្នក។ អ្នកអាចបង្កើត និងផ្ញើប្រតិបត្តិការនេះ ឬបង្កើតប្រតិបត្តិការ Particl ដែលបានចុះហត្ថលេខាដោយផ្នែក (PSBT) ដែលអ្នកអាចរក្សាទុក ឬចម្លងហើយបន្ទាប់មកចុះហត្ថលេខាជាមួយ ឧ. %1កាបូបក្រៅបណ្តាញ ឬកាបូបហាដវែដែលត្រូវគ្នាជាមួយ PSBT ។</translation>
+        <translation type="unfinished">សូមពិនិត្យមើលប្រតិបត្តិការរបស់អ្នក។ អ្នកអាចបង្កើត និងផ្ញើប្រតិបត្តិការនេះ ឬបង្កើតប្រតិបត្តិការ Bitcoin ដែលបានចុះហត្ថលេខាដោយផ្នែក (PSBT) ដែលអ្នកអាចរក្សាទុក ឬចម្លងហើយបន្ទាប់មកចុះហត្ថលេខាជាមួយ ឧ. %1កាបូបក្រៅបណ្តាញ ឬកាបូបហាដវែដែលត្រូវគ្នាជាមួយ PSBT ។</translation>
     </message>
     <message>
         <source>Please, review your transaction.</source>
@@ -2334,12 +2402,20 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">ចំនួនលើសសមតុល្យរបស់អ្នក។</translation>
     </message>
     <message>
+        <source>The total exceeds your balance when the %1 transaction fee is included.</source>
+        <translation type="unfinished">ចំនួនសរុបលើសសមតុល្យរបស់អ្នកនៅពេលដែលកម្រៃប្រត្តិបត្តិការ%1ត្រូវបានបូកបញ្ចូល។</translation>
+    </message>
+    <message>
         <source>Duplicate address found: addresses should only be used once each.</source>
         <translation type="unfinished">អាសយដ្ឋានស្ទួនត្រូវបានរកឃើញៈ គ្រប់អាសយដ្ឋានគួរត្រូវបានប្រើតែម្តង</translation>
     </message>
     <message>
         <source>Transaction creation failed!</source>
         <translation type="unfinished">បង្កើតប្រត្តិបត្តិការមិនជោគជ័យ!</translation>
+    </message>
+    <message>
+        <source>A fee higher than %1 is considered an absurdly high fee.</source>
+        <translation type="unfinished">កម្រៃខ្ពស់ជាង %1 ចាត់ទុកថាតម្លៃមិនសមស្រប។​</translation>
     </message>
     <message numerus="yes">
         <source>Estimated to begin confirmation within %n block(s).</source>
@@ -2350,7 +2426,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     </message>
     <message>
         <source>(no label)</source>
-        <translation type="unfinished">(គ្មាន​ស្លាក​)</translation>
+        <translation type="unfinished">(គ្មាន​ស្លាក​សញ្ញា)</translation>
     </message>
 </context>
 <context>
@@ -2372,7 +2448,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">ជ្រើសរើសអាសយដ្ឋានដែលបានប្រើពីមុន</translation>
     </message>
     <message>
-        <source>The Particl address to send the payment to</source>
+        <source>The Bitcoin address to send the payment to</source>
         <translation type="unfinished">អាសយដ្ឋានប៊ីតខញក្នុងការបញ្ចូនការទូរទាត់ប្រាក់ទៅកាន់</translation>
     </message>
     <message>
@@ -2414,7 +2490,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">&amp;ចុះហត្ថលេខា សារ</translation>
     </message>
     <message>
-        <source>The Particl address to sign the message with</source>
+        <source>The Bitcoin address to sign the message with</source>
         <translation type="unfinished">អាសយដ្ឋានប៊ីតខញនេះ ចុះហត្ថលេខានៅលើសារ</translation>
     </message>
     <message>
@@ -2438,7 +2514,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">ចម្លងហត្ថលេខដែលមានបច្ចុប្បន្នទៅកាន់ប្រព័ន្ធក្តារតមៀប</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Particl address</source>
+        <source>Sign the message to prove you own this Bitcoin address</source>
         <translation type="unfinished">ចុះហត្ថលេខាលើសារនេះដើម្បីបង្ហាញថាលោកអ្នកជាម្ចាស់អាសយដ្ឋានប៊ីតខញ</translation>
     </message>
     <message>
@@ -2466,7 +2542,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">ហត្ថលេខាត្រូវបានផ្តល់នៅពេលដែលសារត្រូវបានចុះហត្ថលេខា</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Particl address</source>
+        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
         <translation type="unfinished">ផ្ទៀងផ្ទាត់សារដើម្បីធានាថាវាត្រូវបានចុះហត្ថលេខាជាមួយនឹងអាសយដ្ឋានប៊ីតខញជាក់លាក់។</translation>
     </message>
     <message>
@@ -2543,6 +2619,16 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <source>abandoned</source>
         <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents an abandoned transaction.</extracomment>
         <translation type="unfinished">បានបោះបង់ចោល</translation>
+    </message>
+    <message>
+        <source>%1/unconfirmed</source>
+        <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents a transaction confirmed in at least one block, but less than 6 blocks.</extracomment>
+        <translation type="unfinished">%1 មិនទាន់បានបញ្ចាក់</translation>
+    </message>
+    <message>
+        <source>%1 confirmations</source>
+        <extracomment>Text explaining the current status of a transaction, shown in the status field of the details window for this transaction. This status represents a transaction confirmed in 6 or more blocks.</extracomment>
+        <translation type="unfinished">%1​ ការបញ្ចាក់</translation>
     </message>
     <message>
         <source>Status</source>
@@ -2637,6 +2723,13 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     </message>
 </context>
 <context>
+    <name>TransactionDescDialog</name>
+    <message>
+        <source>Details for %1</source>
+        <translation type="unfinished">លម្អិត %1</translation>
+    </message>
+</context>
+<context>
     <name>TransactionTableModel</name>
     <message>
         <source>Date</source>
@@ -2657,6 +2750,14 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     <message>
         <source>Abandoned</source>
         <translation type="unfinished">បានបោះបង់</translation>
+    </message>
+    <message>
+        <source>Confirming (%1 of %2 recommended confirmations)</source>
+        <translation type="unfinished">កំពុងបញ្ចាក់(%1 នៃ %2 សេចក្តីបញ្ចាក់ដែលបានណែនាំ)</translation>
+    </message>
+    <message>
+        <source>Confirmed (%1 confirmations)</source>
+        <translation type="unfinished">បានបញ្ចាក់(%1 ការបញ្ចាក់)</translation>
     </message>
     <message>
         <source>Conflicted</source>
@@ -2692,7 +2793,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     </message>
     <message>
         <source>(no label)</source>
-        <translation type="unfinished">(គ្មាន​ស្លាក​)</translation>
+        <translation type="unfinished">(គ្មាន​ស្លាក​សញ្ញា)</translation>
     </message>
     <message>
         <source>Transaction status. Hover over this field to show number of confirmations.</source>
@@ -2815,8 +2916,16 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">ការនាំចេញបានបរាជ័យ</translation>
     </message>
     <message>
+        <source>There was an error trying to save the transaction history to %1.</source>
+        <translation type="unfinished">មានបញ្ហាមួយក្នុងការព្យាយាមរក្សាទុកប្រវត្តិប្រត្តិបត្តិការ %1។</translation>
+    </message>
+    <message>
         <source>Exporting Successful</source>
         <translation type="unfinished">កំពុងនាំចេញដោយជោគជ័យ</translation>
+    </message>
+    <message>
+        <source>The transaction history was successfully saved to %1.</source>
+        <translation type="unfinished">ប្រវត្តប្រត្តិបត្តិការបានទទួលជោគជ័យ និង​បានរក្សាទុក %1។</translation>
     </message>
     <message>
         <source>Range:</source>
@@ -2910,8 +3019,16 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="unfinished">ថតចម្លងទុកមិនទទួលបានជោគជ័យ</translation>
     </message>
     <message>
+        <source>There was an error trying to save the wallet data to %1.</source>
+        <translation type="unfinished">មានបញ្ហាក្នុងការព្យាយាម រក្សាទុកទិន្ន័យកាបូបអេឡិចត្រូនិច %1។</translation>
+    </message>
+    <message>
         <source>Backup Successful</source>
         <translation type="unfinished">ចំម្លងទុកដោយជោគជ័យ</translation>
+    </message>
+    <message>
+        <source>The wallet data was successfully saved to %1.</source>
+        <translation type="unfinished">ទិន្ន័យកាបូបអេឡិចត្រូនិច ត្រូវបានរក្សាទុកដោយជោគជ័យ %1។</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -2943,10 +3060,6 @@ Go to File &gt; Open Wallet to load a wallet.
     <message>
         <source>%s is set very high!</source>
         <translation type="unfinished">%s ត្រូវបានកំណត់យ៉ាងខ្ពស់</translation>
-    </message>
-    <message>
-        <source>Cannot write to data directory '%s'; check permissions.</source>
-        <translation type="unfinished">មិនអាចសរសេរទៅកាន់ កន្លែងផ្ទុកទិន្នន័យ​ '%s'; ពិនិត្យមើលការអនុញ្ញាត។</translation>
     </message>
     <message>
         <source>The inputs size exceeds the maximum weight. Please try sending a smaller amount or manually consolidating your wallet's UTXOs</source>

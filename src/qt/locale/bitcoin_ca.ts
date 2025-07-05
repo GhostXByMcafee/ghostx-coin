@@ -58,13 +58,13 @@
         <translation type="unfinished">&amp;Tria</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Aquestes són les vostres adreces de Particl per a enviar els pagaments. Sempre reviseu l'import i l'adreça del destinatari abans de transferir monedes.</translation>
+        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Aquestes són les vostres adreces de Bitcoin per a enviar els pagaments. Sempre reviseu l'import i l'adreça del destinatari abans de transferir monedes.</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">Aquestes son les teves adreces de Particl per a rebre pagaments. Utilitza el botó "Crear nova adreça de recepció" de la pestanya de recepció per a crear una nova adreça.
+        <translation type="unfinished">Aquestes son les teves adreces de Bitcoin per a rebre pagaments. Utilitza el botó "Crear nova adreça de recepció" de la pestanya de recepció per a crear una nova adreça.
 Només és possible firmar amb adreces del tipus "legacy".</translation>
     </message>
     <message>
@@ -164,8 +164,8 @@ Només és possible firmar amb adreces del tipus "legacy".</translation>
         <translation type="unfinished">Confirma el xifratge de la cartera</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PARTICL&lt;/b&gt;!</source>
-        <translation type="unfinished">Avís: si xifreu la cartera i perdeu la contrasenya, &lt;b&gt;PERDREU TOTS ELS PARTICL&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
+        <translation type="unfinished">Avís: si xifreu la cartera i perdeu la contrasenya, &lt;b&gt;PERDREU TOTS ELS BITCOINS&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -184,8 +184,16 @@ Només és possible firmar amb adreces del tipus "legacy".</translation>
         <translation type="unfinished">Introduïu la contrasenya antiga i la contrasenya nova a la cartera.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your particl from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">Recorda que tot i xifrant la teva cartera, els teus particl no estan completament protegits de robatori a través de programari maliciós que estigui infectant el teu ordinador.</translation>
+        <source>Continue</source>
+        <translation type="unfinished">Continua</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Enrere</translation>
+    </message>
+    <message>
+        <source>Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">Recorda que tot i xifrant la teva cartera, els teus bitcoins no estan completament protegits de robatori a través de programari maliciós que estigui infectant el teu ordinador.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -273,7 +281,11 @@ Només és possible firmar amb adreces del tipus "legacy".</translation>
         <source>Internal error</source>
         <translation type="unfinished">Error intern</translation>
     </message>
-    </context>
+    <message>
+        <source>An internal error occurred. %1 will attempt to continue safely. This is an unexpected bug which can be reported as described below.</source>
+        <translation type="unfinished">S'ha produït un error intern. %1 intentarà continuar amb seguretat. Es tracta d’un error inesperat que es pot informar tal com es descriu a continuació.</translation>
+    </message>
+</context>
 <context>
     <name>QObject</name>
     <message>
@@ -299,12 +311,20 @@ Només és possible firmar amb adreces del tipus "legacy".</translation>
         <translation type="unfinished">desconegut</translation>
     </message>
     <message>
+        <source>Custom…</source>
+        <translation type="unfinished">Personalitzat…</translation>
+    </message>
+    <message>
         <source>Amount</source>
         <translation type="unfinished">Import</translation>
     </message>
     <message>
-        <source>Enter a Particl address (e.g. %1)</source>
-        <translation type="unfinished">Introduïu una adreça de Particl (p. ex. %1)</translation>
+        <source>Enter a Bitcoin address (e.g. %1)</source>
+        <translation type="unfinished">Introduïu una adreça de Bitcoin (p. ex. %1)</translation>
+    </message>
+    <message>
+        <source>Ctrl+W</source>
+        <translation type="unfinished">Control+W</translation>
     </message>
     <message>
         <source>Unroutable</source>
@@ -396,7 +416,11 @@ Només és possible firmar amb adreces del tipus "legacy".</translation>
             <numerusform>%n anys</numerusform>
         </translation>
     </message>
-    </context>
+    <message>
+        <source>default wallet</source>
+        <translation type="unfinished">cartera predeterminada</translation>
+    </message>
+</context>
 <context>
     <name>BitcoinGUI</name>
     <message>
@@ -465,8 +489,8 @@ Només és possible firmar amb adreces del tipus "legacy".</translation>
         <translation type="unfinished">El servidor proxy està &lt;b&gt;activat&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Particl address</source>
-        <translation type="unfinished">Envia monedes a una adreça Particl</translation>
+        <source>Send coins to a Bitcoin address</source>
+        <translation type="unfinished">Envia monedes a una adreça Bitcoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -509,16 +533,16 @@ Només és possible firmar amb adreces del tipus "legacy".</translation>
         <translation type="unfinished">Signa el &amp;missatge</translation>
     </message>
     <message>
-        <source>Sign messages with your Particl addresses to prove you own them</source>
-        <translation type="unfinished">Signa els missatges amb la seva adreça de Particl per a provar que les posseeixes</translation>
+        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <translation type="unfinished">Signa els missatges amb la seva adreça de Bitcoin per a provar que les posseeixes</translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
         <translation type="unfinished">&amp;Verifica el missatge</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Particl addresses</source>
-        <translation type="unfinished">Verifiqueu els missatges per a assegurar-vos que han estat signats amb una adreça Particl específica.</translation>
+        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
+        <translation type="unfinished">Verifiqueu els missatges per a assegurar-vos que han estat signats amb una adreça Bitcoin específica.</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
@@ -577,8 +601,8 @@ Només és possible firmar amb adreces del tipus "legacy".</translation>
         <translation type="unfinished">Connectant als iguals...</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and particl: URIs)</source>
-        <translation type="unfinished">Sol·licita pagaments (genera codis QR i particl: URI)</translation>
+        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
+        <translation type="unfinished">Sol·licita pagaments (genera codis QR i bitcoin: URI)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -628,16 +652,16 @@ Només és possible firmar amb adreces del tipus "legacy".</translation>
         <translation type="unfinished">Actualitzat</translation>
     </message>
     <message>
-        <source>Load Partially Signed Particl Transaction</source>
-        <translation type="unfinished">Carrega la transacció Particl signada parcialment</translation>
+        <source>Load Partially Signed Bitcoin Transaction</source>
+        <translation type="unfinished">Carrega la transacció Bitcoin signada parcialment</translation>
     </message>
     <message>
         <source>Load PSBT from &amp;clipboard…</source>
         <translation type="unfinished">Carrega la PSBT des del porta-retalls.</translation>
     </message>
     <message>
-        <source>Load Partially Signed Particl Transaction from clipboard</source>
-        <translation type="unfinished">Carrega la transacció de Particl signada parcialment des del porta-retalls</translation>
+        <source>Load Partially Signed Bitcoin Transaction from clipboard</source>
+        <translation type="unfinished">Carrega la transacció de Bitcoin signada parcialment des del porta-retalls</translation>
     </message>
     <message>
         <source>Node window</source>
@@ -656,8 +680,8 @@ Només és possible firmar amb adreces del tipus "legacy".</translation>
         <translation type="unfinished">Adreces de &amp;recepció</translation>
     </message>
     <message>
-        <source>Open a particl: URI</source>
-        <translation type="unfinished">Obrir un particl: URI</translation>
+        <source>Open a bitcoin: URI</source>
+        <translation type="unfinished">Obrir un bitcoin: URI</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -694,8 +718,8 @@ Només és possible firmar amb adreces del tipus "legacy".</translation>
         <translation type="unfinished">Migrar una cartera</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Particl command-line options</source>
-        <translation type="unfinished">Mostra el missatge d'ajuda del %1 per obtenir una llista amb les possibles opcions de línia d'ordres de Particl</translation>
+        <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
+        <translation type="unfinished">Mostra el missatge d'ajuda del %1 per obtenir una llista amb les possibles opcions de línia d'ordres de Bitcoin</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
@@ -704,10 +728,6 @@ Només és possible firmar amb adreces del tipus "legacy".</translation>
     <message>
         <source>Mask the values in the Overview tab</source>
         <translation type="unfinished">Emmascara els valors en la pestanya Visió general</translation>
-    </message>
-    <message>
-        <source>default wallet</source>
-        <translation type="unfinished">cartera predeterminada</translation>
     </message>
     <message>
         <source>No wallets available</source>
@@ -758,11 +778,11 @@ Només és possible firmar amb adreces del tipus "legacy".</translation>
         <translation type="unfinished">&amp;Mostra</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Particl network.</source>
+        <source>%n active connection(s) to Bitcoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
-            <numerusform>%n connexió activa a la xarxa Particl</numerusform>
-            <numerusform>%n connexions actives a la xarxa Particl</numerusform>
+            <numerusform>%n connexió activa a la xarxa Bitcoin</numerusform>
+            <numerusform>%n connexions actives a la xarxa Bitcoin</numerusform>
         </translation>
     </message>
     <message>
@@ -1116,10 +1136,6 @@ El procés de migració crearà una còpia de seguretat de la cartera abans de m
         <translation type="unfinished">Avís en l'obertura de la cartera</translation>
     </message>
     <message>
-        <source>default wallet</source>
-        <translation type="unfinished">cartera predeterminada</translation>
-    </message>
-    <message>
         <source>Open Wallet</source>
         <extracomment>Title of window indicating the progress of opening of a wallet.</extracomment>
         <translation type="unfinished">Obre la cartera</translation>
@@ -1189,7 +1205,7 @@ El procés de migració crearà una còpia de seguretat de la cartera abans de m
     </message>
     <message>
         <source>You are one step away from creating your new wallet!</source>
-        <translation type="unfinished">Només et queda un pas per a crear la teva nova cartera</translation>
+        <translation type="unfinished">A un pas de crear la teva nova cartera</translation>
     </message>
     <message>
         <source>Please provide a name and, if desired, enable any advanced options</source>
@@ -1285,8 +1301,8 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation type="unfinished">Edita l'adreça d'enviament</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Particl address.</source>
-        <translation type="unfinished">L'adreça introduïda «%1» no és una adreça de Particl vàlida.</translation>
+        <source>The entered address "%1" is not a valid Bitcoin address.</source>
+        <translation type="unfinished">L'adreça introduïda «%1» no és una adreça de Bitcoin vàlida.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -1372,8 +1388,8 @@ Això és ideal per a carteres de mode només lectura.</translation>
         </translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Particl block chain.</source>
-        <translation type="unfinished">%1 descarregarà i emmagatzemarà una còpia de la cadena de blocs Particl.</translation>
+        <source>%1 will download and store a copy of the Bitcoin block chain.</source>
+        <translation type="unfinished">%1 descarregarà i emmagatzemarà una còpia de la cadena de blocs Bitcoin.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1457,12 +1473,12 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation type="unfinished">Formulari</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the particl network, as detailed below.</source>
-        <translation type="unfinished">És possible que les transaccions recents encara no siguin visibles i, per tant, el saldo de la vostra cartera podria ser incorrecte. Aquesta informació serà correcta una vegada que la cartera hagi finalitzat la sincronització amb la xarxa particl, tal com es detalla més avall.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the bitcoin network, as detailed below.</source>
+        <translation type="unfinished">És possible que les transaccions recents encara no siguin visibles i, per tant, el saldo de la vostra cartera podria ser incorrecte. Aquesta informació serà correcta una vegada que la cartera hagi finalitzat la sincronització amb la xarxa bitcoin, tal com es detalla més avall.</translation>
     </message>
     <message>
-        <source>Attempting to spend particl that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation type="unfinished">Els intents de gastar particl que es veuen afectats per les transaccions que encara no s'hagin mostrat no seran acceptats per la xarxa.</translation>
+        <source>Attempting to spend bitcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation type="unfinished">Els intents de gastar bitcoins que es veuen afectats per les transaccions que encara no s'hagin mostrat no seran acceptats per la xarxa.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1512,8 +1528,8 @@ Això és ideal per a carteres de mode només lectura.</translation>
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open particl URI</source>
-        <translation type="unfinished">Obre Particl URI</translation>
+        <source>Open bitcoin URI</source>
+        <translation type="unfinished">Obre Bitcoin URI</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -1552,6 +1568,10 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation type="unfinished">Nombre de fils de &amp;verificació d'scripts</translation>
     </message>
     <message>
+        <source>Full path to a %1 compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">Camí complet a %1 script compatible amb Bitcoin Core (per exemple, C:\Downloads\hwi.exe o /Users/you/Downloads/hwi.py). Aneu amb compte: el programari maliciós pot robar-vos les monedes!</translation>
+    </message>
+    <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
         <translation type="unfinished">Adreça IP del proxy (p. ex. IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
@@ -1562,6 +1582,10 @@ Això és ideal per a carteres de mode només lectura.</translation>
     <message>
         <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Exit in the menu.</source>
         <translation type="unfinished">Minimitza en comptes de sortir de l'aplicació quan la finestra es tanca. Quan s'habilita aquesta opció l'aplicació es tancarà només quan se selecciona Surt del menú. </translation>
+    </message>
+    <message>
+        <source>Font in the Overview tab: </source>
+        <translation type="unfinished">Tipus de lletra a la pestanya Visió general:</translation>
     </message>
     <message>
         <source>Options set in this dialog are overridden by the command line:</source>
@@ -1596,8 +1620,18 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation type="unfinished">Revertir aquesta configuració requereix tornar a descarregar la cadena de blocs sencera un altre cop.</translation>
     </message>
     <message>
+        <source>Set the number of script verification threads. Negative values correspond to the number of cores you want to leave free to the system.</source>
+        <extracomment>Tooltip text for Options window setting that sets the number of script verification threads. Explains that negative values mean to leave these many cores free to the system.</extracomment>
+        <translation type="unfinished">Estableix el nombre de fils de verificació de l'script.  Els valors negatius corresponen al nombre de nuclis que voleu deixar lliures al sistema.</translation>
+    </message>
+    <message>
         <source>(0 = auto, &lt;0 = leave that many cores free)</source>
         <translation type="unfinished">(0 = auto, &lt;0 = deixa tants nuclis lliures)</translation>
+    </message>
+    <message>
+        <source>This allows you or a third party tool to communicate with the node through command-line and JSON-RPC commands.</source>
+        <extracomment>Tooltip text for Options window setting that enables the RPC server.</extracomment>
+        <translation type="unfinished">Això us permet a vosaltres o a una eina de tercers comunicar-vos amb el node mitjançant ordres de línia d'ordres i JSON-RPC.</translation>
     </message>
     <message>
         <source>Enable R&amp;PC server</source>
@@ -1607,6 +1641,16 @@ Això és ideal per a carteres de mode només lectura.</translation>
     <message>
         <source>W&amp;allet</source>
         <translation type="unfinished">&amp;Moneder</translation>
+    </message>
+    <message>
+        <source>Whether to set subtract fee from amount as default or not.</source>
+        <extracomment>Tooltip text for Options window setting that sets subtracting the fee from a sending amount as default.</extracomment>
+        <translation type="unfinished">Si s'ha d'establir la quota de resta de l'import per defecte o no.</translation>
+    </message>
+    <message>
+        <source>Subtract &amp;fee from amount by default</source>
+        <extracomment>An Options window setting to set subtracting the fee from a sending amount as default.</extracomment>
+        <translation type="unfinished">De manera predeterminada, resta &amp;fee de l'import</translation>
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
@@ -1626,28 +1670,17 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation type="unfinished">Activa els controls &amp;PSBT</translation>
     </message>
     <message>
+        <source>Whether to show PSBT controls.</source>
+        <extracomment>Tooltip text for options window setting that enables PSBT controls.</extracomment>
+        <translation type="unfinished">Si voleu mostrar els controls PSBT.</translation>
+    </message>
+    <message>
         <source>External Signer (e.g. hardware wallet)</source>
         <translation type="unfinished">Signador extern (per exemple, cartera de maquinari)</translation>
     </message>
     <message>
         <source>&amp;External signer script path</source>
         <translation type="unfinished">&amp;Camí de l'script del signatari extern</translation>
-    </message>
-    <message>
-        <source>Automatically open the Particl client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation type="unfinished">Obre el port del client de Particl al router de forma automàtica. Això només funciona quan el router implementa UPnP i l'opció està activada.</translation>
-    </message>
-    <message>
-        <source>Map port using &amp;UPnP</source>
-        <translation type="unfinished">Port obert amb &amp;UPnP</translation>
-    </message>
-    <message>
-        <source>Automatically open the Particl client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
-        <translation type="unfinished">Obriu automàticament el port client de Particl al router. Això només funciona quan el vostre router admet NAT-PMP i està activat. El port extern podria ser aleatori.</translation>
-    </message>
-    <message>
-        <source>Map port using NA&amp;T-PMP</source>
-        <translation type="unfinished">Port del mapa mitjançant NA&amp;T-PMP</translation>
     </message>
     <message>
         <source>Accept connections from outside.</source>
@@ -1658,8 +1691,8 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation type="unfinished">Permet connexions entrants</translation>
     </message>
     <message>
-        <source>Connect to the Particl network through a SOCKS5 proxy.</source>
-        <translation type="unfinished">Connecta a la xarxa Particl a través d'un proxy SOCKS5.</translation>
+        <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
+        <translation type="unfinished">Connecta a la xarxa Bitcoin a través d'un proxy SOCKS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1734,8 +1767,8 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation type="unfinished">Si voleu mostrar les funcions de control de monedes o no.</translation>
     </message>
     <message>
-        <source>Connect to the Particl network through a separate SOCKS5 proxy for Tor onion services.</source>
-        <translation type="unfinished">Connecteu-vos a la xarxa Particl mitjançant un servidor intermediari SOCKS5 separat per als serveis de ceba Tor.</translation>
+        <source>Connect to the Bitcoin network through a separate SOCKS5 proxy for Tor onion services.</source>
+        <translation type="unfinished">Connecteu-vos a la xarxa Bitcoin mitjançant un servidor intermediari SOCKS5 separat per als serveis de ceba Tor.</translation>
     </message>
     <message>
         <source>Use separate SOCKS&amp;5 proxy to reach peers via Tor onion services:</source>
@@ -1809,14 +1842,21 @@ Això és ideal per a carteres de mode només lectura.</translation>
     </message>
 </context>
 <context>
+    <name>OptionsModel</name>
+    <message>
+        <source>Could not read setting "%1", %2.</source>
+        <translation type="unfinished">No s'ha pogut llegir la configuració "%1", %2.</translation>
+    </message>
+</context>
+<context>
     <name>OverviewPage</name>
     <message>
         <source>Form</source>
         <translation type="unfinished">Formulari</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Particl network after a connection is established, but this process has not completed yet.</source>
-        <translation type="unfinished">La informació mostrada pot no estar al dia. El vostra cartera se sincronitza automàticament amb la xarxa Particl un cop s'ha establert connexió, però aquest proces encara no ha finalitzat.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation type="unfinished">La informació mostrada pot no estar al dia. El vostra cartera se sincronitza automàticament amb la xarxa Bitcoin un cop s'ha establert connexió, però aquest proces encara no ha finalitzat.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1914,6 +1954,10 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation type="unfinished">Ha fallat la firma de la transacció: %1</translation>
     </message>
     <message>
+        <source>Cannot sign inputs while wallet is locked.</source>
+        <translation type="unfinished">No es poden signar les entrades mentre la cartera està bloquejada.</translation>
+    </message>
+    <message>
         <source>Could not sign any more inputs.</source>
         <translation type="unfinished">No s'han pogut firmar més entrades.</translation>
     </message>
@@ -1949,6 +1993,10 @@ Això és ideal per a carteres de mode només lectura.</translation>
     <message>
         <source>PSBT saved to disk.</source>
         <translation type="unfinished">PSBT guardada al disc.</translation>
+    </message>
+    <message>
+        <source>Sends %1 to %2</source>
+        <translation type="unfinished">Envia %1 a %2</translation>
     </message>
     <message>
         <source>own address</source>
@@ -2010,16 +2058,16 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation type="unfinished">Error de la sol·licitud de pagament</translation>
     </message>
     <message>
-        <source>Cannot start particl: click-to-pay handler</source>
-        <translation type="unfinished">No es pot iniciar particl: controlador click-to-pay</translation>
+        <source>Cannot start bitcoin: click-to-pay handler</source>
+        <translation type="unfinished">No es pot iniciar bitcoin: controlador click-to-pay</translation>
     </message>
     <message>
         <source>URI handling</source>
         <translation type="unfinished">Gestió d'URI</translation>
     </message>
     <message>
-        <source>'particl://' is not a valid URI. Use 'particl:' instead.</source>
-        <translation type="unfinished">'particl://' no és una URI vàlida. Usi 'particl:' en lloc seu.</translation>
+        <source>'bitcoin://' is not a valid URI. Use 'bitcoin:' instead.</source>
+        <translation type="unfinished">'bitcoin://' no és una URI vàlida. Usi 'bitcoin:' en lloc seu.</translation>
     </message>
     <message>
         <source>Cannot process payment request because BIP70 is not supported.
@@ -2030,8 +2078,8 @@ A causa dels defectes generalitzats de seguretat del BIP70, es recomana que s'ig
 Si rebeu aquest error, haureu de sol·licitar al comerciant que proporcioni un URI compatible amb BIP21.</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Particl address or malformed URI parameters.</source>
-        <translation type="unfinished">L'URI no pot ser analitzat! Això pot ser a causa d'una adreça de Particl no vàlida o per paràmetres URI amb mal format.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
+        <translation type="unfinished">L'URI no pot ser analitzat! Això pot ser a causa d'una adreça de Bitcoin no vàlida o per paràmetres URI amb mal format.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -2213,6 +2261,14 @@ Si rebeu aquest error, haureu de sol·licitar al comerciant que proporcioni un U
     <message>
         <source>Select a peer to view detailed information.</source>
         <translation type="unfinished">Seleccioneu un igual per a mostrar informació detallada.</translation>
+    </message>
+    <message>
+        <source>Transport</source>
+        <translation type="unfinished">Transporta</translation>
+    </message>
+    <message>
+        <source>Session ID</source>
+        <translation type="unfinished">Sessió ID</translation>
     </message>
     <message>
         <source>Version</source>
@@ -2443,6 +2499,10 @@ Si rebeu aquest error, haureu de sol·licitar al comerciant que proporcioni un U
         <translation type="unfinished">Activitat de xarxa inhabilitada</translation>
     </message>
     <message>
+        <source>None</source>
+        <translation type="unfinished">Cap</translation>
+    </message>
+    <message>
         <source>Executing command without any wallet</source>
         <translation type="unfinished">S'està executant l'ordre sense cap cartera</translation>
     </message>
@@ -2520,8 +2580,8 @@ No utilitzeu aquesta consola sense entendre completament les ramificacions d'una
         <translation type="unfinished">&amp;Missatge:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Particl network.</source>
-        <translation type="unfinished">Un missatge opcional que s'adjuntarà a la sol·licitud de pagament, que es mostrarà quan s'obri la sol·licitud. Nota: El missatge no s'enviarà amb el pagament per la xarxa Particl.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bitcoin network.</source>
+        <translation type="unfinished">Un missatge opcional que s'adjuntarà a la sol·licitud de pagament, que es mostrarà quan s'obri la sol·licitud. Nota: El missatge no s'enviarà amb el pagament per la xarxa Bitcoin.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2640,8 +2700,7 @@ No utilitzeu aquesta consola sense entendre completament les ramificacions d'una
     </message>
     <message>
         <source>&amp;Verify</source>
-        <translation type="unfinished">&amp;Verifica
-</translation>
+        <translation type="unfinished">&amp;Verifica</translation>
     </message>
     <message>
         <source>Verify this address on e.g. a hardware wallet screen</source>
@@ -2793,8 +2852,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
 Nota: atès que la tarifa es calcula per byte, una tarifa de "100 satoshis per kvB" per a una mida de transacció de 500 bytes virtuals (la meitat d'1 kvB) donaria finalment una tarifa de només 50 satoshis.</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for particl transactions than the network can process.</source>
-        <translation type="unfinished">Quan no hi ha prou espai en els blocs per a encabir totes les transaccions, els miners i així mateix els nodes de trànsit poden exigir una taxa mínima. És acceptable pagar únicament la taxa mínima, però tingueu present que pot resultar que la vostra transacció no sigui mai confirmada mentre hi hagi més demanda de transaccions particl de les que la xarxa pot processar.</translation>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for bitcoin transactions than the network can process.</source>
+        <translation type="unfinished">Quan no hi ha prou espai en els blocs per a encabir totes les transaccions, els miners i així mateix els nodes de trànsit poden exigir una taxa mínima. És acceptable pagar únicament la taxa mínima, però tingueu present que pot resultar que la vostra transacció no sigui mai confirmada mentre hi hagi més demanda de transaccions bitcoin de les que la xarxa pot processar.</translation>
     </message>
     <message>
         <source>A too low fee might result in a never confirming transaction (read the tooltip)</source>
@@ -2879,8 +2938,8 @@ Nota: atès que la tarifa es calcula per byte, una tarifa de "100 satoshis per k
         <translation type="unfinished">Creació sense firmar</translation>
     </message>
     <message>
-        <source>Creates a Partially Signed Particl Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation type="unfinished">Crea una transacció particl parcialment signada (PSBT) per a utilitzar, per exemple,  amb una cartera %1 fora de línia o amb una cartera compatible amb PSBT.</translation>
+        <source>Creates a Partially Signed Bitcoin Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation type="unfinished">Crea una transacció bitcoin parcialment signada (PSBT) per a utilitzar, per exemple,  amb una cartera %1 fora de línia o amb una cartera compatible amb PSBT.</translation>
     </message>
     <message>
         <source>%1 to '%2'</source>
@@ -2935,9 +2994,9 @@ Nota: atès que la tarifa es calcula per byte, una tarifa de "100 satoshis per k
         <translation type="unfinished">Pot incrementar la tarifa més tard (senyala Replace-By-Fee o substitució per tarifa, BIP-125).</translation>
     </message>
     <message>
-        <source>Please, review your transaction proposal. This will produce a Partially Signed Particl Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <source>Please, review your transaction proposal. This will produce a Partially Signed Bitcoin Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can only create a PSBT. This string is displayed when private keys are disabled and an external signer is not available.</extracomment>
-        <translation type="unfinished">Si us plau, revisa la teva proposta de transacció. Es produirà una transacció de Particl amb firma parcial (PSBT) que podeu guardar o copiar i després firmar, per exemple, amb una cartera %1, o amb una cartera física compatible amb PSBT.</translation>
+        <translation type="unfinished">Si us plau, revisa la teva proposta de transacció. Es produirà una transacció de Bitcoin amb firma parcial (PSBT) que podeu guardar o copiar i després firmar, per exemple, amb una cartera %1, o amb una cartera física compatible amb PSBT.</translation>
     </message>
     <message>
         <source>Do you want to create this transaction?</source>
@@ -3011,8 +3070,8 @@ Nota: atès que la tarifa es calcula per byte, una tarifa de "100 satoshis per k
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Particl address</source>
-        <translation type="unfinished">Avís: adreça Particl no vàlida</translation>
+        <source>Warning: Invalid Bitcoin address</source>
+        <translation type="unfinished">Avís: adreça Bitcoin no vàlida</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -3050,8 +3109,8 @@ Nota: atès que la tarifa es calcula per byte, una tarifa de "100 satoshis per k
         <translation type="unfinished">Escull una adreça feta servir anteriorment</translation>
     </message>
     <message>
-        <source>The Particl address to send the payment to</source>
-        <translation type="unfinished">L'adreça Particl on enviar el pagament</translation>
+        <source>The Bitcoin address to send the payment to</source>
+        <translation type="unfinished">L'adreça Bitcoin on enviar el pagament</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -3070,8 +3129,8 @@ Nota: atès que la tarifa es calcula per byte, una tarifa de "100 satoshis per k
         <translation type="unfinished">L’import a enviar a la unitat seleccionada</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less particl than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation type="unfinished">La tarifa es deduirà de l'import que s'enviarà. El destinatari rebrà menys particl que les que introduïu al camp d'import. Si se seleccionen múltiples destinataris, la tarifa es dividirà per igual.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less bitcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation type="unfinished">La tarifa es deduirà de l'import que s'enviarà. El destinatari rebrà menys bitcoins que les que introduïu al camp d'import. Si se seleccionen múltiples destinataris, la tarifa es dividirà per igual.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -3090,8 +3149,8 @@ Nota: atès que la tarifa es calcula per byte, una tarifa de "100 satoshis per k
         <translation type="unfinished">Introduïu una etiqueta per a aquesta adreça per afegir-la a la llista d'adreces utilitzades</translation>
     </message>
     <message>
-        <source>A message that was attached to the particl: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Particl network.</source>
-        <translation type="unfinished">Un missatge que s'ha adjuntat al particl: URI que s'emmagatzemarà amb la transacció per a la vostra referència. Nota: el missatge no s'enviarà a través de la xarxa Particl.</translation>
+        <source>A message that was attached to the bitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bitcoin network.</source>
+        <translation type="unfinished">Un missatge que s'ha adjuntat al bitcoin: URI que s'emmagatzemarà amb la transacció per a la vostra referència. Nota: el missatge no s'enviarà a través de la xarxa Bitcoin.</translation>
     </message>
 </context>
 <context>
@@ -3116,12 +3175,8 @@ Nota: atès que la tarifa es calcula per byte, una tarifa de "100 satoshis per k
         <translation type="unfinished">&amp;Signa el missatge</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive particl sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation type="unfinished">Podeu signar missatges/acords amb les vostres adreces per a provar que rebeu les particl que s'hi envien. Aneu amb compte no signar res que sigui vague o aleatori, perquè en alguns atacs de suplantació es pot provar que hi signeu la vostra identitat. Només signeu aquelles declaracions completament detallades en què hi esteu d'acord. </translation>
-    </message>
-    <message>
-        <source>The Particl address to sign the message with</source>
-        <translation type="unfinished">L'adreça Particl amb què signar el missatge</translation>
+        <source>The Bitcoin address to sign the message with</source>
+        <translation type="unfinished">L'adreça Bitcoin amb què signar el missatge</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3148,8 +3203,8 @@ Nota: atès que la tarifa es calcula per byte, una tarifa de "100 satoshis per k
         <translation type="unfinished">Copia la signatura actual al porta-retalls del sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Particl address</source>
-        <translation type="unfinished">Signa el missatge per a provar que ets propietari d'aquesta adreça Particl</translation>
+        <source>Sign the message to prove you own this Bitcoin address</source>
+        <translation type="unfinished">Signa el missatge per a provar que ets propietari d'aquesta adreça Bitcoin</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3172,8 +3227,8 @@ Nota: atès que la tarifa es calcula per byte, una tarifa de "100 satoshis per k
         <translation type="unfinished">Introduïu l'adreça del receptor, el missatge (assegureu-vos de copiar els salts de línia, espais, tabuladors, etc. exactament) i signatura de sota per a verificar el missatge. Tingueu cura de no llegir més en la signatura del que està al missatge signat, per a evitar ser enganyat per un atac d'home-en-el-mig. Tingueu en compte que això només demostra que la part que signa rep amb l'adreça, i no es pot provar l'enviament de qualsevol transacció!</translation>
     </message>
     <message>
-        <source>The Particl address the message was signed with</source>
-        <translation type="unfinished">L'adreça Particl amb què va ser signat el missatge</translation>
+        <source>The Bitcoin address the message was signed with</source>
+        <translation type="unfinished">L'adreça Bitcoin amb què va ser signat el missatge</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -3184,8 +3239,8 @@ Nota: atès que la tarifa es calcula per byte, una tarifa de "100 satoshis per k
         <translation type="unfinished">La signatura donada quan es va signar el missatge</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Particl address</source>
-        <translation type="unfinished">Verificar el missatge per a assegurar-se que ha estat signat amb una adreça Particl específica</translation>
+        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
+        <translation type="unfinished">Verificar el missatge per a assegurar-se que ha estat signat amb una adreça Bitcoin específica</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3206,10 +3261,6 @@ Nota: atès que la tarifa es calcula per byte, una tarifa de "100 satoshis per k
     <message>
         <source>Please check the address and try again.</source>
         <translation type="unfinished">Comproveu l'adreça i torneu-ho a provar.</translation>
-    </message>
-    <message>
-        <source>The entered address does not refer to a key.</source>
-        <translation type="unfinished">L'adreça introduïda no referencia a cap clau.</translation>
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
@@ -3328,10 +3379,8 @@ Nota: atès que la tarifa es calcula per byte, una tarifa de "100 satoshis per k
     <message numerus="yes">
         <source>matures in %n more block(s)</source>
         <translation type="unfinished">
-            <numerusform>madura en %n bloc més
-</numerusform>
-            <numerusform>madura en %n blocs més
-</numerusform>
+            <numerusform>madura en %n bloc més</numerusform>
+            <numerusform>madura en %n blocs més</numerusform>
         </translation>
     </message>
     <message>
@@ -3752,11 +3801,6 @@ Ves a Arxiu &gt; Obrir Cartera per a carregar cartera.
         <translation type="unfinished">PSBT copiada</translation>
     </message>
     <message>
-        <source>Copied to clipboard</source>
-        <comment>Fee-bump PSBT saved</comment>
-        <translation type="unfinished">Copiat al portaretalls</translation>
-    </message>
-    <message>
         <source>Can't sign transaction.</source>
         <translation type="unfinished">No es pot signar la transacció.</translation>
     </message>
@@ -3767,10 +3811,6 @@ Ves a Arxiu &gt; Obrir Cartera per a carregar cartera.
     <message>
         <source>Can't display address</source>
         <translation type="unfinished">No es pot mostrar l'adreça</translation>
-    </message>
-    <message>
-        <source>default wallet</source>
-        <translation type="unfinished">cartera predeterminada</translation>
     </message>
 </context>
 <context>
@@ -3820,16 +3860,12 @@ Ves a Arxiu &gt; Obrir Cartera per a carregar cartera.
         <translation type="unfinished">Els desenvolupadors %s</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool particl-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">%s està malmès. Proveu d’utilitzar l’eina particl-wallet per a recuperar o restaurar una còpia de seguretat.</translation>
+        <source>%s corrupt. Try using the wallet tool bitcoin-wallet to salvage or restoring a backup.</source>
+        <translation type="unfinished">%s està malmès. Proveu d’utilitzar l’eina bitcoin-wallet per a recuperar o restaurar una còpia de seguretat.</translation>
     </message>
     <message>
         <source>Cannot downgrade wallet from version %i to version %i. Wallet version unchanged.</source>
         <translation type="unfinished">No es pot degradar la cartera de la versió %i a la versió %i. La versió de la cartera no ha canviat.</translation>
-    </message>
-    <message>
-        <source>Cannot obtain a lock on data directory %s. %s is probably already running.</source>
-        <translation type="unfinished">No es pot obtenir un bloqueig al directori de dades %s. %s probablement ja s'estigui executant.</translation>
     </message>
     <message>
         <source>Cannot upgrade a non HD split wallet from version %i to version %i without upgrading to support pre-split keypool. Please use version %i or no version specified.</source>
@@ -3848,8 +3884,8 @@ Ves a Arxiu &gt; Obrir Cartera per a carregar cartera.
         <translation type="unfinished">Error: el registre de l'identificador del fitxer de bolcat és incorrecte. S'ha obtingut «%s», s'esperava «%s».</translation>
     </message>
     <message>
-        <source>Error: Dumpfile version is not supported. This version of particl-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
-        <translation type="unfinished">Error: la versió del fitxer de bolcat no és compatible. Aquesta versió de particl-wallet només admet fitxers de bolcat de la versió 1. S'ha obtingut un fitxer de bolcat amb la versió %s</translation>
+        <source>Error: Dumpfile version is not supported. This version of bitcoin-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
+        <translation type="unfinished">Error: la versió del fitxer de bolcat no és compatible. Aquesta versió de bitcoin-wallet només admet fitxers de bolcat de la versió 1. S'ha obtingut un fitxer de bolcat amb la versió %s</translation>
     </message>
     <message>
         <source>Error: Legacy wallets only support the "legacy", "p2sh-segwit", and "bech32" address types</source>
@@ -3874,10 +3910,6 @@ Ves a Arxiu &gt; Obrir Cartera per a carregar cartera.
     <message>
         <source>No wallet file format provided. To use createfromdump, -format=&lt;format&gt; must be provided.</source>
         <translation type="unfinished">No s'ha proporcionat cap format de fitxer de cartera. Per a utilitzar createfromdump, s'ha de proporcionar&lt;format&gt;.</translation>
-    </message>
-    <message>
-        <source>Please check that your computer's date and time are correct! If your clock is wrong, %s will not work properly.</source>
-        <translation type="unfinished">Comproveu que la data i hora de l'ordinador són correctes. Si el rellotge és incorrecte, %s no funcionarà correctament.</translation>
     </message>
     <message>
         <source>Please contribute if you find %s useful. Visit %s for further information about the software.</source>
@@ -3964,10 +3996,6 @@ Ves a Arxiu &gt; Obrir Cartera per a carregar cartera.
         <translation type="unfinished">-maxmempool ha de tenir almenys %d MB</translation>
     </message>
     <message>
-        <source>A fatal internal error occurred, see debug.log for details</source>
-        <translation type="unfinished">S'ha produït un error intern fatal. Consulteu debug.log per a més detalls</translation>
-    </message>
-    <message>
         <source>Cannot resolve -%s address: '%s'</source>
         <translation type="unfinished">No es pot resoldre -%s adreça: '%s'</translation>
     </message>
@@ -3976,13 +4004,8 @@ Ves a Arxiu &gt; Obrir Cartera per a carregar cartera.
         <translation type="unfinished">No es poden configurar -peerblockfilters sense -blockfilterindex.</translation>
     </message>
     <message>
-        <source>Cannot write to data directory '%s'; check permissions.</source>
-        <translation type="unfinished">No es pot escriure en el directori de dades "%s". Reviseu-ne els permisos.</translation>
-    </message>
-    <message>
         <source>%s is set very high! Fees this large could be paid on a single transaction.</source>
-        <translation type="unfinished">%s especificat molt alt! Tarifes tan grans podrien pagar-se en una única transacció.
-</translation>
+        <translation type="unfinished">%s especificat molt alt! Tarifes tan grans podrien pagar-se en una única transacció.</translation>
     </message>
     <message>
         <source>Error reading %s! All keys read correctly, but transaction data or address metadata may be missing or incorrect.</source>
@@ -3994,7 +4017,7 @@ Ves a Arxiu &gt; Obrir Cartera per a carregar cartera.
     </message>
     <message>
         <source>Invalid amount for %s=&lt;amount&gt;: '%s' (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
-        <translation type="unfinished">Import no vàlid per a %s=&lt;amount&gt;: '%s' (cal que sigui com a mínim la comissió de minrelay de %s per evitar que les comissions s'encallin)</translation>
+        <translation type="unfinished">Import no vàlid per a %s=&lt;amount&gt;: '%s' (cal que sigui com a mínim la tarifa de minrelay de %s per evi tar que les tarifes s'encallin)</translation>
     </message>
     <message>
         <source>Config setting for %s only applied on %s network when in [%s] section.</source>
@@ -4015,10 +4038,6 @@ Ves a Arxiu &gt; Obrir Cartera per a carregar cartera.
     <message>
         <source>Disk space is too low!</source>
         <translation type="unfinished">L'espai de disc és insuficient!</translation>
-    </message>
-    <message>
-        <source>Do you want to rebuild the block database now?</source>
-        <translation type="unfinished">Voleu reconstruir la base de dades de blocs ara?</translation>
     </message>
     <message>
         <source>Done loading</source>
@@ -4150,6 +4169,10 @@ Ves a Arxiu &gt; Obrir Cartera per a carregar cartera.
         <translation type="unfinished">S'ha produït un error en la verificació de sanejament d'inicialització. S'està tancant %s.</translation>
     </message>
     <message>
+        <source>Input not found or already spent</source>
+        <translation type="unfinished">Input no trobat o s'ha gastat</translation>
+    </message>
+    <message>
         <source>Insufficient funds</source>
         <translation type="unfinished">Balanç insuficient</translation>
     </message>
@@ -4208,10 +4231,6 @@ Ves a Arxiu &gt; Obrir Cartera per a carregar cartera.
     <message>
         <source>Need to specify a port with -whitebind: '%s'</source>
         <translation type="unfinished">Cal especificar un port amb -whitebind: «%s»</translation>
-    </message>
-    <message>
-        <source>Not enough file descriptors available.</source>
-        <translation type="unfinished">No hi ha suficient descriptors de fitxers disponibles.</translation>
     </message>
     <message>
         <source>Prune cannot be configured with a negative value.</source>

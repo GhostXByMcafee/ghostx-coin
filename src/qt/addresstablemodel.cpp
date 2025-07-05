@@ -386,54 +386,22 @@ QString AddressTableModel::addRow(const QString &type, const QString &label, con
     {
         QString label_escaped = GUIUtil::particl::escapeQString(label);
         // Generate a new address to associate with given label
-        QString sCommand;
-        switch (addrType) {
-            case ADDR_STEALTH:
-                if (walletModel->isHardwareLinkedWallet()) {
-                    sCommand = "devicegetnewstealthaddress \"" + label_escaped + "\"";
-                } else {
-                    sCommand = "getnewstealthaddress \"" + label_escaped + "\"  0  0 ";
-                    sCommand += (address_type == OutputType::BECH32) ? " true " : " false ";
-                }
-                break;
-            case ADDR_EXT:
-                sCommand = "getnewextaddress ";
-                sCommand += "\"" + label_escaped + "\" ";
-                sCommand += " \"\" ";
-                sCommand += (address_type == OutputType::BECH32) ? " true " : " false ";
-                break;
-            default:
-                sCommand = "getnewaddress ";
-                sCommand += "\"" + label_escaped + "\" ";
-                sCommand += (address_type == OutputType::BECH32) ? " true " : " false ";
-                sCommand += " false ";
-                sCommand += (addrType == ADDR_STANDARD256) ? " true " : " false ";
-                break;
-        }
-
-        UniValue rv;
-        if (!walletModel->tryCallRpc(sCommand, rv)) {
-            editStatus = RPC_ERROR;
-            return QString();
-        }
-        return QString::fromStdString(rv.get_str());
-        /* Particl TODO: unlock request
-        auto op_dest = walletModel->wallet().getNewDestination(address_type, strLabel);
-        if (!op_dest) {
+        if (auto dest{walletModel->wallet().getNewDestination(address_type, strLabel)}) {
+            strAddress = EncodeDestination(*dest);
+        } else {
             WalletModel::UnlockContext ctx(walletModel->requestUnlock());
             if (!ctx.isValid()) {
                 // Unlock wallet failed or was cancelled
                 editStatus = WALLET_UNLOCK_FAILURE;
                 return QString();
             }
-            op_dest = walletModel->wallet().getNewDestination(address_type, strLabel);
-            if (!op_dest) {
+            if (auto dest_retry{walletModel->wallet().getNewDestination(address_type, strLabel)}) {
+                strAddress = EncodeDestination(*dest_retry);
+            } else {
                 editStatus = KEY_GENERATION_FAILURE;
                 return QString();
             }
         }
-        strAddress = EncodeDestination(*op_dest);
-        */
     }
     else
     {

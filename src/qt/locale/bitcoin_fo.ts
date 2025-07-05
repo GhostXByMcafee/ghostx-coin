@@ -77,8 +77,8 @@
         <translation type="unfinished">Upphædd</translation>
     </message>
     <message>
-        <source>Enter a Particl address (e.g. %1)</source>
-        <translation type="unfinished">Inntøppa eina Particl adressu (t.d. %1)</translation>
+        <source>Enter a Bitcoin address (e.g. %1)</source>
+        <translation type="unfinished">Inntøppa eina Bitcoin adressu (t.d. %1)</translation>
     </message>
     <message>
         <source>Ctrl+W</source>
@@ -189,8 +189,8 @@
         <translation type="unfinished">&amp;Undirrita  boð</translation>
     </message>
     <message>
-        <source>Sign messages with your Particl addresses to prove you own them</source>
-        <translation type="unfinished">Undirrita boðini við tíni Particl-adressu fyri at prógva at tey eru tíni</translation>
+        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <translation type="unfinished">Undirrita boðini við tíni Bitcoin-adressu fyri at prógva at tey eru tíni</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -240,11 +240,11 @@
         <translation type="unfinished">%1 viðskiftari</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Particl network.</source>
+        <source>%n active connection(s) to Bitcoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
-            <numerusform>%n virkið samband til Particl netið.</numerusform>
-            <numerusform>%n virkin sambond til Particl netið.</numerusform>
+            <numerusform>%n virkið samband til Bitcoin netið.</numerusform>
+            <numerusform>%n virkin sambond til Bitcoin netið.</numerusform>
         </translation>
     </message>
     <message>
@@ -286,7 +286,7 @@
     </message>
     <message>
         <source>Bytes:</source>
-        <translation type="unfinished">Byte:</translation>
+        <translation type="unfinished">Být:</translation>
     </message>
     <message>
         <source>Amount:</source>
@@ -496,14 +496,6 @@
     <message>
         <source>&amp;Reset Options</source>
         <translation type="unfinished">&amp;Endurstilla stillingar</translation>
-    </message>
-    <message>
-        <source>Automatically open the Particl client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation type="unfinished">Sjálvvirkandi upplating av Bicoin viðskiftara porturinum á beinaranum. Hetta virkar bert um UPnP er virkja í beinaranum, á netinum tú brúkar.</translation>
-    </message>
-    <message>
-        <source>Automatically open the Particl client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
-        <translation type="unfinished">Sjálvvirkandi upplating av Bicoin viðskiftara porturinum á beinaranum. Hetta virkar bert um NAT-PMP er virkja í beinaranum, á netinum tú brúkar. Ytra porturnummari kann vera tilvildarligt.</translation>
     </message>
     <message>
         <source>&amp;Port:</source>
@@ -864,7 +856,7 @@
     </message>
     <message>
         <source>Bytes:</source>
-        <translation type="unfinished">Byte:</translation>
+        <translation type="unfinished">Být:</translation>
     </message>
     <message>
         <source>Amount:</source>
@@ -881,6 +873,10 @@
     <message>
         <source>Custom change address</source>
         <translation type="unfinished">Adressa til vekslipening</translation>
+    </message>
+    <message>
+        <source>per kilobyte</source>
+        <translation type="unfinished">per kilobýt</translation>
     </message>
     <message>
         <source>Hide</source>
@@ -955,8 +951,8 @@
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Particl address</source>
-        <translation type="unfinished">Ávaring: Ógildig Particl adressa</translation>
+        <source>Warning: Invalid Bitcoin address</source>
+        <translation type="unfinished">Ávaring: Ógildig Bitcoin adressa</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -1005,12 +1001,8 @@
         <translation type="unfinished">&amp;Undirrita Boð</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive particl sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation type="unfinished">Tú kann skriva undir boð/sáttmálar við tínum adressum, fyri at prógva at tú kanst móttaka particl sendar til tær. Ver ansin so tú ikki skrivar undir nakað ógreitt ella tilvildarligt, tí fysking-álop kunnu royna at snýta teg til at latað tín samleika til tey. Undirrita einans nágreiniligar útsagnir ið tú tekur undir við.</translation>
-    </message>
-    <message>
-        <source>The Particl address to sign the message with</source>
-        <translation type="unfinished">Particl adressan at undirskriva boðini við</translation>
+        <source>The Bitcoin address to sign the message with</source>
+        <translation type="unfinished">Bitcoin adressan at undirskriva boðini við</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1033,8 +1025,8 @@
         <translation type="unfinished">Undirskrift</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Particl address</source>
-        <translation type="unfinished">Undirskriva boðini fyri at prógva at Particl-adressan er tín</translation>
+        <source>Sign the message to prove you own this Bitcoin address</source>
+        <translation type="unfinished">Undirskriva boðini fyri at prógva at Bitcoin-adressan er tín</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1045,8 +1037,8 @@
         <translation type="unfinished">Tómstilla &amp;alt</translation>
     </message>
     <message>
-        <source>The Particl address the message was signed with</source>
-        <translation type="unfinished">Particl-adressan ið undirskrivaði boðini</translation>
+        <source>The Bitcoin address the message was signed with</source>
+        <translation type="unfinished">Bitcoin-adressan ið undirskrivaði boðini</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -1267,10 +1259,6 @@
     <message>
         <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any peer will connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
         <translation type="unfinished">%s umbøn at lurta á portur %u. Hetta portrið er tulkað "óhóskandi" og tí er ósannlíkt at nakar viðskiftari sambindur í tað. Sí lista yvir "óhóskandi" portur og nágreiniligari upplýsingar í doc/p2p-bad-ports.md.</translation>
-    </message>
-    <message>
-        <source>Please check that your computer's date and time are correct! If your clock is wrong, %s will not work properly.</source>
-        <translation type="unfinished">Vinaliga tryggja at dagfesting og tíð, í teldu tíni, eru røtt! Er klokkan skeiv virkar %s ikki sum ætlað.</translation>
     </message>
     <message>
         <source>%s is set very high!</source>

@@ -60,7 +60,9 @@ class Coin;
 class SigningProvider;
 enum class MemPoolRemovalReason;
 enum class SigningResult;
-enum class TransactionError;
+namespace common {
+enum class PSBTError;
+} // namespace common
 namespace interfaces {
 class Wallet;
 }
@@ -86,12 +88,9 @@ class CHDWallet;
 namespace wallet {
 struct WalletContext;
 
-//! Explicitly unload and delete the wallet.
-//! Blocks the current thread after signaling the unload intent so that all
-//! wallet pointer owners release the wallet.
-//! Note that, when blocking is not required, the wallet is implicitly unloaded
-//! by the shared pointer deleter.
-void UnloadWallet(std::shared_ptr<CWallet>&& wallet);
+//! Explicitly delete the wallet.
+//! Blocks the current thread until the wallet is destructed.
+void WaitForDeleteWallet(std::shared_ptr<CWallet>&& wallet);
 
 bool AddWallet(WalletContext& context, const std::shared_ptr<CWallet>& wallet);
 bool RemoveWallet(WalletContext& context, const std::shared_ptr<CWallet>& wallet, std::optional<bool> load_on_start, std::vector<bilingual_str>& warnings);
@@ -101,7 +100,7 @@ std::shared_ptr<CWallet> GetDefaultWallet(WalletContext& context, size_t& count)
 std::shared_ptr<CWallet> GetWallet(WalletContext& context, const std::string& name);
 std::shared_ptr<CWallet> LoadWallet(WalletContext& context, const std::string& name, std::optional<bool> load_on_start, const DatabaseOptions& options, DatabaseStatus& status, bilingual_str& error, std::vector<bilingual_str>& warnings);
 std::shared_ptr<CWallet> CreateWallet(WalletContext& context, const std::string& name, std::optional<bool> load_on_start, DatabaseOptions& options, DatabaseStatus& status, bilingual_str& error, std::vector<bilingual_str>& warnings);
-std::shared_ptr<CWallet> RestoreWallet(WalletContext& context, const fs::path& backup_file, const std::string& wallet_name, std::optional<bool> load_on_start, DatabaseStatus& status, bilingual_str& error, std::vector<bilingual_str>& warnings);
+std::shared_ptr<CWallet> RestoreWallet(WalletContext& context, const fs::path& backup_file, const std::string& wallet_name, std::optional<bool> load_on_start, DatabaseStatus& status, bilingual_str& error, std::vector<bilingual_str>& warnings, bool load_after_restore = true);
 std::unique_ptr<interfaces::Handler> HandleLoadWallet(WalletContext& context, LoadWalletFn load_wallet);
 void NotifyWalletLoaded(WalletContext& context, const std::shared_ptr<CWallet>& wallet);
 std::unique_ptr<WalletDatabase> MakeWalletDatabase(const std::string& name, const DatabaseOptions& options, DatabaseStatus& status, bilingual_str& error);
@@ -449,6 +448,7 @@ private:
 
     /** Mark a transaction (and its in-wallet descendants) as a particular tx state. */
     void RecursiveUpdateTxState(const uint256& tx_hash, const TryUpdatingStateFn& try_updating_state) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
+    void RecursiveUpdateTxState(WalletBatch* batch, const uint256& tx_hash, const TryUpdatingStateFn& try_updating_state) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
 
     /** Mark a transaction's inputs dirty, thus forcing the outputs to be recomputed */
     void MarkInputsDirty(const CTransactionRef& tx) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
@@ -506,6 +506,9 @@ private:
 
     // Same as 'AddActiveScriptPubKeyMan' but designed for use within a batch transaction context
     void AddActiveScriptPubKeyManWithDb(WalletBatch& batch, uint256 id, OutputType type, bool internal);
+
+    /** Store wallet flags */
+    void SetWalletFlagWithDB(WalletBatch& batch, uint64_t flags);
 
     //! Cache of descriptor ScriptPubKeys used for IsMine. Maps ScriptPubKey to set of spkms
     std::unordered_map<CScript, std::vector<ScriptPubKeyMan*>, SaltedSipHasher> m_cached_spks;
@@ -608,11 +611,6 @@ public:
      * referenced in transaction, and might cause assert failures.
      */
     int GetTxDepthInMainChain(const CWalletTx& wtx) const EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
-    bool IsTxInMainChain(const CWalletTx& wtx) const EXCLUSIVE_LOCKS_REQUIRED(cs_wallet)
-    {
-        AssertLockHeld(cs_wallet);
-        return GetTxDepthInMainChain(wtx) > 0;
-    }
 
     /**
      * @return number of blocks to maturity for this transaction:
@@ -631,8 +629,8 @@ public:
     virtual bool IsSpentKey(const CScript& scriptPubKey) const EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
     virtual void SetSpentKeyState(WalletBatch& batch, const uint256& hash, unsigned int n, bool used, std::set<CTxDestination>& tx_destinations) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
 
-    /** Display address on an external signer. Returns false if external signer support is not compiled */
-    bool DisplayAddress(const CTxDestination& dest) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
+    /** Display address on an external signer. */
+    util::Result<void> DisplayAddress(const CTxDestination& dest) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
 
     bool IsLockedCoin(const COutPoint& output) const EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
     bool LockCoin(const COutPoint& output, WalletBatch* batch = nullptr) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
@@ -757,7 +755,7 @@ public:
      * @param[in] finalize whether to create the final scriptSig or scriptWitness if possible
      * return error
      */
-    TransactionError FillPSBT(PartiallySignedTransaction& psbtx,
+    std::optional<common::PSBTError> FillPSBT(PartiallySignedTransaction& psbtx,
                   bool& complete,
                   int sighash_type = SIGHASH_DEFAULT,
                   bool sign = true,
@@ -784,7 +782,7 @@ public:
 
     bool ImportScripts(const std::set<CScript> scripts, int64_t timestamp) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
     bool ImportPrivKeys(const std::map<CKeyID, CKey>& privkey_map, const int64_t timestamp) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
-    bool ImportPubKeys(const std::vector<CKeyID>& ordered_pubkeys, const std::map<CKeyID, CPubKey>& pubkey_map, const std::map<CKeyID, std::pair<CPubKey, KeyOriginInfo>>& key_origins, const bool add_keypool, const bool internal, const int64_t timestamp) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
+    bool ImportPubKeys(const std::vector<std::pair<CKeyID, bool>>& ordered_pubkeys, const std::map<CKeyID, CPubKey>& pubkey_map, const std::map<CKeyID, std::pair<CPubKey, KeyOriginInfo>>& key_origins, const bool add_keypool, const int64_t timestamp) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
     bool ImportScriptPubKeys(const std::string& label, const std::set<CScript>& script_pub_keys, const bool have_solving_data, const bool apply_label, const int64_t timestamp) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
 
     /** Updates wallet birth time if 'time' is below it */
@@ -897,6 +895,7 @@ public:
 
     /** Erases the provided transactions from the wallet. */
     util::Result<void> RemoveTxs(std::vector<uint256>& txs_to_remove) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
+    util::Result<void> RemoveTxs(WalletBatch& batch, std::vector<uint256>& txs_to_remove) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
 
     virtual bool SetAddressBook(const CTxDestination& address, const std::string& strName, const std::optional<AddressPurpose>& purpose, bool fBech32=false);
 
@@ -973,7 +972,8 @@ public:
     virtual bool TransactionCanBeAbandoned(const uint256& hashTx) const;
 
     /* Mark a transaction (and it in-wallet descendants) as abandoned so its inputs may be respent. */
-    virtual bool AbandonTransaction(const uint256& hashTx);
+    bool AbandonTransaction(const uint256& hashTx);
+    bool AbandonTransaction(CWalletTx& tx) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
 
     /** Mark a transaction as replaced by another transaction. */
     bool MarkReplaced(const uint256& originalHash, const uint256& newHash);
@@ -1038,9 +1038,9 @@ public:
 
     /** Prepends the wallet name in logging output to ease debugging in multi-wallet use cases */
     template <typename... Params>
-    void WalletLogPrintf(const char* fmt, Params... parameters) const
+    void WalletLogPrintf(util::ConstevalFormatString<sizeof...(Params)> wallet_fmt, const Params&... params) const
     {
-        LogPrintf(("%s " + std::string{fmt}).c_str(), GetDisplayName(), parameters...);
+        LogInfo("%s %s", GetDisplayName(), tfm::format(wallet_fmt, params...));
     };
 
     /** Upgrade the wallet */
@@ -1048,6 +1048,7 @@ public:
 
     //! Returns all unique ScriptPubKeyMans in m_internal_spk_managers and m_external_spk_managers
     std::set<ScriptPubKeyMan*> GetActiveScriptPubKeyMans() const;
+    bool IsActiveScriptPubKeyMan(const ScriptPubKeyMan& spkm) const;
 
     //! Returns all unique ScriptPubKeyMans
     std::set<ScriptPubKeyMan*> GetAllScriptPubKeyMans() const;
@@ -1070,13 +1071,16 @@ public:
     //! Get the LegacyScriptPubKeyMan which is used for all types, internal, and external.
     LegacyScriptPubKeyMan* GetLegacyScriptPubKeyMan() const;
     LegacyScriptPubKeyMan* GetOrCreateLegacyScriptPubKeyMan();
+    LegacyDataSPKM* GetLegacyDataSPKM() const;
+    LegacyDataSPKM* GetOrCreateLegacyDataSPKM();
 
-    //! Make a LegacyScriptPubKeyMan and set it for all types, internal, and external.
+    //! Make a Legacy(Data)SPKM and set it for all types, internal, and external.
     void SetupLegacyScriptPubKeyMan();
 
     bool WithEncryptionKey(std::function<bool (const CKeyingMaterial&)> cb) const override;
 
     bool HasEncryptionKeys() const override;
+    bool HaveCryptedKeys() const;
 
     /** Get last block processed height */
     int GetLastBlockHeight() const EXCLUSIVE_LOCKS_REQUIRED(cs_wallet)
@@ -1123,9 +1127,14 @@ public:
     //! @param[in] internal Whether this ScriptPubKeyMan provides change addresses
     void DeactivateScriptPubKeyMan(uint256 id, OutputType type, bool internal);
 
+    //! Create new DescriptorScriptPubKeyMan and add it to the wallet
+    DescriptorScriptPubKeyMan& SetupDescriptorScriptPubKeyMan(WalletBatch& batch, const CExtKey& master_key, const OutputType& output_type, bool internal) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
     //! Create new DescriptorScriptPubKeyMans and add them to the wallet
-    void SetupDescriptorScriptPubKeyMans(const CExtKey& master_key) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
+    void SetupDescriptorScriptPubKeyMans(WalletBatch& batch, const CExtKey& master_key) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
     void SetupDescriptorScriptPubKeyMans() EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
+
+    //! Create new seed and default DescriptorScriptPubKeyMans for this wallet
+    void SetupOwnDescriptorScriptPubKeyMans(WalletBatch& batch) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
 
     //! Return the DescriptorScriptPubKeyMan for a WalletDescriptor if it is already in the wallet
     DescriptorScriptPubKeyMan* GetDescriptorScriptPubKeyMan(const WalletDescriptor& desc) const;
@@ -1150,7 +1159,7 @@ public:
 
     //! Adds the ScriptPubKeyMans given in MigrationData to this wallet, removes LegacyScriptPubKeyMan,
     //! and where needed, moves tx and address book entries to watchonly_wallet or solvable_wallet
-    bool ApplyMigrationData(MigrationData& data, bilingual_str& error) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
+    util::Result<void> ApplyMigrationData(WalletBatch& local_wallet_batch, MigrationData& data) EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
 
     //! Whether the (external) signer performs R-value signature grinding
     bool CanGrindR() const;
@@ -1170,6 +1179,12 @@ public:
     std::vector<uint256> ResendWalletTransactionsBefore(int64_t nTime);
 
     virtual bool ShouldRescan() { return true; };
+    //! Retrieve the xpubs in use by the active descriptors
+    std::set<CExtPubKey> GetActiveHDPubKeys() const EXCLUSIVE_LOCKS_REQUIRED(cs_wallet);
+
+    //! Find the private key for the given key id from the wallet's descriptors, if available
+    //! Returns nullopt when no descriptor has the key or if the wallet is locked.
+    std::optional<CKey> GetKey(const CKeyID& keyid) const;
 };
 
 /**
@@ -1248,6 +1263,8 @@ struct MigrationResult {
 
 //! Do all steps to migrate a legacy wallet to a descriptor wallet
 [[nodiscard]] util::Result<MigrationResult> MigrateLegacyToDescriptor(const std::string& wallet_name, const SecureString& passphrase, WalletContext& context);
+//! Requirement: The wallet provided to this function must be isolated, with no attachment to the node's context.
+[[nodiscard]] util::Result<MigrationResult> MigrateLegacyToDescriptor(std::shared_ptr<CWallet> local_wallet, const SecureString& passphrase, WalletContext& context, bool was_loaded);
 } // namespace wallet
 
 #endif // BITCOIN_WALLET_WALLET_H

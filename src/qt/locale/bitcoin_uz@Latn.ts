@@ -47,22 +47,22 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation type="unfinished">Coin yuborish uchun manzilni tanlang</translation>
+        <translation type="unfinished">Tanga yuborish uchun manzilni tanlash</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation type="unfinished">Coinlarni qabul qilish uchun manzilni tanlang</translation>
+        <translation type="unfinished">Tangalarni qabul qilish uchun manzilni tanlash</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
         <translation type="unfinished">&amp;Tanlash</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Quyida to'lovlarni yuborish uchun Particl manzillaringiz. Coinlarni yuborishdan oldin har doim miqdor va qabul qilish manzilini tekshiring.</translation>
+        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Quyida to'lovlarni yuborish uchun Bitcoin manzillaringiz. Coinlarni yuborishdan oldin har doim miqdor va qabul qilish manzilini tekshiring.</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Bular to'lovlarni qabul qilish uchun mo'ljallangan Bitkoin manzillar. Yangi manzillar yaratish uchun 'Yangi qabul qilish manzili yaratish' tugmasini ishlating.
 Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
@@ -156,8 +156,8 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         <translation type="unfinished">Hamyon shifrlanishini tasdiqlang</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PARTICL&lt;/b&gt;!</source>
-        <translation type="unfinished">Eslatma: Agar hamyoningizni shifrlasangiz va maxfiy so'zni unutib qo'ysangiz, siz &lt;b&gt;BARCHA PARTICLLARINGIZNI YO'QOTASIZ&lt;/b&gt;! </translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
+        <translation type="unfinished">Eslatma: Agar hamyoningizni shifrlasangiz va maxfiy so'zni unutib qo'ysangiz, siz &lt;b&gt;BARCHA BITCOINLARINGIZNI YO'QOTASIZ&lt;/b&gt;! </translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -173,11 +173,19 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
     </message>
     <message>
         <source>Enter the old passphrase and new passphrase for the wallet.</source>
-        <translation type="unfinished">Hamyonning oldingi va yangi maxfiy so'zlarini kiriting</translation>
+        <translation type="unfinished">Hamyon uchun eski parol va yangi parolni kiriting.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your particl from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">Shuni yodda tutingki, hamyonni shifrlash kompyuterdagi virus yoki zararli dasturlar sizning particllaringizni o'g'irlashidan to'liq himoyalay olmaydi.</translation>
+        <source>Continue</source>
+        <translation type="unfinished">Davom etish</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Orqaga </translation>
+    </message>
+    <message>
+        <source>Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">Shuni yodda tutingki, hamyonni shifrlash kompyuterdagi virus yoki zararli dasturlar sizning bitcoinlaringizni o'g'irlashidan to'liq himoyalay olmaydi.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -193,7 +201,7 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
-        <translation type="unfinished">ESLATMA: Siz eski hamyoningiz joylashgan fayldan yaratgan kopiyalaringizni yangi shifrlangan hamyon fayliga almashtirishingiz lozim. Maxfiylik siyosati tufayli, yangi shifrlangan hamyondan foydalanishni boshlashingiz bilanoq eski nusxalar foydalanishga yaroqsiz holga keltiriladi.</translation>
+        <translation type="unfinished">MUHIM: Hamyon faylingizning oldingi nusxalari yangi fayl, shifrlangan hamyoni bilan almashtirilishi kerak. masalalik nuqtai nazaridan, shifrlanmagan hamyon faylining oldingi nusxalari yangi, shifrlangan hamyondan yuklashning yangilanishi bilanoq foydasiz bo'ladi.</translation>
     </message>
     <message>
         <source>Wallet encryption failed</source>
@@ -201,7 +209,7 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
     </message>
     <message>
         <source>Wallet encryption failed due to an internal error. Your wallet was not encrypted.</source>
-        <translation type="unfinished">Ichki xatolik tufayli hamyon shifrlanishi amalga oshmadi.</translation>
+        <translation type="unfinished">Ichki xatolik tufayli hamyon shifrlanishi oshmadi. Sizning hamyoningiz shifrlanmagan.</translation>
     </message>
     <message>
         <source>The supplied passphrases do not match.</source>
@@ -216,8 +224,17 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         <translation type="unfinished">Noto'g'ri maxfiy so'z kiritildi</translation>
     </message>
     <message>
+        <source>The passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 25.0, please try again with only the characters up to — but not including — the first null character. If this is successful, please set a new passphrase to avoid this issue in the future.</source>
+        <translation type="unfinished">Hamyon shifrini ochish uchun parol iborasi noto'g'ri. U null belgini o'z ichiga oladi (ya'ni - nol bayt). Agar parol iborasi ushbu dasturiy ta'minotning 25.0 dan oldingi versiyasida o'rnatilgan bo'lsa, iltimos, faqat birinchi null belgigacha bo'lgan qurilmalar bilan qayta urinib ko'ring (lekin shu narsa emas). Agar bu voqea bo'lsa, bu muammoni olish uchun yangi parol o'rnating.
+</translation>
+    </message>
+    <message>
         <source>Wallet passphrase was successfully changed.</source>
         <translation type="unfinished">Hamyon uchun kiritilgan maxfiy so'z yangisiga almashtirildi.</translation>
+    </message>
+    <message>
+        <source>The old passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 25.0, please try again with only the characters up to — but not including — the first null character.</source>
+        <translation type="unfinished">Hamyon shifrini ochish uchun yordam eski parol noto'g'ri. U null belgini o'z ichiga oladi (ya'ni - nol bayt). Agar parol iborasi ushbu dasturiy ta'minotning 25.0 dan oldingi versiyasida o'rnatilgan bo'lsa, iltimos, faqat birinchi null belgigacha bo'lgan qurilmalar bilan qayta urinib ko'ring (lekin shu narsa emas).</translation>
     </message>
     <message>
         <source>Warning: The Caps Lock key is on!</source>
@@ -279,8 +296,8 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         <translation type="unfinished">Miqdor</translation>
     </message>
     <message>
-        <source>Enter a Particl address (e.g. %1)</source>
-        <translation type="unfinished">Particl манзилини киритинг (масалан.  %1)</translation>
+        <source>Enter a Bitcoin address (e.g. %1)</source>
+        <translation type="unfinished">Bitcoin манзилини киритинг (масалан.  %1)</translation>
     </message>
     <message>
         <source>Inbound</source>
@@ -370,6 +387,10 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         <source>%1 GB</source>
         <translation type="unfinished">%1 ГБ</translation>
     </message>
+    <message>
+        <source>default wallet</source>
+        <translation type="unfinished">standart hamyon</translation>
+    </message>
 </context>
 <context>
     <name>BitcoinGUI</name>
@@ -439,7 +460,7 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         <translation type="unfinished">Proksi &lt;b&gt;yoqildi&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Particl address</source>
+        <source>Send coins to a Bitcoin address</source>
         <translation type="unfinished">Bitkoin manziliga coinlarni yuborish</translation>
     </message>
     <message>
@@ -448,7 +469,7 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
-        <translation type="unfinished">Hamyon shifrlanishi uchun ishlatilgan maxfiy so'zni almashtirish</translation>
+        <translation type="unfinished">Паролни ўзгартириш ҳамённи кодлашда фойдаланилади</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -468,7 +489,7 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
     </message>
     <message>
         <source>Encrypt the private keys that belong to your wallet</source>
-        <translation type="unfinished">Hamyonga tegishli bo'lgan maxfiy so'zlarni shifrlash</translation>
+        <translation type="unfinished">Ҳамёнингизга тегишли махфий калитларни кодлаш</translation>
     </message>
     <message>
         <source>&amp;Backup Wallet…</source>
@@ -483,16 +504,16 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         <translation type="unfinished">Xabarni &amp;signlash...</translation>
     </message>
     <message>
-        <source>Sign messages with your Particl addresses to prove you own them</source>
-        <translation type="unfinished">Bitkoin manzillarga ega ekaningizni tasdiqlash uchun xabarni signlang</translation>
+        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <translation type="unfinished">Bitcoin манзилидан унинг эгаси эканлигингизни исботлаш учун хабарлар ёзинг</translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
         <translation type="unfinished">&amp;Xabarni tasdiqlash...</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Particl addresses</source>
-        <translation type="unfinished">Xabar belgilangan Bitkoin manzillari bilan imzolanganligiga ishonch hosil qilish uchun ularni tasdiqlang</translation>
+        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
+        <translation type="unfinished">Хабарларни махсус Bitcoin манзилларингиз билан ёзилганлигига ишонч ҳосил қилиш учун уларни тасдиқланг</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
@@ -516,19 +537,19 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished">&amp;Fayl</translation>
+        <translation type="unfinished">&amp;Файл</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation type="unfinished">&amp;Sozlamalar</translation>
+        <translation type="unfinished">&amp; Созламалар</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished">&amp;Yordam</translation>
+        <translation type="unfinished">&amp;Ёрдам</translation>
     </message>
     <message>
         <source>Tabs toolbar</source>
-        <translation type="unfinished">Yorliqlar menyusi</translation>
+        <translation type="unfinished">Ички ойналар асбоблар панели</translation>
     </message>
     <message>
         <source>Syncing Headers (%1%)…</source>
@@ -551,20 +572,20 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         <translation type="unfinished">Pirlarga ulanish...</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and particl: URIs)</source>
-        <translation type="unfinished">Тўловлар (QR кодлари ва particl ёрдамида яратишлар: URI’лар) сўраш</translation>
+        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
+        <translation type="unfinished">To'lovlarni so'rash(QR kolar va bitkoin yaratish: URL manzillar)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
-        <translation type="unfinished">Фойдаланилган жўнатилган манзиллар ва ёрлиқлар рўйхатини кўрсатиш</translation>
+        <translation type="unfinished">Manzillar va yorliqlar ro'yxatini ko'rsatish</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
-        <translation type="unfinished">Фойдаланилган қабул қилинган манзиллар ва ёрлиқлар рўйхатини кўрсатиш</translation>
+        <translation type="unfinished">Qabul qilish manzillari va yorliqlar ro'yxatini ko'rsatish</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
-        <translation type="unfinished">&amp;Буйруқлар сатри мосламалари</translation>
+        <translation type="unfinished">&amp;Command-line sozlamalari</translation>
     </message>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
@@ -575,7 +596,7 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
     </message>
     <message>
         <source>%1 behind</source>
-        <translation type="unfinished">%1 орқада</translation>
+        <translation type="unfinished">%1 yonida</translation>
     </message>
     <message>
         <source>Catching up…</source>
@@ -583,30 +604,30 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
     </message>
     <message>
         <source>Last received block was generated %1 ago.</source>
-        <translation type="unfinished">Сўнги қабул қилинган блок %1 олдин яратилган.</translation>
+        <translation type="unfinished">%1 oldin oxirgi marta blok qabul qilingan edi.</translation>
     </message>
     <message>
         <source>Transactions after this will not yet be visible.</source>
-        <translation type="unfinished">Бундан кейинги пул ўтказмалари кўринмайдиган бўлади.</translation>
+        <translation type="unfinished">Shundan keyingi operatsiyalar hali ko'rinmaydi.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Хатолик</translation>
+        <translation type="unfinished">Xatolik</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Диққат</translation>
+        <translation type="unfinished">Eslatma</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Маълумот</translation>
+        <translation type="unfinished">Informatsiya</translation>
     </message>
     <message>
         <source>Up to date</source>
-        <translation type="unfinished">Янгиланган</translation>
+        <translation type="unfinished">Hozirgi kunda</translation>
     </message>
     <message>
-        <source>Load Partially Signed Particl Transaction</source>
+        <source>Load Partially Signed Bitcoin Transaction</source>
         <translation type="unfinished">Qisman signlangan Bitkoin tranzaksiyasini yuklash</translation>
     </message>
     <message>
@@ -614,7 +635,7 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         <translation type="unfinished">&amp;Nusxalanganlar dan PSBT ni yuklash</translation>
     </message>
     <message>
-        <source>Load Partially Signed Particl Transaction from clipboard</source>
+        <source>Load Partially Signed Bitcoin Transaction from clipboard</source>
         <translation type="unfinished">Nusxalanganlar qisman signlangan Bitkoin tranzaksiyalarini yuklash</translation>
     </message>
     <message>
@@ -634,12 +655,12 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         <translation type="unfinished">&amp;Qabul qilish manzillari</translation>
     </message>
     <message>
-        <source>Open a particl: URI</source>
+        <source>Open a bitcoin: URI</source>
         <translation type="unfinished">Bitkoinni ochish: URI</translation>
     </message>
     <message>
         <source>Open Wallet</source>
-        <translation type="unfinished">Ochiq hamyon</translation>
+        <translation type="unfinished">Hamyonni ochish</translation>
     </message>
     <message>
         <source>Open a wallet</source>
@@ -650,11 +671,29 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         <translation type="unfinished">Hamyonni yopish</translation>
     </message>
     <message>
+        <source>Restore Wallet…</source>
+        <extracomment>Name of the menu item that restores wallet from a backup file.</extracomment>
+        <translation type="unfinished">Hamyonni tiklash</translation>
+    </message>
+    <message>
+        <source>Restore a wallet from a backup file</source>
+        <extracomment>Status tip for Restore Wallet menu item</extracomment>
+        <translation type="unfinished">Zahira faylidan hamyonni tiklash</translation>
+    </message>
+    <message>
         <source>Close all wallets</source>
         <translation type="unfinished">Barcha hamyonlarni yopish</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Particl command-line options</source>
+        <source>Migrate Wallet</source>
+        <translation type="unfinished">Hamyonni koʻchirish</translation>
+    </message>
+    <message>
+        <source>Migrate a wallet</source>
+        <translation type="unfinished">Hamyonni koʻchiring</translation>
+    </message>
+    <message>
+        <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
         <translation type="unfinished">Yozilishi mumkin bo'lgan command-line sozlamalar ro'yxatini olish uchun %1 yordam xabarini ko'rsatish</translation>
     </message>
     <message>
@@ -662,12 +701,23 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         <translation type="unfinished">Umumiy ko'rinish menyusidagi qiymatlarni maskirovka qilish</translation>
     </message>
     <message>
-        <source>default wallet</source>
-        <translation type="unfinished">standart hamyon</translation>
-    </message>
-    <message>
         <source>No wallets available</source>
         <translation type="unfinished">Hamyonlar mavjud emas</translation>
+    </message>
+    <message>
+        <source>Wallet Data</source>
+        <extracomment>Name of the wallet data file format.</extracomment>
+        <translation type="unfinished">Hamyon maʼlumotlari</translation>
+    </message>
+    <message>
+        <source>Load Wallet Backup</source>
+        <extracomment>The title for Restore Wallet File Windows</extracomment>
+        <translation type="unfinished">Hamyon zahira nusxasini yuklang</translation>
+    </message>
+    <message>
+        <source>Restore Wallet</source>
+        <extracomment>Title of pop-up window shown when the user is attempting to restore a wallet.</extracomment>
+        <translation type="unfinished">Hamyonni tiklash</translation>
     </message>
     <message>
         <source>Wallet Name</source>
@@ -699,7 +749,7 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         <translation type="unfinished">Ko'&amp;rsatish</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Particl network.</source>
+        <source>%n active connection(s) to Bitcoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform>Bitkoin tarmog'iga %n aktiv ulanishlar.</numerusform>
@@ -984,6 +1034,13 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
     </message>
 </context>
 <context>
+    <name>MigrateWalletActivity</name>
+    <message>
+        <source>Migrate Wallet</source>
+        <translation type="unfinished">dudlangan cho'chqa go'shti koʻchirish</translation>
+    </message>
+    </context>
+<context>
     <name>OpenWalletActivity</name>
     <message>
         <source>Open wallet failed</source>
@@ -992,10 +1049,6 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
     <message>
         <source>Open wallet warning</source>
         <translation type="unfinished">Hamyonni ochish ogohlantirishi</translation>
-    </message>
-    <message>
-        <source>default wallet</source>
-        <translation type="unfinished">standart hamyon</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -1008,6 +1061,14 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         <translation type="unfinished">Hamyonni ochish &lt;b&gt;%1&lt;/b&gt;...</translation>
     </message>
 </context>
+<context>
+    <name>RestoreWalletActivity</name>
+    <message>
+        <source>Restore Wallet</source>
+        <extracomment>Title of progress window which is displayed when wallets are being restored.</extracomment>
+        <translation type="unfinished">Hamyonni tiklash</translation>
+    </message>
+    </context>
 <context>
     <name>WalletController</name>
     <message>
@@ -1126,8 +1187,8 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         <translation type="unfinished">Жунатилувчи манзилни тахрирлаш</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Particl address.</source>
-        <translation type="unfinished">Киритилган "%1" манзили тўғри Particl манзили эмас.</translation>
+        <source>The entered address "%1" is not a valid Bitcoin address.</source>
+        <translation type="unfinished">Киритилган "%1" манзили тўғри Bitcoin манзили эмас.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -1209,8 +1270,8 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         </translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Particl block chain.</source>
-        <translation type="unfinished"> Particl blok zanjirining%1 nusxasini yuklab oladi va saqlaydi</translation>
+        <source>%1 will download and store a copy of the Bitcoin block chain.</source>
+        <translation type="unfinished"> Bitcoin blok zanjirining%1 nusxasini yuklab oladi va saqlaydi</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1298,11 +1359,11 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         <translation type="unfinished">Шакл</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the particl network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the bitcoin network, as detailed below.</source>
         <translation type="unfinished">So'nggi tranzaksiyalar hali ko'rinmasligi mumkin, shuning uchun hamyoningiz balansi noto'g'ri ko'rinishi mumkin. Sizning hamyoningiz bitkoin tarmog'i bilan sinxronlashni tugatgandan so'ng, quyida batafsil tavsiflanganidek, bu ma'lumot to'g'rilanadi.</translation>
     </message>
     <message>
-        <source>Attempting to spend particl that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend bitcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation type="unfinished">Hali ko'rsatilmagan tranzaksiyalarga bitkoinlarni sarflashga urinish tarmoq tomonidan qabul qilinmaydi.</translation>
     </message>
     <message>
@@ -1349,7 +1410,7 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open particl URI</source>
+        <source>Open bitcoin URI</source>
         <translation type="unfinished">Bitkoin URI sini ochish</translation>
     </message>
     <message>
@@ -1427,11 +1488,6 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
     <message>
         <source>Reverting this setting requires re-downloading the entire blockchain.</source>
         <translation type="unfinished">Bu sozlamani qaytarish butun blok zanjirini qayta yuklab olishni talab qiladi.</translation>
-    </message>
-    <message>
-        <source>Maximum database cache size. A larger cache can contribute to faster sync, after which the benefit is less pronounced for most use cases. Lowering the cache size will reduce memory usage. Unused mempool memory is shared for this cache.</source>
-        <extracomment>Tooltip text for Options window setting that sets the size of the database cache. Explains the corresponding effects of increasing/decreasing this value.</extracomment>
-        <translation type="unfinished">Ma'lumotlar bazasi keshining maksimal hajmi. Kattaroq kesh tezroq sinxronlashtirishga hissa qo'shishi mumkin, ya'ni foyda kamroq sezilishi mumkin.</translation>
     </message>
     <message>
         <source>Set the number of script verification threads. Negative values correspond to the number of cores you want to leave free to the system.</source>
@@ -1560,6 +1616,10 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         <translation type="unfinished">Ўзгаришлар амалга ошиши учун мижозни қайта ишга тушириш талаб қилинади.</translation>
     </message>
     <message>
+        <source>Continue</source>
+        <translation type="unfinished">Davom etish</translation>
+    </message>
+    <message>
         <source>Error</source>
         <translation type="unfinished">Хатолик</translation>
     </message>
@@ -1579,8 +1639,8 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         <translation type="unfinished">Шакл</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Particl network after a connection is established, but this process has not completed yet.</source>
-        <translation type="unfinished">Кўрсатилган маълумот эскирган бўлиши мумкин. Ҳамёнингиз алоқа ўрнатилгандан сўнг Particl тармоқ билан автоматик тарзда синхронланади, аммо жараён ҳалигача тугалланмади.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation type="unfinished">Кўрсатилган маълумот эскирган бўлиши мумкин. Ҳамёнингиз алоқа ўрнатилгандан сўнг Bitcoin тармоқ билан автоматик тарзда синхронланади, аммо жараён ҳалигача тугалланмади.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1826,6 +1886,10 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         <translation type="unfinished">&amp;Manzilni nusxalash</translation>
     </message>
     <message>
+        <source>None</source>
+        <translation type="unfinished">Йўқ</translation>
+    </message>
+    <message>
         <source>via %1</source>
         <translation type="unfinished">%1 орқали</translation>
     </message>
@@ -1964,7 +2028,7 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
     </message>
     <message>
         <source>(no label)</source>
-        <translation type="unfinished">(Yorliqlar mavjud emas)</translation>
+        <translation type="unfinished">(Ёрлиқ мавжуд эмас)</translation>
     </message>
     <message>
         <source>(no message)</source>
@@ -2113,8 +2177,8 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Particl address</source>
-        <translation type="unfinished">Диққат: Нотўғр Particl манзили</translation>
+        <source>Warning: Invalid Bitcoin address</source>
+        <translation type="unfinished">Диққат: Нотўғр Bitcoin манзили</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2122,7 +2186,7 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
     </message>
     <message>
         <source>(no label)</source>
-        <translation type="unfinished">(Yorliqlar mavjud emas)</translation>
+        <translation type="unfinished">(Ёрлиқ мавжуд эмас)</translation>
     </message>
 </context>
 <context>
@@ -2330,7 +2394,7 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
     </message>
     <message>
         <source>(no label)</source>
-        <translation type="unfinished">(Yorliqlar mavjud emas)</translation>
+        <translation type="unfinished">(Ёрлиқ мавжуд эмас)</translation>
     </message>
     <message>
         <source>Transaction status. Hover over this field to show number of confirmations.</source>
@@ -2474,11 +2538,7 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
         <source>Send Coins</source>
         <translation type="unfinished">Тангаларни жунат</translation>
     </message>
-    <message>
-        <source>default wallet</source>
-        <translation type="unfinished">standart hamyon</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>WalletView</name>
     <message>
@@ -2488,6 +2548,11 @@ Kirish faqat 'legacy' turidagi manzillar uchun.</translation>
     <message>
         <source>Export the data in the current tab to a file</source>
         <translation type="unfinished">Joriy yorliqdagi ma'lumotlarni faylga eksport qilish</translation>
+    </message>
+    <message>
+        <source>Wallet Data</source>
+        <extracomment>Name of the wallet data file format.</extracomment>
+        <translation type="unfinished">Hamyon maʼlumotlari</translation>
     </message>
     </context>
 <context>

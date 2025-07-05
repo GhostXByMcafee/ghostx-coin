@@ -58,13 +58,13 @@
         <translation type="unfinished">&amp;Velg</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Dette er dine Particl adresser for å sende  å sende betalinger. Husk å sjekke beløp og mottager adresser før du sender mynter.</translation>
+        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Dette er dine Bitcoin adresser for å sende betalinger. Husk å sjekke beløp og mottakeradressen før du sender mynter.</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">Dette er dine Particl adresser for å motta betalinger. Bruk 'Lag ny mottaksadresse' knappen i motta tabben for å lage nye adresser. Signering er bare mulig for adresser av typen 'legacy'.</translation>
+        <translation type="unfinished">Dette er dine Bitcoin adresser for å motta betalinger. Bruk 'Lag ny mottaksadresse' knappen i motta tabben for å lage nye adresser. Signering er bare mulig for adresser av typen 'legacy'.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -80,7 +80,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Export Address List</source>
-        <translation type="unfinished">Eksporter adresse listen</translation>
+        <translation type="unfinished">Eksporter adresseliste</translation>
     </message>
     <message>
         <source>Comma separated file</source>
@@ -155,8 +155,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Bekreft kryptering av lommeboken</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PARTICL&lt;/b&gt;!</source>
-        <translation type="unfinished">Advarsel: Dersom du krypterer lommeboken og mister passordfrasen vil du &lt;b&gt;MISTE ALLE DINE PARTICL&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
+        <translation type="unfinished">Advarsel: Dersom du krypterer lommeboken og mister passordfrasen vil du &lt;b&gt;MISTE ALLE DINE BITCOIN&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -175,8 +175,16 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Skriv inn den gamle passordfrasen og den nye passordfrasen for lommeboken.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your particl from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">Husk at å kryptere lommeboken ikke vil beskytte dine particl fullstendig fra å bli stjålet av skadevare som infiserer datamaskinen din.</translation>
+        <source>Continue</source>
+        <translation type="unfinished">Fortsett</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Tilbake</translation>
+    </message>
+    <message>
+        <source>Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">Husk at å kryptere lommeboken ikke vil beskytte dine bitcoins fullstendig fra å bli stjålet av skadevare som infiserer datamaskinen din.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -217,6 +225,10 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Wallet passphrase was successfully changed.</source>
         <translation type="unfinished">Passordsetningen for lommeboken ble endret</translation>
+    </message>
+    <message>
+        <source>Passphrase change failed</source>
+        <translation type="unfinished">Passordendring feilet</translation>
     </message>
     <message>
         <source>Warning: The Caps Lock key is on!</source>
@@ -282,8 +294,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Beløp</translation>
     </message>
     <message>
-        <source>Enter a Particl address (e.g. %1)</source>
-        <translation type="unfinished">Oppgi en Particl-adresse (f.eks. %1)</translation>
+        <source>Enter a Bitcoin address (e.g. %1)</source>
+        <translation type="unfinished">Oppgi en Bitcoin-adresse (f.eks. %1)</translation>
     </message>
     <message>
         <source>Unroutable</source>
@@ -382,7 +394,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
             <numerusform>%n år</numerusform>
         </translation>
     </message>
-    </context>
+    <message>
+        <source>default wallet</source>
+        <translation type="unfinished">standard lommebok</translation>
+    </message>
+</context>
 <context>
     <name>BitcoinGUI</name>
     <message>
@@ -434,6 +450,10 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Lag en ny lommebok</translation>
     </message>
     <message>
+        <source>&amp;Minimize</source>
+        <translation type="unfinished">&amp;Minimer</translation>
+    </message>
+    <message>
         <source>Wallet:</source>
         <translation type="unfinished">Lommebok:</translation>
     </message>
@@ -447,8 +467,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Proxy er &lt;b&gt;slått på&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Particl address</source>
-        <translation type="unfinished">Send mynter til en Particl adresse</translation>
+        <source>Send coins to a Bitcoin address</source>
+        <translation type="unfinished">Send mynter til en Bitcoin adresse</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -456,7 +476,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
-        <translation type="unfinished">Endre passordfrasen for kryptering av lommeboken</translation>
+        <translation type="unfinished">Endre passordsetningen for kryptering av lommeboken</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -491,16 +511,16 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Signer &amp;melding...</translation>
     </message>
     <message>
-        <source>Sign messages with your Particl addresses to prove you own them</source>
-        <translation type="unfinished">Signer meldingene med Particl adresse for å bevise at diu eier dem</translation>
+        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <translation type="unfinished">Signer meldingene med Bitcoin adresse for å bevise at diu eier dem</translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
         <translation type="unfinished">&amp;Verifiser melding...</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Particl addresses</source>
-        <translation type="unfinished">Verifiser meldinger for å sikre at de ble signert med en angitt Particl adresse</translation>
+        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
+        <translation type="unfinished">Verifiser meldinger for å sikre at de ble signert med en angitt Bitcoin adresse</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
@@ -559,8 +579,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Kobler til likemannsnettverket...</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and particl: URIs)</source>
-        <translation type="unfinished">Be om betalinger (genererer QR-koder og particl-URIer)</translation>
+        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
+        <translation type="unfinished">Be om betalinger (genererer QR-koder og bitcoin-URIer)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -614,12 +634,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Oppdatert</translation>
     </message>
     <message>
-        <source>Load Partially Signed Particl Transaction</source>
-        <translation type="unfinished">Last delvis signert Particl transaksjon</translation>
+        <source>Load Partially Signed Bitcoin Transaction</source>
+        <translation type="unfinished">Last delvis signert Bitcoin transaksjon</translation>
     </message>
     <message>
-        <source>Load Partially Signed Particl Transaction from clipboard</source>
-        <translation type="unfinished">Last Delvis Signert Particl Transaksjon fra utklippstavle</translation>
+        <source>Load Partially Signed Bitcoin Transaction from clipboard</source>
+        <translation type="unfinished">Last Delvis Signert Bitcoin Transaksjon fra utklippstavle</translation>
     </message>
     <message>
         <source>Node window</source>
@@ -638,8 +658,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp;Mottaker adresser</translation>
     </message>
     <message>
-        <source>Open a particl: URI</source>
-        <translation type="unfinished">Åpne en particl: URI</translation>
+        <source>Open a bitcoin: URI</source>
+        <translation type="unfinished">Åpne en bitcoin: URI</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -668,8 +688,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Lukk alle lommebøker</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Particl command-line options</source>
-        <translation type="unfinished">Vis %1-hjelpemeldingen for å få en liste over mulige Particl-kommandolinjealternativer</translation>
+        <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
+        <translation type="unfinished">Vis %1-hjelpemeldingen for å få en liste over mulige Bitcoin-kommandolinjealternativer</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
@@ -678,10 +698,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Mask the values in the Overview tab</source>
         <translation type="unfinished">Masker verdiene i oversiktstabben</translation>
-    </message>
-    <message>
-        <source>default wallet</source>
-        <translation type="unfinished">standard lommebok</translation>
     </message>
     <message>
         <source>No wallets available</source>
@@ -719,12 +735,16 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>%1 client</source>
         <translation type="unfinished">%1-klient</translation>
     </message>
+    <message>
+        <source>&amp;Hide</source>
+        <translation type="unfinished">&amp;Skjul</translation>
+    </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Particl network.</source>
+        <source>%n active connection(s) to Bitcoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
-            <numerusform> %n aktiv tilkobling til Particl-nettverket.</numerusform>
-            <numerusform>%n aktive tilkoblinger til Particl-nettverket.</numerusform>
+            <numerusform> %n aktiv tilkobling til Bitcoin-nettverket.</numerusform>
+            <numerusform>%n aktive tilkoblinger til Bitcoin-nettverket.</numerusform>
         </translation>
     </message>
     <message>
@@ -1005,10 +1025,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Advasel om åpen lommebok.</translation>
     </message>
     <message>
-        <source>default wallet</source>
-        <translation type="unfinished">standard lommebok</translation>
-    </message>
-    <message>
         <source>Open Wallet</source>
         <extracomment>Title of window indicating the progress of opening of a wallet.</extracomment>
         <translation type="unfinished">Åpne Lommebok</translation>
@@ -1051,6 +1067,10 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Create Wallet</source>
         <translation type="unfinished">Lag lommebok</translation>
+    </message>
+    <message>
+        <source>You are one step away from creating your new wallet!</source>
+        <translation type="unfinished">Du er ett steg unna å opprette din nye lommebok!</translation>
     </message>
     <message>
         <source>Wallet Name</source>
@@ -1141,8 +1161,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Rediger utsendingsadresse</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Particl address.</source>
-        <translation type="unfinished">Den angitte adressen "%1" er ikke en gyldig Particl-adresse.</translation>
+        <source>The entered address "%1" is not a valid Bitcoin address.</source>
+        <translation type="unfinished">Den angitte adressen "%1" er ikke en gyldig Bitcoin-adresse.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -1224,8 +1244,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         </translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Particl block chain.</source>
-        <translation type="unfinished">%1 vil laste ned og lagre en kopi av Particl blokkjeden.</translation>
+        <source>%1 will download and store a copy of the Bitcoin block chain.</source>
+        <translation type="unfinished">%1 vil laste ned og lagre en kopi av Bitcoin blokkjeden.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1313,12 +1333,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Skjema</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the particl network, as detailed below.</source>
-        <translation type="unfinished">Det kan hende nylige transaksjoner ikke vises enda, og at lommeboksaldoen dermed blir uriktig. Denne informasjonen vil rette seg når synkronisering av lommeboka mot particl-nettverket er fullført, som anvist nedenfor.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the bitcoin network, as detailed below.</source>
+        <translation type="unfinished">Det kan hende nylige transaksjoner ikke vises enda, og at lommeboksaldoen dermed blir uriktig. Denne informasjonen vil rette seg når synkronisering av lommeboka mot bitcoin-nettverket er fullført, som anvist nedenfor.</translation>
     </message>
     <message>
-        <source>Attempting to spend particl that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation type="unfinished">Forsøk på å bruke particl som er påvirket av transaksjoner som ikke er vist enda godtas ikke av nettverket.</translation>
+        <source>Attempting to spend bitcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation type="unfinished">Forsøk på å bruke bitcoin som er påvirket av transaksjoner som ikke er vist enda godtas ikke av nettverket.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1364,8 +1384,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open particl URI</source>
-        <translation type="unfinished">Åpne particl URI</translation>
+        <source>Open bitcoin URI</source>
+        <translation type="unfinished">Åpne bitcoin URI</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -1476,14 +1496,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp;Ekstern undertegner skriptsti</translation>
     </message>
     <message>
-        <source>Automatically open the Particl client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation type="unfinished">Åpne automatisk Particl klientporten på ruteren. Dette virker kun om din ruter støtter UPnP og dette er påslått.</translation>
-    </message>
-    <message>
-        <source>Map port using &amp;UPnP</source>
-        <translation type="unfinished">Sett opp port ved hjelp av &amp;UPnP</translation>
-    </message>
-    <message>
         <source>Accept connections from outside.</source>
         <translation type="unfinished">Tillat tilkoblinger fra utsiden</translation>
     </message>
@@ -1492,8 +1504,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Tillatt innkommend&amp;e tilkoblinger</translation>
     </message>
     <message>
-        <source>Connect to the Particl network through a SOCKS5 proxy.</source>
-        <translation type="unfinished">Koble til Particl-nettverket gjennom en SOCKS5 proxy.</translation>
+        <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
+        <translation type="unfinished">Koble til Bitcoin-nettverket gjennom en SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1549,15 +1561,15 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation type="unfinished">Velg standard delt enhet for visning i grensesnittet og for sending av particl.</translation>
+        <translation type="unfinished">Velg standard delt enhet for visning i grensesnittet og for sending av bitcoins.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
         <translation type="unfinished">Skal myntkontroll funksjoner vises eller ikke.</translation>
     </message>
     <message>
-        <source>Connect to the Particl network through a separate SOCKS5 proxy for Tor onion services.</source>
-        <translation type="unfinished">Kobl til Particl nettverket gjennom en separat SOCKS5 proxy for Tor onion tjenester. </translation>
+        <source>Connect to the Bitcoin network through a separate SOCKS5 proxy for Tor onion services.</source>
+        <translation type="unfinished">Kobl til Bitcoin nettverket gjennom en separat SOCKS5 proxy for Tor onion tjenester. </translation>
     </message>
     <message>
         <source>Use separate SOCKS&amp;5 proxy to reach peers via Tor onion services:</source>
@@ -1637,8 +1649,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Skjema</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Particl network after a connection is established, but this process has not completed yet.</source>
-        <translation type="unfinished">Informasjonen som vises kan være foreldet. Din lommebok synkroniseres automatisk med Particl-nettverket etter at tilkobling er opprettet, men denne prosessen er ikke ferdig enda.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation type="unfinished">Informasjonen som vises kan være foreldet. Din lommebok synkroniseres automatisk med Bitcoin-nettverket etter at tilkobling er opprettet, men denne prosessen er ikke ferdig enda.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1840,16 +1852,16 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Feil ved betalingsforespørsel</translation>
     </message>
     <message>
-        <source>Cannot start particl: click-to-pay handler</source>
-        <translation type="unfinished">Kan ikke starte particl: Klikk-og-betal håndterer</translation>
+        <source>Cannot start bitcoin: click-to-pay handler</source>
+        <translation type="unfinished">Kan ikke starte bitcoin: Klikk-og-betal håndterer</translation>
     </message>
     <message>
         <source>URI handling</source>
         <translation type="unfinished">URI-håndtering</translation>
     </message>
     <message>
-        <source>'particl://' is not a valid URI. Use 'particl:' instead.</source>
-        <translation type="unfinished">'particl: //' er ikke en gyldig URI. Bruk 'particl:' i stedet.</translation>
+        <source>'bitcoin://' is not a valid URI. Use 'bitcoin:' instead.</source>
+        <translation type="unfinished">'bitcoin: //' er ikke en gyldig URI. Bruk 'bitcoin:' i stedet.</translation>
     </message>
     <message>
         <source>Cannot process payment request because BIP70 is not supported.
@@ -1860,8 +1872,8 @@ Grunnet utbredte sikkerhetshull i BIP70 er det sterkt anbefalt å ignorere instr
 Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 kompatibel URI.</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Particl address or malformed URI parameters.</source>
-        <translation type="unfinished">URI kan ikke fortolkes! Dette kan være forårsaket av en ugyldig particl-adresse eller feilformede URI-parametre.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
+        <translation type="unfinished">URI kan ikke fortolkes! Dette kan være forårsaket av en ugyldig bitcoin-adresse eller feilformede URI-parametre.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -2282,6 +2294,10 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
         <translation type="unfinished">Nettverksaktivitet avskrudd</translation>
     </message>
     <message>
+        <source>None</source>
+        <translation type="unfinished">Ingen</translation>
+    </message>
+    <message>
         <source>Executing command without any wallet</source>
         <translation type="unfinished">Utfør kommando uten noen lommebok</translation>
     </message>
@@ -2342,8 +2358,8 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
         <translation type="unfinished">&amp;Melding:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Particl network.</source>
-        <translation type="unfinished">En valgfri melding å tilknytte betalingsetterspørringen, som vil bli vist når forespørselen er åpnet. Meldingen vil ikke bli sendt med betalingen over Particl-nettverket.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bitcoin network.</source>
+        <translation type="unfinished">En valgfri melding å tilknytte betalingsetterspørringen, som vil bli vist når forespørselen er åpnet. Meldingen vil ikke bli sendt med betalingen over Bitcoin-nettverket.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2516,7 +2532,7 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation type="unfinished">Send Particl</translation>
+        <translation type="unfinished">Send Bitcoins</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -2607,8 +2623,8 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
         <translation type="unfinished">Skjul innstillinger for transaksjonsgebyr</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for particl transactions than the network can process.</source>
-        <translation type="unfinished">Når det er mindre transaksjonsvolum enn plass i blokkene, kan minere så vel som noder håndheve et minimumsgebyr for videresending. Å kun betale minsteavgiften er helt greit, men vær klar over at dette kan skape en transaksjon som aldri blir bekreftet hvis det blir større etterspørsel etter particl-transaksjoner enn nettverket kan behandle.</translation>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for bitcoin transactions than the network can process.</source>
+        <translation type="unfinished">Når det er mindre transaksjonsvolum enn plass i blokkene, kan minere så vel som noder håndheve et minimumsgebyr for videresending. Å kun betale minsteavgiften er helt greit, men vær klar over at dette kan skape en transaksjon som aldri blir bekreftet hvis det blir større etterspørsel etter bitcoin-transaksjoner enn nettverket kan behandle.</translation>
     </message>
     <message>
         <source>A too low fee might result in a never confirming transaction (read the tooltip)</source>
@@ -2684,6 +2700,14 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
         <translation type="unfinished">Cr &amp; eate Usignert</translation>
     </message>
     <message>
+        <source>Creates a Partially Signed Bitcoin Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation type="unfinished">Oppretter en delvis signert Bitcoin-transaksjon (PSBT) for bruk med f.eks. en offline%1 lommebok eller en PSBT-kompatibel maskinvarelommebok.</translation>
+    </message>
+    <message>
+        <source>%1 to '%2'</source>
+        <translation type="unfinished">%1 til '%2'</translation>
+    </message>
+    <message>
         <source>%1 to %2</source>
         <translation type="unfinished">%1 til %2</translation>
     </message>
@@ -2728,9 +2752,9 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
         <translation type="unfinished">Du kan øke gebyret senere (signaliserer Replace-By-Fee, BIP-125).</translation>
     </message>
     <message>
-        <source>Please, review your transaction proposal. This will produce a Partially Signed Particl Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <source>Please, review your transaction proposal. This will produce a Partially Signed Bitcoin Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can only create a PSBT. This string is displayed when private keys are disabled and an external signer is not available.</extracomment>
-        <translation type="unfinished">Se over ditt transaksjonsforslag. Dette kommer til å produsere en Delvis Signert Particl Transaksjon (PSBT) som du kan lagre eller kopiere og så signere med f.eks. en offline %1 lommebok, eller en PSBT kompatibel hardware lommebok.</translation>
+        <translation type="unfinished">Se over ditt transaksjonsforslag. Dette kommer til å produsere en Delvis Signert Bitcoin Transaksjon (PSBT) som du kan lagre eller kopiere og så signere med f.eks. en offline %1 lommebok, eller en PSBT kompatibel hardware lommebok.</translation>
     </message>
     <message>
         <source>Do you want to create this transaction?</source>
@@ -2798,8 +2822,8 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Particl address</source>
-        <translation type="unfinished">Advarsel Ugyldig particl-adresse</translation>
+        <source>Warning: Invalid Bitcoin address</source>
+        <translation type="unfinished">Advarsel Ugyldig bitcoin-adresse</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2837,8 +2861,8 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
         <translation type="unfinished">Velg tidligere brukt adresse</translation>
     </message>
     <message>
-        <source>The Particl address to send the payment to</source>
-        <translation type="unfinished">Particl-adressen betalingen skal sendes til</translation>
+        <source>The Bitcoin address to send the payment to</source>
+        <translation type="unfinished">Bitcoin-adressen betalingen skal sendes til</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -2853,8 +2877,8 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
         <translation type="unfinished">beløpet som skal sendes inn den valgte enheten.</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less particl than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation type="unfinished">Gebyret vil bli trukket fra beløpet som blir sendt. Mottakeren vil motta mindre particl enn det du skriver inn i beløpsfeltet. Hvis det er valgt flere mottakere, deles gebyret likt.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less bitcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation type="unfinished">Gebyret vil bli trukket fra beløpet som blir sendt. Mottakeren vil motta mindre bitcoins enn det du skriver inn i beløpsfeltet. Hvis det er valgt flere mottakere, deles gebyret likt.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2873,8 +2897,8 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
         <translation type="unfinished">Skriv inn en merkelapp for denne adressen for å legge den til listen av brukte adresser</translation>
     </message>
     <message>
-        <source>A message that was attached to the particl: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Particl network.</source>
-        <translation type="unfinished">En melding som var tilknyttet particlen: URI vil bli lagret med transaksjonen for din oversikt. Denne meldingen vil ikke bli sendt over Particl-nettverket.</translation>
+        <source>A message that was attached to the bitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bitcoin network.</source>
+        <translation type="unfinished">En melding som var tilknyttet bitcoinen: URI vil bli lagret med transaksjonen for din oversikt. Denne meldingen vil ikke bli sendt over Bitcoin-nettverket.</translation>
     </message>
 </context>
 <context>
@@ -2895,12 +2919,8 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
         <translation type="unfinished">&amp;Signer Melding</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive particl sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation type="unfinished">Du kan signere meldinger/avtaler med adresser for å bevise at du kan motta particl sendt til dem. Vær forsiktig med å signere noe vagt eller tilfeldig, siden phishing-angrep kan prøve å lure deg til å signere din identitet over til dem. Bare signer fullt detaljerte utsagn som du er enig i.</translation>
-    </message>
-    <message>
-        <source>The Particl address to sign the message with</source>
-        <translation type="unfinished">Particl-adressen meldingen skal signeres med</translation>
+        <source>The Bitcoin address to sign the message with</source>
+        <translation type="unfinished">Bitcoin-adressen meldingen skal signeres med</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2923,8 +2943,8 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
         <translation type="unfinished">Kopier valgt signatur til utklippstavle</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Particl address</source>
-        <translation type="unfinished">Signer meldingen for å bevise at du eier denne Particl-adressen</translation>
+        <source>Sign the message to prove you own this Bitcoin address</source>
+        <translation type="unfinished">Signer meldingen for å bevise at du eier denne Bitcoin-adressen</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2947,8 +2967,8 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
         <translation type="unfinished">Skriv inn mottakerens adresse, melding (forsikre deg om at du kopier linjeskift, mellomrom, faner osv. nøyaktig) og underskrift nedenfor for å bekrefte meldingen. Vær forsiktig så du ikke leser mer ut av signaturen enn hva som er i den signerte meldingen i seg selv, for å unngå å bli lurt av et man-in-the-middle-angrep. Merk at dette bare beviser at den som signerer kan motta med adressen, dette beviser ikke hvem som har sendt transaksjoner!</translation>
     </message>
     <message>
-        <source>The Particl address the message was signed with</source>
-        <translation type="unfinished">Particl-adressen meldingen ble signert med</translation>
+        <source>The Bitcoin address the message was signed with</source>
+        <translation type="unfinished">Bitcoin-adressen meldingen ble signert med</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -2959,8 +2979,8 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
         <translation type="unfinished">signaturen som ble gitt da meldingen ble signert</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Particl address</source>
-        <translation type="unfinished">Verifiser meldingen for å være sikker på at den ble signert av den angitte Particl-adressen</translation>
+        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
+        <translation type="unfinished">Verifiser meldingen for å være sikker på at den ble signert av den angitte Bitcoin-adressen</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -2981,10 +3001,6 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
     <message>
         <source>Please check the address and try again.</source>
         <translation type="unfinished">Sjekk adressen og prøv igjen.</translation>
-    </message>
-    <message>
-        <source>The entered address does not refer to a key.</source>
-        <translation type="unfinished">Innskrevet adresse refererer ikke til noen nøkkel.</translation>
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
@@ -3161,7 +3177,7 @@ Hvis du får denne feilen burde du be forretningsdrivende om å tilby en BIP21 k
     </message>
     <message>
         <source>Generated coins must mature %1 blocks before they can be spent. When you generated this block, it was broadcast to the network to be added to the block chain. If it fails to get into the chain, its state will change to "not accepted" and it won't be spendable. This may occasionally happen if another node generates a block within a few seconds of yours.</source>
-        <translation type="unfinished">Genererte particl må modne %1 blokker før de kan brukes. Da du genererte denne blokken ble den kringkastet på nettverket for å bli lagt til i kjeden av blokker. Hvis den ikke kommer med i kjeden vil den endre seg til "ikke akseptert", og vil ikke kunne brukes. Dette vil noen ganger skje hvis en annen node genererer en blokk innen noen sekunder av din.</translation>
+        <translation type="unfinished">Genererte bitcoins må modne %1 blokker før de kan brukes. Da du genererte denne blokken ble den kringkastet på nettverket for å bli lagt til i kjeden av blokker. Hvis den ikke kommer med i kjeden vil den endre seg til "ikke akseptert", og vil ikke kunne brukes. Dette vil noen ganger skje hvis en annen node genererer en blokk innen noen sekunder av din.</translation>
     </message>
     <message>
         <source>Debug information</source>
@@ -3465,7 +3481,7 @@ Gå til Fil &gt; Åpne lommebok for å laste en lommebok.
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation type="unfinished">Send Particl</translation>
+        <translation type="unfinished">Send Bitcoins</translation>
     </message>
     <message>
         <source>Fee bump error</source>
@@ -3520,10 +3536,6 @@ Gå til Fil &gt; Åpne lommebok for å laste en lommebok.
         <source>Can't display address</source>
         <translation type="unfinished">Kan ikke vise adresse</translation>
     </message>
-    <message>
-        <source>default wallet</source>
-        <translation type="unfinished">standard lommebok</translation>
-    </message>
 </context>
 <context>
     <name>WalletView</name>
@@ -3572,16 +3584,12 @@ Gå til Fil &gt; Åpne lommebok for å laste en lommebok.
         <translation type="unfinished">%s-utviklerne</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool particl-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">%s korrupt. Prøv å bruk lommebokverktøyet particl-wallet til å fikse det eller laste en backup.</translation>
+        <source>%s corrupt. Try using the wallet tool bitcoin-wallet to salvage or restoring a backup.</source>
+        <translation type="unfinished">%s korrupt. Prøv å bruk lommebokverktøyet bitcoin-wallet til å fikse det eller laste en backup.</translation>
     </message>
     <message>
         <source>Cannot downgrade wallet from version %i to version %i. Wallet version unchanged.</source>
         <translation type="unfinished">Kan ikke nedgradere lommebok fra versjon %i til versjon %i. Lommebokversjon er uforandret.</translation>
-    </message>
-    <message>
-        <source>Cannot obtain a lock on data directory %s. %s is probably already running.</source>
-        <translation type="unfinished">Kan ikke låse datamappen %s. %s kjører antagelig allerede.</translation>
     </message>
     <message>
         <source>Cannot upgrade a non HD split wallet from version %i to version %i without upgrading to support pre-split keypool. Please use version %i or no version specified.</source>
@@ -3600,8 +3608,8 @@ Gå til Fil &gt; Åpne lommebok for å laste en lommebok.
         <translation type="unfinished">Feil: Dumpfil identifiseringsoppføring stemmer ikke. Fikk "%s", forventet "%s".</translation>
     </message>
     <message>
-        <source>Error: Dumpfile version is not supported. This version of particl-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
-        <translation type="unfinished">Feil: Dumpfil versjon er ikke støttet. Denne versjonen av particl-lommebok støtter kun versjon 1 dumpfiler. Fikk dumpfil med versjon %s</translation>
+        <source>Error: Dumpfile version is not supported. This version of bitcoin-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
+        <translation type="unfinished">Feil: Dumpfil versjon er ikke støttet. Denne versjonen av bitcoin-lommebok støtter kun versjon 1 dumpfiler. Fikk dumpfil med versjon %s</translation>
     </message>
     <message>
         <source>File %s already exists. If you are sure this is what you want, move it out of the way first.</source>
@@ -3610,10 +3618,6 @@ Gå til Fil &gt; Åpne lommebok for å laste en lommebok.
     <message>
         <source>More than one onion bind address is provided. Using %s for the automatically created Tor onion service.</source>
         <translation type="unfinished">Mer enn en onion adresse har blitt gitt. Bruker %s for den automatisk lagde Tor onion tjenesten.</translation>
-    </message>
-    <message>
-        <source>Please check that your computer's date and time are correct! If your clock is wrong, %s will not work properly.</source>
-        <translation type="unfinished">Sjekk at din datamaskins dato og klokke er stilt rett! Hvis klokka er feil, vil ikke %s fungere ordentlig.</translation>
     </message>
     <message>
         <source>Please contribute if you find %s useful. Visit %s for further information about the software.</source>
@@ -3672,6 +3676,10 @@ Gå til Fil &gt; Åpne lommebok for å laste en lommebok.
         <translation type="unfinished">Advarsel: Dumpfil lommebokformat "%s" stemmer ikke med format "%s" spesifisert i kommandolinje.</translation>
     </message>
     <message>
+        <source>Warning: Private keys detected in wallet {%s} with disabled private keys</source>
+        <translation type="unfinished">Advarsel: Private nøkler oppdaget i lommeboken {%s} med deaktiverte private nøkler</translation>
+    </message>
+    <message>
         <source>Warning: We do not appear to fully agree with our peers! You may need to upgrade, or other nodes may need to upgrade.</source>
         <translation type="unfinished">Advarsel: Vi ser ikke ut til å være i full overenstemmelse med våre likemenn! Du kan trenge å oppgradere, eller andre noder kan trenge å oppgradere.</translation>
     </message>
@@ -3688,10 +3696,6 @@ Gå til Fil &gt; Åpne lommebok for å laste en lommebok.
         <translation type="unfinished">-maxmempool må være minst %d MB</translation>
     </message>
     <message>
-        <source>A fatal internal error occurred, see debug.log for details</source>
-        <translation type="unfinished">En fatal intern feil oppstod, se debug.log for detaljer.</translation>
-    </message>
-    <message>
         <source>Cannot resolve -%s address: '%s'</source>
         <translation type="unfinished">Kunne ikke slå opp -%s-adresse: "%s"</translation>
     </message>
@@ -3704,6 +3708,10 @@ Gå til Fil &gt; Åpne lommebok for å laste en lommebok.
 Unable to restore backup of wallet.</source>
         <translation type="unfinished">
 Kunne ikke gjenopprette sikkerhetskopi av lommebok.</translation>
+    </message>
+    <message>
+        <source>Config setting for %s only applied on %s network when in [%s] section.</source>
+        <translation type="unfinished">Konfigurasjonsinnstilling for%s brukes bare på%s nettverk når du er i delen [%s].</translation>
     </message>
     <message>
         <source>Copyright (C) %i-%i</source>
@@ -3724,10 +3732,6 @@ Kunne ikke gjenopprette sikkerhetskopi av lommebok.</translation>
     <message>
         <source>Disk space is too low!</source>
         <translation type="unfinished">For lite diskplass!</translation>
-    </message>
-    <message>
-        <source>Do you want to rebuild the block database now?</source>
-        <translation type="unfinished">Ønsker du å gjenopprette blokkdatabasen nå?</translation>
     </message>
     <message>
         <source>Done loading</source>
@@ -3752,6 +3756,10 @@ Kunne ikke gjenopprette sikkerhetskopi av lommebok.</translation>
     <message>
         <source>Error loading %s</source>
         <translation type="unfinished">Feil ved lasting av %s</translation>
+    </message>
+    <message>
+        <source>Error loading %s: Private keys can only be disabled during creation</source>
+        <translation type="unfinished">Feil ved lasting av%s: Private nøkler kan bare deaktiveres under opprettelsen</translation>
     </message>
     <message>
         <source>Error loading %s: Wallet corrupted</source>
@@ -3858,6 +3866,10 @@ Kunne ikke gjenopprette sikkerhetskopi av lommebok.</translation>
         <translation type="unfinished">Ugyldig -mellomtjeneradresse eller vertsnavn: "%s"</translation>
     </message>
     <message>
+        <source>Invalid P2P permission: '%s'</source>
+        <translation type="unfinished">Ugyldig P2P-tillatelse: '%s'</translation>
+    </message>
+    <message>
         <source>Invalid amount for -%s=&lt;amount&gt;: '%s'</source>
         <translation type="unfinished">Ugyldig beløp for -%s=&lt;amount&gt;: "%s"</translation>
     </message>
@@ -3897,10 +3909,6 @@ Mangler løsningsdata for å estimere transaksjonsstørrelse</translation>
     <message>
         <source>No addresses available</source>
         <translation type="unfinished">Ingen adresser tilgjengelig</translation>
-    </message>
-    <message>
-        <source>Not enough file descriptors available.</source>
-        <translation type="unfinished">For få fildeskriptorer tilgjengelig.</translation>
     </message>
     <message>
         <source>Prune cannot be configured with a negative value.</source>
@@ -4021,6 +4029,10 @@ Mangler løsningsdata for å estimere transaksjonsstørrelse</translation>
     <message>
         <source>Unable to bind to %s on this computer. %s is probably already running.</source>
         <translation type="unfinished">Kan ikke binde til %s på denne datamaskinen. Sannsynligvis kjører %s allerede.</translation>
+    </message>
+    <message>
+        <source>Unable to create the PID file '%s': %s</source>
+        <translation type="unfinished">Kan ikke opprette PID-filen '%s':%s</translation>
     </message>
     <message>
         <source>Unable to generate initial keys</source>

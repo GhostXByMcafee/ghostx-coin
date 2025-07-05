@@ -20,6 +20,7 @@ import time
 import urllib.parse
 import collections
 import shlex
+import sys
 from pathlib import Path
 
 from .authproxy import (
@@ -39,9 +40,17 @@ from .util import (
     rpc_url,
     wait_until_helper_internal,
     p2p_port,
+    tor_port,
 )
 
 BITCOIND_PROC_WAIT_TIMEOUT = 60
+# The size of the blocks xor key
+# from InitBlocksdirXorKey::xor_key.size()
+NUM_XOR_BYTES = 8
+# The null blocks key (all 0s)
+NULL_BLK_XOR_KEY = bytes([0] * NUM_XOR_BYTES)
+BITCOIN_PID_FILENAME_DEFAULT = "bitcoind.pid"
+PARTICL_PID_FILENAME_DEFAULT = "particld.pid"
 
 
 class FailedToStartError(Exception):
@@ -88,8 +97,11 @@ class TestNode():
         self.coverage_dir = coverage_dir
         self.cwd = cwd
         self.descriptors = descriptors
+        self.has_explicit_bind = False
         if extra_conf is not None:
             append_config(self.datadir_path, extra_conf)
+            # Remember if there is bind=... in the config file.
+            self.has_explicit_bind = any(e.startswith("bind=") for e in extra_conf)
         # Most callers will just need to add extra args to the standard list below.
         # For those callers that need more flexibility, they can just set the args property directly.
         # Note that common args are set in the config file (see initialize_datadir)
@@ -106,7 +118,7 @@ class TestNode():
             "-debugexclude=libevent",
             "-debugexclude=leveldb",
             "-debugexclude=rand",
-            "-uacomment=testnode%d" % i,
+            "-uacomment=testnode%d" % i,  # required for subversion uniqueness across peers
         ]
         if self.descriptors is None:
             self.args.append("-disablewallet")
@@ -136,9 +148,7 @@ class TestNode():
                 self.args.append("-v2transport=1")
             else:
                 self.args.append("-v2transport=0")
-        else:
-            # v2transport requested but not supported for node
-            assert not v2transport
+        # if v2transport is requested via global flag but not supported for node version, ignore it
 
         self.cli = TestNodeCLI(bitcoin_cli, self.datadir_path)
         self.use_cli = use_cli
@@ -150,7 +160,6 @@ class TestNode():
         self.rpc = None
         self.url = None
         self.log = logging.getLogger('TestFramework.node%d' % i)
-        self.cleanup_on_exit = True # Whether to kill the node when this object goes away
         # Cache perf subprocesses here by their data output filename.
         self.perf_subprocesses = {}
 
@@ -192,11 +201,11 @@ class TestNode():
     def __del__(self):
         # Ensure that we don't leave any bitcoind processes lying around after
         # the test ends
-        if self.process and self.cleanup_on_exit:
+        if self.process:
             # Should only happen on test failure
             # Avoid using logger, as that may have already been shutdown when
             # this destructor is called.
-            print(self._node_msg("Cleaning up leftover process"))
+            print(self._node_msg("Cleaning up leftover process"), file=sys.stderr)
             self.process.kill()
 
     def __getattr__(self, name):
@@ -215,6 +224,15 @@ class TestNode():
         if kwargs.pop('btcmode', True):
             extra_args.insert(0, '-btcmode')
             extra_args.insert(0, '-nosmsg')
+        # If listening and no -bind is given, then bitcoind would bind P2P ports on
+        # 0.0.0.0:P and 127.0.0.1:P+1 (for incoming Tor connections), where P is
+        # a unique port chosen by the test framework and configured as port=P in
+        # bitcoin.conf. To avoid collisions, change it to 127.0.0.1:tor_port().
+        will_listen = all(e != "-nolisten" and e != "-listen=0" for e in extra_args)
+        has_explicit_bind = self.has_explicit_bind or any(e.startswith("-bind=") for e in extra_args)
+        if will_listen and not has_explicit_bind:
+            extra_args.append(f"-bind=0.0.0.0:{p2p_port(self.index)}")
+            extra_args.append(f"-bind=127.0.0.1:{tor_port(self.index)}=onion")
 
         self.use_v2transport = "-v2transport=1" in extra_args or (self.default_to_v2 and "-v2transport=0" not in extra_args)
 
@@ -247,7 +265,7 @@ class TestNode():
         if self.start_perf:
             self._start_perf()
 
-    def wait_for_rpc_connection(self):
+    def wait_for_rpc_connection(self, *, wait_for_import=True):
         """Sets up an RPC connection to the bitcoind process. Returns False if unable to connect."""
         # Poll at a rate of four times per second
         poll_per_s = 4
@@ -269,7 +287,7 @@ class TestNode():
                 )
                 rpc.getblockcount()
                 # If the call to getblockcount() succeeds then the RPC connection is up
-                if self.version_is_at_least(190000):
+                if self.version_is_at_least(190000) and wait_for_import:
                     # getmempoolinfo.loaded is available since commit
                     # bb8ae2c (version 0.19.0)
                     self.wait_until(lambda: rpc.getmempoolinfo()['loaded'])
@@ -338,16 +356,16 @@ class TestNode():
         self.log.debug("TestNode.generate() dispatches `generate` call to `generatetoaddress`")
         return self.generatetoaddress(nblocks=nblocks, address=self.get_deterministic_priv_key().address, maxtries=maxtries, **kwargs)
 
-    def generateblock(self, *args, invalid_call, **kwargs):
-        assert not invalid_call
+    def generateblock(self, *args, called_by_framework, **kwargs):
+        assert called_by_framework, "Direct call of this mining RPC is discouraged. Please use one of the self.generate* methods on the test framework, which sync the nodes to avoid intermittent test issues. You may use sync_fun=self.no_op to disable the sync explicitly."
         return self.__getattr__('generateblock')(*args, **kwargs)
 
-    def generatetoaddress(self, *args, invalid_call, **kwargs):
-        assert not invalid_call
+    def generatetoaddress(self, *args, called_by_framework, **kwargs):
+        assert called_by_framework, "Direct call of this mining RPC is discouraged. Please use one of the self.generate* methods on the test framework, which sync the nodes to avoid intermittent test issues. You may use sync_fun=self.no_op to disable the sync explicitly."
         return self.__getattr__('generatetoaddress')(*args, **kwargs)
 
-    def generatetodescriptor(self, *args, invalid_call, **kwargs):
-        assert not invalid_call
+    def generatetodescriptor(self, *args, called_by_framework, **kwargs):
+        assert called_by_framework, "Direct call of this mining RPC is discouraged. Please use one of the self.generate* methods on the test framework, which sync the nodes to avoid intermittent test issues. You may use sync_fun=self.no_op to disable the sync explicitly."
         return self.__getattr__('generatetodescriptor')(*args, **kwargs)
 
     def setmocktime(self, timestamp, offset=False):
@@ -425,8 +443,9 @@ class TestNode():
         return True
 
     def wait_until_stopped(self, *, timeout=BITCOIND_PROC_WAIT_TIMEOUT, expect_error=False, **kwargs):
-        expected_ret_code = 1 if expect_error else 0  # Whether node shutdown return EXIT_FAILURE or EXIT_SUCCESS
-        self.wait_until(lambda: self.is_node_stopped(expected_ret_code=expected_ret_code, **kwargs), timeout=timeout)
+        if "expected_ret_code" not in kwargs:
+            kwargs["expected_ret_code"] = 1 if expect_error else 0  # Whether node shutdown return EXIT_FAILURE or EXIT_SUCCESS
+        self.wait_until(lambda: self.is_node_stopped(**kwargs), timeout=timeout)
 
     def replace_in_config(self, replacements):
         """
@@ -454,6 +473,14 @@ class TestNode():
     @property
     def blocks_path(self) -> Path:
         return self.chain_path / "blocks"
+
+    @property
+    def blocks_key_path(self) -> Path:
+        return self.blocks_path / "xor.dat"
+
+    def read_xor_key(self) -> bytes:
+        with open(self.blocks_key_path, "rb") as xor_f:
+            return xor_f.read(NUM_XOR_BYTES)
 
     @property
     def wallets_path(self) -> Path:
@@ -496,7 +523,7 @@ class TestNode():
         self._raise_assertion_error('Expected messages "{}" does not partially match log:\n\n{}\n\n'.format(str(expected_msgs), print_log))
 
     @contextlib.contextmanager
-    def wait_for_debug_log(self, expected_msgs, timeout=60):
+    def busy_wait_for_debug_log(self, expected_msgs, timeout=60):
         """
         Block until we see a particular debug log message fragment or until we exceed the timeout.
         Return:
@@ -671,7 +698,7 @@ class TestNode():
                     assert_msg += "with expected error " + expected_msg
                 self._raise_assertion_error(assert_msg)
 
-    def add_p2p_connection(self, p2p_conn, *, wait_for_verack=True, send_version=True, supports_v2_p2p=None, wait_for_v2_handshake=True, **kwargs):
+    def add_p2p_connection(self, p2p_conn, *, wait_for_verack=True, send_version=True, supports_v2_p2p=None, wait_for_v2_handshake=True, expect_success=True, **kwargs):
         """Add an inbound p2p connection to the node.
 
         This method adds the p2p connection to the self.p2ps list and also
@@ -691,14 +718,14 @@ class TestNode():
         if supports_v2_p2p is None:
             supports_v2_p2p = self.use_v2transport
 
-
-        p2p_conn.p2p_connected_to_node = True
         if self.use_v2transport:
             kwargs['services'] = kwargs.get('services', P2P_SERVICES) | NODE_P2P_V2
         supports_v2_p2p = self.use_v2transport and supports_v2_p2p
         p2p_conn.peer_connect(**kwargs, send_version=send_version, net=self.chain, timeout_factor=self.timeout_factor, supports_v2_p2p=supports_v2_p2p)()
 
         self.p2ps.append(p2p_conn)
+        if not expect_success:
+            return p2p_conn
         p2p_conn.wait_until(lambda: p2p_conn.is_connected, check_connected=False)
         if supports_v2_p2p and wait_for_v2_handshake:
             p2p_conn.wait_until(lambda: p2p_conn.v2_state.tried_v2_handshake)
@@ -730,7 +757,7 @@ class TestNode():
 
         return p2p_conn
 
-    def add_outbound_p2p_connection(self, p2p_conn, *, wait_for_verack=True, p2p_idx, connection_type="outbound-full-relay", supports_v2_p2p=None, advertise_v2_p2p=None, **kwargs):
+    def add_outbound_p2p_connection(self, p2p_conn, *, wait_for_verack=True, wait_for_disconnect=False, p2p_idx, connection_type="outbound-full-relay", supports_v2_p2p=None, advertise_v2_p2p=None, **kwargs):
         """Add an outbound p2p connection from node. Must be an
         "outbound-full-relay", "block-relay-only", "addr-fetch" or "feeler" connection.
 
@@ -757,7 +784,6 @@ class TestNode():
             self.log.debug("Connecting to %s:%d %s" % (address, port, connection_type))
             self.addconnection('%s:%d' % (address, port), connection_type, advertise_v2_p2p)
 
-        p2p_conn.p2p_connected_to_node = False
         if supports_v2_p2p is None:
             supports_v2_p2p = self.use_v2transport
         if advertise_v2_p2p is None:
@@ -777,7 +803,7 @@ class TestNode():
         if reconnect:
             p2p_conn.wait_for_reconnect()
 
-        if connection_type == "feeler":
+        if connection_type == "feeler" or wait_for_disconnect:
             # feeler connections are closed as soon as the node receives a `version` message
             p2p_conn.wait_until(lambda: p2p_conn.message_count["version"] == 1, check_connected=False)
             p2p_conn.wait_until(lambda: not p2p_conn.is_connected, check_connected=False)
@@ -814,8 +840,8 @@ class TestNode():
         self.mocktime += seconds
         self.setmocktime(self.mocktime)
 
-    def wait_until(self, test_function, timeout=60):
-        return wait_until_helper_internal(test_function, timeout=timeout, timeout_factor=self.timeout_factor)
+    def wait_until(self, test_function, timeout=60, check_interval=0.05):
+        return wait_until_helper_internal(test_function, timeout=timeout, timeout_factor=self.timeout_factor, check_interval=check_interval)
 
     def tx(self, args):
         binary = 'particl-tx'

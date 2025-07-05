@@ -16,8 +16,10 @@
 
 static void Blind(benchmark::Bench& bench)
 {
-    ECC_Start();
-    particl::ECC_Start_Blinding();
+    // ECC_Start();
+    // particl::ECC_Start_Blinding();
+
+    ECC_Context();
 
     secp256k1_pedersen_commitment commitment;
     std::vector<uint8_t> vchRangeproof;

@@ -2,6 +2,10 @@
 <context>
     <name>AddressBookPage</name>
     <message>
+        <source>Create a new address</source>
+        <translation type="unfinished">Δημιουργία νέας διεύθυνσης </translation>
+    </message>
+    <message>
         <source>&amp;New</source>
         <translation type="unfinished">&amp;Νέo</translation>
     </message>
@@ -50,13 +54,13 @@
         <translation type="unfinished">Ε&amp;πιλογή</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Αυτές είναι οι Particl διευθύνσεις σας για να στέλνετε πληρωμές. Να ελέγχετε πάντα το ποσό, καθώς και τη διεύθυνση παραλήπτη πριν στείλετε νομίσματα.</translation>
+        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Αυτές είναι οι Bitcoin διευθύνσεις σας για να στέλνετε πληρωμές. Να ελέγχετε πάντα το ποσό, καθώς και τη διεύθυνση παραλήπτη πριν στείλετε νομίσματα.</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">Αυτές είναι οι Particl διευθύνσεις για τη λήψη πληρωμών. Χρησιμοποιήστε το κουμπί  'Δημιουργία νέας διεύθυνσης λήψεων' στο παράθυρο λήψεων για τη δημιουργία νέας διεύθυνσης.
+        <translation type="unfinished">Αυτές είναι οι Bitcoin διευθύνσεις για τη λήψη πληρωμών. Χρησιμοποιήστε το κουμπί  'Δημιουργία νέας διεύθυνσης λήψεων' στο παράθυρο λήψεων για τη δημιουργία νέας διεύθυνσης.
 Η υπογραφή είναι διαθέσιμη μόνο σε διευθύνσεις 'παλαιού τύπου'.</translation>
     </message>
     <message>
@@ -84,6 +88,10 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>There was an error trying to save the address list to %1. Please try again.</source>
         <extracomment>An error message. %1 is a stand-in argument for the name of the file we attempted to save to.</extracomment>
         <translation type="unfinished">Σφάλμα κατά την προσπάθεια αποθήκευσης της λίστας διευθύνσεων στο %1. Παρακαλώ δοκιμάστε ξανά.</translation>
+    </message>
+    <message>
+        <source>Receiving addresses - %1</source>
+        <translation type="unfinished">Διευθύνσεις λήψης - %1</translation>
     </message>
     <message>
         <source>Exporting Failed</source>
@@ -148,8 +156,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Επιβεβαίωσε κρυπτογράφηση πορτοφολιού</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PARTICL&lt;/b&gt;!</source>
-        <translation type="unfinished">Προσοχή! Εάν κρυπτογραφήσετε το πορτοφόλι σας και χάσετε τη φράση πρόσβασης, θα &lt;b&gt; ΧΑΣΕΤΕ ΟΛΑ ΤΑ PARTICL ΣΑΣ&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
+        <translation type="unfinished">Προσοχή! Εάν κρυπτογραφήσετε το πορτοφόλι σας και χάσετε τη φράση πρόσβασης, θα &lt;b&gt; ΧΑΣΕΤΕ ΟΛΑ ΤΑ BITCOIN ΣΑΣ&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -168,8 +176,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Εισαγάγετε τον παλιό και νέο κωδικό πρόσβασης σας για το πορτοφόλι.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your particl from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">Θυμίσου ότι το να κρυπτογραφείς το πορτοφόλι σου δεν μπορεί να προστατέψει πλήρως τα particl σου από κλοπή από  κακόβουλο λογισμικό που έχει μολύνει τον υπολογιστή σου</translation>
+        <source>Continue</source>
+        <translation type="unfinished">Συνεχίστε</translation>
+    </message>
+    <message>
+        <source>Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">Θυμίσου ότι το να κρυπτογραφείς το πορτοφόλι σου δεν μπορεί να προστατέψει πλήρως τα bitcoins σου από κλοπή από  κακόβουλο λογισμικό που έχει μολύνει τον υπολογιστή σου</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -283,12 +295,16 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">άγνωστο</translation>
     </message>
     <message>
+        <source>Default system font "%1"</source>
+        <translation type="unfinished">Προεπιλεγμένη γραμματοσειρά συστήματος "%1"</translation>
+    </message>
+    <message>
         <source>Amount</source>
         <translation type="unfinished">Ποσό</translation>
     </message>
     <message>
-        <source>Enter a Particl address (e.g. %1)</source>
-        <translation type="unfinished">Εισάγετε μια διεύθυνση Particl (π.χ. %1)</translation>
+        <source>Enter a Bitcoin address (e.g. %1)</source>
+        <translation type="unfinished">Εισάγετε μια διεύθυνση Bitcoin (π.χ. %1)</translation>
     </message>
     <message>
         <source>Unroutable</source>
@@ -389,7 +405,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
             <numerusform>%n έτη</numerusform>
         </translation>
     </message>
-    </context>
+    <message>
+        <source>default wallet</source>
+        <translation type="unfinished">Προεπιλεγμένο πορτοφόλι</translation>
+    </message>
+</context>
 <context>
     <name>BitcoinGUI</name>
     <message>
@@ -458,8 +478,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Proxy είναι&lt;b&gt;ενεργοποιημένος&lt;/b&gt;:%1 </translation>
     </message>
     <message>
-        <source>Send coins to a Particl address</source>
-        <translation type="unfinished">Στείλε νομίσματα σε μια διεύθυνση particl</translation>
+        <source>Send coins to a Bitcoin address</source>
+        <translation type="unfinished">Στείλε νομίσματα σε μια διεύθυνση bitcoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -467,7 +487,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
-        <translation type="unfinished">Αλλαγή της φράσης πρόσβασης για την κρυπτογράφηση του πορτοφολιού</translation>
+        <translation type="unfinished">Αλλαγή του κωδικού κρυπτογράφησης του πορτοφολιού</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -502,7 +522,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Υπογραφή &amp;μηνύματος...</translation>
     </message>
     <message>
-        <source>Sign messages with your Particl addresses to prove you own them</source>
+        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
         <translation type="unfinished">Υπογράψτε ένα μήνυμα για να βεβαιώσετε πως είστε ο κάτοχος αυτής της διεύθυνσης</translation>
     </message>
     <message>
@@ -510,8 +530,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp;Επιβεβαίωση μηνύματος...</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Particl addresses</source>
-        <translation type="unfinished">Ελέγξτε τα μηνύματα για να βεβαιωθείτε ότι υπογράφηκαν με τις καθορισμένες διευθύνσεις Particl</translation>
+        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
+        <translation type="unfinished">Ελέγξτε τα μηνύματα για να βεβαιωθείτε ότι υπογράφηκαν με τις καθορισμένες διευθύνσεις Bitcoin</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
@@ -570,8 +590,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Σύνδεση στους χρήστες...</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and particl: URIs)</source>
-        <translation type="unfinished">Αίτηση πληρωμών (δημιουργεί QR codes και διευθύνσεις particl: )</translation>
+        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
+        <translation type="unfinished">Αίτηση πληρωμών (δημιουργεί QR codes και διευθύνσεις bitcoin: )</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -625,16 +645,16 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Ενημερωμένο</translation>
     </message>
     <message>
-        <source>Load Partially Signed Particl Transaction</source>
-        <translation type="unfinished">Φόρτωση συναλλαγής Partially Signed Particl</translation>
+        <source>Load Partially Signed Bitcoin Transaction</source>
+        <translation type="unfinished">Φόρτωση συναλλαγής Partially Signed Bitcoin</translation>
     </message>
     <message>
         <source>Load PSBT from &amp;clipboard…</source>
         <translation type="unfinished">Φόρτωσε PSBT από &amp;πρόχειρο...</translation>
     </message>
     <message>
-        <source>Load Partially Signed Particl Transaction from clipboard</source>
-        <translation type="unfinished">Φόρτωση συναλλαγής Partially Signed Particl από το πρόχειρο</translation>
+        <source>Load Partially Signed Bitcoin Transaction from clipboard</source>
+        <translation type="unfinished">Φόρτωση συναλλαγής Partially Signed Bitcoin από το πρόχειρο</translation>
     </message>
     <message>
         <source>Node window</source>
@@ -653,8 +673,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp;Λήψη διευθύνσεων</translation>
     </message>
     <message>
-        <source>Open a particl: URI</source>
-        <translation type="unfinished">Ανοίξτε ένα particl: URI</translation>
+        <source>Open a bitcoin: URI</source>
+        <translation type="unfinished">Ανοίξτε ένα bitcoin: URI</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -684,15 +704,15 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Migrate Wallet</source>
-        <translation type="unfinished">Μεταφορά Πορτοφολιού</translation>
+        <translation type="unfinished">Μετεγκατάσταση Πορτοφολιού</translation>
     </message>
     <message>
         <source>Migrate a wallet</source>
-        <translation type="unfinished">Μεταφορά ενός πορτοφολιού</translation>
+        <translation type="unfinished">Μετεγκατάσταση ενός πορτοφολιού</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Particl command-line options</source>
-        <translation type="unfinished">Εμφάνισε το %1 βοηθητικό μήνυμα για λήψη μιας λίστας με διαθέσιμες επιλογές για Particl εντολές </translation>
+        <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
+        <translation type="unfinished">Εμφάνισε το %1 βοηθητικό μήνυμα για λήψη μιας λίστας με διαθέσιμες επιλογές για Bitcoin εντολές </translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
@@ -701,10 +721,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <message>
         <source>Mask the values in the Overview tab</source>
         <translation type="unfinished">Απόκρυψη τιμών στην καρτέλα Επισκόπησης</translation>
-    </message>
-    <message>
-        <source>default wallet</source>
-        <translation type="unfinished">Προεπιλεγμένο πορτοφόλι</translation>
     </message>
     <message>
         <source>No wallets available</source>
@@ -755,11 +771,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Ε&amp;μφάνιση</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Particl network.</source>
+        <source>%n active connection(s) to Bitcoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
-            <numerusform>1%n  ενεργές συνδέσεις στο δίκτυο Particl.</numerusform>
-            <numerusform>%n ενεργές συνδέσεις στο δίκτυο Particl.</numerusform>
+            <numerusform>%n active connection(s) to Bitcoin network.</numerusform>
+            <numerusform>%n active connection(s) to Bitcoin network.</numerusform>
         </translation>
     </message>
     <message>
@@ -1113,10 +1129,6 @@ The migration process will create a backup of the wallet before migrating. This 
         <translation type="unfinished">Προειδοποίηση ανοίγματος πορτοφολιού</translation>
     </message>
     <message>
-        <source>default wallet</source>
-        <translation type="unfinished">Προεπιλεγμένο πορτοφόλι</translation>
-    </message>
-    <message>
         <source>Open Wallet</source>
         <extracomment>Title of window indicating the progress of opening of a wallet.</extracomment>
         <translation type="unfinished">Άνοιγμα Πορτοφολιού</translation>
@@ -1281,8 +1293,8 @@ The migration process will create a backup of the wallet before migrating. This 
         <translation type="unfinished">Επεξεργασία διεύθυνσης αποστολής</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Particl address.</source>
-        <translation type="unfinished">Η διεύθυνση "%1" δεν είναι έγκυρη Particl διεύθυνση.</translation>
+        <source>The entered address "%1" is not a valid Bitcoin address.</source>
+        <translation type="unfinished">Η διεύθυνση "%1" δεν είναι έγκυρη Bitcoin διεύθυνση.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -1368,8 +1380,8 @@ The migration process will create a backup of the wallet before migrating. This 
         </translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Particl block chain.</source>
-        <translation type="unfinished">Το %1 θα κατεβάσει και θα αποθηκεύσει ένα αντίγραφο της αλυσίδας μπλοκ Particl.</translation>
+        <source>%1 will download and store a copy of the Bitcoin block chain.</source>
+        <translation type="unfinished">Το %1 θα κατεβάσει και θα αποθηκεύσει ένα αντίγραφο της αλυσίδας μπλοκ Bitcoin.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1453,12 +1465,12 @@ The migration process will create a backup of the wallet before migrating. This 
         <translation type="unfinished">Φόρμα</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the particl network, as detailed below.</source>
-        <translation type="unfinished">Οι πρόσφατες συναλλαγές ενδέχεται να μην είναι ακόμα ορατές και επομένως η ισορροπία του πορτοφολιού σας μπορεί να είναι εσφαλμένη. Αυτές οι πληροφορίες θα είναι σωστές όταν ολοκληρωθεί το συγχρονισμό του πορτοφολιού σας με το δίκτυο Particl, όπως περιγράφεται παρακάτω.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the bitcoin network, as detailed below.</source>
+        <translation type="unfinished">Οι πρόσφατες συναλλαγές ενδέχεται να μην είναι ακόμα ορατές και επομένως η ισορροπία του πορτοφολιού σας μπορεί να είναι εσφαλμένη. Αυτές οι πληροφορίες θα είναι σωστές όταν ολοκληρωθεί το συγχρονισμό του πορτοφολιού σας με το δίκτυο Bitcoin, όπως περιγράφεται παρακάτω.</translation>
     </message>
     <message>
-        <source>Attempting to spend particl that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation type="unfinished">Η προσπάθεια να δαπανήσετε particl που επηρεάζονται από τις μη εμφανιζόμενες ακόμη συναλλαγές δεν θα γίνει αποδεκτή από το δίκτυο.</translation>
+        <source>Attempting to spend bitcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation type="unfinished">Η προσπάθεια να δαπανήσετε bitcoins που επηρεάζονται από τις μη εμφανιζόμενες ακόμη συναλλαγές δεν θα γίνει αποδεκτή από το δίκτυο.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1512,8 +1524,8 @@ The migration process will create a backup of the wallet before migrating. This 
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open particl URI</source>
-        <translation type="unfinished">Ανοίξτε το particl URI</translation>
+        <source>Open bitcoin URI</source>
+        <translation type="unfinished">Ανοίξτε το bitcoin URI</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -1600,11 +1612,6 @@ The migration process will create a backup of the wallet before migrating. This 
         <translation type="unfinished">Η επαναφορά αυτής της ρύθμισης απαιτεί εκ νέου λήψη ολόκληρου του μπλοκ αλυσίδας.</translation>
     </message>
     <message>
-        <source>Maximum database cache size. A larger cache can contribute to faster sync, after which the benefit is less pronounced for most use cases. Lowering the cache size will reduce memory usage. Unused mempool memory is shared for this cache.</source>
-        <extracomment>Tooltip text for Options window setting that sets the size of the database cache. Explains the corresponding effects of increasing/decreasing this value.</extracomment>
-        <translation type="unfinished">Μέγιστο μέγεθος βάσης δεδομένων προσωρινής μνήμης. Μια μεγαλύτερη προσωρινή μνήμη μπορεί να συμβάλει στον ταχύτερο συγχρονισμό, μετά τον οποίο το όφελος είναι λιγότερο έντονο για τις περισσότερες περιπτώσεις χρήσης. Η μείωση του μεγέθους της προσωρινής μνήμης θα μειώσει τη χρήση της μνήμης. Η αχρησιμοποίητη μνήμη mempool είναι κοινόχρηστη για αυτήν την προσωρινή μνήμη.</translation>
-    </message>
-    <message>
         <source>MiB</source>
         <translation type="unfinished">MebiBytes</translation>
     </message>
@@ -1676,22 +1683,6 @@ The migration process will create a backup of the wallet before migrating. This 
         <translation type="unfinished">&amp;Διαδρομή σεναρίου εξωτερικού υπογράφοντος</translation>
     </message>
     <message>
-        <source>Automatically open the Particl client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation type="unfinished">Αυτόματο άνοιγμα των θυρών Particl στον δρομολογητή. Λειτουργεί μόνο αν ο δρομολογητής σας υποστηρίζει τη λειτουργία UPnP.</translation>
-    </message>
-    <message>
-        <source>Map port using &amp;UPnP</source>
-        <translation type="unfinished">Απόδοση θυρών με χρήση &amp;UPnP</translation>
-    </message>
-    <message>
-        <source>Automatically open the Particl client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
-        <translation type="unfinished">Ανοίξτε αυτόματα τη πόρτα του Particl client στο router. Αυτό λειτουργεί μόνο όταν το router σας υποστηρίζει NAT-PMP και είναι ενεργοποιημένο. Η εξωτερική πόρτα μπορεί να είναι τυχαία.</translation>
-    </message>
-    <message>
-        <source>Map port using NA&amp;T-PMP</source>
-        <translation type="unfinished">Δρομολόγηση θύρας με χρήση NA&amp;T-PMP</translation>
-    </message>
-    <message>
         <source>Accept connections from outside.</source>
         <translation type="unfinished">Αποδοχή εξωτερικών συνδέσεων</translation>
     </message>
@@ -1700,8 +1691,8 @@ The migration process will create a backup of the wallet before migrating. This 
         <translation type="unfinished">Επιτρέπονται εισερχόμενες συνδέσεις</translation>
     </message>
     <message>
-        <source>Connect to the Particl network through a SOCKS5 proxy.</source>
-        <translation type="unfinished">Σύνδεση στο δίκτυο Particl μέσω διαμεσολαβητή SOCKS5.</translation>
+        <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
+        <translation type="unfinished">Σύνδεση στο δίκτυο Bitcoin μέσω διαμεσολαβητή SOCKS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1780,8 +1771,8 @@ The migration process will create a backup of the wallet before migrating. This 
         <translation type="unfinished">Επιλογή κατά πόσο να αναδείχνονται οι δυνατότητες ελέγχου κερμάτων.</translation>
     </message>
     <message>
-        <source>Connect to the Particl network through a separate SOCKS5 proxy for Tor onion services.</source>
-        <translation type="unfinished">Συνδεθείτε στο δίκτυο Particl μέσω ενός ξεχωριστού διακομιστή μεσολάβησης SOCKS5 για τις onion υπηρεσίες του Tor.</translation>
+        <source>Connect to the Bitcoin network through a separate SOCKS5 proxy for Tor onion services.</source>
+        <translation type="unfinished">Συνδεθείτε στο δίκτυο Bitcoin μέσω ενός ξεχωριστού διακομιστή μεσολάβησης SOCKS5 για τις onion υπηρεσίες του Tor.</translation>
     </message>
     <message>
         <source>Use separate SOCKS&amp;5 proxy to reach peers via Tor onion services:</source>
@@ -1878,8 +1869,8 @@ The migration process will create a backup of the wallet before migrating. This 
         <translation type="unfinished">Φόρμα</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Particl network after a connection is established, but this process has not completed yet.</source>
-        <translation type="unfinished">Οι πληροφορίες που εμφανίζονται μπορεί να είναι ξεπερασμένες. Το πορτοφόλι σας συγχρονίζεται αυτόματα με το δίκτυο Particl μετά από μια σύνδεση, αλλά αυτή η διαδικασία δεν έχει ακόμη ολοκληρωθεί.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation type="unfinished">Οι πληροφορίες που εμφανίζονται μπορεί να είναι ξεπερασμένες. Το πορτοφόλι σας συγχρονίζεται αυτόματα με το δίκτυο Bitcoin μετά από μια σύνδεση, αλλά αυτή η διαδικασία δεν έχει ακόμη ολοκληρωθεί.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -2094,16 +2085,16 @@ ID Συναλλαγής: %1</translation>
         <translation type="unfinished">Σφάλμα αίτησης πληρωμής</translation>
     </message>
     <message>
-        <source>Cannot start particl: click-to-pay handler</source>
-        <translation type="unfinished">Δεν είναι δυνατή η εκκίνηση του particl: χειριστής click-to-pay</translation>
+        <source>Cannot start bitcoin: click-to-pay handler</source>
+        <translation type="unfinished">Δεν είναι δυνατή η εκκίνηση του bitcoin: χειριστής click-to-pay</translation>
     </message>
     <message>
         <source>URI handling</source>
         <translation type="unfinished">χειρισμός URI</translation>
     </message>
     <message>
-        <source>'particl://' is not a valid URI. Use 'particl:' instead.</source>
-        <translation type="unfinished">Το 'particl://' δεν είναι έγκυρο URI. Αντ' αυτού χρησιμοποιήστε το 'particl:'.</translation>
+        <source>'bitcoin://' is not a valid URI. Use 'bitcoin:' instead.</source>
+        <translation type="unfinished">Το 'bitcoin://' δεν είναι έγκυρο URI. Αντ' αυτού χρησιμοποιήστε το 'bitcoin:'.</translation>
     </message>
     <message>
         <source>Cannot process payment request because BIP70 is not supported.
@@ -2114,8 +2105,8 @@ If you are receiving this error you should request the merchant provide a BIP21 
 Εάν λαμβάνετε αυτό το σφάλμα, θα πρέπει να ζητήσετε από τον έμπορο να παρέχει ένα URI συμβατό με το BIP21.</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Particl address or malformed URI parameters.</source>
-        <translation type="unfinished">Δεν είναι δυνατή η ανάλυση του URI! Αυτό μπορεί να προκληθεί από μη έγκυρη διεύθυνση Particl ή παραμορφωμένες παραμέτρους URI.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
+        <translation type="unfinished">Δεν είναι δυνατή η ανάλυση του URI! Αυτό μπορεί να προκληθεί από μη έγκυρη διεύθυνση Bitcoin ή παραμορφωμένες παραμέτρους URI.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -2315,10 +2306,6 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation type="unfinished">Μεταφορά</translation>
     </message>
     <message>
-        <source>The BIP324 session ID string in hex, if any.</source>
-        <translation type="unfinished">Η συμβολοσειρά αναγνωριστικού περιόδου σύνδεσης BIP324 σε δεκαεξαδική μορφή, εάν υπάρχει.</translation>
-    </message>
-    <message>
         <source>Session ID</source>
         <translation type="unfinished">Αναγνωριστικό περιόδου σύνδεσης</translation>
     </message>
@@ -2415,6 +2402,10 @@ If you are receiving this error you should request the merchant provide a BIP21 
     <message>
         <source>Permissions</source>
         <translation type="unfinished">Αδειες</translation>
+    </message>
+    <message>
+        <source>The direction and type of peer connection: %1</source>
+        <translation type="unfinished">Η κατεύθυνση και ο τύπος της ομότιμης σύνδεσης: %1</translation>
     </message>
     <message>
         <source>Direction/Type</source>
@@ -2564,7 +2555,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
     </message>
     <message>
         <source>we selected the peer for high bandwidth relay</source>
-        <translation type="unfinished">επιλέξαμε τον ομότιμο για αναμετάδοση υψηλού εύρους ζώνης</translation>
+        <translation type="unfinished">επιλέξαμε τον ομότιμο για υψηλού εύρους ζώνης αναμετάδοση</translation>
     </message>
     <message>
         <source>the peer selected us for high bandwidth relay</source>
@@ -2607,6 +2598,10 @@ If you are receiving this error you should request the merchant provide a BIP21 
     <message>
         <source>Network activity disabled</source>
         <translation type="unfinished">Η δραστηριότητα δικτύου είναι απενεργοποιημένη</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished">Κανένα</translation>
     </message>
     <message>
         <source>Executing command without any wallet</source>
@@ -2695,8 +2690,8 @@ For more information on using this console, type %6.
         <translation type="unfinished">&amp;Μήνυμα:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Particl network.</source>
-        <translation type="unfinished">Ένα προαιρετικό μήνυμα που επισυνάπτεται στο αίτημα πληρωμής, το οποίο θα εμφανιστεί όταν το αίτημα ανοίξει. Σημείωση: Το μήνυμα δεν θα αποσταλεί με την πληρωμή μέσω του δικτύου Particl.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bitcoin network.</source>
+        <translation type="unfinished">Ένα προαιρετικό μήνυμα που επισυνάπτεται στο αίτημα πληρωμής, το οποίο θα εμφανιστεί όταν το αίτημα ανοίξει. Σημείωση: Το μήνυμα δεν θα αποσταλεί με την πληρωμή μέσω του δικτύου Bitcoin.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2780,7 +2775,7 @@ For more information on using this console, type %6.
     </message>
     <message>
         <source>Generates an address compatible with older wallets.</source>
-        <translation type="unfinished">Παράγει μια διεύθυνση συμβατή με παλαιότερα πορτοφόλια.</translation>
+        <translation type="unfinished">Δημιουργεί μια διεύθυνση συμβατή με παλαιότερα πορτοφόλια.</translation>
     </message>
     <message>
         <source>Generates a native segwit address (BIP-173). Some old wallets don't support it.</source>
@@ -2993,8 +2988,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
 Σημείωση: Εφόσον η χρέωση υπολογίζεται ανά byte, ένας ρυθμός χρέωσης των «100 satoshis ανά kvB» για μέγεθος συναλλαγής 500 ψηφιακών bytes (το μισό του 1 kvB) θα απέφερε χρέωση μόλις 50 satoshis.</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for particl transactions than the network can process.</source>
-        <translation type="unfinished">Όταν υπάρχει λιγότερος όγκος συναλλαγών από το χώρο στα μπλοκ, οι ανθρακωρύχοι καθώς και οι κόμβοι αναμετάδοσης μπορούν να επιβάλουν ένα ελάχιστο τέλος. Η πληρωμή μόνο αυτού του ελάχιστου τέλους είναι μια χαρά, αλλά γνωρίζετε ότι αυτό μπορεί να οδηγήσει σε μια συναλλαγή που δεν επιβεβαιώνει ποτέ τη στιγμή που υπάρχει μεγαλύτερη ζήτηση για συναλλαγές particl από ό, τι μπορεί να επεξεργαστεί το δίκτυο.</translation>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for bitcoin transactions than the network can process.</source>
+        <translation type="unfinished">Όταν υπάρχει λιγότερος όγκος συναλλαγών από το χώρο στα μπλοκ, οι ανθρακωρύχοι καθώς και οι κόμβοι αναμετάδοσης μπορούν να επιβάλουν ένα ελάχιστο τέλος. Η πληρωμή μόνο αυτού του ελάχιστου τέλους είναι μια χαρά, αλλά γνωρίζετε ότι αυτό μπορεί να οδηγήσει σε μια συναλλαγή που δεν επιβεβαιώνει ποτέ τη στιγμή που υπάρχει μεγαλύτερη ζήτηση για συναλλαγές bitcoin από ό, τι μπορεί να επεξεργαστεί το δίκτυο.</translation>
     </message>
     <message>
         <source>A too low fee might result in a never confirming transaction (read the tooltip)</source>
@@ -3079,6 +3074,10 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">Δη&amp;μιουργία Ανυπόγραφου</translation>
     </message>
     <message>
+        <source>Creates a Partially Signed Bitcoin Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation type="unfinished">Δημιουργεί μια συναλλαγή Bitcoin με μερική υπογραφή (PSBT) για χρήση με π.χ. ένα πορτοφόλι%1 εκτός σύνδεσης ή ένα πορτοφόλι υλικού συμβατό με το PSBT.</translation>
+    </message>
+    <message>
         <source>%1 to '%2'</source>
         <translation type="unfinished">%1 προς το '%2'</translation>
     </message>
@@ -3131,9 +3130,9 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished"> Μπορείτε να αυξήσετε αργότερα την αμοιβή (σήματα Αντικατάσταση-By-Fee, BIP-125).</translation>
     </message>
     <message>
-        <source>Please, review your transaction proposal. This will produce a Partially Signed Particl Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <source>Please, review your transaction proposal. This will produce a Partially Signed Bitcoin Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can only create a PSBT. This string is displayed when private keys are disabled and an external signer is not available.</extracomment>
-        <translation type="unfinished">Παρακαλούμε, ελέγξτε την πρόταση συναλλαγής. Θα παραχθεί μια συναλλαγή Particl με μερική υπογραφή (PSBT), την οποία μπορείτε να αντιγράψετε και στη συνέχεια να υπογράψετε με π.χ. ένα πορτοφόλι %1 εκτός σύνδεσης ή ένα πορτοφόλι υλικού συμβατό με το PSBT.</translation>
+        <translation type="unfinished">Παρακαλούμε, ελέγξτε την πρόταση συναλλαγής. Θα παραχθεί μια συναλλαγή Bitcoin με μερική υπογραφή (PSBT), την οποία μπορείτε να αντιγράψετε και στη συνέχεια να υπογράψετε με π.χ. ένα πορτοφόλι %1 εκτός σύνδεσης ή ένα πορτοφόλι υλικού συμβατό με το PSBT.</translation>
     </message>
     <message>
         <source>Do you want to create this transaction?</source>
@@ -3141,9 +3140,9 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">Θέλετε να δημιουργήσετε αυτήν τη συναλλαγή;</translation>
     </message>
     <message>
-        <source>Please, review your transaction. You can create and send this transaction or create a Partially Signed Particl Transaction (PSBT), which you can save or copy and then sign with, e.g., an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <source>Please, review your transaction. You can create and send this transaction or create a Partially Signed Bitcoin Transaction (PSBT), which you can save or copy and then sign with, e.g., an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can send their transaction or create a PSBT. This string is displayed when both private keys and PSBT controls are enabled.</extracomment>
-        <translation type="unfinished">Παρακαλώ, ελέγξτε τη συναλλαγή σας. Μπορείτε να δημιουργήσετε και να στείλετε αυτήν τη συναλλαγή ή να δημιουργήσετε μια μερικώς υπογεγραμμένη συναλλαγή Particl (PSBT), την οποία μπορείτε να αποθηκεύσετε ή να αντιγράψετε και στη συνέχεια να υπογράψετε, π.χ. με ένα πορτοφόλι εκτός σύνδεσης%1ή ένα πορτοφόλι υλικού συμβατό με PSBT.</translation>
+        <translation type="unfinished">Παρακαλώ, ελέγξτε τη συναλλαγή σας. Μπορείτε να δημιουργήσετε και να στείλετε αυτήν τη συναλλαγή ή να δημιουργήσετε μια μερικώς υπογεγραμμένη συναλλαγή Bitcoin (PSBT), την οποία μπορείτε να αποθηκεύσετε ή να αντιγράψετε και στη συνέχεια να υπογράψετε, π.χ. με ένα πορτοφόλι εκτός σύνδεσης%1ή ένα πορτοφόλι υλικού συμβατό με PSBT.</translation>
     </message>
     <message>
         <source>Please, review your transaction.</source>
@@ -3216,13 +3215,13 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     <message numerus="yes">
         <source>Estimated to begin confirmation within %n block(s).</source>
         <translation type="unfinished">
-            <numerusform>Estimated to begin confirmation within %n block(s).</numerusform>
-            <numerusform>Estimated to begin confirmation within %n block(s).</numerusform>
+            <numerusform>Αναμένεται η έναρξη επιβεβαίωσης εντός %n μπλοκ.</numerusform>
+            <numerusform>Αναμένεται η έναρξη επιβεβαίωσης εντός %n μπλοκ.</numerusform>
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Particl address</source>
-        <translation type="unfinished">Προειδοποίηση: Μη έγκυρη διεύθυνση Particl</translation>
+        <source>Warning: Invalid Bitcoin address</source>
+        <translation type="unfinished">Προειδοποίηση: Μη έγκυρη διεύθυνση Bitcoin</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -3260,8 +3259,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">Επιλογή διεύθυνσης που έχει ήδη χρησιμοποιηθεί</translation>
     </message>
     <message>
-        <source>The Particl address to send the payment to</source>
-        <translation type="unfinished">Η διεύθυνση Particl που θα σταλεί η πληρωμή</translation>
+        <source>The Bitcoin address to send the payment to</source>
+        <translation type="unfinished">Η διεύθυνση Bitcoin που θα σταλεί η πληρωμή</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -3276,8 +3275,12 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">Το ποσό που θα αποσταλεί στην επιλεγμένη μονάδα</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less particl than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation type="unfinished">Το τέλος θα αφαιρεθεί από το ποσό που αποστέλλεται. Ο παραλήπτης θα λάβει λιγότερα particl από ό,τι εισάγετε στο πεδίο ποσό. Εάν επιλεγούν πολλοί παραλήπτες, το έξοδο διαιρείται εξίσου.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less bitcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation type="unfinished">Το τέλος θα αφαιρεθεί από το ποσό που αποστέλλεται. Ο παραλήπτης θα λάβει λιγότερα bitcoins από ό,τι εισάγετε στο πεδίο ποσό. Εάν επιλεγούν πολλοί παραλήπτες, το έξοδο διαιρείται εξίσου.</translation>
+    </message>
+    <message>
+        <source>S&amp;ubtract fee from amount</source>
+        <translation type="unfinished">Α&amp;φερέστε το τέλος από το ποσό</translation>
     </message>
     <message>
         <source>Use available balance</source>
@@ -3292,8 +3295,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">Εισάγετε μία ετικέτα για αυτή την διεύθυνση για να προστεθεί στη λίστα με τις χρησιμοποιημένες διευθύνσεις</translation>
     </message>
     <message>
-        <source>A message that was attached to the particl: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Particl network.</source>
-        <translation type="unfinished">Ένα μήνυμα που επισυνάφθηκε στο particl: URI το οποίο θα αποθηκευτεί με τη συναλλαγή για αναφορά. Σημείωση: Αυτό το μήνυμα δεν θα σταλεί μέσω του δικτύου Particl.</translation>
+        <source>A message that was attached to the bitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bitcoin network.</source>
+        <translation type="unfinished">Ένα μήνυμα που επισυνάφθηκε στο bitcoin: URI το οποίο θα αποθηκευτεί με τη συναλλαγή για αναφορά. Σημείωση: Αυτό το μήνυμα δεν θα σταλεί μέσω του δικτύου Bitcoin.</translation>
     </message>
 </context>
 <context>
@@ -3318,12 +3321,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">&amp;Υπογραφή Μηνύματος</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive particl sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation type="unfinished">Μπορείτε να υπογράψετε μηνύματα/συμφωνίες με τις διευθύνσεις σας για να αποδείξετε ότι μπορείτε να λάβετε τα particl που τους αποστέλλονται. Προσέξτε να μην υπογράψετε τίποτα ασαφές ή τυχαίο, καθώς οι επιθέσεις ηλεκτρονικού "ψαρέματος" ενδέχεται να σας εξαπατήσουν να υπογράψετε την ταυτότητά σας σε αυτούς. Υπογράψτε μόνο πλήρως λεπτομερείς δηλώσεις που συμφωνείτε.</translation>
-    </message>
-    <message>
-        <source>The Particl address to sign the message with</source>
-        <translation type="unfinished">Διεύθυνση Particl που θα σταλεί το μήνυμα</translation>
+        <source>The Bitcoin address to sign the message with</source>
+        <translation type="unfinished">Διεύθυνση Bitcoin που θα σταλεί το μήνυμα</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3346,8 +3345,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">Αντιγραφή της επιλεγμένης υπογραφής στο πρόχειρο του συστήματος</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Particl address</source>
-        <translation type="unfinished">Υπογράψτε το μήνυμα για να αποδείξετε πως σας ανήκει η συγκεκριμένη διεύθυνση Particl</translation>
+        <source>Sign the message to prove you own this Bitcoin address</source>
+        <translation type="unfinished">Υπογράψτε το μήνυμα για να αποδείξετε πως σας ανήκει η συγκεκριμένη διεύθυνση Bitcoin</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3370,8 +3369,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">Εισαγάγετε τη διεύθυνση του παραλήπτη, το μήνυμα (βεβαιωθείτε ότι αντιγράφετε σωστά τα διαλείμματα γραμμής, τα κενά, τις καρτέλες κλπ.) Και την υπογραφή παρακάτω για να επαληθεύσετε το μήνυμα. Προσέξτε να μην διαβάσετε περισσότερα στην υπογραφή από ό,τι είναι στο ίδιο το υπογεγραμμένο μήνυμα, για να αποφύγετε να εξαπατήσετε από μια επίθεση στον άνθρωπο στη μέση. Σημειώστε ότι αυτό αποδεικνύει μόνο ότι η υπογραφή συμβαλλόμενο μέρος λαμβάνει με τη διεύθυνση, δεν μπορεί να αποδειχθεί αποστολή οποιασδήποτε συναλλαγής!</translation>
     </message>
     <message>
-        <source>The Particl address the message was signed with</source>
-        <translation type="unfinished">Διεύθυνση Particl με την οποία έχει υπογραφεί το μήνυμα</translation>
+        <source>The Bitcoin address the message was signed with</source>
+        <translation type="unfinished">Διεύθυνση Bitcoin με την οποία έχει υπογραφεί το μήνυμα</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -3382,8 +3381,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">Η υπογραφή που δόθηκε όταν υπογράφηκε το μήνυμα</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Particl address</source>
-        <translation type="unfinished">Επαληθεύστε το μήνυμα για να αποδείξετε πως υπογράφθηκε από τη συγκεκριμένη διεύθυνση Particl</translation>
+        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
+        <translation type="unfinished">Επαληθεύστε το μήνυμα για να αποδείξετε πως υπογράφθηκε από τη συγκεκριμένη διεύθυνση Bitcoin</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3404,10 +3403,6 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     <message>
         <source>Please check the address and try again.</source>
         <translation type="unfinished">Ελέγξτε τη διεύθυνση και δοκιμάστε ξανά.</translation>
-    </message>
-    <message>
-        <source>The entered address does not refer to a key.</source>
-        <translation type="unfinished">Η καταχωρημένη διεύθυνση δεν αναφέρεται σε ένα κλειδί.</translation>
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
@@ -3971,10 +3966,6 @@ Go to File &gt; Open Wallet to load a wallet.
         <source>Can't display address</source>
         <translation type="unfinished">Αδυναμία προβολής διεύθυνσης</translation>
     </message>
-    <message>
-        <source>default wallet</source>
-        <translation type="unfinished">Προεπιλεγμένο πορτοφόλι</translation>
-    </message>
 </context>
 <context>
     <name>WalletView</name>
@@ -4023,16 +4014,12 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="unfinished">Οι προγραμματιστές %s</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool particl-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">%s κατεστραμμένο. Δοκιμάστε να το επισκευάσετε με το εργαλείο πορτοφολιού particl-wallet, ή επαναφέρετε κάποιο αντίγραφο ασφαλείας.</translation>
+        <source>%s corrupt. Try using the wallet tool bitcoin-wallet to salvage or restoring a backup.</source>
+        <translation type="unfinished">%s κατεστραμμένο. Δοκιμάστε να το επισκευάσετε με το εργαλείο πορτοφολιού bitcoin-wallet, ή επαναφέρετε κάποιο αντίγραφο ασφαλείας.</translation>
     </message>
     <message>
         <source>Cannot downgrade wallet from version %i to version %i. Wallet version unchanged.</source>
         <translation type="unfinished">Αδύνατη η υποβάθμιση του πορτοφολιού από την έκδοση %i στην έκδοση %i. Η έκδοση του πορτοφολιού δεν έχει αλλάξει.</translation>
-    </message>
-    <message>
-        <source>Cannot obtain a lock on data directory %s. %s is probably already running.</source>
-        <translation type="unfinished">Δεν είναι δυνατή η εφαρμογή κλειδώματος στον κατάλογο δεδομένων %s. Το %s μάλλον εκτελείται ήδη.</translation>
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
@@ -4043,8 +4030,8 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="unfinished">Σφάλμα: Η καταγραφή του φορμά του αρχείου dump είναι εσφαλμένη. Ελήφθη: «%s», αναμενόταν: «φορμά».</translation>
     </message>
     <message>
-        <source>Error: Dumpfile version is not supported. This version of particl-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
-        <translation type="unfinished">Σφάλμα: Η έκδοση του αρχείου dump δεν υποστηρίζεται. Αυτή η έκδοση του particl-wallet υποστηρίζει αρχεία dump μόνο της έκδοσης 1. Δόθηκε αρχείο dump έκδοσης %s.</translation>
+        <source>Error: Dumpfile version is not supported. This version of bitcoin-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
+        <translation type="unfinished">Σφάλμα: Η έκδοση του αρχείου dump δεν υποστηρίζεται. Αυτή η έκδοση του bitcoin-wallet υποστηρίζει αρχεία dump μόνο της έκδοσης 1. Δόθηκε αρχείο dump έκδοσης %s.</translation>
     </message>
     <message>
         <source>File %s already exists. If you are sure this is what you want, move it out of the way first.</source>
@@ -4061,10 +4048,6 @@ Go to File &gt; Open Wallet to load a wallet.
     <message>
         <source>No wallet file format provided. To use createfromdump, -format=&lt;format&gt; must be provided.</source>
         <translation type="unfinished">Δεν δόθηκε φορμά αρχείου πορτοφολιού. Για τη χρήση του createfromdump, πρέπει να δοθεί -format=&lt;format&gt;.</translation>
-    </message>
-    <message>
-        <source>Please check that your computer's date and time are correct! If your clock is wrong, %s will not work properly.</source>
-        <translation type="unfinished">Ελέγξτε ότι η ημερομηνία και η ώρα του υπολογιστή σας είναι σωστές! Αν το ρολόι σας είναι λάθος, το %s δεν θα λειτουργήσει σωστά.</translation>
     </message>
     <message>
         <source>Please contribute if you find %s useful. Visit %s for further information about the software.</source>
@@ -4103,6 +4086,10 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="unfinished">Αυτό είναι το τέλος συναλλαγής που μπορείτε να πληρώσετε όταν δεν υπάρχουν εκτιμήσεις τελών.</translation>
     </message>
     <message>
+        <source>Total length of network version string (%i) exceeds maximum length (%i). Reduce the number or size of uacomments.</source>
+        <translation type="unfinished">Το συνολικό μήκος της συμβολοσειράς έκδοσης δικτύου (%i) υπερβαίνει το μέγιστο μήκος (%i). Μειώστε τον αριθμό ή το μέγεθος των προϊόντων.</translation>
+    </message>
+    <message>
         <source>Unable to replay blocks. You will need to rebuild the database using -reindex-chainstate.</source>
         <translation type="unfinished">Δεν είναι δυνατή η επανάληψη των μπλοκ. Θα χρειαστεί να ξαναφτιάξετε τη βάση δεδομένων χρησιμοποιώντας το -reindex-chainstate.</translation>
     </message>
@@ -4119,20 +4106,16 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="unfinished">Πρέπει να ξαναφτιάξετε τη βάση δεδομένων χρησιμοποιώντας το -reindex για να επιστρέψετε στη λειτουργία χωρίς εκτύπωση. Αυτό θα ξαναφορτώσει ολόκληρο το blockchain</translation>
     </message>
     <message>
+        <source>%s is set very high!</source>
+        <translation type="unfinished">%s είναι πολύ υψηλή!</translation>
+    </message>
+    <message>
         <source>-maxmempool must be at least %d MB</source>
         <translation type="unfinished">-maxmempool πρέπει να είναι τουλάχιστον %d MB</translation>
     </message>
     <message>
-        <source>A fatal internal error occurred, see debug.log for details</source>
-        <translation type="unfinished">Προέκυψε ένα κρίσιμο εσωτερικό σφάλμα. Ανατρέξτε στο debug.log για λεπτομέρειες</translation>
-    </message>
-    <message>
         <source>Cannot resolve -%s address: '%s'</source>
         <translation type="unfinished">Δεν είναι δυνατή η επίλυση -%s διεύθυνση: '%s'</translation>
-    </message>
-    <message>
-        <source>Cannot write to data directory '%s'; check permissions.</source>
-        <translation type="unfinished">Αδύνατη η εγγραφή στον κατάλογο δεδομένων '%s'. Ελέγξτε τα δικαιώματα.</translation>
     </message>
     <message>
         <source>%s is set very high! Fees this large could be paid on a single transaction.</source>
@@ -4169,10 +4152,6 @@ Go to File &gt; Open Wallet to load a wallet.
     <message>
         <source>Disk space is too low!</source>
         <translation type="unfinished">Αποθηκευτικός χώρος πολύ μικρός!</translation>
-    </message>
-    <message>
-        <source>Do you want to rebuild the block database now?</source>
-        <translation type="unfinished">Θέλετε να δημιουργηθεί τώρα η βάση δεδομένων των μπλοκ;</translation>
     </message>
     <message>
         <source>Done loading</source>
@@ -4291,6 +4270,10 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="unfinished">Μη έγκυρη άδεια P2P: '%s'</translation>
     </message>
     <message>
+        <source>Invalid amount for -%s=&lt;amount&gt;: '%s'</source>
+        <translation type="unfinished">Μη έγκυρο ποσό για -%s=&lt;amount&gt;: '%s'</translation>
+    </message>
+    <message>
         <source>Invalid netmask specified in -whitelist: '%s'</source>
         <translation type="unfinished">Μη έγκυρη μάσκα δικτύου που καθορίζεται στο -whitelist: '%s'</translation>
     </message>
@@ -4317,10 +4300,6 @@ Go to File &gt; Open Wallet to load a wallet.
     <message>
         <source>No addresses available</source>
         <translation type="unfinished">Καμμία διαθέσιμη διεύθυνση</translation>
-    </message>
-    <message>
-        <source>Not enough file descriptors available.</source>
-        <translation type="unfinished">Δεν υπάρχουν αρκετοί περιγραφείς αρχείων διαθέσιμοι.</translation>
     </message>
     <message>
         <source>Prune cannot be configured with a negative value.</source>
@@ -4465,6 +4444,10 @@ Go to File &gt; Open Wallet to load a wallet.
     <message>
         <source>Unknown address type '%s'</source>
         <translation type="unfinished">Άγνωστος τύπος διεύθυνσης '%s'</translation>
+    </message>
+    <message>
+        <source>Unknown change type '%s'</source>
+        <translation type="unfinished"> Άγνωστος τύπος αλλαγής '%s'</translation>
     </message>
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>

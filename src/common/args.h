@@ -66,6 +66,8 @@ enum class OptionsCategory {
     SMSG,
     PART_WALLET,
     PART_STAKING,
+    CLI_COMMANDS,
+    IPC,
 
     HIDDEN // Always the last option to avoid printing these in the help
 };
@@ -372,6 +374,13 @@ protected:
     }
 
     /**
+     * Check CLI command args
+     *
+     * @throws std::runtime_error when multiple CLI_COMMAND arguments are specified
+     */
+    void CheckMultipleCLIArgs() const;
+
+    /**
      * Get the help string
      */
     std::string GetHelpMessage() const;
@@ -431,7 +440,7 @@ private:
     fs::path GetDataDir(bool net_specific) const;
 
     /**
-     * Return -regtest/-signet/-testnet/-chain= setting as a ChainType enum if a
+     * Return -regtest/-signet/-testnet/-testnet4/-chain= setting as a ChainType enum if a
      * recognized chain type was set, or as a string if an unrecognized chain
      * name was set. Raise an exception if an invalid combination of flags was
      * provided.
@@ -454,6 +463,11 @@ bool HelpRequested(const ArgsManager& args);
 
 /** Add help options to the args manager */
 void SetupHelpOptions(ArgsManager& args);
+
+extern const std::vector<std::string> TEST_OPTIONS_DOC;
+
+/** Checks if a particular test option is present in -test command-line arg options */
+bool HasTestOption(const ArgsManager& args, const std::string& test_option);
 
 /**
  * Format a string to be used as group of options in help messages

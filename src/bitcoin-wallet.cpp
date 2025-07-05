@@ -1,10 +1,8 @@
-// Copyright (c) 2016-2022 The Bitcoin Core developers
+// Copyright (c) 2016-present The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#if defined(HAVE_CONFIG_H)
-#include <config/bitcoin-config.h>
-#endif
+#include <bitcoin-build-config.h> // IWYU pragma: keep
 
 #include <chainparams.h>
 #include <chainparamsbase.h>
@@ -31,8 +29,10 @@
 // Particl includes
 #include <key/mnemonic.h>
 
-const std::function<std::string(const char*)> G_TRANSLATION_FUN = nullptr;
 UrlDecodeFn* const URL_DECODE = nullptr;
+using util::Join;
+
+const TranslateFn G_TRANSLATION_FUN{nullptr};
 
 static void SetupWalletToolArgs(ArgsManager& argsman)
 {
@@ -40,7 +40,7 @@ static void SetupWalletToolArgs(ArgsManager& argsman)
     SetupChainParamsBaseOptions(argsman);
 
     argsman.AddArg("-version", "Print version and exit", ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
-    argsman.AddArg("-datadir=<dir>", "Specify data directory", ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
+    argsman.AddArg("-datadir=<dir>", "Specify data directory", ArgsManager::ALLOW_ANY | ArgsManager::DISALLOW_NEGATION, OptionsCategory::OPTIONS);
     argsman.AddArg("-wallet=<wallet-name>", "Specify wallet name", ArgsManager::ALLOW_ANY | ArgsManager::NETWORK_ONLY, OptionsCategory::OPTIONS);
     argsman.AddArg("-dumpfile=<file name>", "When used with 'dump', writes out the records to this file. When used with 'createfromdump', loads the records into a new wallet.", ArgsManager::ALLOW_ANY | ArgsManager::DISALLOW_NEGATION, OptionsCategory::OPTIONS);
     argsman.AddArg("-debug=<category>", "Output debugging information (default: 0).", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
@@ -48,6 +48,7 @@ static void SetupWalletToolArgs(ArgsManager& argsman)
     argsman.AddArg("-legacy", "Create legacy wallet. Only for 'create'", ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
     argsman.AddArg("-format=<format>", "The format of the wallet file to create. Either \"bdb\" or \"sqlite\". Only used with 'createfromdump'", ArgsManager::ALLOW_ANY, OptionsCategory::OPTIONS);
     argsman.AddArg("-printtoconsole", "Send trace/debug info to console (default: 1 when no -debug is true, 0 otherwise).", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
+    argsman.AddArg("-withinternalbdb", "Use the internal Berkeley DB parser when dumping a Berkeley DB wallet file (default: false)", ArgsManager::ALLOW_ANY, OptionsCategory::DEBUG_TEST);
 
     argsman.AddCommand("info", "Get wallet info");
     argsman.AddCommand("create", "Create new wallet file");
@@ -69,18 +70,19 @@ static std::optional<int> WalletAppInit(ArgsManager& args, int argc, char* argv[
         return EXIT_FAILURE;
     }
     const bool missing_args{argc < 2};
-    if (missing_args || HelpRequested(args) || args.IsArgSet("-version")) {
-        std::string strUsage = strprintf("%s particl-wallet version", PACKAGE_NAME) + " " + FormatFullVersion() + "\n";
+    if (missing_args || HelpRequested(args) || args.GetBoolArg("-version", false)) {
+        std::string strUsage = strprintf("%s particl-wallet utility version", CLIENT_NAME) + " " + FormatFullVersion() + "\n";
 
-        if (args.IsArgSet("-version")) {
+        if (args.GetBoolArg("-version", false)) {
             strUsage += FormatParagraph(LicenseInfo());
         } else {
             strUsage += "\n"
-                        "particl-wallet is an offline tool for creating and interacting with " PACKAGE_NAME " wallet files.\n"
-                        "By default particl-wallet will act on wallets in the default mainnet wallet directory in the datadir.\n"
-                        "To change the target wallet, use the -datadir, -wallet and -regtest/-signet/-testnet arguments.\n\n"
-                        "Usage:\n"
-                        "  particl-wallet [options] <command>\n";
+                "particl-wallet is an offline tool for creating and interacting with " CLIENT_NAME " wallet files.\n\n"
+                "By default particl-wallet will act on wallets in the default mainnet wallet directory in the datadir.\n\n"
+                "To change the target wallet, use the -datadir, -wallet and (test)chain selection arguments.\n"
+                "\n"
+                "Usage: particl-wallet [options] <command>\n"
+                "\n";
             strUsage += "\n" + args.GetHelpMessage();
         }
         tfm::format(std::cout, "%s", strUsage);
@@ -201,10 +203,9 @@ MAIN_FUNCTION
         return EXIT_FAILURE;
     }
 
-    ECC_Start();
+    ECC_Context ecc_context{};
     if (!wallet::WalletTool::ExecuteWalletToolFunc(args, command->command)) {
         return EXIT_FAILURE;
     }
-    ECC_Stop();
     return EXIT_SUCCESS;
 }

@@ -7,14 +7,21 @@
 #define BITCOIN_NET_PROCESSING_H
 
 #include <net.h>
+#include <txorphanage.h>
 #include <validationinterface.h>
 #include <node/blockstorage.h>
+
+#include <chrono>
 
 class AddrMan;
 class CChainParams;
 class CTxMemPool;
 class ChainstateManager;
 class Peer;
+
+namespace node {
+class Warnings;
+} // namespace node
 
 /** Whether transaction reconciliation protocol should be enabled by default. */
 static constexpr bool DEFAULT_TXRECONCILIATION_ENABLE{false};
@@ -25,10 +32,11 @@ static const uint32_t DEFAULT_MAX_ORPHAN_TRANSACTIONS{100};
 static const uint32_t DEFAULT_BLOCK_RECONSTRUCTION_EXTRA_TXN{100};
 static const bool DEFAULT_PEERBLOOMFILTERS = false;
 static const bool DEFAULT_PEERBLOCKFILTERS = false;
-/** Threshold for marking a node to be discouraged, e.g. disconnected and added to the discouragement filter. */
-static const int DISCOURAGEMENT_THRESHOLD{100};
 /** Maximum number of outstanding CMPCTBLOCK requests for the same block. */
 static const unsigned int MAX_CMPCTBLOCKS_INFLIGHT_PER_BLOCK = 3;
+/** Number of headers sent in one getheaders result. We rely on the assumption that if a peer sends
+ *  less than this number, we reached its tip. Changing this value is a protocol upgrade. */
+static const unsigned int MAX_HEADERS_RESULTS = 2000;
 
 struct CNodeStateStats {
     int m_misbehavior_score = 0;
@@ -50,6 +58,12 @@ struct CNodeStateStats {
     int m_chain_height = -1;
     int nDuplicateCount = 0;
     int nLooseHeadersCount = 0;
+    std::chrono::seconds time_offset{0};
+};
+
+struct PeerManagerInfo {
+    std::chrono::seconds median_outbound_time_offset{0s};
+    bool ignores_incoming_txs{false};
 };
 
 class PeerManager : public CValidationInterface, public NetEventsInterface
@@ -73,12 +87,15 @@ public:
         //! Particl - Keep banscore
         size_t banscore{DISCOURAGEMENT_THRESHOLD};
         bool automaticbans{particl::DEFAULT_AUTOMATIC_BANS};
+        //! Number of headers sent in one getheaders message result (this is
+        //! a test-only option).
+        uint32_t max_headers_result{MAX_HEADERS_RESULTS};
     };
 
     static std::unique_ptr<PeerManager> make(CConnman& connman, AddrMan& addrman,
                                              BanMan* banman, ChainstateManager& chainman,
-                                             CTxMemPool& pool, Options opts);
-    virtual ~PeerManager() { }
+                                             CTxMemPool& pool, node::Warnings& warnings, Options opts);
+    virtual ~PeerManager() = default;
 
     /**
      * Attempt to manually fetch block from a given peer. We must already have the header.
@@ -95,8 +112,10 @@ public:
     /** Get statistics from node state */
     virtual bool GetNodeStateStats(NodeId nodeid, CNodeStateStats& stats) const = 0;
 
-    /** Whether this node ignores txs received over p2p. */
-    virtual bool IgnoresIncomingTxs() = 0;
+    virtual std::vector<TxOrphanage::OrphanTxBase> GetOrphanTransactions() = 0;
+
+    /** Get peer manager info. */
+    virtual PeerManagerInfo GetInfo() const = 0;
 
     /** Relay transaction to all peers. */
     virtual void RelayTransaction(const uint256& txid, const uint256& wtxid) = 0;
@@ -108,7 +127,7 @@ public:
     virtual void SetBestBlock(int height, std::chrono::seconds time) = 0;
 
     /* Public for unit testing. */
-    virtual void UnitTestMisbehaving(NodeId peer_id, int howmuch) = 0;
+    virtual void UnitTestMisbehaving(NodeId peer_id) = 0;
 
     /* Particl: Keep old functionality */
     virtual void MisbehavingById(const NodeId pnode, const int howmuch, const std::string& message) = 0;

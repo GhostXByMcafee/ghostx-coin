@@ -50,6 +50,7 @@ static const int TOOLTIP_WRAP_THRESHOLD = 80;
 #define QAPP_ORG_DOMAIN "particl.io"
 #define QAPP_APP_NAME_DEFAULT "Particl-Qt"
 #define QAPP_APP_NAME_TESTNET "Particl-Qt-testnet"
+#define QAPP_APP_NAME_TESTNET4 "Particl-Qt-testnet4"
 #define QAPP_APP_NAME_SIGNET "Particl-Qt-signet"
 #define QAPP_APP_NAME_REGTEST "Particl-Qt-regtest"
 

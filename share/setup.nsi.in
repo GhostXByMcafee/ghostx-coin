@@ -1,4 +1,4 @@
-Name "@PACKAGE_NAME@ (64-bit)"
+Name "@CLIENT_NAME@ (64-bit)"
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
@@ -11,9 +11,8 @@ Unicode true
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION @CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_REVISION@.@CLIENT_VERSION_PARTICL@
-!define COMPANY "@PACKAGE_NAME@ project"
-!define URL @PACKAGE_URL@
+!define COMPANY "@CLIENT_NAME@ project"
+!define URL @CLIENT_URL@
 
 # MUI Symbol Definitions
 !define MUI_ICON "@abs_top_srcdir@/share/pixmaps/particl.ico"
@@ -25,7 +24,7 @@ Unicode true
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
-!define MUI_STARTMENUPAGE_DEFAULTFOLDER "@PACKAGE_NAME@"
+!define MUI_STARTMENUPAGE_DEFAULTFOLDER "@CLIENT_NAME@"
 !define MUI_FINISHPAGE_RUN "$WINDIR\explorer.exe"
 !define MUI_FINISHPAGE_RUN_PARAMETERS $INSTDIR\@BITCOIN_GUI_NAME@@EXEEXT@
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
@@ -58,13 +57,13 @@ CRCCheck force
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion @CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_PARTICL@.@CLIENT_VERSION_BUILD@
-VIAddVersionKey ProductName "@PACKAGE_NAME@"
-VIAddVersionKey ProductVersion "@PACKAGE_VERSION@"
+VIProductVersion @CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_BUILD@.0
+VIAddVersionKey ProductName "@CLIENT_NAME@"
+VIAddVersionKey ProductVersion "@CLIENT_VERSION_STRING@"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
-VIAddVersionKey FileVersion "@PACKAGE_VERSION@"
-VIAddVersionKey FileDescription "Installer for @PACKAGE_NAME@"
+VIAddVersionKey FileVersion "@CLIENT_VERSION_STRING@"
+VIAddVersionKey FileDescription "Installer for @CLIENT_NAME@"
 VIAddVersionKey LegalCopyright "Copyright (C) 2009-@COPYRIGHT_YEAR@ @COPYRIGHT_HOLDERS_FINAL@"
 InstallDirRegKey HKCU "${REGKEY}" Path
 ShowUninstDetails show
@@ -96,11 +95,13 @@ Section -post SEC0001
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\@BITCOIN_GUI_NAME@@EXEEXT@
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\@PACKAGE_NAME@ (testnet, 64-bit).lnk" "$INSTDIR\@BITCOIN_GUI_NAME@@EXEEXT@" "-testnet" "$INSTDIR\@BITCOIN_GUI_NAME@@EXEEXT@" 1
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\@CLIENT_NAME@ (testnet).lnk" "$INSTDIR\@BITCOIN_GUI_NAME@@EXEEXT@" "-testnet" "$INSTDIR\@BITCOIN_GUI_NAME@@EXEEXT@" 1
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\@CLIENT_NAME@ (test signet).lnk" "$INSTDIR\@BITCOIN_GUI_NAME@@EXEEXT@" "-signet" "$INSTDIR\@BITCOIN_GUI_NAME@@EXEEXT@" 2
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\@CLIENT_NAME@ (testnet4).lnk" "$INSTDIR\@BITCOIN_GUI_NAME@@EXEEXT@" "-testnet4" "$INSTDIR\@BITCOIN_GUI_NAME@@EXEEXT@" 3
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
-    WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "@PACKAGE_VERSION@"
+    WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "@CLIENT_VERSION_STRING@"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" Publisher "${COMPANY}"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" URLInfoAbout "${URL}"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayIcon $INSTDIR\bitcoin-qt.exe
@@ -142,6 +143,9 @@ Section -un.post UNSEC0001
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\@PACKAGE_NAME@ (testnet, 64-bit).lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\@CLIENT_NAME@ (testnet).lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\@CLIENT_NAME@ (testnet4).lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\@CLIENT_NAME@ (test signet).lnk"
     Delete /REBOOTOK "$SMSTARTUP\Particl.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
@@ -150,7 +154,7 @@ Section -un.post UNSEC0001
     DeleteRegValue HKCU "${REGKEY}" Path
     DeleteRegKey /IfEmpty HKCU "${REGKEY}\Components"
     DeleteRegKey /IfEmpty HKCU "${REGKEY}"
-    DeleteRegKey HKCR "@PACKAGE_TARNAME@"
+    DeleteRegKey HKCR "@CLIENT_TARNAME@"
     RmDir /REBOOTOK $SMPROGRAMS\$StartMenuGroup
     RmDir /REBOOTOK $INSTDIR
     Push $R0

@@ -4,13 +4,18 @@
 
 #include <bench/bench.h>
 #include <coins.h>
+#include <consensus/amount.h>
+#include <key.h>
 #include <policy/policy.h>
+#include <primitives/transaction.h>
+#include <script/script.h>
 #include <script/signingprovider.h>
 #include <test/util/transaction_utils.h>
 
 #include <key/extkey.h>
 #include <key/stealth.h>
 
+#include <cassert>
 #include <vector>
 
 // Microbenchmark for simple accesses to a CCoinsViewCache database. Note from
@@ -22,7 +27,7 @@
 static void CCoinsCaching(benchmark::Bench& bench)
 {
     fParticlMode = false;
-    ECC_Start();
+    ECC_Context ecc_context{};
 
     FillableSigningProvider keystore;
     CCoinsView coinsDummy;
@@ -51,7 +56,6 @@ static void CCoinsCaching(benchmark::Bench& bench)
         bool success{AreInputsStandard(tx_1, coins)};
         assert(success);
     });
-    ECC_Stop();
 }
 
 BENCHMARK(CCoinsCaching, benchmark::PriorityLevel::HIGH);

@@ -58,11 +58,11 @@
         <translation type="unfinished">S&amp;aýla</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished">Tölegleri ibermek üçin siziň Bitkoin salgylaryňyz şulardyr. Teňňeleri ibermezden ozal hemişe möçberi we kabul edýän salgyny barlaň.</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Tölegleri kabul etmek üçin siziň Bitkoin salgylaryňyz şulardyr. Täze salgylary döretmek üçin kabul etmek bölüminde "Täze kabul ediji salgyny döret" düwmesini ulan.
 Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
@@ -156,7 +156,7 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">Gapjygyň şifrlenmegini tassykla</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PARTICL&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
         <translation type="unfinished">Duýduryş: Eger gapjygyňy şifrleseň we parol sözlemiňi ýitirseň, sen &lt;b&gt;ÄHLI BITKOINLERIŇI ÝITIRERSIŇ&lt;/b&gt;!</translation>
     </message>
     <message>
@@ -176,7 +176,11 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">Gapjyk üçin öňki we täze parol sözlemiňi ýaz.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your particl from being stolen by malware infecting your computer.</source>
+        <source>Continue</source>
+        <translation type="unfinished">Dowam et</translation>
+    </message>
+    <message>
+        <source>Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
         <translation type="unfinished">Gapjygyňy şifrlemek kompýuteriňe zyýanly programma ýokuşmak arkaly bitkoinleriň ogurlanmagyndan doly gorap bilmejekdigini ýatdan çykarma.</translation>
     </message>
     <message>
@@ -295,7 +299,7 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">Möçber</translation>
     </message>
     <message>
-        <source>Enter a Particl address (e.g. %1)</source>
+        <source>Enter a Bitcoin address (e.g. %1)</source>
         <translation type="unfinished">(Bitkoin salgysyny giriziň (meselem, %1)</translation>
     </message>
     <message>
@@ -399,7 +403,11 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
             <numerusform>%n ýyl</numerusform>
         </translation>
     </message>
-    </context>
+    <message>
+        <source>default wallet</source>
+        <translation type="unfinished">deslapky bellenen gapjyk</translation>
+    </message>
+</context>
 <context>
     <name>BitcoinGUI</name>
     <message>
@@ -468,7 +476,7 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">Proksi &lt;b&gt;işleýär&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Particl address</source>
+        <source>Send coins to a Bitcoin address</source>
         <translation type="unfinished">Bitkoin salgysyna teňňeleri iber</translation>
     </message>
     <message>
@@ -512,7 +520,7 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">&amp;Habara gol çek…</translation>
     </message>
     <message>
-        <source>Sign messages with your Particl addresses to prove you own them</source>
+        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
         <translation type="unfinished">Bitkoin salgylarynyň eýesidigini subut etmek üçin habarlara öz Bitkoin salgylaryň bilen gol çek</translation>
     </message>
     <message>
@@ -520,7 +528,7 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">&amp;Habary tassykla…</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Particl addresses</source>
+        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
         <translation type="unfinished">Habarlaryň görkezilen Bitkoin salgylary bilen gol çekilendigini kepillendirmek üçin habarlary tassykla</translation>
     </message>
     <message>
@@ -580,7 +588,7 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">Deňdeşlere baglanylýar...</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and particl: URIs)</source>
+        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
         <translation type="unfinished">Tölegleri sora (QR kodlary we bitkoin: URIleri döredýär)</translation>
     </message>
     <message>
@@ -635,16 +643,16 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">Döwrebap</translation>
     </message>
     <message>
-        <source>Load Partially Signed Particl Transaction</source>
-        <translation type="unfinished">Bölekleýýin gol çekilen bitkoin amalyny (BGÇBA) ýükle</translation>
+        <source>Load Partially Signed Bitcoin Transaction</source>
+        <translation type="unfinished">Bölekleýýin gol çekilen bitkoin geleşigini ýükle</translation>
     </message>
     <message>
         <source>Load PSBT from &amp;clipboard…</source>
         <translation type="unfinished">&amp;alyş-çalyş panelinden BGÇBA ýükle…</translation>
     </message>
     <message>
-        <source>Load Partially Signed Particl Transaction from clipboard</source>
-        <translation type="unfinished">Bölekleýin gol çekilen bitkoin amalyny alyş-çalyş panelinden ýükle</translation>
+        <source>Load Partially Signed Bitcoin Transaction from clipboard</source>
+        <translation type="unfinished">Bölekleýin gol çekilen bitkoin geleşigini alyş-çalyş panelinden ýükle</translation>
     </message>
     <message>
         <source>Node window</source>
@@ -663,7 +671,7 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">&amp;Kabul edýän salgylar</translation>
     </message>
     <message>
-        <source>Open a particl: URI</source>
+        <source>Open a bitcoin: URI</source>
         <translation type="unfinished">Bitkoin aç: URI</translation>
     </message>
     <message>
@@ -693,7 +701,7 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">Ähli gapjyklary ýap</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Particl command-line options</source>
+        <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
         <translation type="unfinished">Mümkin bolan Bitkoin buýruk setiri opsiýalarynyň sanawyny görmek üçin %1 goldaw habaryny görkez</translation>
     </message>
     <message>
@@ -703,10 +711,6 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
     <message>
         <source>Mask the values in the Overview tab</source>
         <translation type="unfinished">Gözden geçir bölüminde sanlaryň üstüni ört</translation>
-    </message>
-    <message>
-        <source>default wallet</source>
-        <translation type="unfinished">deslapky bellenen gapjyk</translation>
     </message>
     <message>
         <source>No wallets available</source>
@@ -757,7 +761,7 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">G&amp;örkez</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Particl network.</source>
+        <source>%n active connection(s) to Bitcoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform>Bitkoin toruna %n işjeň arabaglanyşyk.</numerusform>
@@ -1060,10 +1064,6 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">Gapjyk açmak duýduryşy</translation>
     </message>
     <message>
-        <source>default wallet</source>
-        <translation type="unfinished">deslapky bellenen gapjyk</translation>
-    </message>
-    <message>
         <source>Open Wallet</source>
         <extracomment>Title of window indicating the progress of opening of a wallet.</extracomment>
         <translation type="unfinished">Gapjygy aç</translation>
@@ -1220,7 +1220,7 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">Iberýän salgyny rejele</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Particl address.</source>
+        <source>The entered address "%1" is not a valid Bitcoin address.</source>
         <translation type="unfinished">Ýazylan salgy %1 ýaly Bitkoin salgysy ýok.</translation>
     </message>
     <message>
@@ -1266,7 +1266,7 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
 <context>
     <name>Intro</name>
     <message>
-        <source>Particl</source>
+        <source>Bitcoin</source>
         <translation type="unfinished">Bitkoin</translation>
     </message>
     <message numerus="yes">
@@ -1311,7 +1311,7 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         </translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Particl block chain.</source>
+        <source>%1 will download and store a copy of the Bitcoin block chain.</source>
         <translation type="unfinished">%1 Bitkoin blok zynjyrynyň nusgasyny ýükläp alar we göçürer.</translation>
     </message>
     <message>
@@ -1404,11 +1404,11 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">Forma</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the particl network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the bitcoin network, as detailed below.</source>
         <translation type="unfinished">Soňky geleşikler entek görünmän biler, şonuň üçin gapjygyňyzdaky galyndy nädogry bolup biler. Bu maglumat aşakda beýan edilişi ýaly gapjygyňyz bitkoin tory bilen utgaşmagy tamamlanda dogry bolar.</translation>
     </message>
     <message>
-        <source>Attempting to spend particl that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend bitcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation type="unfinished">Entek görkezilmedik geleşikleriň täsirine düşen bitkoinleri sarp etmek synanyşygy ulgam tarapyndan kabul edilmez.</translation>
     </message>
     <message>
@@ -1459,7 +1459,7 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open particl URI</source>
+        <source>Open bitcoin URI</source>
         <translation type="unfinished">Bitkoin URI aç</translation>
     </message>
     <message>
@@ -1551,11 +1551,6 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">Bu sazlama gaýdyp barmak üçin tutuş blok zynjyryny gaýtadan ýükläp almak zerur.</translation>
     </message>
     <message>
-        <source>Maximum database cache size. A larger cache can contribute to faster sync, after which the benefit is less pronounced for most use cases. Lowering the cache size will reduce memory usage. Unused mempool memory is shared for this cache.</source>
-        <extracomment>Tooltip text for Options window setting that sets the size of the database cache. Explains the corresponding effects of increasing/decreasing this value.</extracomment>
-        <translation type="unfinished">Maksimum maglumat binýadynyň keş göwrümi. Keş näçe uly boldugyça sinhronlaşdyrma şonça çalt bolmagyna goşant goşular, ondan soň peýdasy köplenç köp bildirmeýär. Keş göwrümini azaltmak ýadyň ulanylyşyny azaldar. Ulanylmaýan umumy ýat howuzy bu keş üçin paýlaşylýar.  </translation>
-    </message>
-    <message>
         <source>Set the number of script verification threads. Negative values correspond to the number of cores you want to leave free to the system.</source>
         <extracomment>Tooltip text for Options window setting that sets the number of script verification threads. Explains that negative values mean to leave these many cores free to the system.</extracomment>
         <translation type="unfinished">Skript tassyklama akymlarynyň sanyny belläň. Otrisatel sanlar ulgam üçin boş galdyryljak ýadrolaryň sanyna gabat gelýär.</translation>
@@ -1623,22 +1618,6 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">&amp;Daşyndan gol çekijiniň skript ýoly</translation>
     </message>
     <message>
-        <source>Automatically open the Particl client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation type="unfinished">Bitkoin müşderi portuny routerde awtomatik usulda aç. Bu diňe routeriňiz UPnP goldaýan bolsa we ol işjeň bolsa işleýär.</translation>
-    </message>
-    <message>
-        <source>Map port using &amp;UPnP</source>
-        <translation type="unfinished">&amp;UPnP ulanyp porty aşyryň</translation>
-    </message>
-    <message>
-        <source>Automatically open the Particl client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
-        <translation type="unfinished">Bitkoin müşderi portuny routerde awtomatik usulda açýar. Bu diňe routeriňiz NAT-PMP goldaýan we ol işjeňleşdirilen bolsa işleýär. Daşarky router tötänleýin bolup biler.</translation>
-    </message>
-    <message>
-        <source>Map port using NA&amp;T-PMP</source>
-        <translation type="unfinished">NA&amp;T-PMP ulanýan porty aşyryň</translation>
-    </message>
-    <message>
         <source>Accept connections from outside.</source>
         <translation type="unfinished">Daşyndan gelen birikmeleri kabul et.</translation>
     </message>
@@ -1647,7 +1626,7 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">Gele&amp;n birikmelere rugsat ber</translation>
     </message>
     <message>
-        <source>Connect to the Particl network through a SOCKS5 proxy.</source>
+        <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
         <translation type="unfinished">SOCKS5 proksi arkaly Bitkoin toruna baglan.</translation>
     </message>
     <message>
@@ -1723,7 +1702,7 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">Teňňe dolandyryş aýratynlyklary görkezilmelimi ýa-da ýok.</translation>
     </message>
     <message>
-        <source>Connect to the Particl network through a separate SOCKS5 proxy for Tor onion services.</source>
+        <source>Connect to the Bitcoin network through a separate SOCKS5 proxy for Tor onion services.</source>
         <translation type="unfinished">Tor onion hyzmatlary üçin aýratyn SOCKS5 proksi arkaly Bitkoin toruna baglan.</translation>
     </message>
     <message>
@@ -1816,7 +1795,7 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">Forma</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Particl network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished">Görkezilýän maglumat könelen bolup biler. birikme ýerine ýetirilenden soň siziň gapjygyňyz awtomatiki usulda Bitkoin tory bilen sinhronlaşar, ýöne bu iş entäk gutarmady.</translation>
     </message>
     <message>
@@ -2023,7 +2002,7 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">Töleg talabynda ýalňyşlyk</translation>
     </message>
     <message>
-        <source>Cannot start particl: click-to-pay handler</source>
+        <source>Cannot start bitcoin: click-to-pay handler</source>
         <translation type="unfinished">Bitkoini başlap bolanok: click-to-pay işleýjisi</translation>
     </message>
     <message>
@@ -2031,8 +2010,8 @@ Diňe "miras" görnüşli salgylar bilen gol çekmek mümkin.</translation>
         <translation type="unfinished">URI işlemeklik</translation>
     </message>
     <message>
-        <source>'particl://' is not a valid URI. Use 'particl:' instead.</source>
-        <translation type="unfinished">'particl://' dogry URI däl. Onuň ýerine 'particl:' ulanyň.</translation>
+        <source>'bitcoin://' is not a valid URI. Use 'bitcoin:' instead.</source>
+        <translation type="unfinished">'bitcoin://' dogry URI däl. Onuň ýerine 'bitcoin:' ulanyň.</translation>
     </message>
     <message>
         <source>Cannot process payment request because BIP70 is not supported.
@@ -2043,7 +2022,7 @@ BIP70-däki howpsuzlygyň giňden ýaýran gowşak taraplary sebäpli, täjirler
 Size bu ýalňyşlyk gelýän bolsa, siz täjirden BIP21-e gabat gelýän URI-ni üpjün etmegini talap etmeli.</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Particl address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
         <translation type="unfinished">URI-ni işläp bolmady! Munuň sebäbi nädogry Bitkoin salgysy ýa-da ýalňyş emele getirilen URI parametrleri bolup biler.</translation>
     </message>
     <message>
@@ -2326,6 +2305,10 @@ Size bu ýalňyşlyk gelýän bolsa, siz täjirden BIP21-e gabat gelýän URI-ni
         <extracomment>Context menu action to copy the address of a peer.</extracomment>
         <translation type="unfinished">&amp;Salgyny göçür</translation>
     </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished">ýok</translation>
+    </message>
     </context>
 <context>
     <name>ReceiveCoinsDialog</name>
@@ -2581,13 +2564,6 @@ Size bu ýalňyşlyk gelýän bolsa, siz täjirden BIP21-e gabat gelýän URI-ni
         <translation type="unfinished">Ýalňyşlyk</translation>
     </message>
     </context>
-<context>
-    <name>WalletModel</name>
-    <message>
-        <source>default wallet</source>
-        <translation type="unfinished">deslapky bellenen gapjyk</translation>
-    </message>
-</context>
 <context>
     <name>WalletView</name>
     <message>

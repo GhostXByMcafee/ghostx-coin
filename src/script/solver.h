@@ -10,6 +10,7 @@
 
 #include <attributes.h>
 #include <script/script.h>
+#include <span.h>
 
 #include <string>
 #include <optional>
@@ -23,11 +24,11 @@ struct CExtPubKey;
 struct ScriptHash;
 
 class CPubKey;
-template <typename C> class Span;
 
 enum class TxoutType {
     NONSTANDARD,
     // 'standard' transaction types:
+    ANCHOR, //!< anyone can spend script
     PUBKEY,
     PUBKEYHASH,
     SCRIPTHASH,

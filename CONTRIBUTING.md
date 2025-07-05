@@ -14,6 +14,43 @@ purposes. As such, there are repository maintainers who are responsible for
 merging pull requests, the [release cycle](/doc/release-process.md), and
 moderation.
 
+Getting Started
+---------------
+
+New contributors are very welcome and needed.
+
+Reviewing and testing is highly valued and the most effective way you can contribute
+as a new contributor. It also will teach you much more about the code and
+process than opening pull requests. Please refer to the [peer review](#peer-review)
+section below.
+
+Before you start contributing, familiarize yourself with the Bitcoin Core build
+system and tests. Refer to the documentation in the repository on how to build
+Bitcoin Core and how to run the unit tests, functional tests, and fuzz tests.
+
+There are many open issues of varying difficulty waiting to be fixed.
+If you're looking for somewhere to start contributing, check out the
+[good first issue](https://github.com/bitcoin/bitcoin/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
+list or changes that are
+[up for grabs](https://github.com/bitcoin/bitcoin/issues?utf8=%E2%9C%93&q=label%3A%22Up+for+grabs%22).
+Some of them might no longer be applicable. So if you are interested, but
+unsure, you might want to leave a comment on the issue first.
+
+You may also participate in the [Bitcoin Core PR Review Club](https://bitcoincore.reviews/).
+
+### Good First Issue Label
+
+The purpose of the `good first issue` label is to highlight which issues are
+suitable for a new contributor without a deep understanding of the codebase.
+
+However, good first issues can be solved by anyone. If they remain unsolved
+for a longer time, a frequent contributor might address them.
+
+You do not need to request permission to start working on an issue. However,
+you are encouraged to leave a comment if you are planning to work on it. This
+will help other contributors monitor which issues are actively being addressed
+and is also an effective way to request assistance if and when you need it.
+
 Communication Channels
 ----------------------
 
@@ -22,6 +59,13 @@ with the web client, [riot.im](https://riot.im/app/). Desktop downloads also ava
 
 Discussion about codebase improvements happens in GitHub issues and pull
 requests.
+
+The developer
+[mailing list](https://groups.google.com/g/bitcoindev)
+should be used to discuss complicated or controversial consensus or P2P protocol changes before working on
+a patch set.
+Archives can be found on [https://gnusha.org/pi/bitcoindev/](https://gnusha.org/pi/bitcoindev/).
+
 
 Contributor Workflow
 --------------------
@@ -80,11 +124,11 @@ the pull request affects. Valid areas as:
   - `net` or `p2p` for changes to the peer-to-peer network code
   - `refactor` for structural changes that do not change behavior
   - `rpc`, `rest` or `zmq` for changes to the RPC, REST or ZMQ APIs
-  - `script` for changes to the scripts and tools
+  - `contrib` or `cli` for changes to the scripts and tools
   - `test`, `qa` or `ci` for changes to the unit tests, QA tests or CI code
   - `util` or `lib` for changes to the utils or libraries
   - `wallet` for changes to the wallet code
-  - `build` for changes to the GNU Autotools or MSVC builds
+  - `build` for changes to CMake
   - `guix` for changes to the GUIX reproducible builds
 
 Examples:
@@ -347,11 +391,8 @@ Backporting
 
 Security and bug fixes can be backported from `master` to release
 branches.
-If the backport is non-trivial, it may be appropriate to open an
-additional PR to backport the change, but only after the original PR
-has been merged.
-Otherwise, backports will be done in batches and
-the maintainers will use the proper `Needs backport (...)` labels
+Maintainers will do backports in batches and
+use the proper `Needs backport (...)` labels
 when needed (the original author does not need to worry about it).
 
 A backport should contain the following metadata in the commit body:

@@ -705,13 +705,13 @@ static constexpr TransactionSerParams TX_NO_WITNESS{.allow_witness = false};
 
 /**
  * Basic transaction serialization format:
- * - int32_t nVersion
+ * - uint32_t version
  * - std::vector<CTxIn> vin
  * - std::vector<CTxOut> vout
  * - uint32_t nLockTime
  *
  * Extended transaction serialization format:
- * - int32_t nVersion
+ * - uint32_t version
  * - unsigned char dummy = 0x00
  * - unsigned char flags (!= 0)
  * - std::vector<CTxIn> vin
@@ -761,7 +761,7 @@ void UnserializeTransaction(TxType& tx, Stream& s, const TransactionSerParams& p
                 default:
                     throw std::ios_base::failure("Unknown transaction output type");
             }
-            tx.vpout[k]->nVersion = bv;
+            tx.vpout[k]->version = bv;
             s >> *tx.vpout[k];
         }
 
@@ -772,13 +772,13 @@ void UnserializeTransaction(TxType& tx, Stream& s, const TransactionSerParams& p
         return;
     }
 
-    tx.nVersion |= bv;
+    tx.version |= bv;
     s >> bv;
-    tx.nVersion |= bv<<8;
+    tx.version |= bv<<8;
     s >> bv;
-    tx.nVersion |= bv<<16;
+    tx.version |= bv<<16;
     s >> bv;
-    tx.nVersion |= bv<<24;
+    tx.version |= bv<<24;
 
     unsigned char flags = 0;
     tx.vin.clear();
@@ -819,11 +819,11 @@ void SerializeTransaction(const TxType& tx, Stream& s, const TransactionSerParam
 {
     const bool fAllowWitness = params.allow_witness;
 
-    if (IsParticlTxVersion(tx.nVersion)) {
-        uint8_t bv = tx.nVersion & 0xFF;
+    if (IsParticlTxVersion(tx.version)) {
+        uint8_t bv = tx.version & 0xFF;
         s << bv;
 
-        bv = (tx.nVersion>>8) & 0xFF;
+        bv = (tx.version>>8) & 0xFF;
         s << bv; // TransactionType
 
         s << tx.nLockTime;
@@ -831,7 +831,7 @@ void SerializeTransaction(const TxType& tx, Stream& s, const TransactionSerParam
 
         WriteCompactSize(s, tx.vpout.size());
         for (size_t k = 0; k < tx.vpout.size(); ++k) {
-            s << tx.vpout[k]->nVersion;
+            s << tx.vpout[k]->version;
             s << *tx.vpout[k];
         }
 
@@ -843,7 +843,7 @@ void SerializeTransaction(const TxType& tx, Stream& s, const TransactionSerParam
         return;
     }
 
-    s << tx.nVersion;
+    s << tx.version;
 
     unsigned char flags = 0;
     // Consistency check
@@ -883,8 +883,8 @@ class CTransaction
 {
 public:
     // Default transaction version.
-    static const int32_t CURRENT_VERSION=2;
-    static const int32_t CURRENT_PARTICL_VERSION=0xA0;
+    static const uint32_t CURRENT_PARTICL_VERSION{0xA0};
+    static const uint32_t CURRENT_VERSION{2};
 
     // The local variables are made const to prevent unintended modification
     // without updating the cached hash value. However, CTransaction is not
@@ -894,7 +894,7 @@ public:
     const std::vector<CTxIn> vin;
     const std::vector<CTxOut> vout;
     const std::vector<CTxOutBaseRef> vpout;
-    const int32_t nVersion;
+    const uint32_t version;
     const uint32_t nLockTime;
 
 private:
@@ -915,7 +915,7 @@ public:
 
     template <typename Stream>
     inline void Serialize(Stream& s) const {
-        SerializeTransaction(*this, s, s.GetParams());
+        SerializeTransaction(*this, s, s.template GetParams<TransactionSerParams>());
     }
 
     /** This deserializing constructor is provided instead of an Unserialize method.
@@ -923,27 +923,27 @@ public:
     template <typename Stream>
     CTransaction(deserialize_type, const TransactionSerParams& params, Stream& s) : CTransaction(CMutableTransaction(deserialize, params, s)) {}
     template <typename Stream>
-    CTransaction(deserialize_type, ParamsStream<TransactionSerParams,Stream>& s) : CTransaction(CMutableTransaction(deserialize, s)) {}
+    CTransaction(deserialize_type, Stream& s) : CTransaction(CMutableTransaction(deserialize, s)) {}
 
     bool IsNull() const {
         return vin.empty() && vout.empty() && vpout.empty();
     }
 
     bool IsParticlVersion() const {
-        return IsParticlTxVersion(nVersion);
+        return IsParticlTxVersion(version);
     }
 
     int GetParticlVersion() const {
-        return nVersion & 0xFF;
+        return version & 0xFF;
     }
 
     int GetType() const {
-        return (nVersion >> 8) & 0xFF;
+        return (version >> 8) & 0xFF;
     }
 
     size_t GetNumVOuts() const
     {
-        return IsParticlTxVersion(nVersion) ? vpout.size() : vout.size();
+        return IsParticlTxVersion(version) ? vpout.size() : vout.size();
     }
 
     const Txid& GetHash() const LIFETIMEBOUND { return hash; }
@@ -1052,7 +1052,7 @@ struct CMutableTransaction
     std::vector<CTxIn> vin;
     std::vector<CTxOut> vout;
     std::vector<CTxOutBaseRef> vpout;
-    int32_t nVersion;
+    uint32_t version;
     uint32_t nLockTime;
 
     explicit CMutableTransaction();
@@ -1060,12 +1060,12 @@ struct CMutableTransaction
 
     template <typename Stream>
     inline void Serialize(Stream& s) const {
-        SerializeTransaction(*this, s, s.GetParams());
+        SerializeTransaction(*this, s, s.template GetParams<TransactionSerParams>());
     }
 
     template <typename Stream>
     inline void Unserialize(Stream& s) {
-        UnserializeTransaction(*this, s, s.GetParams());
+        UnserializeTransaction(*this, s, s.template GetParams<TransactionSerParams>());
     }
 
     template <typename Stream>
@@ -1074,37 +1074,37 @@ struct CMutableTransaction
     }
 
     template <typename Stream>
-    CMutableTransaction(deserialize_type, ParamsStream<TransactionSerParams,Stream>& s) {
+    CMutableTransaction(deserialize_type, Stream& s) {
         Unserialize(s);
     }
 
     void SetType(int type) {
-        nVersion |= (type & 0xFF) << 8;
+        version |= (type & 0xFF) << 8;
     }
 
     bool IsParticlVersion() const {
-        return IsParticlTxVersion(nVersion);
+        return IsParticlTxVersion(version);
     }
 
     int GetParticlVersion() const {
-        return nVersion & 0xFF;
+        return version & 0xFF;
     }
 
     int GetType() const {
-        return (nVersion >> 8) & 0xFF;
+        return (version >> 8) & 0xFF;
     }
 
     bool IsCoinStake() const
     {
         return GetType() == TXN_COINSTAKE
             && vin.size() > 0 && vpout.size() > 1
-            && vpout[0]->nVersion == OUTPUT_DATA
-            && vpout[1]->nVersion == OUTPUT_STANDARD;
+            && vpout[0]->version == OUTPUT_DATA
+            && vpout[1]->version == OUTPUT_STANDARD;
     }
 
     size_t GetNumVOuts() const
     {
-        return IsParticlTxVersion(nVersion) ? vpout.size() : vout.size();
+        return IsParticlTxVersion(version) ? vpout.size() : vout.size();
     }
 
     /** Compute the hash of this CMutableTransaction. This is computed on the

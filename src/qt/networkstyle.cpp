@@ -19,6 +19,7 @@ static const struct {
 } network_styles[] = {
     {ChainType::MAIN, QAPP_APP_NAME_DEFAULT, 0, 0},
     {ChainType::TESTNET, QAPP_APP_NAME_TESTNET, 101, 17},
+    {ChainType::TESTNET4, QAPP_APP_NAME_TESTNET4, 101, 17},
     {ChainType::SIGNET, QAPP_APP_NAME_SIGNET, 45, 35},
     {ChainType::REGTEST, QAPP_APP_NAME_REGTEST, 63, 1},
 };

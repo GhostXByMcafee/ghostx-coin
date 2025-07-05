@@ -33,6 +33,8 @@ from test_framework.util import assert_equal
 
 MAX_LOCATOR_SZ = 101
 MAX_BLOCK_WEIGHT = 4000000
+DEFAULT_BLOCK_RESERVED_WEIGHT = 8000
+MINIMUM_BLOCK_RESERVED_WEIGHT = 2000
 MAX_BLOOM_FILTER_SIZE = 36000
 MAX_BLOOM_HASH_FUNCS = 50
 
@@ -46,6 +48,7 @@ MAX_PROTOCOL_MESSAGE_LENGTH = 4000000  # Maximum length of incoming protocol mes
 MAX_HEADERS_RESULTS = 2000  # Number of headers sent in one getheaders result
 MAX_INV_SIZE = 50000  # Maximum number of entries in an 'inv' protocol message
 
+NODE_NONE = 0
 NODE_NETWORK = (1 << 0)
 NODE_BLOOM = (1 << 2)
 NODE_WITNESS = (1 << 3)
@@ -335,7 +338,7 @@ class CAddress:
         elif self.net == self.NET_CJDNS:
             self.ip = socket.inet_ntop(socket.AF_INET6, addr_bytes)
         else:
-            raise Exception(f"Address type not supported")
+            raise Exception("Address type not supported")
 
         self.port = int.from_bytes(f.read(2), "big")
 
@@ -362,7 +365,7 @@ class CAddress:
         elif self.net == self.NET_CJDNS:
             r += socket.inet_pton(socket.AF_INET6, self.ip)
         else:
-            raise Exception(f"Address type not supported")
+            raise Exception("Address type not supported")
         r += self.port.to_bytes(2, "big")
         return r
 
@@ -616,12 +619,12 @@ class CTxWitness:
 
 
 class CTransaction:
-    __slots__ = ("hash", "nLockTime", "nVersion", "sha256", "vin", "vout",
+    __slots__ = ("hash", "nLockTime", "version", "sha256", "vin", "vout",
                  "wit")
 
     def __init__(self, tx=None):
         if tx is None:
-            self.nVersion = 2
+            self.version = 2
             self.vin = []
             self.vout = []
             self.wit = CTxWitness()
@@ -629,7 +632,7 @@ class CTransaction:
             self.sha256 = None
             self.hash = None
         else:
-            self.nVersion = tx.nVersion
+            self.version = tx.version
             self.vin = copy.deepcopy(tx.vin)
             self.vout = copy.deepcopy(tx.vout)
             self.nLockTime = tx.nLockTime
@@ -638,9 +641,9 @@ class CTransaction:
             self.wit = copy.deepcopy(tx.wit)
 
     def deserialize(self, f):
-        self.nVersion = int.from_bytes(f.read(1), "little")
-        if self.nVersion == PARTICL_TX_VERSION:
-            self.nVersion |= int.from_bytes(f.read(1), "little") << 8
+        self.version = int.from_bytes(f.read(1), "little")
+        if self.version == PARTICL_TX_VERSION:
+            self.version |= int.from_bytes(f.read(1), "little") << 8
             self.nLockTime = int.from_bytes(f.read(4), "little")
             self.vin = deser_vector(f, CTxIn)
 
@@ -648,7 +651,7 @@ class CTransaction:
             self.vout.clear()
             for i in range(num_outputs):
                 txo = CTxOutPart()
-                txo.nVersion = int.from_bytes(f.read(1), "little")
+                txo.version = int.from_bytes(f.read(1), "little")
                 txo.deserialize(f)
                 self.vout.append(txo)
 
@@ -659,9 +662,9 @@ class CTransaction:
             self.hash = None
             return
 
-        self.nVersion |= int.from_bytes(f.read(1), "little") << 8
-        self.nVersion |= int.from_bytes(f.read(1), "little") << 16
-        self.nVersion |= int.from_bytes(f.read(1), "little") << 24
+        self.version |= int.from_bytes(f.read(1), "little") << 8
+        self.version |= int.from_bytes(f.read(1), "little") << 16
+        self.version |= int.from_bytes(f.read(1), "little") << 24
         # self.nVersion = int.from_bytes(f.read(4), "little", signed=True)
         self.vin = deser_vector(f, CTxIn)
         flags = 0
@@ -684,17 +687,17 @@ class CTransaction:
         self.hash = None
 
     def serialize_without_witness(self, include_rangeproof=False):
-        if self.nVersion & 0xff == PARTICL_TX_VERSION:
-            r = self.nVersion.to_bytes(2, "little")
+        if self.version & 0xff == PARTICL_TX_VERSION:
+            r = self.version.to_bytes(2, "little")
             r += self.nLockTime.to_bytes(4, "little")
             r += ser_vector(self.vin)
             r += ser_compact_size(len(self.vout))
             for txo in self.vout:
-                r += bytes((txo.nVersion,))
+                r += bytes((txo.version,))
                 r += txo.serialize(with_witness=include_rangeproof)
             return r
         r = b""
-        r += self.nVersion.to_bytes(4, "little", signed=True)
+        r += self.version.to_bytes(4, "little")
         r += ser_vector(self.vin)
         r += ser_vector(self.vout)
         r += self.nLockTime.to_bytes(4, "little")
@@ -702,7 +705,7 @@ class CTransaction:
 
     # Only serialize with witness when explicitly called for
     def serialize_with_witness(self):
-        if self.nVersion & 0xff == PARTICL_TX_VERSION:
+        if self.version & 0xff == PARTICL_TX_VERSION:
             r = self.serialize_without_witness(include_rangeproof=True)
             while len(self.wit.vtxinwit) < len(self.vin):
                 self.wit.vtxinwit.append(CTxInWitness())
@@ -712,7 +715,7 @@ class CTransaction:
         if not self.wit.is_null():
             flags |= 1
         r = b""
-        r += self.nVersion.to_bytes(4, "little", signed=True)
+        r += self.version.to_bytes(4, "little")
         if flags:
             dummy = []
             r += ser_vector(dummy)
@@ -772,8 +775,8 @@ class CTransaction:
         return math.ceil(self.get_weight() / WITNESS_SCALE_FACTOR)
 
     def __repr__(self):
-        return "CTransaction(nVersion=%i vin=%s vout=%s wit=%s nLockTime=%i)" \
-            % (self.nVersion, repr(self.vin), repr(self.vout), repr(self.wit), self.nLockTime)
+        return "CTransaction(version=%i vin=%s vout=%s wit=%s nLockTime=%i)" \
+            % (self.version, repr(self.vin), repr(self.vout), repr(self.wit), self.nLockTime)
 
 
 class CBlockHeader:
@@ -1411,8 +1414,11 @@ class msg_tx:
     __slots__ = ("tx",)
     msgtype = b"tx"
 
-    def __init__(self, tx=CTransaction()):
-        self.tx = tx
+    def __init__(self, tx=None):
+        if tx is None:
+            self.tx = CTransaction()
+        else:
+            self.tx = tx
 
     def deserialize(self, f):
         self.tx.deserialize(f)

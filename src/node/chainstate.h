@@ -14,9 +14,11 @@
 
 class CTxMemPool;
 
-namespace node {
-
+namespace kernel {
 struct CacheSizes;
+} // namespace kernel
+
+namespace node {
 
 struct ChainstateLoadArgs {
     bool address_index{false};
@@ -27,10 +29,10 @@ struct ChainstateLoadArgs {
 
 struct ChainstateLoadOptions {
     CTxMemPool* mempool{nullptr};
-    bool block_tree_db_in_memory{false};
     bool coins_db_in_memory{false};
-    bool reindex{false};
-    bool reindex_chainstate{false};
+    // Whether to wipe the chainstate database when loading it. If set, this
+    // will cause the chainstate database to be rebuilt starting from genesis.
+    bool wipe_chainstate_db{false};
     bool prune{false};
     //! Setting require_full_verification to true will require all checks at
     //! check_level (below) to succeed for loading to succeed. Setting it to
@@ -72,7 +74,7 @@ using ChainstateLoadResult = std::tuple<ChainstateLoadStatus, bilingual_str>;
  *
  *  LoadChainstate returns a (status code, error string) tuple.
  */
-ChainstateLoadResult LoadChainstate(ChainstateManager& chainman, const CacheSizes& cache_sizes,
+ChainstateLoadResult LoadChainstate(ChainstateManager& chainman, const kernel::CacheSizes& cache_sizes,
                                     const ChainstateLoadOptions& options);
 ChainstateLoadResult VerifyLoadedChainstate(ChainstateManager& chainman, const ChainstateLoadOptions& options);
 namespace particl {

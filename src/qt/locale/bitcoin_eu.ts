@@ -3,7 +3,7 @@
     <name>AddressBookPage</name>
     <message>
         <source>Right-click to edit address or label</source>
-        <translation type="unfinished">Klikatu eskuinarekin helbidea edo etiketa aldatzeko</translation>
+        <translation type="unfinished">Eskuin-klika helbidea edo etiketa aldatzeko</translation>
     </message>
     <message>
         <source>Create a new address</source>
@@ -58,13 +58,13 @@
         <translation type="unfinished">&amp;Aukeratu</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Hauek dira zuk dirua jaso dezaketen Particl helbideak. Egiaztatu beti diru-kopurua eta dirua jasoko duen helbidea zuzen egon daitezen, txanponak bidali baino lehen.</translation>
+        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Hauek dira zuk dirua jaso dezaketen Bitcoin helbideak. Egiaztatu beti diru-kopurua eta dirua jasoko duen helbidea zuzen egon daitezen, txanponak bidali baino lehen.</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">Hauek dira ordainketak jasotzeko zure Particl helbideak. Jaso taulako 'Jasotzeko helbide berri bat sortu' botoia erabili helbide berri bat sortzeko.
+        <translation type="unfinished">Hauek dira ordainketak jasotzeko zure Bitcoin helbideak. Jaso taulako 'Jasotzeko helbide berri bat sortu' botoia erabili helbide berri bat sortzeko.
 Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
@@ -94,6 +94,14 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">Akats bat egon da helbide lista %1-ean gordetzen sahiatzean. Mesedez, saiatu berriro.</translation>
     </message>
     <message>
+        <source>Sending addresses - %1</source>
+        <translation type="unfinished">Bidaltzeko helbideak - %1</translation>
+    </message>
+    <message>
+        <source>Receiving addresses - %1</source>
+        <translation type="unfinished">Jasotze helbideak - %1</translation>
+    </message>
+    <message>
         <source>Exporting Failed</source>
         <translation type="unfinished">Esportazioak huts egin du</translation>
     </message>
@@ -102,7 +110,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <name>AddressTableModel</name>
     <message>
         <source>Label</source>
-        <translation type="unfinished">Izendapen</translation>
+        <translation type="unfinished">Etiketa</translation>
     </message>
     <message>
         <source>Address</source>
@@ -110,7 +118,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     </message>
     <message>
         <source>(no label)</source>
-        <translation type="unfinished">(izendapenik ez)</translation>
+        <translation type="unfinished">(etiketarik ez)</translation>
     </message>
 </context>
 <context>
@@ -156,8 +164,8 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">Diruorroaren enkriptazioa berretsi</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PARTICL&lt;/b&gt;!</source>
-        <translation type="unfinished">Abisua: Diruzorroa enkriptatzen baduzu eta zure pasahitza galtzen baduzu, &lt;b&gt;PARTICL GUZTIAK GALDUKO DITUZU&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
+        <translation type="unfinished">Abisua: Diruzorroa enkriptatzen baduzu eta zure pasahitza galtzen baduzu, &lt;b&gt;BITCOIN GUZTIAK GALDUKO DITUZU&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -176,8 +184,16 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">Diruzorroaren pasahitz zahar zein berria sartu.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your particl from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">Gogoan izan diruzorroaren enkripzioak ezin dituela zure particlak zure ordenagailuan izan dezakezun malware batengandik lapurtuak izatetik guztiz babestu .</translation>
+        <source>Continue</source>
+        <translation type="unfinished">Jarraitu</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Atzera</translation>
+    </message>
+    <message>
+        <source>Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">Gogoan izan diruzorroaren enkripzioak ezin dituela zure bitcoinak zure ordenagailuan izan dezakezun malware batengandik lapurtuak izatetik guztiz babestu .</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -216,8 +232,16 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">Zorroa desenkriptatzeko sartutako pasahitza okerra da.</translation>
     </message>
     <message>
+        <source>The passphrase entered for the wallet decryption is incorrect. It contains a null character (ie - a zero byte). If the passphrase was set with a version of this software prior to 25.0, please try again with only the characters up to — but not including — the first null character. If this is successful, please set a new passphrase to avoid this issue in the future.</source>
+        <translation type="unfinished">Kartera deszifratzeko sartu den pasahitza ez da zuzena. Karaktere nulua du (adib - zero byte). Passphrasak software honen bertsio bat bazuen 25.0 bertsioaren aurretik, mesedez, saia zaitez berriro karaktere hutsekin, lehen karaktere nulua barne hartu gabe. Arrakasta izanez gero, jar ezazu passphrase berri bat etorkizunean hori saihesteko.</translation>
+    </message>
+    <message>
         <source>Wallet passphrase was successfully changed.</source>
         <translation type="unfinished">Diruzorroaren pasahitza arrakastaz aldatu da.</translation>
+    </message>
+    <message>
+        <source>Passphrase change failed</source>
+        <translation type="unfinished">Passphrase aldaketak porrot egin du.</translation>
     </message>
     <message>
         <source>Warning: The Caps Lock key is on!</source>
@@ -238,8 +262,16 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
 <context>
     <name>BitcoinApplication</name>
     <message>
+        <source>Settings file %1 might be corrupt or invalid.</source>
+        <translation type="unfinished">%1 Konfigurazio fitxategian akatsa edo baliogabea izan daiteke</translation>
+    </message>
+    <message>
         <source>Runaway exception</source>
         <translation type="unfinished">Ranaway exception</translation>
+    </message>
+    <message>
+        <source>A fatal error occurred. %1 can no longer continue safely and will quit.</source>
+        <translation type="unfinished">Akats larri bat gertatu zen. %1-ek ezin du segurtasunez jarraitu eta itxi egingo da.</translation>
     </message>
     <message>
         <source>Internal error</source>
@@ -251,6 +283,10 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <message>
         <source>Error: %1</source>
         <translation type="unfinished">Akatsa: %1</translation>
+    </message>
+    <message>
+        <source>%1 didn't yet exit safely…</source>
+        <translation type="unfinished">%1 ez da oraindik segurtasunez itxi…</translation>
     </message>
     <message>
         <source>unknown</source>
@@ -310,7 +346,11 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
             <numerusform />
         </translation>
     </message>
-    </context>
+    <message>
+        <source>default wallet</source>
+        <translation type="unfinished">Diruzorro lehenetsia</translation>
+    </message>
+</context>
 <context>
     <name>BitcoinGUI</name>
     <message>
@@ -379,8 +419,8 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">Proxya &lt;b&gt;gaituta&lt;/b&gt; dago : %1</translation>
     </message>
     <message>
-        <source>Send coins to a Particl address</source>
-        <translation type="unfinished">Bidali txanponak Particl helbide batera</translation>
+        <source>Send coins to a Bitcoin address</source>
+        <translation type="unfinished">Bidali txanponak Bitcoin helbide batera</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -423,16 +463,16 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">sinatu &amp;mezua</translation>
     </message>
     <message>
-        <source>Sign messages with your Particl addresses to prove you own them</source>
-        <translation type="unfinished">Sinatu mezuak Particlen helbideekin, jabetza frogatzeko.</translation>
+        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <translation type="unfinished">Sinatu mezuak Bitcoinen helbideekin, jabetza frogatzeko.</translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
         <translation type="unfinished">Mezua &amp;balioztatu</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Particl addresses</source>
-        <translation type="unfinished">Egiaztatu mesua Particl helbide espezifikoarekin erregistratu direla ziurtatzeko</translation>
+        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
+        <translation type="unfinished">Egiaztatu mesua Bitcoin helbide espezifikoarekin erregistratu direla ziurtatzeko</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
@@ -469,6 +509,10 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <message>
         <source>Tabs toolbar</source>
         <translation type="unfinished">Fitxen tresna-barra</translation>
+    </message>
+    <message>
+        <source>Syncing Headers (%1%)…</source>
+        <translation type="unfinished">Burukoak sinkronizatzen (%1%)...</translation>
     </message>
     <message>
         <source>Synchronizing with network…</source>
@@ -538,16 +582,16 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">Eguneratua</translation>
     </message>
     <message>
-        <source>Load Partially Signed Particl Transaction</source>
-        <translation type="unfinished">Partzialki sinatutako Particl transakzioa kargatu</translation>
+        <source>Load Partially Signed Bitcoin Transaction</source>
+        <translation type="unfinished">Partzialki sinatutako Bitcoin transakzioa kargatu</translation>
     </message>
     <message>
         <source>Load PSBT from &amp;clipboard…</source>
         <translation type="unfinished">kargatu PSBT arbeletik...</translation>
     </message>
     <message>
-        <source>Load Partially Signed Particl Transaction from clipboard</source>
-        <translation type="unfinished">Partzialki sinatutako Particl transakzioa kargatu arbeletik</translation>
+        <source>Load Partially Signed Bitcoin Transaction from clipboard</source>
+        <translation type="unfinished">Partzialki sinatutako Bitcoin transakzioa kargatu arbeletik</translation>
     </message>
     <message>
         <source>Node window</source>
@@ -562,8 +606,8 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">&amp;Helbideak jasotzen</translation>
     </message>
     <message>
-        <source>Open a particl: URI</source>
-        <translation type="unfinished">Ireki particl bat: URI</translation>
+        <source>Open a bitcoin: URI</source>
+        <translation type="unfinished">Ireki bitcoin bat: URI</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -578,12 +622,18 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">Diruzorroa itxi</translation>
     </message>
     <message>
-        <source>Close all wallets</source>
-        <translation type="unfinished">Diruzorro guztiak itxi</translation>
+        <source>Restore Wallet…</source>
+        <extracomment>Name of the menu item that restores wallet from a backup file.</extracomment>
+        <translation type="unfinished">Diru-zorroa berrezarri...</translation>
     </message>
     <message>
-        <source>default wallet</source>
-        <translation type="unfinished">Diruzorro lehenetsia</translation>
+        <source>Restore a wallet from a backup file</source>
+        <extracomment>Status tip for Restore Wallet menu item</extracomment>
+        <translation type="unfinished">Berrezarri diru-zorro bat babeskopia artxibo batetik.</translation>
+    </message>
+    <message>
+        <source>Close all wallets</source>
+        <translation type="unfinished">Diruzorro guztiak itxi</translation>
     </message>
     <message>
         <source>No wallets available</source>
@@ -619,12 +669,17 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <translation type="unfinished">E&amp;rakutsi</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Particl network.</source>
+        <source>%n active connection(s) to Bitcoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
             <numerusform />
         </translation>
+    </message>
+    <message>
+        <source>Click for more actions.</source>
+        <extracomment>A substring of the tooltip. "More actions" are available via the context menu.</extracomment>
+        <translation type="unfinished">Klikatu ekintza gehiago egiteko</translation>
     </message>
     <message>
         <source>Show Peers tab</source>
@@ -858,10 +913,6 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <message>
         <source>Open wallet warning</source>
         <translation type="unfinished">Diruzorroa irekitzen abisua</translation>
-    </message>
-    <message>
-        <source>default wallet</source>
-        <translation type="unfinished">Diruzorro lehenetsia</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -1098,8 +1149,8 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open particl URI</source>
-        <translation type="unfinished">Ireki particl URIa</translation>
+        <source>Open bitcoin URI</source>
+        <translation type="unfinished">Ireki bitcoin URIa</translation>
     </message>
     <message>
         <source>URI:</source>
@@ -1152,10 +1203,6 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
     <message>
         <source>Enable coin &amp;control features</source>
         <translation type="unfinished">Diruaren &amp;kontrolaren ezaugarriak gaitu</translation>
-    </message>
-    <message>
-        <source>Map port using &amp;UPnP</source>
-        <translation type="unfinished">Portua mapeatu &amp;UPnP erabiliz</translation>
     </message>
     <message>
         <source>Accept connections from outside.</source>
@@ -1223,6 +1270,10 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <source>Configuration options</source>
         <extracomment>Window title text of pop-up box that allows opening up of configuration file.</extracomment>
         <translation type="unfinished">Konfiguraketa aukerak</translation>
+    </message>
+    <message>
+        <source>Continue</source>
+        <translation type="unfinished">Jarraitu</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2157,11 +2208,7 @@ Sinatzea 'legacy' motako helbideekin soilik da posible</translation>
         <source>PSBT copied</source>
         <translation type="unfinished">PSBT kopiatua</translation>
     </message>
-    <message>
-        <source>default wallet</source>
-        <translation type="unfinished">Diruzorro lehenetsia</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>WalletView</name>
     <message>

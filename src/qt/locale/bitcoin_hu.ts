@@ -58,13 +58,13 @@
         <translation type="unfinished">K&amp;iválaszt</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Ezek az Ön Particl címei kifizetések küldéséhez. Mindig ellenőrizze az összeget és a fogadó címet mielőtt érméket küldene.</translation>
+        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Ezek az Ön Bitcoin címei kifizetések küldéséhez. Mindig ellenőrizze az összeget és a fogadó címet mielőtt érméket küldene.</translation>
     </message>
     <message>
-        <source>These are your Particl addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">Ezek az Ön Particl címei amelyeken fogadni tud Particl utalásokat. Az "Új cím létrehozása" gombbal tud új címet létrehozni.
+        <translation type="unfinished">Ezek az Ön Bitcoin címei amelyeken fogadni tud Bitcoin utalásokat. Az "Új cím létrehozása" gombbal tud új címet létrehozni.
 Aláírni csak régi típusú, egyessel kezdődő címekkel lehet.</translation>
     </message>
     <message>
@@ -164,8 +164,8 @@ Aláírni csak régi típusú, egyessel kezdődő címekkel lehet.</translation>
         <translation type="unfinished">Tárca titkosításának megerősítése</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR PARTICL&lt;/b&gt;!</source>
-        <translation type="unfinished">Figyelmeztetés: Ha titkosítja a tárcáját és elveszíti a jelmondatát, akkor &lt;b&gt;AZ ÖSSZES PARTICLJA ELVÉSZ&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
+        <translation type="unfinished">Figyelmeztetés: Ha titkosítja a tárcáját és elveszíti a jelmondatát, akkor &lt;b&gt;AZ ÖSSZES BITCOINJA ELVÉSZ&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -184,7 +184,15 @@ Aláírni csak régi típusú, egyessel kezdődő címekkel lehet.</translation>
         <translation type="unfinished">Írja be a tárca régi és új jelmondatát.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your particl from being stolen by malware infecting your computer.</source>
+        <source>Continue</source>
+        <translation type="unfinished">Tovább</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Vissza</translation>
+    </message>
+    <message>
+        <source>Remember that encrypting your wallet cannot fully protect your bitcoins from being stolen by malware infecting your computer.</source>
         <translation type="unfinished">Ne feledje, hogy a tárca titkosítása nem nyújt teljes védelmet az adathalász programok fertőzésével szemben.</translation>
     </message>
     <message>
@@ -311,12 +319,16 @@ Aláírni csak régi típusú, egyessel kezdődő címekkel lehet.</translation>
         <translation type="unfinished">Alapértelmezett betűtípus "%1"</translation>
     </message>
     <message>
+        <source>Custom…</source>
+        <translation type="unfinished">Egyedi…</translation>
+    </message>
+    <message>
         <source>Amount</source>
         <translation type="unfinished">Összeg</translation>
     </message>
     <message>
-        <source>Enter a Particl address (e.g. %1)</source>
-        <translation type="unfinished">Adjon meg egy Particl címet (pl: %1)</translation>
+        <source>Enter a Bitcoin address (e.g. %1)</source>
+        <translation type="unfinished">Adjon meg egy Bitcoin címet (pl: %1)</translation>
     </message>
     <message>
         <source>Unroutable</source>
@@ -421,7 +433,11 @@ Aláírni csak régi típusú, egyessel kezdődő címekkel lehet.</translation>
             <numerusform>%n év</numerusform>
         </translation>
     </message>
-    </context>
+    <message>
+        <source>default wallet</source>
+        <translation type="unfinished">alapértelmezett tárca</translation>
+    </message>
+</context>
 <context>
     <name>BitcoinGUI</name>
     <message>
@@ -490,8 +506,8 @@ Aláírni csak régi típusú, egyessel kezdődő címekkel lehet.</translation>
         <translation type="unfinished">A proxy &lt;b&gt;aktív&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Particl address</source>
-        <translation type="unfinished">Particl küldése megadott címre</translation>
+        <source>Send coins to a Bitcoin address</source>
+        <translation type="unfinished">Bitcoin küldése megadott címre</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -499,7 +515,7 @@ Aláírni csak régi típusú, egyessel kezdődő címekkel lehet.</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
-        <translation type="unfinished">Tárcatitkosító jelmondat megváltoztatása</translation>
+        <translation type="unfinished">Tárcatitkosító jelszó megváltoztatása</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -527,23 +543,23 @@ Aláírni csak régi típusú, egyessel kezdődő címekkel lehet.</translation>
     </message>
     <message>
         <source>&amp;Change Passphrase…</source>
-        <translation type="unfinished">Jelmondat &amp;megváltoztatása…</translation>
+        <translation type="unfinished">Jelszó &amp;megváltoztatása…</translation>
     </message>
     <message>
         <source>Sign &amp;message…</source>
         <translation type="unfinished">Üzenet &amp;aláírása…</translation>
     </message>
     <message>
-        <source>Sign messages with your Particl addresses to prove you own them</source>
-        <translation type="unfinished">Üzenetek aláírása a Particl-címeivel, amivel bizonyíthatja, hogy az Öné</translation>
+        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
+        <translation type="unfinished">Üzenetek aláírása a Bitcoin-címeivel, amivel bizonyíthatja hogy a cím az Öné</translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
         <translation type="unfinished">Üzenet &amp;ellenőrzése…</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Particl addresses</source>
-        <translation type="unfinished">Üzenetek ellenőrzése, hogy valóban a megjelölt Particl-címekkel vannak-e aláírva</translation>
+        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
+        <translation type="unfinished">Üzenetek ellenőrzése, hogy valóban a megjelölt Bitcoin-címekkel vannak-e aláírva</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
@@ -559,7 +575,7 @@ Aláírni csak régi típusú, egyessel kezdődő címekkel lehet.</translation>
     </message>
     <message>
         <source>Create Wallet…</source>
-        <translation type="unfinished">Tárca létrehozása...</translation>
+        <translation type="unfinished">Tárca készítése…</translation>
     </message>
     <message>
         <source>Close All Wallets…</source>
@@ -602,8 +618,8 @@ Aláírni csak régi típusú, egyessel kezdődő címekkel lehet.</translation>
         <translation type="unfinished">Csatlakozás partnerekhez…</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and particl: URIs)</source>
-        <translation type="unfinished">Fizetési kérelem (QR-kódot és "particl:" URI azonosítót hoz létre)</translation>
+        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
+        <translation type="unfinished">Fizetési kérelem (QR-kódot és "bitcoin:" URI azonosítót hoz létre)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -615,7 +631,7 @@ Aláírni csak régi típusú, egyessel kezdődő címekkel lehet.</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
-        <translation type="unfinished">Paran&amp;cssori opciók</translation>
+        <translation type="unfinished">Paran&amp;cssor kapcsolók</translation>
     </message>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
@@ -645,7 +661,7 @@ Aláírni csak régi típusú, egyessel kezdődő címekkel lehet.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Figyelmeztetés</translation>
+        <translation type="unfinished">Figyelem</translation>
     </message>
     <message>
         <source>Information</source>
@@ -656,16 +672,16 @@ Aláírni csak régi típusú, egyessel kezdődő címekkel lehet.</translation>
         <translation type="unfinished">Naprakész</translation>
     </message>
     <message>
-        <source>Load Partially Signed Particl Transaction</source>
-        <translation type="unfinished">Részlegesen aláírt Particl tranzakció (PSBT) betöltése</translation>
+        <source>Load Partially Signed Bitcoin Transaction</source>
+        <translation type="unfinished">Részlegesen aláírt Bitcoin tranzakció (PSBT) betöltése</translation>
     </message>
     <message>
         <source>Load PSBT from &amp;clipboard…</source>
         <translation type="unfinished">PSBT betöltése &amp;vágólapról...</translation>
     </message>
     <message>
-        <source>Load Partially Signed Particl Transaction from clipboard</source>
-        <translation type="unfinished">Részlegesen aláírt Particl tranzakció (PSBT) betöltése vágólapról</translation>
+        <source>Load Partially Signed Bitcoin Transaction from clipboard</source>
+        <translation type="unfinished">Részlegesen aláírt Bitcoin tranzakció (PSBT) betöltése vágólapról</translation>
     </message>
     <message>
         <source>Node window</source>
@@ -684,16 +700,16 @@ Aláírni csak régi típusú, egyessel kezdődő címekkel lehet.</translation>
         <translation type="unfinished">&amp;Fogadó címek</translation>
     </message>
     <message>
-        <source>Open a particl: URI</source>
-        <translation type="unfinished">Particl URI megnyitása</translation>
+        <source>Open a bitcoin: URI</source>
+        <translation type="unfinished">Bitcoin URI megnyitása</translation>
     </message>
     <message>
         <source>Open Wallet</source>
-        <translation type="unfinished">Tárca megnyitása</translation>
+        <translation type="unfinished">Tárca Megnyitása</translation>
     </message>
     <message>
         <source>Open a wallet</source>
-        <translation type="unfinished">Egy tárca megnyitása</translation>
+        <translation type="unfinished">Tárca megnyitása</translation>
     </message>
     <message>
         <source>Close wallet</source>
@@ -722,8 +738,8 @@ Aláírni csak régi típusú, egyessel kezdődő címekkel lehet.</translation>
         <translation type="unfinished">Egy tárca migrálása</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Particl command-line options</source>
-        <translation type="unfinished">A %1 súgó megjelenítése a Particl lehetséges parancssori kapcsolóinak listájával</translation>
+        <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
+        <translation type="unfinished">A %1 súgó megjelenítése a Bitcoin lehetséges parancssori kapcsolóinak listájával</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
@@ -734,17 +750,13 @@ Aláírni csak régi típusú, egyessel kezdődő címekkel lehet.</translation>
         <translation type="unfinished">Értékek elrejtése az Áttekintés fülön</translation>
     </message>
     <message>
-        <source>default wallet</source>
-        <translation type="unfinished">alapértelmezett tárca</translation>
-    </message>
-    <message>
         <source>No wallets available</source>
         <translation type="unfinished">Nincs elérhető tárca</translation>
     </message>
     <message>
         <source>Wallet Data</source>
         <extracomment>Name of the wallet data file format.</extracomment>
-        <translation type="unfinished">Tárca adat</translation>
+        <translation type="unfinished">Tárca adatai</translation>
     </message>
     <message>
         <source>Load Wallet Backup</source>
@@ -786,10 +798,10 @@ Aláírni csak régi típusú, egyessel kezdődő címekkel lehet.</translation>
         <translation type="unfinished">&amp;Mutat</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Particl network.</source>
+        <source>%n active connection(s) to Bitcoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
-            <numerusform>%n aktív kapcsolat a Particl hálózathoz.</numerusform>
+            <numerusform>%n aktív kapcsolat a Bitcoin hálózathoz.</numerusform>
         </translation>
     </message>
     <message>
@@ -984,11 +996,11 @@ Aláírni csak régi típusú, egyessel kezdődő címekkel lehet.</translation>
     </message>
     <message>
         <source>Copy &amp;label</source>
-        <translation type="unfinished">C&amp;ímke másolása</translation>
+        <translation type="unfinished">Címke &amp;másolása</translation>
     </message>
     <message>
         <source>Copy &amp;amount</source>
-        <translation type="unfinished">&amp;Összeg másolása</translation>
+        <translation type="unfinished">Ö&amp;sszeg másolása</translation>
     </message>
     <message>
         <source>Copy transaction &amp;ID and output index</source>
@@ -1145,10 +1157,6 @@ A migrációs folyamat készít biztonsági mentést a tárcáról migrálás el
     <message>
         <source>Open wallet warning</source>
         <translation type="unfinished">Tárca-megnyitási figyelmeztetés</translation>
-    </message>
-    <message>
-        <source>default wallet</source>
-        <translation type="unfinished">alapértelmezett tárca</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -1315,8 +1323,8 @@ A migrációs folyamat készít biztonsági mentést a tárcáról migrálás el
         <translation type="unfinished">Küldő cím szerkesztése</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Particl address.</source>
-        <translation type="unfinished">A megadott "%1" cím nem egy érvényes Particl-cím.</translation>
+        <source>The entered address "%1" is not a valid Bitcoin address.</source>
+        <translation type="unfinished">A megadott "%1" cím nem egy érvényes Bitcoin-cím.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -1398,8 +1406,8 @@ A migrációs folyamat készít biztonsági mentést a tárcáról migrálás el
         </translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Particl block chain.</source>
-        <translation type="unfinished">%1 fog letöltődni és a Particl blokklánc egy másolatát fogja tárolni.</translation>
+        <source>%1 will download and store a copy of the Bitcoin block chain.</source>
+        <translation type="unfinished">%1 fog letöltődni és a Bitcoin blokklánc egy másolatát fogja tárolni.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1491,12 +1499,12 @@ A migrációs folyamat készít biztonsági mentést a tárcáról migrálás el
         <translation type="unfinished">Űrlap</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the particl network, as detailed below.</source>
-        <translation type="unfinished">A legutóbbi tranzakciók még lehet, hogy nem láthatók emiatt előfordulhat, hogy a tárca egyenlege helytelen. A tárca azon nyomban az aktuális egyenleget fogja mutatni, amint befejezte a particl hálózattal történő szinkronizációt, amely alább van részletezve.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the bitcoin network, as detailed below.</source>
+        <translation type="unfinished">A legutóbbi tranzakciók még lehet, hogy nem láthatók emiatt előfordulhat, hogy a tárca egyenlege helytelen. A tárca azon nyomban az aktuális egyenleget fogja mutatni, amint befejezte a bitcoin hálózattal történő szinkronizációt, amely alább van részletezve.</translation>
     </message>
     <message>
-        <source>Attempting to spend particl that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation type="unfinished">A hálózat nem fogadja el azoknak a particloknak az elköltését, amelyek érintettek a még nem látszódó tranzakciókban.</translation>
+        <source>Attempting to spend bitcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation type="unfinished">A hálózat nem fogadja el azoknak a bitcoinoknak az elköltését, amelyek érintettek a még nem látszódó tranzakciókban.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1550,8 +1558,8 @@ A migrációs folyamat készít biztonsági mentést a tárcáról migrálás el
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open particl URI</source>
-        <translation type="unfinished">Particl URI megnyitása</translation>
+        <source>Open bitcoin URI</source>
+        <translation type="unfinished">Bitcoin URI megnyitása</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -1606,6 +1614,10 @@ A migrációs folyamat készít biztonsági mentést a tárcáról migrálás el
         <translation type="unfinished">Az alkalmazásból való kilépés helyett az eszköztárba kicsinyíti az alkalmazást az ablak bezárásakor. Ez esetben az alkalmazás csak a Kilépés menüponttal zárható be.</translation>
     </message>
     <message>
+        <source>Font in the Overview tab: </source>
+        <translation type="unfinished">A Főoldal fül betűtípusa:</translation>
+    </message>
+    <message>
         <source>Options set in this dialog are overridden by the command line:</source>
         <translation type="unfinished">Ebben az ablakban megadott beállítások felülbírálásra kerültek a parancssori kapcsolók által:</translation>
     </message>
@@ -1636,11 +1648,6 @@ A migrációs folyamat készít biztonsági mentést a tárcáról migrálás el
     <message>
         <source>Reverting this setting requires re-downloading the entire blockchain.</source>
         <translation type="unfinished">A beállítás visszaállításához le kell tölteni a teljes blokkláncot.</translation>
-    </message>
-    <message>
-        <source>Maximum database cache size. A larger cache can contribute to faster sync, after which the benefit is less pronounced for most use cases. Lowering the cache size will reduce memory usage. Unused mempool memory is shared for this cache.</source>
-        <extracomment>Tooltip text for Options window setting that sets the size of the database cache. Explains the corresponding effects of increasing/decreasing this value.</extracomment>
-        <translation type="unfinished">Adatbázis gyorsítótár maximális mérete. Nagyobb gyorsítótár gyorsabb szinkronizálást eredményez utána viszont az előnyei kevésbé számottevők. A gyorsítótár méretének csökkentése a memóriafelhasználást is mérsékli. A használaton kívüli mempool memória is osztozik ezen a táron.</translation>
     </message>
     <message>
         <source>Set the number of script verification threads. Negative values correspond to the number of cores you want to leave free to the system.</source>
@@ -1710,22 +1717,6 @@ A migrációs folyamat készít biztonsági mentést a tárcáról migrálás el
         <translation type="unfinished">&amp;Külső aláíró szkript elérési útvonala</translation>
     </message>
     <message>
-        <source>Automatically open the Particl client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation type="unfinished">A Particl-kliens portjának automatikus megnyitása a routeren. Ez csak akkor működik, ha a router támogatja az UPnP-t és az engedélyezve is van rajta.</translation>
-    </message>
-    <message>
-        <source>Map port using &amp;UPnP</source>
-        <translation type="unfinished">&amp;UPnP port-feltérképezés</translation>
-    </message>
-    <message>
-        <source>Automatically open the Particl client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
-        <translation type="unfinished">A Particl kliens port automatikus megnyitása a routeren. Ez csak akkor működik ha a router támogatja a NAT-PMP-t és ez engedélyezve is van. A külső port lehet véletlenszerűen választott.</translation>
-    </message>
-    <message>
-        <source>Map port using NA&amp;T-PMP</source>
-        <translation type="unfinished">Külső port megnyitása NA&amp;T-PMP-vel</translation>
-    </message>
-    <message>
         <source>Accept connections from outside.</source>
         <translation type="unfinished">Külső csatlakozások elfogadása.</translation>
     </message>
@@ -1734,8 +1725,8 @@ A migrációs folyamat készít biztonsági mentést a tárcáról migrálás el
         <translation type="unfinished">Be&amp;jövő kapcsolatok engedélyezése</translation>
     </message>
     <message>
-        <source>Connect to the Particl network through a SOCKS5 proxy.</source>
-        <translation type="unfinished">Csatlakozás a Particl hálózatához SOCKS5 proxyn keresztül</translation>
+        <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
+        <translation type="unfinished">Csatlakozás a Bitcoin hálózatához SOCKS5 proxyn keresztül</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1806,8 +1797,8 @@ A migrációs folyamat készít biztonsági mentést a tárcáról migrálás el
         <translation type="unfinished">Mutassa-e a pénzküldés beállításait.</translation>
     </message>
     <message>
-        <source>Connect to the Particl network through a separate SOCKS5 proxy for Tor onion services.</source>
-        <translation type="unfinished">Csatlakozás a Particl hálózathoz külön SOCKS5 proxy használatával a Tor rejtett szolgáltatásainak eléréséhez.</translation>
+        <source>Connect to the Bitcoin network through a separate SOCKS5 proxy for Tor onion services.</source>
+        <translation type="unfinished">Csatlakozás a Bitcoin hálózathoz külön SOCKS5 proxy használatával a Tor rejtett szolgáltatásainak eléréséhez.</translation>
     </message>
     <message>
         <source>Use separate SOCKS&amp;5 proxy to reach peers via Tor onion services:</source>
@@ -1899,8 +1890,8 @@ A migrációs folyamat készít biztonsági mentést a tárcáról migrálás el
         <translation type="unfinished">Űrlap</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Particl network after a connection is established, but this process has not completed yet.</source>
-        <translation type="unfinished">A kijelzett információ lehet, hogy elavult. A kapcsolat létrehozatalát követően tárcája automatikusan szinkronba kerül a Particl hálózattal, de ez a folyamat még nem fejeződött be.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation type="unfinished">A kijelzett információ lehet, hogy elavult. A kapcsolat létrehozatalát követően tárcája automatikusan szinkronba kerül a Bitcoin hálózattal, de ez a folyamat még nem fejeződött be.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -2114,16 +2105,16 @@ A migrációs folyamat készít biztonsági mentést a tárcáról migrálás el
         <translation type="unfinished">Hiba történt a fizetési kérelem során</translation>
     </message>
     <message>
-        <source>Cannot start particl: click-to-pay handler</source>
-        <translation type="unfinished">A particl nem tud elindulni: click-to-pay kezelő</translation>
+        <source>Cannot start bitcoin: click-to-pay handler</source>
+        <translation type="unfinished">A bitcoin nem tud elindulni: click-to-pay kezelő</translation>
     </message>
     <message>
         <source>URI handling</source>
         <translation type="unfinished">URI kezelés</translation>
     </message>
     <message>
-        <source>'particl://' is not a valid URI. Use 'particl:' instead.</source>
-        <translation type="unfinished">'particl://' nem érvényes egységes erőforrás azonosító (URI). Használja helyette a 'particl:'-t.</translation>
+        <source>'bitcoin://' is not a valid URI. Use 'bitcoin:' instead.</source>
+        <translation type="unfinished">'bitcoin://' nem érvényes egységes erőforrás azonosító (URI). Használja helyette a 'bitcoin:'-t.</translation>
     </message>
     <message>
         <source>Cannot process payment request because BIP70 is not supported.
@@ -2132,8 +2123,8 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation type="unfinished">A fizetési kérelmet nem lehet feldolgozni, mert a BIP70 nem támogatott. A jól ismert biztonsági hiányosságok miatt a BIP70-re való váltásra történő felhívásokat hagyja figyelmen kívül. Amennyiben ezt az üzenetet látja kérjen egy új, BIP21 kompatibilis URI-t.</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Particl address or malformed URI parameters.</source>
-        <translation type="unfinished">Nem sikerült az URI értelmezése! Ezt okozhatja érvénytelen Particl cím, vagy rossz URI paraméterezés.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
+        <translation type="unfinished">Nem sikerült az URI értelmezése! Ezt okozhatja érvénytelen Bitcoin cím, vagy rossz URI paraméterezés.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -2281,6 +2272,14 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation type="unfinished">Kapcsolatok száma</translation>
     </message>
     <message>
+        <source>Local Addresses</source>
+        <translation type="unfinished">Helyi címek</translation>
+    </message>
+    <message>
+        <source>Network addresses that your Bitcoin node is currently using to communicate with other nodes.</source>
+        <translation type="unfinished">Hálózati címek amelyeken keresztül jelenleg a Bitcoin csomópontja a többi csomóponttal kommunikál.</translation>
+    </message>
+    <message>
         <source>Block chain</source>
         <translation type="unfinished">Blokklánc</translation>
     </message>
@@ -2329,16 +2328,16 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation type="unfinished">Válasszon ki egy partnert a részletes információk megtekintéséhez.</translation>
     </message>
     <message>
+        <source>Hide Peers Detail</source>
+        <translation type="unfinished">Partner részleteinek elrejtése</translation>
+    </message>
+    <message>
         <source>The transport layer version: %1</source>
         <translation type="unfinished">Az átviteli réteg verziója: %1</translation>
     </message>
     <message>
         <source>Transport</source>
         <translation type="unfinished">Átvitel</translation>
-    </message>
-    <message>
-        <source>The BIP324 session ID string in hex, if any.</source>
-        <translation type="unfinished">A BIP324 munkamenet azonosító hex formátumú szöveglánca, ha van.</translation>
     </message>
     <message>
         <source>Session ID</source>
@@ -2445,6 +2444,10 @@ If you are receiving this error you should request the merchant provide a BIP21 
     <message>
         <source>Direction/Type</source>
         <translation type="unfinished">Irány/Típus</translation>
+    </message>
+    <message>
+        <source>The BIP324 session ID string in hex.</source>
+        <translation type="unfinished">A BIP324 munkamenet-azonosító hex formátumban.</translation>
     </message>
     <message>
         <source>The network protocol this peer is connected through: IPv4, IPv6, Onion, I2P, or CJDNS.</source>
@@ -2639,8 +2642,16 @@ If you are receiving this error you should request the merchant provide a BIP21 
         <translation type="unfinished">Hálózati tevékenység letiltva</translation>
     </message>
     <message>
+        <source>None</source>
+        <translation type="unfinished">Semmi</translation>
+    </message>
+    <message>
         <source>Executing command without any wallet</source>
         <translation type="unfinished">Parancs végrehajtása tárca nélkül</translation>
+    </message>
+    <message>
+        <source>Node window - [%1]</source>
+        <translation type="unfinished">Csomópont ablak - [%1]</translation>
     </message>
     <message>
         <source>Executing command using "%1" wallet</source>
@@ -2719,8 +2730,8 @@ Gépeljen %5 az elérhető parancsok áttekintéséhez. Több információért a
         <translation type="unfinished">&amp;Üzenet:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Particl network.</source>
-        <translation type="unfinished">Egy opcionális üzenet csatolása a fizetési kérelemhez, amely megjelenik a kérelem megnyitásakor. Megjegyzés: Az üzenet nem lesz elküldve a fizetséggel a Particl hálózaton keresztül.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bitcoin network.</source>
+        <translation type="unfinished">Egy opcionális üzenet csatolása a fizetési kérelemhez, amely megjelenik a kérelem megnyitásakor. Megjegyzés: Az üzenet nem lesz elküldve a fizetséggel a Bitcoin hálózaton keresztül.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2792,7 +2803,7 @@ Gépeljen %5 az elérhető parancsok áttekintéséhez. Több információért a
     </message>
     <message>
         <source>Copy &amp;amount</source>
-        <translation type="unfinished">&amp;Összeg másolása</translation>
+        <translation type="unfinished">Ö&amp;sszeg másolása</translation>
     </message>
     <message>
         <source>Base58 (Legacy)</source>
@@ -3020,7 +3031,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
 Megjegyzés: Mivel a díj bájtonként van kiszámítva, egy "100 satoshi kvB-nként"-ként megadott díj egy 500 virtuális bájt (1kvB fele) méretű tranzakció végül csak 50 satoshi-s díjat jelentene.</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for particl transactions than the network can process.</source>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for bitcoin transactions than the network can process.</source>
         <translation type="unfinished">Ha kevesebb a tranzakció, mint amennyi hely lenne egy blokkban, akkor a bányászok és a többi csomópont megkövetelheti a minimum díjat. Ezt a minimum díjat fizetni elegendő lehet de elképzelhető, hogy ez esetleg egy soha sem jóváhagyott tranzakciót eredményez ahogy a tranzakciók száma magasabb lesz, mint a hálózat által megengedett.</translation>
     </message>
     <message>
@@ -3106,8 +3117,8 @@ Megjegyzés: Mivel a díj bájtonként van kiszámítva, egy "100 satoshi kvB-nk
         <translation type="unfinished">&amp;Aláíratlan létrehozása</translation>
     </message>
     <message>
-        <source>Creates a Partially Signed Particl Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation type="unfinished">Létrehoz egy Részlegesen Aláírt Particl Tranzakciót (PSBT) melyet offline %1 tárcával vagy egy PSBT kompatibilis hardver tárcával használhat.</translation>
+        <source>Creates a Partially Signed Bitcoin Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation type="unfinished">Létrehoz egy Részlegesen Aláírt Bitcoin Tranzakciót (PSBT) melyet offline %1 tárcával vagy egy PSBT kompatibilis hardver tárcával használhat.</translation>
     </message>
     <message>
         <source>%1 to '%2'</source>
@@ -3162,9 +3173,9 @@ Megjegyzés: Mivel a díj bájtonként van kiszámítva, egy "100 satoshi kvB-nk
         <translation type="unfinished">Később növelheti a tranzakció díját (Replace-By-Fee-t jelez, BIP-125).</translation>
     </message>
     <message>
-        <source>Please, review your transaction proposal. This will produce a Partially Signed Particl Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <source>Please, review your transaction proposal. This will produce a Partially Signed Bitcoin Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can only create a PSBT. This string is displayed when private keys are disabled and an external signer is not available.</extracomment>
-        <translation type="unfinished">Kérjük nézze át a tranzakciós javaslatot. Ez létrehoz egy részlegesen aláírt particl tranzakciót (PSBT) amit elmenthet vagy kimásolhat amit később aláírhatja offline %1 tárcával vagy egy PSBT kompatibilis hardvertárcával.</translation>
+        <translation type="unfinished">Kérjük nézze át a tranzakciós javaslatot. Ez létrehoz egy részlegesen aláírt bitcoin tranzakciót (PSBT) amit elmenthet vagy kimásolhat amit később aláírhatja offline %1 tárcával vagy egy PSBT kompatibilis hardvertárcával.</translation>
     </message>
     <message>
         <source>%1 from wallet '%2'</source>
@@ -3176,9 +3187,9 @@ Megjegyzés: Mivel a díj bájtonként van kiszámítva, egy "100 satoshi kvB-nk
         <translation type="unfinished">Biztosan létrehozza ezt a tranzakciót?</translation>
     </message>
     <message>
-        <source>Please, review your transaction. You can create and send this transaction or create a Partially Signed Particl Transaction (PSBT), which you can save or copy and then sign with, e.g., an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <source>Please, review your transaction. You can create and send this transaction or create a Partially Signed Bitcoin Transaction (PSBT), which you can save or copy and then sign with, e.g., an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can send their transaction or create a PSBT. This string is displayed when both private keys and PSBT controls are enabled.</extracomment>
-        <translation type="unfinished">Kérjük nézze át a tranzakció részleteit. Véglegesítheti és elküldheti ezt a tranzakciót vagy létrehozhat egy részlegesen aláírt particl tranzakciót (PSBT) amit elmentve vagy átmásolva aláírhat egy offline %1 tárcával, vagy PSBT-t támogató hardvertárcával.</translation>
+        <translation type="unfinished">Kérjük nézze át a tranzakció részleteit. Véglegesítheti és elküldheti ezt a tranzakciót vagy létrehozhat egy részlegesen aláírt bitcoin tranzakciót (PSBT) amit elmentve vagy átmásolva aláírhat egy offline %1 tárcával, vagy PSBT-t támogató hardvertárcával.</translation>
     </message>
     <message>
         <source>Please, review your transaction.</source>
@@ -3254,8 +3265,8 @@ Megjegyzés: Mivel a díj bájtonként van kiszámítva, egy "100 satoshi kvB-nk
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Particl address</source>
-        <translation type="unfinished">Figyelmeztetés: Érvénytelen Particl cím</translation>
+        <source>Warning: Invalid Bitcoin address</source>
+        <translation type="unfinished">Figyelmeztetés: Érvénytelen Bitcoin cím</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -3293,8 +3304,8 @@ Megjegyzés: Mivel a díj bájtonként van kiszámítva, egy "100 satoshi kvB-nk
         <translation type="unfinished">Válasszon egy korábban már használt címet</translation>
     </message>
     <message>
-        <source>The Particl address to send the payment to</source>
-        <translation type="unfinished">Erre a Particl címre küldje az összeget</translation>
+        <source>The Bitcoin address to send the payment to</source>
+        <translation type="unfinished">Erre a Bitcoin címre küldje az összeget</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -3309,8 +3320,8 @@ Megjegyzés: Mivel a díj bájtonként van kiszámítva, egy "100 satoshi kvB-nk
         <translation type="unfinished">A küldendő összeg a választott egységben.</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less particl than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation type="unfinished">A díj le lesz vonva a küldött teljes összegből. A címzett kevesebb particlt fog megkapni, mint amennyit az összeg mezőben megadott. Amennyiben több címzett van kiválasztva, az illeték egyenlő mértékben lesz elosztva.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less bitcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation type="unfinished">A díj le lesz vonva a küldött teljes összegből. A címzett kevesebb bitcoint fog megkapni, mint amennyit az összeg mezőben megadott. Amennyiben több címzett van kiválasztva, az illeték egyenlő mértékben lesz elosztva.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -3329,8 +3340,8 @@ Megjegyzés: Mivel a díj bájtonként van kiszámítva, egy "100 satoshi kvB-nk
         <translation type="unfinished">Adjon egy címkét ehhez a címhez, hogy bekerüljön a használt címek közé</translation>
     </message>
     <message>
-        <source>A message that was attached to the particl: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Particl network.</source>
-        <translation type="unfinished">Egy üzenet a particl: URI-hoz csatolva, amely a tranzakciócal együtt lesz eltárolva az Ön számára. Megjegyzés: Ez az üzenet nem kerül elküldésre a Particl hálózaton keresztül.</translation>
+        <source>A message that was attached to the bitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bitcoin network.</source>
+        <translation type="unfinished">Egy üzenet a bitcoin: URI-hoz csatolva, amely a tranzakciócal együtt lesz eltárolva az Ön számára. Megjegyzés: Ez az üzenet nem kerül elküldésre a Bitcoin hálózaton keresztül.</translation>
     </message>
 </context>
 <context>
@@ -3355,12 +3366,12 @@ Megjegyzés: Mivel a díj bájtonként van kiszámítva, egy "100 satoshi kvB-nk
         <translation type="unfinished">Üzenet &amp;aláírása</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive particl sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation type="unfinished">Címeivel aláírhatja az üzeneteket/egyezményeket, amivel bizonyíthatja, hogy át tudja venni az ezekre a címekre küldött particl-t. Vigyázzon, hogy ne írjon alá semmi félreérthetőt, mivel adathalász támadásokkal megpróbálhatják becsapni, hogy az azonosságát átírja másokra. Csak olyan részletes állításokat írjon alá, amivel egyetért.</translation>
+        <source>You can sign messages/agreements with your legacy (P2PKH) addresses to prove you can receive bitcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation type="unfinished">Aláírhat üzeneteket/megállapodásokat a régí típusú (P2PKH) címeivel amivel bizonyítja, hogy fogadni és elkölteni is tudja az oda küldött bitcoint. Legyen óvatos és ne írjon alá semmilyen ködös vagy véletlenszerű üzenetet, mivel adathalászok megkísérelhetik rávenni a személyazonosságának átruházására. Csak olyan alaposan részletezett állításokat írjon alá amivel teljesen egyetért.</translation>
     </message>
     <message>
-        <source>The Particl address to sign the message with</source>
-        <translation type="unfinished">Particl cím, amivel alá kívánja írni az üzenetet</translation>
+        <source>The Bitcoin address to sign the message with</source>
+        <translation type="unfinished">Bitcoin cím, amivel alá kívánja írni az üzenetet</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3383,8 +3394,8 @@ Megjegyzés: Mivel a díj bájtonként van kiszámítva, egy "100 satoshi kvB-nk
         <translation type="unfinished">A jelenleg kiválasztott aláírás másolása a rendszer-vágólapra</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Particl address</source>
-        <translation type="unfinished">Üzenet aláírása, ezzel bizonyítva, hogy Öné ez a Particl cím</translation>
+        <source>Sign the message to prove you own this Bitcoin address</source>
+        <translation type="unfinished">Üzenet aláírása, ezzel bizonyítva, hogy Öné ez a Bitcoin cím</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -3407,8 +3418,8 @@ Megjegyzés: Mivel a díj bájtonként van kiszámítva, egy "100 satoshi kvB-nk
         <translation type="unfinished">Adja meg a fogadó címét, az üzenetet (megbizonyosodva arról, hogy az új-sor, szóköz, tab, stb. karaktereket is pontosan adta meg) és az aláírást az üzenet ellenőrzéséhez. Ügyeljen arra, ne gondoljon bele többet az aláírásba, mint amennyi az aláírt szövegben ténylegesen áll, hogy elkerülje a köztes-ember (man-in-the-middle) támadást. Megjegyzendő, hogy ez csak azt bizonyítja hogy az aláíró fél az adott címen tud fogadni, de azt nem tudja igazolni hogy képes-e akár egyetlen tranzakció feladására is!</translation>
     </message>
     <message>
-        <source>The Particl address the message was signed with</source>
-        <translation type="unfinished">Particl cím, amivel aláírta az üzenetet</translation>
+        <source>The Bitcoin address the message was signed with</source>
+        <translation type="unfinished">Bitcoin cím, amivel aláírta az üzenetet</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -3419,8 +3430,8 @@ Megjegyzés: Mivel a díj bájtonként van kiszámítva, egy "100 satoshi kvB-nk
         <translation type="unfinished">A kapott aláírás amikor az üzenet alá lett írva.</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Particl address</source>
-        <translation type="unfinished">Ellenőrizze az üzenetet, hogy valóban a megjelölt Particl címmel van-e aláírva</translation>
+        <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
+        <translation type="unfinished">Ellenőrizze az üzenetet, hogy valóban a megjelölt Bitcoin címmel van-e aláírva</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3443,8 +3454,8 @@ Megjegyzés: Mivel a díj bájtonként van kiszámítva, egy "100 satoshi kvB-nk
         <translation type="unfinished">Ellenőrizze a címet és próbálja meg újra.</translation>
     </message>
     <message>
-        <source>The entered address does not refer to a key.</source>
-        <translation type="unfinished">A megadott cím nem hivatkozik egy kulcshoz sem.</translation>
+        <source>The entered address does not refer to a legacy (P2PKH) key. Message signing for SegWit and other non-P2PKH address types is not supported in this version of %1. Please check the address and try again.</source>
+        <translation type="unfinished">A megadott cím nem régi típusú (P2PKH) kulcsra hivatkozik. Üzenetek aláírása SegWit és más nem P2PKH típusú címekkel nem támogatott a jelenlegi %1 verzióban. Kérjük ellenőrizze a címet majd próbálja újra.</translation>
     </message>
     <message>
         <source>Wallet unlock was cancelled.</source>
@@ -3835,7 +3846,7 @@ Megjegyzés: Mivel a díj bájtonként van kiszámítva, egy "100 satoshi kvB-nk
     </message>
     <message>
         <source>Copy &amp;amount</source>
-        <translation type="unfinished">&amp;Összeg másolása</translation>
+        <translation type="unfinished">Ö&amp;sszeg másolása</translation>
     </message>
     <message>
         <source>Copy transaction &amp;ID</source>
@@ -4019,9 +4030,8 @@ A "Fájl &gt; Tárca megnyitása" menüben tölthet be egyet.
         <translation type="unfinished">PSBT másolva</translation>
     </message>
     <message>
-        <source>Copied to clipboard</source>
-        <comment>Fee-bump PSBT saved</comment>
-        <translation type="unfinished">Vágólapra másolva</translation>
+        <source>Fee-bump PSBT copied to clipboard</source>
+        <translation type="unfinished">Díj emelési PSBT a vágólapra másolva</translation>
     </message>
     <message>
         <source>Can't sign transaction.</source>
@@ -4032,12 +4042,12 @@ A "Fájl &gt; Tárca megnyitása" menüben tölthet be egyet.
         <translation type="unfinished">A tranzakciót nem lehet elküldeni</translation>
     </message>
     <message>
-        <source>Can't display address</source>
-        <translation type="unfinished">Nem lehet a címet megjeleníteni</translation>
+        <source>Signer error</source>
+        <translation type="unfinished">Aláíró hiba</translation>
     </message>
     <message>
-        <source>default wallet</source>
-        <translation type="unfinished">alapértelmezett tárca</translation>
+        <source>Can't display address</source>
+        <translation type="unfinished">Nem lehet a címet megjeleníteni</translation>
     </message>
 </context>
 <context>
@@ -4057,7 +4067,7 @@ A "Fájl &gt; Tárca megnyitása" menüben tölthet be egyet.
     <message>
         <source>Wallet Data</source>
         <extracomment>Name of the wallet data file format.</extracomment>
-        <translation type="unfinished">Tárca adat</translation>
+        <translation type="unfinished">Tárca adatai</translation>
     </message>
     <message>
         <source>Backup Failed</source>
@@ -4087,8 +4097,8 @@ A "Fájl &gt; Tárca megnyitása" menüben tölthet be egyet.
         <translation type="unfinished">A %s fejlesztők</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool particl-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">%s sérült. Próbálja meg a particlt-wallet tárca mentő eszközt használni, vagy állítsa helyre egy biztonsági mentésből.</translation>
+        <source>%s corrupt. Try using the wallet tool bitcoin-wallet to salvage or restoring a backup.</source>
+        <translation type="unfinished">%s sérült. Próbálja meg a bitcoint-wallet tárca mentő eszközt használni, vagy állítsa helyre egy biztonsági mentésből.</translation>
     </message>
     <message>
         <source>%s failed to validate the -assumeutxo snapshot state. This indicates a hardware problem, or a bug in the software, or a bad software modification that allowed an invalid snapshot to be loaded. As a result of this, the node will shut down and stop using any state that was built on the snapshot, resetting the chain height from %d to %d. On the next restart, the node will resume syncing from %d without using any snapshot data. Please report this incident to %s, including how you obtained the snapshot. The invalid snapshot chainstate will be left on disk in case it is helpful in diagnosing the issue that caused this error.</source>
@@ -4101,10 +4111,6 @@ A "Fájl &gt; Tárca megnyitása" menüben tölthet be egyet.
     <message>
         <source>Cannot downgrade wallet from version %i to version %i. Wallet version unchanged.</source>
         <translation type="unfinished">Nem sikerült a tárcát %i verzióról %i verzióra módosítani. A tárca verziója változatlan maradt.</translation>
-    </message>
-    <message>
-        <source>Cannot obtain a lock on data directory %s. %s is probably already running.</source>
-        <translation type="unfinished">Az %s adatkönyvtár nem zárolható. A %s valószínűleg fut már.</translation>
     </message>
     <message>
         <source>Cannot upgrade a non HD split wallet from version %i to version %i without upgrading to support pre-split keypool. Please use version %i or no version specified.</source>
@@ -4135,8 +4141,8 @@ A "Fájl &gt; Tárca megnyitása" menüben tölthet be egyet.
         <translation type="unfinished">Hiba: A dump fájl azonosító rekordja helytelen. Talált "%s", várt "%s".</translation>
     </message>
     <message>
-        <source>Error: Dumpfile version is not supported. This version of particl-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
-        <translation type="unfinished">Hiba: A dump fájl verziója nem támogatott. A particl-wallet ez a kiadása csak 1-es verziójú dump fájlokat támogat. A talált dump fájl verziója %s.</translation>
+        <source>Error: Dumpfile version is not supported. This version of bitcoin-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
+        <translation type="unfinished">Hiba: A dump fájl verziója nem támogatott. A bitcoin-wallet ez a kiadása csak 1-es verziójú dump fájlokat támogat. A talált dump fájl verziója %s.</translation>
     </message>
     <message>
         <source>Error: Legacy wallets only support the "legacy", "p2sh-segwit", and "bech32" address types</source>
@@ -4169,10 +4175,6 @@ A "Fájl &gt; Tárca megnyitása" menüben tölthet be egyet.
     <message>
         <source>No wallet file format provided. To use createfromdump, -format=&lt;format&gt; must be provided.</source>
         <translation type="unfinished">Nincs tárca fájlformátum megadva. A createfromdump használatához -format=&lt;format&gt; megadása kötelező.</translation>
-    </message>
-    <message>
-        <source>Please check that your computer's date and time are correct! If your clock is wrong, %s will not work properly.</source>
-        <translation type="unfinished">Ellenőrizze, hogy helyesen van-e beállítva a gépén a dátum és az idő! A %s nem fog megfelelően működni, ha rosszul van beállítva az óra.</translation>
     </message>
     <message>
         <source>Please contribute if you find %s useful. Visit %s for further information about the software.</source>
@@ -4283,10 +4285,6 @@ A "Fájl &gt; Tárca megnyitása" menüben tölthet be egyet.
         <translation type="unfinished">-maxmempool legalább %d MB kell legyen.</translation>
     </message>
     <message>
-        <source>A fatal internal error occurred, see debug.log for details</source>
-        <translation type="unfinished">Súlyos belső hiba történt, részletek a debug.log-ban</translation>
-    </message>
-    <message>
         <source>Cannot resolve -%s address: '%s'</source>
         <translation type="unfinished">-%s cím feloldása nem sikerült: '%s'</translation>
     </message>
@@ -4297,10 +4295,6 @@ A "Fájl &gt; Tárca megnyitása" menüben tölthet be egyet.
     <message>
         <source>Cannot set -peerblockfilters without -blockfilterindex.</source>
         <translation type="unfinished">A -peerblockfilters nem állítható be a -blockfilterindex opció nélkül.</translation>
-    </message>
-    <message>
-        <source>Cannot write to data directory '%s'; check permissions.</source>
-        <translation type="unfinished">Nem lehet írni a '%s' könyvtárba; ellenőrizze a jogosultságokat.</translation>
     </message>
     <message>
         <source>%s is set very high! Fees this large could be paid on a single transaction.</source>
@@ -4335,6 +4329,12 @@ A "Fájl &gt; Tárca megnyitása" menüben tölthet be egyet.
         <translation type="unfinished">Sikertelen az emelt díjak becslése, mert a megerősítetlen UTXO-k hatalmas mennyiségű megerősítetlen tranzakcióktól függnek.</translation>
     </message>
     <message>
+        <source>Failed to remove snapshot chainstate dir (%s). Manually remove it before restarting.
+</source>
+        <translation type="unfinished">Nem sikerült a láncállapot pillanatkép könyvtárat (%s) eltávolítani. Távolítsa el kézzel újraindítás előtt.
+</translation>
+    </message>
+    <message>
         <source>Failed to rename invalid peers.dat file. Please move or delete it and try again.</source>
         <translation type="unfinished">Az érvénytelen peers.dat fájl átnevezése sikertelen. Kérjük mozgassa vagy törölje, majd próbálja újra.</translation>
     </message>
@@ -4343,12 +4343,28 @@ A "Fájl &gt; Tárca megnyitása" menüben tölthet be egyet.
         <translation type="unfinished">Díjbecslés sikertelen. Alapértelmezett díj letiltva. Várjon néhány blokkot vagy engedélyezze ezt: %s.</translation>
     </message>
     <message>
+        <source>Flushing block file to disk failed. This is likely the result of an I/O error.</source>
+        <translation type="unfinished">Nem sikerült a blokk fájlt lemezre írni. Ez valószínű I/O hiba következménye.</translation>
+    </message>
+    <message>
+        <source>Flushing undo file to disk failed. This is likely the result of an I/O error.</source>
+        <translation type="unfinished">Nem sikerült a visszavonási fájlt lemezre írni. Ez valószínű I/O hiba következménye.</translation>
+    </message>
+    <message>
         <source>Incompatible options: -dnsseed=1 was explicitly specified, but -onlynet forbids connections to IPv4/IPv6</source>
         <translation type="unfinished">Összeférhetetlen beállítások: -dnsseed=1 lett megadva, de az -onlynet megtiltja az IPv4/IPv6 kapcsolatokat</translation>
     </message>
     <message>
         <source>Invalid amount for %s=&lt;amount&gt;: '%s' (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
         <translation type="unfinished">Érvénytelen összeg: %s=&lt;amount&gt;: '%s' (legalább a minrelay összeg azaz %s kell legyen, hogy ne ragadjon be a tranzakció)</translation>
+    </message>
+    <message>
+        <source>Maximum transaction weight is less than transaction weight without inputs</source>
+        <translation type="unfinished">Maximális tranzakciós súly kevesebb, mint a bemenetek nélküli tranzakció súlya</translation>
+    </message>
+    <message>
+        <source>Maximum transaction weight is too low, can not accommodate change output</source>
+        <translation type="unfinished">Maximális tranzakciós súly túl alacsony, nincs hely a visszajáró kimenetnek</translation>
     </message>
     <message>
         <source>Outbound connections restricted to CJDNS (-onlynet=cjdns) but -cjdnsreachable is not provided</source>
@@ -4365,6 +4381,14 @@ A "Fájl &gt; Tárca megnyitása" menüben tölthet be egyet.
     <message>
         <source>Outbound connections restricted to i2p (-onlynet=i2p) but -i2psam is not provided</source>
         <translation type="unfinished">A kilépő kapcsolatok i2p-re korlátozottak (-onlynet=i2p) de nincs megadva -i2psam</translation>
+    </message>
+    <message>
+        <source>Rename of '%s' -&gt; '%s' failed. Cannot clean up the background chainstate leveldb directory.</source>
+        <translation type="unfinished">Nem sikerült az '%s' -&gt; '%s' átnevezés. Nem lehet kitisztítani a háttér láncállapot leveldb könyvtárat.</translation>
+    </message>
+    <message>
+        <source>The combination of the pre-selected inputs and the wallet automatic inputs selection exceeds the transaction maximum weight. Please try sending a smaller amount or manually consolidating your wallet's UTXOs</source>
+        <translation type="unfinished">Az előre kiválasztott bemenetek és a tárca automatikus bemeneteinek kombinációja meghaladja a maximális tranzakciós súlyt. Kérjük próbáljon kisebb összeget küldeni vagy kézzel egyesítse a tárca UTXO-it.</translation>
     </message>
     <message>
         <source>The inputs size exceeds the maximum weight. Please try sending a smaller amount or manually consolidating your wallet's UTXOs</source>
@@ -4409,6 +4433,10 @@ Kérjük próbálja futtatni a legújabb szoftver verziót.
 </translation>
     </message>
     <message>
+        <source>Your computer's date and time appear to be more than %d minutes out of sync with the network, this may lead to consensus failure. After you've confirmed your computer's clock, this message should no longer appear when you restart your node. Without a restart, it should stop showing automatically after you've connected to a sufficient number of new outbound peers, which may take some time. You can inspect the `timeoffset` field of the `getpeerinfo` and `getnetworkinfo` RPC methods to get more info.</source>
+        <translation type="unfinished">A számítógépének órája több mint %d perces eltérést mutat a hálózatéhoz képest, ez hátráltathatja a konszenzusra jutást. Miután megbizonyosodott az óra helyességéről ennek az üzenetnek nem szabad megjelennie a csomópont újraindítása után. Újraindítás nélkül nem jelenik meg többször miután elegendő új kimenő partnerhez csatlakozott, ami eltarthat egy ideig. További információért tanulmányozhatja a `timeoffset` mezőt a `getpeerinfo` és a `getnetworkinfo` RPC parancsokban.</translation>
+    </message>
+    <message>
         <source>
 Unable to cleanup failed migration</source>
         <translation type="unfinished">
@@ -4421,6 +4449,18 @@ Unable to restore backup of wallet.</source>
 A tárca biztonsági mentésének visszaállítása sikertelen.</translation>
     </message>
     <message>
+        <source>whitebind may only be used for incoming connections ("out" was passed)</source>
+        <translation type="unfinished">A whitebind csak bejövő kapcsolatokhoz használható ("out" lett megadva)</translation>
+    </message>
+    <message>
+        <source>A fatal internal error occurred, see debug.log for details: </source>
+        <translation type="unfinished">Végzetes belső hiba történt, részletek a debug.log fájlban:</translation>
+    </message>
+    <message>
+        <source>Assumeutxo data not found for the given blockhash '%s'.</source>
+        <translation type="unfinished">Nem található assumeutxo adat a megadott blokk ellenőrzőösszeghez '%s'.</translation>
+    </message>
+    <message>
         <source>Block verification was interrupted</source>
         <translation type="unfinished">Blokkok ellenőrzése megszakítva</translation>
     </message>
@@ -4431,6 +4471,10 @@ A tárca biztonsági mentésének visszaállítása sikertelen.</translation>
     <message>
         <source>Copyright (C) %i-%i</source>
         <translation type="unfinished">Szerzői jog (C) fenntartva %i-%i</translation>
+    </message>
+    <message>
+        <source>Corrupt block found indicating potential hardware failure.</source>
+        <translation type="unfinished">Hibás blokk találata valószínűleg hardver hibára utal.</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -4449,16 +4493,16 @@ A tárca biztonsági mentésének visszaállítása sikertelen.</translation>
         <translation type="unfinished">Kevés a hely a lemezen!</translation>
     </message>
     <message>
-        <source>Do you want to rebuild the block database now?</source>
-        <translation type="unfinished">Újra akarja építeni a blokk-adatbázist most?</translation>
-    </message>
-    <message>
         <source>Done loading</source>
         <translation type="unfinished">Betöltés befejezve</translation>
     </message>
     <message>
         <source>Dump file %s does not exist.</source>
         <translation type="unfinished">A %s elérési úton fájl nem létezik.</translation>
+    </message>
+    <message>
+        <source>Elliptic curve cryptography sanity check failure. %s is shutting down.</source>
+        <translation type="unfinished">Elliptikus görbés kriptográfia épségi ellenőrzése sikertelen. %s most leáll.</translation>
     </message>
     <message>
         <source>Error creating %s</source>
@@ -4593,8 +4637,24 @@ A tárca biztonsági mentésének visszaállítása sikertelen.</translation>
         <translation type="unfinished">Hiba: Nem lehet írni a figyelő tárca legfelső blokkját megadó rekordot</translation>
     </message>
     <message>
+        <source>Error: database transaction cannot be executed for wallet %s</source>
+        <translation type="unfinished">Hiba: adatbázis tranzakció végrehajtása sikertelen ehhez a tárcához: %s</translation>
+    </message>
+    <message>
+        <source>Failed to connect best block (%s).</source>
+        <translation type="unfinished">Sikertelen a legjobb blokkhoz (%s) csatlakozás.</translation>
+    </message>
+    <message>
+        <source>Failed to disconnect block.</source>
+        <translation type="unfinished">Blokk szétkapcsolása nem sikerült.</translation>
+    </message>
+    <message>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
         <translation type="unfinished">Egyik hálózati portot sem sikerül figyelni. Használja a -listen=0 kapcsolót, ha ezt szeretné.</translation>
+    </message>
+    <message>
+        <source>Failed to read block.</source>
+        <translation type="unfinished">Blokk olvasása nem sikerült.</translation>
     </message>
     <message>
         <source>Failed to rescan the wallet during initialization</source>
@@ -4607,6 +4667,26 @@ A tárca biztonsági mentésének visszaállítása sikertelen.</translation>
     <message>
         <source>Failed to verify database</source>
         <translation type="unfinished">Adatbázis ellenőrzése sikertelen</translation>
+    </message>
+    <message>
+        <source>Failed to write block.</source>
+        <translation type="unfinished">Blokk írása nem sikerült.</translation>
+    </message>
+    <message>
+        <source>Failed to write to block index database.</source>
+        <translation type="unfinished">A blokk-index adatbázis írása nem sikerült.</translation>
+    </message>
+    <message>
+        <source>Failed to write to coin database.</source>
+        <translation type="unfinished">Az érme-adatbázis írása nem sikerült.</translation>
+    </message>
+    <message>
+        <source>Failed to write undo data.</source>
+        <translation type="unfinished">Visszavonási adatok írása nem sikerült.</translation>
+    </message>
+    <message>
+        <source>Failure removing transaction: %s</source>
+        <translation type="unfinished">Tranzakció eltávolítása nem sikerült: %s</translation>
     </message>
     <message>
         <source>Fee rate (%s) is lower than the minimum fee rate setting (%s)</source>
@@ -4701,6 +4781,10 @@ A tárca biztonsági mentésének visszaállítása sikertelen.</translation>
         <translation type="unfinished">Tárca betöltése…</translation>
     </message>
     <message>
+        <source>Maximum transaction weight must be between %d and %d</source>
+        <translation type="unfinished">Maximális tranzakciós súlynak %d és %d között kell lennie.</translation>
+    </message>
+    <message>
         <source>Missing amount</source>
         <translation type="unfinished">Hiányzó összeg</translation>
     </message>
@@ -4717,16 +4801,16 @@ A tárca biztonsági mentésének visszaállítása sikertelen.</translation>
         <translation type="unfinished">Nincsenek rendelkezésre álló címek</translation>
     </message>
     <message>
-        <source>Not enough file descriptors available.</source>
-        <translation type="unfinished">Nincs elég fájlleíró.</translation>
-    </message>
-    <message>
         <source>Not found pre-selected input %s</source>
         <translation type="unfinished">Nem található előre kiválasztott bemenet %s</translation>
     </message>
     <message>
         <source>Not solvable pre-selected input %s</source>
         <translation type="unfinished">Nem megoldható az előre kiválasztott bemenet %s</translation>
+    </message>
+    <message>
+        <source>Only direction was set, no permissions: '%s'</source>
+        <translation type="unfinished">Csak az irány lett beállítva, engedélyek nem: '%s'</translation>
     </message>
     <message>
         <source>Prune cannot be configured with a negative value.</source>
@@ -4773,6 +4857,18 @@ A tárca biztonsági mentésének visszaállítása sikertelen.</translation>
         <translation type="unfinished">Ismeretlen bekezdés [%s]</translation>
     </message>
     <message>
+        <source>Signer did not echo address</source>
+        <translation type="unfinished">Az aláíró nem jelzett vissza címet</translation>
+    </message>
+    <message>
+        <source>Signer echoed unexpected address %s</source>
+        <translation type="unfinished">Az aláíró váratlan címet jelzett vissza: %s</translation>
+    </message>
+    <message>
+        <source>Signer returned error: %s</source>
+        <translation type="unfinished">Aláíró hibát jelzett: %s</translation>
+    </message>
+    <message>
         <source>Signing transaction failed</source>
         <translation type="unfinished">Tranzakció aláírása sikertelen</translation>
     </message>
@@ -4801,6 +4897,18 @@ A tárca biztonsági mentésének visszaállítása sikertelen.</translation>
         <translation type="unfinished">Hálózati szálak indítása…</translation>
     </message>
     <message>
+        <source>System error while flushing: %s</source>
+        <translation type="unfinished">Rendszerhiba lemezre írás közben: %s</translation>
+    </message>
+    <message>
+        <source>System error while loading external block file: %s</source>
+        <translation type="unfinished">Rendszerhiba külső blokk fájl betöltése közben: %s</translation>
+    </message>
+    <message>
+        <source>System error while saving block to disk: %s</source>
+        <translation type="unfinished">Rendszerhiba blokk lemezre mentése közben: %s</translation>
+    </message>
+    <message>
         <source>The source code is available from %s.</source>
         <translation type="unfinished">A forráskód elérhető innen: %s.</translation>
     </message>
@@ -4817,6 +4925,10 @@ A tárca biztonsági mentésének visszaállítása sikertelen.</translation>
         <translation type="unfinished">A tárca nem fog a minimális továbbítási díjnál kevesebbet fizetni. </translation>
     </message>
     <message>
+        <source>There is no ScriptPubKeyManager for this address</source>
+        <translation type="unfinished">Nem tartozik ScriptPubKeyManager ehhez a címhez</translation>
+    </message>
+    <message>
         <source>This is experimental software.</source>
         <translation type="unfinished">Ez egy kísérleti szoftver.</translation>
     </message>
@@ -4827,6 +4939,10 @@ A tárca biztonsági mentésének visszaállítása sikertelen.</translation>
     <message>
         <source>This is the transaction fee you will pay if you send a transaction.</source>
         <translation type="unfinished">Ez a tranzakció díja, amelyet kifizet, ha tranzakciót indít.</translation>
+    </message>
+    <message>
+        <source>Transaction %s does not belong to this wallet</source>
+        <translation type="unfinished">A %s tranzakció nem tartozik ehhez a tárcához</translation>
     </message>
     <message>
         <source>Transaction amount too small</source>
@@ -4851,10 +4967,6 @@ A tárca biztonsági mentésének visszaállítása sikertelen.</translation>
     <message>
         <source>Transaction too large</source>
         <translation type="unfinished">Túl nagy tranzakció</translation>
-    </message>
-    <message>
-        <source>Unable to allocate memory for -maxsigcachesize: '%s' MiB</source>
-        <translation type="unfinished">Nem sikerült a memóriát lefoglalni -maxsigcachesize számára: '%s' MiB</translation>
     </message>
     <message>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
@@ -4917,6 +5029,10 @@ A tárca biztonsági mentésének visszaállítása sikertelen.</translation>
         <translation type="unfinished">Ismeretlen új szabályok aktiválva (verzióbit %i)</translation>
     </message>
     <message>
+        <source>Unrecognised option "%s" provided in -test=&lt;option&gt;.</source>
+        <translation type="unfinished">Ismeretlen beállítás "%s" lett megadva itt: -test=&lt;option&gt;.</translation>
+    </message>
+    <message>
         <source>Unsupported global logging level %s=%s. Valid values: %s.</source>
         <translation type="unfinished">Nem támogatott globális naplózási szint %s=%s. Lehetséges értékek: %s.</translation>
     </message>
@@ -4935,6 +5051,10 @@ A tárca biztonsági mentésének visszaállítása sikertelen.</translation>
     <message>
         <source>Error: Could not add watchonly tx %s to watchonly wallet</source>
         <translation type="unfinished">Hiba: Nem sikerült hozzáadni a megfigyelt %s tranzakciót a figyelő tárcához</translation>
+    </message>
+    <message>
+        <source>Error: Could not delete watchonly transactions. </source>
+        <translation type="unfinished">Hiba: Nem lehet törölni csak megfigyelt tranzakciókat.</translation>
     </message>
     <message>
         <source>User Agent comment (%s) contains unsafe characters.</source>
